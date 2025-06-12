@@ -5,17 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TiSDesign - Design Personalizzato per Ristoranti e Saloni</title>
     <style>
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/mYcqTSergLb16PdbJJQMl9ebYm4.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/ZRl8AlxwsX1m7xS1eJCiSPbztg.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+1F00-1FFF
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0370-03FF
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/d3tHnaQIAeqiE5hGcRw4mmgWYU.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+        }
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+            unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+1F00-1FFF
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0370-03FF
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/d3tHnaQIAeqiE5hGcRw4mmgWYU.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+            unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB
+        }
+        @font-face{
+            font-family:Inter Placeholder;
+            src:local("Arial");
+            ascent-override:89.79%;
+            descent-override:22.36%;
+            line-gap-override:0%;
+            size-adjust:107.89%
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            background: #000000;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background-color: #ffffff;
+            color: #ffffff;
+            background-color: #0d0d0d;
         }
 
         .container {
@@ -29,10 +154,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #252525;
         }
 
         .nav-container {
@@ -47,7 +172,7 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            color: #1a1a1a;
+            color: #ffffff;
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -60,20 +185,20 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #1a1a1a;
+            color: #ffffff;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #007AFF;
+            color: #0099ff;
         }
 
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
-            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
         }
 
         .hero h1 {
@@ -81,42 +206,48 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
-            color: #1a1a1a;
+            color: #ffffff;
             letter-spacing: -2px;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-variation-settings: "opsz" 32, "wght" 700;
+            letter-spacing: -0.04em;
         }
 
         .hero .subtitle {
             font-size: 1.3rem;
-            color: #666;
+            color: #999;
             margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-variation-settings: "opsz" 32, "wght" 700;
+            letter-spacing: -0.04em;
         }
 
         .cta-button {
             display: inline-block;
-            background: #007AFF;
-            color: white;
+            background: #ffffff;
+            color: #000000;
             padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
         }
 
         .cta-button:hover {
-            background: #0051D0;
+            background: #dddddd;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
         }
 
         /* Services Section */
         .services {
             padding: 100px 0;
-            background: #ffffff;
+            background: #0d0d0d;
         }
 
         .section-title {
@@ -124,7 +255,10 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 60px;
-            color: #1a1a1a;
+            color: #ffffff;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-variation-settings: "opsz" 32, "wght" 700;
+            letter-spacing: -0.04em;
         }
 
         .services-grid {
@@ -135,40 +269,49 @@
         }
 
         .service-card {
-            background: #f8f9ff;
+            background: #191919;
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #252525;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: 20px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            color: #ffffff;
         }
 
         .service-card h3 {
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 15px;
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .service-card p {
-            color: #666;
+            color: #999;
             line-height: 1.6;
         }
 
         /* Why Choose Us Section */
         .why-choose {
             padding: 100px 0;
-            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #191919 0%, #0d0d0d 100%);
         }
 
         .why-grid {
@@ -184,57 +327,69 @@
         }
 
         .why-icon {
-            width: 80px;
-            height: 80px;
-            background: #007AFF;
+            width: 48px;
+            height: 48px;
+            background: #777777;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
+            font-size: 1.5rem;
+            color: #ffffff;
         }
 
         .why-item h3 {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 15px;
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
-            background: #ffffff;
+            background: #0d0d0d;
         }
 
         .testimonial-card {
-            background: #f8f9ff;
+            background: #191919;
             padding: 40px;
             border-radius: 20px;
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #252525;
         }
 
         .testimonial-text {
             font-size: 1.2rem;
-            color: #333;
+            color: #ffffff;
             margin-bottom: 20px;
             font-style: italic;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            line-height: 1.2em;
+            text-align: left;
         }
 
         .testimonial-author {
             font-weight: 600;
-            color: #007AFF;
+            color: #0099ff;
+            font-family: "Inter", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4em;
+            text-align: left;
         }
 
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
             color: white;
             text-align: center;
         }
@@ -243,20 +398,33 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-variation-settings: "opsz" 32, "wght" 700;
+            letter-spacing: -0.03em;
+            line-height: 1em;
+            color: #ffffff;
         }
 
         .contact p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             opacity: 0.9;
+            font-family: "Inter", "Inter Placeholder", sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: -0.01em;
+            line-height: 1.4em;
+            color: #999999;
         }
 
         .contact-info {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             margin-top: 40px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .contact-item {
@@ -267,26 +435,54 @@
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s ease;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-variation-settings: "opsz" 24, "wght" 500;
+            letter-spacing: -0.01em;
+            line-height: 1em;
+            color: #999999;
         }
 
         .contact-item:hover {
             opacity: 0.8;
         }
 
+        .contact .cta-button {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact .cta-button:hover {
+            background: #333333;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #0d0d0d;
             color: white;
             padding: 40px 0;
             text-align: center;
+            border-top: 1px solid #252525;
         }
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        .footer-content p {
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1em;
+            color: #999999;
         }
 
         .social-links {
@@ -299,10 +495,16 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-variation-settings: "opsz" 24, "wght" 500;
+            letter-spacing: -0.01em;
+            line-height: 1em;
+            color: #999999;
         }
 
         .social-links a:hover {
-            color: #007AFF;
+            color: #0099ff;
         }
 
         /* Responsive */
@@ -332,10 +534,7 @@
         }
 
         /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
         /* Animation for cards */
         @keyframes fadeInUp {
             from {
@@ -466,15 +665,15 @@
             <a href="mailto:info.tisdesign@gmail.com" class="cta-button">Contattaci ora</a>
             <div class="contact-info">
                 <a href="tel:+390176080882922" class="contact-item">
-                    <span>📞</span>
+                    <span style="color: #0099ff;">📞</span>
                     <span>0176 80882922</span>
                 </a>
                 <a href="mailto:info.tisdesign@gmail.com" class="contact-item">
-                    <span>✉️</span>
+                    <span style="color: #0099ff;">✉️</span>
                     <span>info.tisdesign@gmail.com</span>
                 </a>
                 <a href="#" class="contact-item">
-                    <span>🛍️</span>
+                    <span style="color: #0099ff;">🛍️</span>
                     <span>Etsy Store</span>
                 </a>
             </div>
@@ -514,10 +713,10 @@
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                nav.style.background = 'rgba(13, 13, 13, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(255, 255, 255, 0.1)';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.background = 'rgba(13, 13, 13, 0.95)';
                 nav.style.boxShadow = 'none';
             }
         });
