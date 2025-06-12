@@ -167,6 +167,45 @@
             padding: 15px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: #191919;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #252525;
+        }
+
+        .language-switcher span {
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .language-switcher span:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .language-switcher span.active {
+            opacity: 1;
+            background: rgba(0, 153, 255, 0.2);
+            border: 1px solid #0099ff;
+        }
+
+        .language-switcher span.clicked-animation {
+            transform: scale(0.9);
         }
 
         .logo {
@@ -196,9 +235,9 @@
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            padding: 180px 0 80px;
             text-align: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: #0d0d0d;
         }
 
         .hero h1 {
@@ -215,7 +254,7 @@
 
         .hero .subtitle {
             font-size: 1.3rem;
-            color: #999;
+            color: #cccccc;
             margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
@@ -512,6 +551,17 @@
             .nav-links {
                 display: none;
             }
+            
+            .language-switcher {
+                padding: 6px 8px;
+                gap: 8px;
+            }
+            
+            .language-switcher span {
+                width: 24px;
+                height: 24px;
+                font-size: 16px;
+            }
 
             .hero h1 {
                 font-size: 2.5rem;
@@ -535,22 +585,99 @@
 
         /* Smooth scrolling */
         
-        /* Animation for cards */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .service-card,
-        .why-item,
-        .testimonial-card {
-            animation: fadeInUp 0.6s ease-out;
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        .animate-fade-in.animate-in {
+            opacity: 1;
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered animations for grids */
+        .service-card {
+            transition-delay: 0s;
+        }
+
+        .service-card:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .service-card:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .service-card:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        .service-card:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+
+        .service-card:nth-child(6) {
+            transition-delay: 0.5s;
+        }
+
+        .why-item:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .why-item:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .why-item:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .why-item:nth-child(4) {
+            transition-delay: 0.3s;
         }
     </style>
 </head>
@@ -558,60 +685,65 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">TiSDesign</a>
+            <a href="#home" class="logo" data-i18n="logo">TiSDesign</a>
             <ul class="nav-links">
-                <li><a href="#servizi">Servizi</a></li>
-                <li><a href="#perche">Perché Noi</a></li>
-                <li><a href="#testimonianze">Clienti</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#servizi" data-i18n="nav_services">Servizi</a></li>
+                <li><a href="#perche" data-i18n="nav_why_us">Perché Noi</a></li>
+                <li><a href="#testimonianze" data-i18n="nav_testimonials">Clienti</a></li>
+                <li><a href="#contatti" data-i18n="nav_contact">Contatti</a></li>
             </ul>
+            <div class="language-switcher">
+                <span data-lang="it">🇮🇹</span>
+                <span data-lang="en">🇬🇧</span>
+                <span data-lang="de">🇩🇪</span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Design che fa<br>la differenza.</h1>
-            <p class="subtitle">Creiamo l'identità visiva perfetta per il tuo ristorante o salone. 
+            <h1 class="animate-fade-in" data-i18n="hero_title">Design che fa<br>la differenza.</h1>
+            <p class="subtitle animate-fade-in" data-i18n="hero_subtitle">Creiamo l'identità visiva perfetta per il tuo ristorante o salone. 
             Abbigliamento personalizzato, gadget e decorazioni adesive con design grafico gratuito.</p>
-            <a href="#contatti" class="cta-button">Inizia il tuo progetto</a>
+            <a href="#contatti" class="cta-button animate-scale" data-i18n="hero_cta">Inizia il tuo progetto</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="servizi" class="services">
         <div class="container">
-            <h2 class="section-title">I nostri servizi</h2>
+            <h2 class="section-title animate-on-scroll" data-i18n="services_title">I nostri servizi</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">👕</div>
-                    <h3>Abbigliamento Personalizzato</h3>
-                    <p>Magliette, grembiuli, felpe e uniformi da lavoro con il tuo logo. Design grafico incluso e qualità garantita.</p>
+                    <h3 data-i18n="service1_title">Abbigliamento Personalizzato</h3>
+                    <p data-i18n="service1_desc">Magliette, grembiuli, felpe e uniformi da lavoro con il tuo logo. Design grafico incluso e qualità garantita.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">🎁</div>
-                    <h3>Gadget & Merchandising</h3>
-                    <p>Penne, tazze, shopper e accessori promozionali che rafforzano la tua immagine aziendale.</p>
+                    <h3 data-i18n="service2_title">Gadget & Merchandising</h3>
+                    <p data-i18n="service2_desc">Penne, tazze, shopper e accessori promozionali che rafforzano la tua immagine aziendale.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">🎨</div>
-                    <h3>Decorazioni Adesive</h3>
-                    <p>Beklebungen per vetrine e veicoli. Trasforma i tuoi spazi in potenti strumenti di marketing.</p>
+                    <h3 data-i18n="service3_title">Decorazioni Adesive</h3>
+                    <p data-i18n="service3_desc">Beklebungen per vetrine e veicoli. Trasforma i tuoi spazi in potenti strumenti di marketing.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">✨</div>
-                    <h3>Design Grafico Gratuito</h3>
-                    <p>Ogni progetto include la creazione grafica personalizzata. Il tuo brand unico, senza costi aggiuntivi.</p>
+                    <h3 data-i18n="service4_title">Design Grafico Gratuito</h3>
+                    <p data-i18n="service4_desc">Ogni progetto include la creazione grafica personalizzata. Il tuo brand unico, senza costi aggiuntivi.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">💡</div>
-                    <h3>Consulenza Brand</h3>
-                    <p>Ti aiutiamo a definire l'immagine perfetta per il tuo business, dal concept alla realizzazione.</p>
+                    <h3 data-i18n="service5_title">Consulenza Brand</h3>
+                    <p data-i18n="service5_desc">Ti aiutiamo a definire l'immagine perfetta per il tuo business, dal concept alla realizzazione.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll">
                     <div class="service-icon">🚀</div>
-                    <h3>Servizio Completo</h3>
-                    <p>Dalla progettazione alla consegna, ci occupiamo di tutto. Tu pensi al tuo business, noi al resto.</p>
+                    <h3 data-i18n="service6_title">Servizio Completo</h3>
+                    <p data-i18n="service6_desc">Dalla progettazione alla consegna, ci occupiamo di tutto. Tu pensi al tuo business, noi al resto.</p>
                 </div>
             </div>
         </div>
@@ -620,27 +752,27 @@
     <!-- Why Choose Us Section -->
     <section id="perche" class="why-choose">
         <div class="container">
-            <h2 class="section-title">Perché scegliere TiSDesign</h2>
+            <h2 class="section-title animate-on-scroll" data-i18n="why_us_title">Perché scegliere TiSDesign</h2>
             <div class="why-grid">
-                <div class="why-item">
+                <div class="why-item animate-slide-left">
                     <div class="why-icon">🎯</div>
-                    <h3>Specializzati nel settore</h3>
-                    <p>Conosciamo le esigenze di ristoranti, bar e saloni di bellezza. Ogni progetto è studiato per il tuo mercato.</p>
+                    <h3 data-i18n="why1_title">Specializzati nel settore</h3>
+                    <p data-i18n="why1_desc">Conosciamo le esigenze di ristoranti, bar e saloni di bellezza. Ogni progetto è studiato per il tuo mercato.</p>
                 </div>
-                <div class="why-item">
+                <div class="why-item animate-slide-right">
                     <div class="why-icon">⚡</div>
-                    <h3>Design grafico incluso</h3>
-                    <p>Non paghi extra per la creatività. Ogni ordine include la progettazione grafica personalizzata.</p>
+                    <h3 data-i18n="why2_title">Design grafico incluso</h3>
+                    <p data-i18n="why2_desc">Non paghi extra per la creatività. Ogni ordine include la progettazione grafica personalizzata.</p>
                 </div>
-                <div class="why-item">
+                <div class="why-item animate-slide-left">
                     <div class="why-icon">🤝</div>
-                    <h3>Approccio personale</h3>
-                    <p>Lavoriamo fianco a fianco con te, dall'idea iniziale fino alla consegna finale.</p>
+                    <h3 data-i18n="why3_title">Approccio personale</h3>
+                    <p data-i18n="why3_desc">Lavoriamo fianco a fianco con te, dall'idea iniziale fino alla consegna finale.</p>
                 </div>
-                <div class="why-item">
+                <div class="why-item animate-slide-right">
                     <div class="why-icon">💎</div>
-                    <h3>Qualità garantita</h3>
-                    <p>Utilizziamo solo materiali di prima qualità e tecniche di stampa professionali.</p>
+                    <h3 data-i18n="why4_title">Qualità garantita</h3>
+                    <p data-i18n="why4_desc">Utilizziamo solo materiali di prima qualità e tecniche di stampa professionali.</p>
                 </div>
             </div>
         </div>
@@ -649,10 +781,10 @@
     <!-- Testimonials Section -->
     <section id="testimonianze" class="testimonials">
         <div class="container">
-            <h2 class="section-title">Cosa dicono i nostri clienti</h2>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!"</p>
-                <p class="testimonial-author">- Marco, Ristorante Da Marco</p>
+            <h2 class="section-title animate-on-scroll" data-i18n="testimonials_title">Cosa dicono i nostri clienti</h2>
+            <div class="testimonial-card animate-scale">
+                <p class="testimonial-text" data-i18n="testimonial1_text">"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!"</p>
+                <p class="testimonial-author" data-i18n="testimonial1_author">- Marco, Ristorante Da Marco</p>
             </div>
         </div>
     </section>
@@ -660,21 +792,21 @@
     <!-- Contact Section -->
     <section id="contatti" class="contact">
         <div class="container">
-            <h2>Iniziamo il tuo progetto</h2>
-            <p>Trasforma la tua attività con un design professionale e personalizzato</p>
-            <a href="mailto:info.tisdesign@gmail.com" class="cta-button">Contattaci ora</a>
-            <div class="contact-info">
+            <h2 class="animate-on-scroll" data-i18n="contact_title">Iniziamo il tuo progetto</h2>
+            <p class="animate-on-scroll" data-i18n="contact_subtitle">Trasforma la tua attività con un design professionale e personalizzato</p>
+            <a href="mailto:info.tisdesign@gmail.com" class="cta-button animate-scale" data-i18n="contact_cta">Contattaci ora</a>
+            <div class="contact-info animate-fade-in">
                 <a href="tel:+390176080882922" class="contact-item">
                     <span style="color: #0099ff;">📞</span>
-                    <span>0176 80882922</span>
+                    <span data-i18n="contact_phone">0176 80882922</span>
                 </a>
                 <a href="mailto:info.tisdesign@gmail.com" class="contact-item">
                     <span style="color: #0099ff;">✉️</span>
-                    <span>info.tisdesign@gmail.com</span>
+                    <span data-i18n="contact_email">info.tisdesign@gmail.com</span>
                 </a>
                 <a href="#" class="contact-item">
                     <span style="color: #0099ff;">🛍️</span>
-                    <span>Etsy Store</span>
+                    <span data-i18n="contact_etsy">Etsy Store</span>
                 </a>
             </div>
         </div>
@@ -684,11 +816,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.</p>
                 <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Etsy</a>
+                    <a href="#" data-i18n="social_instagram">Instagram</a>
+                    <a href="#" data-i18n="social_facebook">Facebook</a>
+                    <a href="#" data-i18n="social_etsy">Etsy</a>
                 </div>
             </div>
         </div>
@@ -719,6 +851,210 @@
                 nav.style.background = 'rgba(13, 13, 13, 0.95)';
                 nav.style.boxShadow = 'none';
             }
+        });
+
+        // Language switcher
+        const translations = {
+            it: {
+                logo: "TiSDesign",
+                nav_services: "Servizi",
+                nav_why_us: "Perché Noi",
+                nav_testimonials: "Clienti",
+                nav_contact: "Contatti",
+                hero_title: "Design che fa<br>la differenza.",
+                hero_subtitle: "Creiamo l'identità visiva perfetta per il tuo ristorante o salone. Abbigliamento personalizzato, gadget e decorazioni adesive con design grafico gratuito.",
+                hero_cta: "Inizia il tuo progetto",
+                services_title: "I nostri servizi",
+                service1_title: "Abbigliamento Personalizzato",
+                service1_desc: "Magliette, grembiuli, felpe e uniformi da lavoro con il tuo logo. Design grafico incluso e qualità garantita.",
+                service2_title: "Gadget & Merchandising",
+                service2_desc: "Penne, tazze, shopper e accessori promozionali che rafforzano la tua immagine aziendale.",
+                service3_title: "Decorazioni Adesive",
+                service3_desc: "Beklebungen per vetrine e veicoli. Trasforma i tuoi spazi in potenti strumenti di marketing.",
+                service4_title: "Design Grafico Gratuito",
+                service4_desc: "Ogni progetto include la creazione grafica personalizzata. Il tuo brand unico, senza costi aggiuntivi.",
+                service5_title: "Consulenza Brand",
+                service5_desc: "Ti aiutiamo a definire l'immagine perfetta per il tuo business, dal concept alla realizzazione.",
+                service6_title: "Servizio Completo",
+                service6_desc: "Dalla progettazione alla consegna, ci occupiamo di tutto. Tu pensi al tuo business, noi al resto.",
+                why_us_title: "Perché scegliere TiSDesign",
+                why1_title: "Specializzati nel settore",
+                why1_desc: "Conosciamo le esigenze di ristoranti, bar e saloni di bellezza. Ogni progetto è studiato per il tuo mercato.",
+                why2_title: "Design grafico incluso",
+                why2_desc: "Non paghi extra per la creatività. Ogni ordine include la progettazione grafica personalizzata.",
+                why3_title: "Approccio personale",
+                why3_desc: "Lavoriamo fianco a fianco con te, dall'idea iniziale fino alla consegna finale.",
+                why4_title: "Qualità garantita",
+                why4_desc: "Utilizziamo solo materiali di prima qualità e tecniche di stampa professionali.",
+                testimonials_title: "Cosa dicono i nostri clienti",
+                testimonial1_text: "\"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!\"",
+                testimonial1_author: "- Marco, Ristorante Da Marco",
+                contact_title: "Iniziamo il tuo progetto",
+                contact_subtitle: "Trasforma la tua attività con un design professionale e personalizzato",
+                contact_cta: "Contattaci ora",
+                contact_phone: "0176 80882922",
+                contact_email: "info.tisdesign@gmail.com",
+                contact_etsy: "Etsy Store",
+                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.",
+                social_instagram: "Instagram",
+                social_facebook: "Facebook",
+                social_etsy: "Etsy"
+            },
+            en: {
+                logo: "TiSDesign",
+                nav_services: "Services",
+                nav_why_us: "Why Us",
+                nav_testimonials: "Clients",
+                nav_contact: "Contact",
+                hero_title: "Design that makes<br>a difference.",
+                hero_subtitle: "We create the perfect visual identity for your restaurant or salon. Customized apparel, gadgets and adhesive decorations with free graphic design.",
+                hero_cta: "Start your project",
+                services_title: "Our services",
+                service1_title: "Custom Clothing",
+                service1_desc: "T-shirts, aprons, sweatshirts and work uniforms with your logo. Graphic design included and guaranteed quality.",
+                service2_title: "Gadgets & Merchandising",
+                service2_desc: "Pens, mugs, shoppers and promotional accessories that strengthen your company image.",
+                service3_title: "Adhesive Decorations",
+                service3_desc: "Window and vehicle stickers. Transform your spaces into powerful marketing tools.",
+                service4_title: "Free Graphic Design",
+                service4_desc: "Every project includes personalized graphic creation. Your unique brand, at no additional cost.",
+                service5_title: "Brand Consulting",
+                service5_desc: "We help you define the perfect image for your business, from concept to realization.",
+                service6_title: "Complete Service",
+                service6_desc: "From design to delivery, we take care of everything. You think about your business, we'll take care of the rest.",
+                why_us_title: "Why choose TiSDesign",
+                why1_title: "Specialized in the sector",
+                why1_desc: "We know the needs of restaurants, bars and beauty salons. Every project is designed for your market.",
+                why2_title: "Graphic design included",
+                why2_desc: "You don't pay extra for creativity. Every order includes personalized graphic design.",
+                why3_title: "Personal approach",
+                why3_desc: "We work side by side with you, from the initial idea to the final delivery.",
+                why4_title: "Guaranteed quality",
+                why4_desc: "We only use first quality materials and professional printing techniques.",
+                testimonials_title: "What our customers say",
+                testimonial1_text: "\"TiSDesign has transformed the image of our restaurant. Personalized T-shirts have given a professional touch that our customers really appreciate!\"",
+                testimonial1_author: "- Marco, Da Marco Restaurant",
+                contact_title: "Let's start your project",
+                contact_subtitle: "Transform your business with professional and personalized design",
+                contact_cta: "Contact us now",
+                contact_phone: "0176 80882922",
+                contact_email: "info.tisdesign@gmail.com",
+                contact_etsy: "Etsy Store",
+                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. All rights reserved.",
+                social_instagram: "Instagram",
+                social_facebook: "Facebook",
+                social_etsy: "Etsy"
+            },
+            de: {
+                logo: "TiSDesign",
+                nav_services: "Dienstleistungen",
+                nav_why_us: "Warum Wir",
+                nav_testimonials: "Kunden",
+                nav_contact: "Kontakt",
+                hero_title: "Design, das den<br>Unterschied macht.",
+                hero_subtitle: "Wir kreieren die perfekte visuelle Identität für Ihr Restaurant oder Ihren Salon. Personalisierte Kleidung, Gadgets und Klebedekorationen mit kostenlosem Grafikdesign.",
+                hero_cta: "Starten Sie Ihr Projekt",
+                services_title: "Unsere Dienstleistungen",
+                service1_title: "Personalisierte Kleidung",
+                service1_desc: "T-Shirts, Schürzen, Sweatshirts und Arbeitskleidung mit Ihrem Logo. Grafikdesign inklusive und garantierte Qualität.",
+                service2_title: "Gadgets & Merchandising",
+                service2_desc: "Stifte, Tassen, Taschen und Werbeartikel, die Ihr Firmenimage stärken.",
+                service3_title: "Klebedekorationen",
+                service3_desc: "Beklebungen für Schaufenster und Fahrzeuge. Verwandeln Sie Ihre Räume in kraftvolle Marketing-Tools.",
+                service4_title: "Kostenloses Grafikdesign",
+                service4_desc: "Jedes Projekt beinhaltet personalisierte Grafikerstellung. Ihre einzigartige Marke, ohne zusätzliche Kosten.",
+                service5_title: "Markenberatung",
+                service5_desc: "Wir helfen Ihnen, das perfekte Image für Ihr Unternehmen zu definieren, vom Konzept bis zur Umsetzung.",
+                service6_title: "Kompletter Service",
+                service6_desc: "Vom Design bis zur Lieferung kümmern wir uns um alles. Sie denken an Ihr Geschäft, wir um den Rest.",
+                why_us_title: "Warum TiSDesign wählen",
+                why1_title: "Spezialisiert auf die Branche",
+                why1_desc: "Wir kennen die Bedürfnisse von Restaurants, Bars und Schönheitssalons. Jedes Projekt ist für Ihren Markt konzipiert.",
+                why2_title: "Grafikdesign inklusive",
+                why2_desc: "Sie zahlen nicht extra für Kreativität. Jede Bestellung beinhaltet personalisiertes Grafikdesign.",
+                why3_title: "Persönlicher Ansatz",
+                why3_desc: "Wir arbeiten Seite an Seite mit Ihnen, von der ersten Idee bis zur finalen Lieferung.",
+                why4_title: "Garantierte Qualität",
+                why4_desc: "Wir verwenden nur erstklassige Materialien und professionelle Drucktechniken.",
+                testimonials_title: "Was unsere Kunden sagen",
+                testimonial1_text: "\"TiSDesign hat das Image unseres Restaurants verwandelt. Die personalisierten T-Shirts haben einen professionellen Touch verliehen, den unsere Kunden sehr schätzen!\"",
+                testimonial1_author: "- Marco, Restaurant Da Marco",
+                contact_title: "Lassen Sie uns Ihr Projekt starten",
+                contact_subtitle: "Verwandeln Sie Ihr Unternehmen mit professionellem und personalisiertem Design",
+                contact_cta: "Kontaktieren Sie uns jetzt",
+                contact_phone: "0176 80882922",
+                contact_email: "info.tisdesign@gmail.com",
+                contact_etsy: "Etsy Store",
+                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. Alle Rechte vorbehalten.",
+                social_instagram: "Instagram",
+                social_facebook: "Facebook",
+                social_etsy: "Etsy"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Update active state
+            document.querySelectorAll('.language-switcher span').forEach(flag => {
+                flag.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            
+            localStorage.setItem('selectedLang', lang);
+        }
+
+        // Event listeners for language flags
+        document.addEventListener('DOMContentLoaded', () => {
+            const langFlags = document.querySelectorAll('.language-switcher span');
+            langFlags.forEach(flag => {
+                flag.addEventListener('click', (event) => {
+                    const clickedFlag = event.target;
+                    clickedFlag.classList.add('clicked-animation');
+                    setTimeout(() => {
+                        clickedFlag.classList.remove('clicked-animation');
+                    }, 200); // Animation duration
+                    setLanguage(clickedFlag.dataset.lang);
+                });
+            });
+
+            // Set initial language based on localStorage or default to English
+            const savedLang = localStorage.getItem('selectedLang');
+            setLanguage(savedLang || 'en');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Immediately animate hero section elements
+            const heroElements = document.querySelectorAll('.hero .animate-fade-in, .hero .animate-scale');
+            heroElements.forEach(el => {
+                setTimeout(() => {
+                    el.classList.add('animate-in');
+                }, 300); // Small delay for smooth loading
+            });
+
+            // Observe other elements for scroll animations
+            const scrollElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .testimonials .animate-scale, .contact .animate-fade-in, .contact .animate-scale');
+            scrollElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
