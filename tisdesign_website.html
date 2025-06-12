@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiSDesign - Design Personalizzato per Ristoranti e Saloni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007AFF;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #0051D0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #f8f9ff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: #007AFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .why-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .testimonial-card {
+            background: #f8f9ff;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #f0f0f0;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #007AFF;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #007AFF;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .why-item,
+        .testimonial-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">TiSDesign</a>
+            <ul class="nav-links">
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#perche">Perché Noi</a></li>
+                <li><a href="#testimonianze">Clienti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Design che fa<br>la differenza.</h1>
+            <p class="subtitle">Creiamo l'identità visiva perfetta per il tuo ristorante o salone. 
+            Abbigliamento personalizzato, gadget e decorazioni adesive con design grafico gratuito.</p>
+            <a href="#contatti" class="cta-button">Inizia il tuo progetto</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servizi" class="services">
+        <div class="container">
+            <h2 class="section-title">I nostri servizi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👕</div>
+                    <h3>Abbigliamento Personalizzato</h3>
+                    <p>Magliette, grembiuli, felpe e uniformi da lavoro con il tuo logo. Design grafico incluso e qualità garantita.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>Gadget & Merchandising</h3>
+                    <p>Penne, tazze, shopper e accessori promozionali che rafforzano la tua immagine aziendale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Decorazioni Adesive</h3>
+                    <p>Beklebungen per vetrine e veicoli. Trasforma i tuoi spazi in potenti strumenti di marketing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Design Grafico Gratuito</h3>
+                    <p>Ogni progetto include la creazione grafica personalizzata. Il tuo brand unico, senza costi aggiuntivi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Consulenza Brand</h3>
+                    <p>Ti aiutiamo a definire l'immagine perfetta per il tuo business, dal concept alla realizzazione.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Servizio Completo</h3>
+                    <p>Dalla progettazione alla consegna, ci occupiamo di tutto. Tu pensi al tuo business, noi al resto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="perche" class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Perché scegliere TiSDesign</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">🎯</div>
+                    <h3>Specializzati nel settore</h3>
+                    <p>Conosciamo le esigenze di ristoranti, bar e saloni di bellezza. Ogni progetto è studiato per il tuo mercato.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <h3>Design grafico incluso</h3>
+                    <p>Non paghi extra per la creatività. Ogni ordine include la progettazione grafica personalizzata.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🤝</div>
+                    <h3>Approccio personale</h3>
+                    <p>Lavoriamo fianco a fianco con te, dall'idea iniziale fino alla consegna finale.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">💎</div>
+                    <h3>Qualità garantita</h3>
+                    <p>Utilizziamo solo materiali di prima qualità e tecniche di stampa professionali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonianze" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Cosa dicono i nostri clienti</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!"</p>
+                <p class="testimonial-author">- Marco, Ristorante Da Marco</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contatti" class="contact">
+        <div class="container">
+            <h2>Iniziamo il tuo progetto</h2>
+            <p>Trasforma la tua attività con un design professionale e personalizzato</p>
+            <a href="mailto:info.tisdesign@gmail.com" class="cta-button">Contattaci ora</a>
+            <div class="contact-info">
+                <a href="tel:+390176080882922" class="contact-item">
+                    <span>📞</span>
+                    <span>0176 80882922</span>
+                </a>
+                <a href="mailto:info.tisdesign@gmail.com" class="contact-item">
+                    <span>✉️</span>
+                    <span>info.tisdesign@gmail.com</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <span>🛍️</span>
+                    <span>Etsy Store</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Etsy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
