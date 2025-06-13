@@ -346,12 +346,10 @@
         }
 
         .services-grid {
-            display: flex;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-            padding-bottom: 20px; /* Space for scrollbar */
-            gap: 20px; /* Gap between cards */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .service-card {
@@ -361,9 +359,7 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid #252525;
-            width: calc(100vw - 40px); /* Set width to fit exactly within .container padding */
-            flex-shrink: 0;
-            scroll-snap-align: center; /* Center the snapped card for better visual experience */
+            box-shadow: 0 0 60px 15px rgba(255, 255, 255, 0.15);
         }
 
         .service-card:hover {
@@ -667,13 +663,13 @@
                 scroll-snap-type: x mandatory;
                 -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
                 padding-bottom: 20px; /* Space for scrollbar */
-                gap: 20px; /* Reduced gap for horizontal scroll */
+                gap: 20px; /* Spazio tra le cards su mobile */
             }
 
             .service-card {
-                min-width: calc(100vw - 60px); /* Adjusted width for consistent padding on both sides */
+                width: calc(100vw - 40px); /* Larghezza per adattarsi ai margini del .container (20px per lato) */
                 flex-shrink: 0;
-                scroll-snap-align: center; /* Center the snapped card for better visual experience */
+                scroll-snap-align: center; /* Centra la card nello snap */
             }
             
             .why-grid {
