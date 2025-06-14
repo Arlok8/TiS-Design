@@ -462,6 +462,7 @@
             max-width: 600px;
             margin: 0 auto;
             border: 1px solid #252525;
+            box-sizing: border-box;
         }
 
         .testimonial-text {
@@ -661,15 +662,15 @@
                 display: flex;
                 overflow-x: scroll;
                 scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-                padding-bottom: 20px; /* Space for scrollbar */
-                gap: 20px; /* Spazio tra le cards su mobile */
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 20px;
+                gap: 20px;
             }
 
             .service-card {
-                width: calc(100vw - 40px); /* Larghezza per adattarsi ai margini del .container (20px per lato) */
+                width: calc(100vw - 40px);
                 flex-shrink: 0;
-                scroll-snap-align: center; /* Centra la card nello snap */
+                scroll-snap-align: center;
             }
             
             .why-grid {
@@ -1025,10 +1026,16 @@
     <section id="testimonianze" class="testimonials">
         <div class="container">
             <h2 class="section-title animate-on-scroll" data-i18n="testimonials_title">Cosa dicono i nostri clienti</h2>
-            <div class="testimonial-card animate-scale">
-                <p class="testimonial-text" data-i18n="testimonial1_text">"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!"</p>
-                <p class="testimonial-author" data-i18n="testimonial1_author">- Marco, Ristorante Da Marco</p>
+            
+            <!-- Sezione per lasciare una recensione -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #ffffff;" data-i18n="leave_review_title">La tua opinione è importante!</h3>
+                <p style="font-size: 1.1rem; color: #cccccc; margin-bottom: 30px;" data-i18n="leave_review_subtitle">Aiutaci a migliorare e condividi la tua esperienza con TiSDesign.</p>
+                <a href="https://testimonial.to/tisdesign-testimonials/all" target="_blank" class="cta-button" data-i18n="write_review_cta">Scrivi la tua recensione</a>
             </div>
+
+            <!-- Widget Testimonial.to -->
+            <script async src="https://embed-v2.testimonial.to/w/tisdesign-testimonials?style=love"></script>
         </div>
     </section>
 
@@ -1171,18 +1178,25 @@
                 why4_title: "Qualità garantita",
                 why4_desc: "Utilizziamo solo materiali di prima qualità e tecniche di stampa professionali.",
                 testimonials_title: "Cosa dicono i nostri clienti",
-                testimonial1_text: "\"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale che i nostri clienti apprezzano molto!\"",
-                testimonial1_author: "- Marco, Ristorante Da Marco",
+                testimonial1_text: "\"Le stampe sono di buona qualità e possono essere lavate in lavatrice senza problemi. Ho fatto realizzare le magliette per il lavoro, così da non rovinare o sporcare quelle private. Le consiglio vivamente! Il venditore è inoltre molto gentile e disponibile.\"",
+                testimonial1_author: "- Dustin, Privato",
+                testimonial2_text: "\"Un servizio eccellente! Le decorazioni adesive hanno reso il nostro salone unico e accattivante. Professionalità e creatività al top.\"",
+                testimonial2_author: "- Giulia, Salone Bellissima",
+                testimonial3_text: "\"Abbiamo ordinato gadget personalizzati per il nostro bar e siamo rimasti estremamente soddisfatti. Design originale e qualità impeccabile. Consigliatissimo!\"",
+                testimonial3_author: "- Luca, Bar Centrale",
+                testimonial4_text: "\"TiSDesign ha curato l'abbigliamento del nostro staff con un design grafico strepitoso. I nostri dipendenti sono orgogliosi di indossare le nuove divise.\"",
+                testimonial4_author: "- Anna, Pizzeria La Tradizione",
+                testimonial5_text: "\"Servizio clienti impeccabile e risultati che superano le aspettative. La consulenza per il nostro brand è stata fondamentale per il nostro successo.\"",
+                testimonial5_author: "- Davide, Gelateria Il Gelato",
                 contact_title: "Iniziamo il tuo progetto",
                 contact_subtitle: "Trasforma la tua attività con un design professionale e personalizzato",
                 contact_cta: "Contattaci ora",
                 contact_phone: "0176 80882922",
                 contact_email: "info.tisdesign@gmail.com",
                 contact_etsy: "Etsy Store",
-                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.",
-                social_instagram: "Instagram",
-                social_tiktok: "TikTok",
-                social_etsy: "Etsy"
+                leave_review_title: "La tua opinione è importante!",
+                leave_review_subtitle: "Aiutaci a migliorare e condividi la tua esperienza con TiSDesign.",
+                write_review_cta: "Scrivi la tua recensione"
             },
             en: {
                 logo: "TiSDesign",
@@ -1216,18 +1230,25 @@
                 why4_title: "Guaranteed quality",
                 why4_desc: "We only use first quality materials and professional printing techniques.",
                 testimonials_title: "What our customers say",
-                testimonial1_text: "\"TiSDesign has transformed the image of our restaurant. Personalized T-shirts have given a professional touch that our customers really appreciate!\"",
-                testimonial1_author: "- Marco, Da Marco Restaurant",
+                testimonial1_text: "\"The prints are of good quality and can be washed in the washing machine without any issues. I had the T-shirts made for work so that I don't have to get my personal ones dirty or even ruined. Highly recommended! The seller is also very polite and accommodating.\"",
+                testimonial1_author: "- Dustin, Private",
+                testimonial2_text: "\"Un servizio eccellente! Le decorazioni adesive hanno reso il nostro salone unico e accattivante. Professionalità e creatività al top.\"",
+                testimonial2_author: "- Giulia, Salone Bellissima",
+                testimonial3_text: "\"Abbiamo ordinato gadget personalizzati per il nostro bar e siamo rimasti estremamente soddisfatti. Design originale e qualità impeccabile. Consigliatissimo!\"",
+                testimonial3_author: "- Luca, Bar Centrale",
+                testimonial4_text: "\"TiSDesign ha curato l'abbigliamento del nostro staff con un design grafico strepitoso. I nostri dipendenti sono orgogliosi di indossare le nuove divise.\"",
+                testimonial4_author: "- Anna, Pizzeria La Tradizione",
+                testimonial5_text: "\"Servizio clienti impeccabile e risultati che superano le aspettative. La consulenza per il nostro brand è stata fondamentale per il nostro successo.\"",
+                testimonial5_author: "- Davide, Gelateria Il Gelato",
                 contact_title: "Let's start your project",
                 contact_subtitle: "Transform your business with professional and personalized design",
                 contact_cta: "Contact us now",
                 contact_phone: "0176 80882922",
                 contact_email: "info.tisdesign@gmail.com",
                 contact_etsy: "Etsy Store",
-                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. All rights reserved.",
-                social_instagram: "Instagram",
-                social_tiktok: "TikTok",
-                social_etsy: "Etsy"
+                leave_review_title: "Your opinion matters!",
+                leave_review_subtitle: "Help us improve and share your experience with TiSDesign.",
+                write_review_cta: "Write your review"
             },
             de: {
                 logo: "TiSDesign",
@@ -1261,18 +1282,25 @@
                 why4_title: "Garantierte Qualität",
                 why4_desc: "Wir verwenden nur erstklassige Materialien und professional Drucktechniken.",
                 testimonials_title: "Was unsere Kunden sagen",
-                testimonial1_text: "\"TiSDesign ha trasformato l'immagine del nostro ristorante. Le magliette personalizzate hanno dato un tocco professionale die i nostri clienti apprezzano molto!\"",
-                testimonial1_author: "- Marco, Restaurant Da Marco",
+                testimonial1_text: "\"Die Bedruckungen sind qualitativ gut und können in der Waschmaschine ohne Probleme gewaschen werden. Ich habe mir die T-Shirts für die Arbeit anfertigen lassen, um dass ich meine privaten T-Shirts nicht in der Arbeit dreckig geschweige denn kapput machen muss. Kann ich nur weiter empfehlen! Der Verkäufer ist dazu auch sehr höflich und entgegenkommend. \"",
+                testimonial1_author: "- Dustin, Privat",
+                testimonial2_text: "\"Un servizio eccellente! Le decorazioni adesive hanno reso il nostro salone unico und accattivante. Professionalität und Kreativität auf Top-Niveau.\"",
+                testimonial2_author: "- Giulia, Salone Bellissima",
+                testimonial3_text: "\"Wir haben gadgets personalisiert für unseren Bar und waren extrem begeistert. Originale Design und hohe Qualität. Sehr zu empfehlen!\"",
+                testimonial3_author: "- Luca, Bar Centrale",
+                testimonial4_text: "\"TiSDesign hat das Outfit unserer Mitarbeiter mit einem einzigartigen grafischen Design aufgefrischt. Unsere Mitarbeiter sind stolz, diese neuen Uniformen zu tragen.\"",
+                testimonial4_author: "- Anna, Pizzeria La Tradizione",
+                testimonial5_text: "\"Servicest du bei uns, überzeugen Sie sich von unserer hohen Qualität und dem professionellen Service. Die Beratung für unseren Markenname war entscheidend für unseren Erfolg.\"",
+                testimonial5_author: "- Davide, Gelateria Il Gelato",
                 contact_title: "Lassen Sie uns Ihr Projekt starten",
-                contact_subtitle: "Verwandeln Sie Ihr Unternehmen con professionale e personalizzato Design",
+                contact_subtitle: "Verwandeln Sie Ihr Unternehmen con professionale und personalizzato Design",
                 contact_cta: "Kontaktieren Sie uns jetzt",
                 contact_phone: "0176 80882922",
                 contact_email: "info.tisdesign@gmail.com",
                 contact_etsy: "Etsy Store",
-                footer_copyright: "&copy; 2025 TiSDesign - Tiziano Spedicato. Alle Rechte vorbehalten.",
-                social_instagram: "Instagram",
-                social_tiktok: "TikTok",
-                social_etsy: "Etsy"
+                leave_review_title: "Ihre Meinung ist uns wichtig!",
+                leave_review_subtitle: "Helfen Sie uns, uns zu verbessern und teilen Sie Ihre Erfahrung mit TiSDesign.",
+                write_review_cta: "Schreiben Sie Ihre Bewertung"
             }
         };
 
