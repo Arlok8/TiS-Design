@@ -1806,9 +1806,23 @@
         <div style="margin-bottom: 20px;">
           <label for="printSize" data-i18n="config_size" style="display: block; font-weight: bold; margin-bottom: 5px;">Dimensione stampa:</label>
           <select id="printSize" name="printSize" style="width: 100%; padding: 10px;">
-            <option value="small" data-i18n="config_size_small">Piccola (10x10 cm)</option>
-            <option value="medium" data-i18n="config_size_medium">Media (20x20 cm)</option>
-            <option value="large" data-i18n="config_size_large">Grande (30x30 cm)</option>
+            <option value="5x5">Solo fronte (5x5 cm) – €12,90</option>
+            <option value="5x5f+5x5b">Fronte 5x5 + Retro 5x5 – €15,90</option>
+            <option value="10x10">Solo fronte (10x10 cm) – €16,90</option>
+            <option value="20x20">Solo fronte (20x20 cm) – €20,90</option>
+            <option value="30x30">Solo fronte (30x30 cm) – €24,90</option>
+            <option value="10x10+10x10">Fronte 10x10 + Retro 10x10 – €19,90</option>
+            <option value="10x10+20x20">Fronte 10x10 + Retro 20x20 – €23,90</option>
+            <option value="10x10+30x30">Fronte 10x10 + Retro 30x30 – €27,90</option>
+            <option value="20x20+10x10">Fronte 20x20 + Retro 10x10 – €23,90</option>
+            <option value="20x20+20x20">Fronte 20x20 + Retro 20x20 – €27,90</option>
+            <option value="20x20+30x30">Fronte 20x20 + Retro 30x30 – €31,90</option>
+            <option value="30x30+10x10">Fronte 30x30 + Retro 10x10 – €27,90</option>
+            <option value="30x30+20x20">Fronte 30x30 + Retro 20x20 – €31,90</option>
+            <option value="30x30+30x30">Fronte 30x30 + Retro 30x30 – €35,90</option>
+            <option value="retro10x10">Solo retro (10x10 cm) – €14,90</option>
+            <option value="retro20x20">Solo retro (20x20 cm) – €18,90</option>
+            <option value="retro30x30">Solo retro (30x30 cm) – €22,90</option>
           </select>
         </div>
 
@@ -1986,7 +2000,26 @@
                 card3_title: "Decorazioni adesive",
                 "idea-cta": "Hai un'idea? Iniziamo a crearla insieme.",
                 "contact-for-quote": "Contattaci per ricevere un preventivo",
-                "contact-for-design": "Contattaci per questo design"
+                "contact-for-design": "Contattaci per questo design",
+                printSizeOptions: {
+                  "5x5": "Solo fronte (5×5 cm)",
+                  "5x5f+5x5b": "Fronte 5×5 + Retro 5×5",
+                  "10x10": "Solo fronte (10×10 cm)",
+                  "20x20": "Solo fronte (20×20 cm)",
+                  "30x30": "Solo fronte (30×30 cm)",
+                  "10x10+10x10": "Fronte 10×10 + Retro 10×10",
+                  "10x10+20x20": "Fronte 10×10 + Retro 20×20",
+                  "10x10+30x30": "Fronte 10×10 + Retro 30×30",
+                  "20x20+10x10": "Fronte 20×20 + Retro 10×10",
+                  "20x20+20x20": "Fronte 20×20 + Retro 20×20",
+                  "20x20+30x30": "Fronte 20×20 + Retro 30×30",
+                  "30x30+10x10": "Fronte 30×30 + Retro 10×10",
+                  "30x30+20x20": "Fronte 30×30 + Retro 20×20",
+                  "30x30+30x30": "Fronte 30×30 + Retro 30×30",
+                  "retro10x10": "Solo retro (10×10 cm)",
+                  "retro20x20": "Solo retro (20×20 cm)",
+                  "retro30x30": "Solo retro (30×30 cm)"
+                }
             },
             en: {
                 // Meta tags
@@ -2038,7 +2071,26 @@
                 card3_title: "Adhesive Decorations",
                 "idea-cta": "Have an idea? Let's build it together.",
                 "contact-for-quote": "Contact us for a quote",
-                "contact-for-design": "Contact us for this design"
+                "contact-for-design": "Contact us for this design",
+                printSizeOptions: {
+                  "5x5": "Front only (5×5 cm)",
+                  "5x5f+5x5b": "Front 5×5 + Back 5×5",
+                  "10x10": "Front only (10×10 cm)",
+                  "20x20": "Front only (20×20 cm)",
+                  "30x30": "Front only (30×30 cm)",
+                  "10x10+10x10": "Front 10×10 + Back 10×10",
+                  "10x10+20x20": "Front 10×10 + Back 20×20",
+                  "10x10+30x30": "Front 10×10 + Back 30×30",
+                  "20x20+10x10": "Front 20×20 + Back 10×10",
+                  "20x20+20x20": "Front 20×20 + Back 20×20",
+                  "20x20+30x30": "Front 20×20 + Back 30×30",
+                  "30x30+10x10": "Front 30×30 + Back 10×10",
+                  "30x30+20x20": "Front 30×30 + Back 20×20",
+                  "30x30+30x30": "Front 30×30 + Back 30×30",
+                  "retro10x10": "Back only (10×10 cm)",
+                  "retro20x20": "Back only (20×20 cm)",
+                  "retro30x30": "Back only (30×30 cm)"
+                }
             },
             de: {
                 // Meta tags
@@ -2090,14 +2142,47 @@
                 card3_title: "Klebefolien & Aufkleber",
                 "idea-cta": "Hast du eine Idee? Lass sie uns gemeinsam umsetzen.",
                 "contact-for-quote": "Kontaktieren Sie uns für ein Angebot",
-                "contact-for-design": "Kontaktieren Sie uns für dieses Design"
+                "contact-for-design": "Kontaktieren Sie uns für dieses Design",
+                printSizeOptions: {
+                  "5x5": "Nur vorne (5×5 cm)",
+                  "5x5f+5x5b": "Vorne 5×5 + Hinten 5×5",
+                  "10x10": "Nur vorne (10×10 cm)",
+                  "20x20": "Nur vorne (20×20 cm)",
+                  "30x30": "Nur vorne (30×30 cm)",
+                  "10x10+10x10": "Vorne 10×10 + Hinten 10×10",
+                  "10x10+20x20": "Vorne 10×10 + Hinten 20×20",
+                  "10x10+30x30": "Vorne 10×10 + Hinten 30×30",
+                  "20x20+10x10": "Vorne 20×20 + Hinten 10×10",
+                  "20x20+20x20": "Vorne 20×20 + Hinten 20×20",
+                  "20x20+30x30": "Vorne 20×20 + Hinten 30×30",
+                  "30x30+10x10": "Vorne 30×30 + Hinten 10×10",
+                  "30x30+20x20": "Vorne 30×30 + Hinten 20×20",
+                  "30x30+30x30": "Vorne 30×30 + Hinten 30×30",
+                  "retro10x10": "Nur hinten (10×10 cm)",
+                  "retro20x20": "Nur hinten (20×20 cm)",
+                  "retro30x30": "Nur hinten (30×30 cm)"
+                }
             }
         };
 
         const priceBySize = {
-            small: 14,
-            medium: 18,
-            large: 22
+          "5x5": 12.9,
+          "5x5f+5x5b": 15.9,
+          "10x10": 16.9,
+          "20x20": 20.9,
+          "30x30": 24.9,
+          "10x10+10x10": 19.9,
+          "10x10+20x20": 23.9,
+          "10x10+30x30": 27.9,
+          "20x20+10x10": 23.9,
+          "20x20+20x20": 27.9,
+          "20x20+30x30": 31.9,
+          "30x30+10x10": 27.9,
+          "30x30+20x20": 31.9,
+          "30x30+30x30": 35.9,
+          "retro10x10": 14.9,
+          "retro20x20": 18.9,
+          "retro30x30": 22.9
         };
 
         function updateMetaTags(lang) {
