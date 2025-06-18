@@ -4,11 +4,54 @@
   <meta charset="UTF-8">
   <title>Cookie Policy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #000; color: #fff; }
+    .lang-section { display: none; }
+    .lang-toggle { margin-bottom: 20px; }
+    .lang-toggle button {
+      margin-right: 10px;
+      background: #c67043;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem; background: #000; color: #fff;">
-  <h1>Cookie Policy</h1>
-  <p>Questo sito utilizza solo cookie tecnici per il funzionamento di base.</p>
-  <p>Eventuali strumenti come Google Analytics possono impostare cookie di tracciamento. Puoi bloccarli dal tuo browser.</p>
-  <p>Non utilizziamo cookie pubblicitari di profilazione.</p>
+<body>
+  <div class="lang-toggle">
+    <button onclick="showLang('it')">🇮🇹 Italiano</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('de')">🇩🇪 Deutsch</button>
+  </div>
+
+  <div class="lang-section" id="lang-it">
+    <h1>Cookie Policy</h1>
+    <p>Questo sito utilizza solo cookie tecnici essenziali per il funzionamento.</p>
+    <p>Eventuali strumenti come Google Analytics potrebbero impostare cookie di tracciamento. Puoi bloccarli dal tuo browser.</p>
+    <p>Non utilizziamo cookie pubblicitari di profilazione.</p>
+  </div>
+
+  <div class="lang-section" id="lang-en">
+    <h1>Cookie Policy</h1>
+    <p>This site only uses essential technical cookies for its core functionality.</p>
+    <p>Tools like Google Analytics may set tracking cookies. You can block them via your browser settings.</p>
+    <p>We do not use advertising or profiling cookies.</p>
+  </div>
+
+  <div class="lang-section" id="lang-de">
+    <h1>Cookie-Richtlinie</h1>
+    <p>Diese Website verwendet nur technisch notwendige Cookies für die Grundfunktionen.</p>
+    <p>Tools wie Google Analytics können Tracking-Cookies setzen. Sie können diese über Ihren Browser blockieren.</p>
+    <p>Wir verwenden keine Werbe- oder Profilierungs-Cookies.</p>
+  </div>
+
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
+      document.getElementById('lang-' + lang).style.display = 'block';
+    }
+    showLang('it');
+  </script>
 </body>
 </html> 

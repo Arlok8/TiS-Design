@@ -4,11 +4,54 @@
   <meta charset="UTF-8">
   <title>Condizioni di Vendita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #000; color: #fff; }
+    .lang-section { display: none; }
+    .lang-toggle { margin-bottom: 20px; }
+    .lang-toggle button {
+      margin-right: 10px;
+      background: #c67043;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem; background: #000; color: #fff;">
-  <h1>Condizioni di Vendita</h1>
-  <p>I prodotti TiSDesign sono venduti tramite la piattaforma Etsy all'indirizzo:</p>
-  <p><a href="https://www.etsy.com/shop/tisdesign" target="_blank" style="color:#c67043;">https://www.etsy.com/shop/tisdesign</a></p>
-  <p>Si applicano i termini di servizio, le politiche di reso e pagamento stabilite da Etsy.</p>
+<body>
+  <div class="lang-toggle">
+    <button onclick="showLang('it')">🇮🇹 Italiano</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('de')">🇩🇪 Deutsch</button>
+  </div>
+
+  <div class="lang-section" id="lang-it">
+    <h1>Condizioni di Vendita</h1>
+    <p>I prodotti TiSDesign sono venduti tramite la piattaforma Etsy:</p>
+    <p><a href="https://www.etsy.com/shop/tisdesign" target="_blank" style="color:#c67043;">https://www.etsy.com/shop/tisdesign</a></p>
+    <p>Si applicano le condizioni di vendita, di reso e pagamento di Etsy.</p>
+  </div>
+
+  <div class="lang-section" id="lang-en">
+    <h1>Terms of Sale</h1>
+    <p>TiSDesign products are sold through the Etsy platform:</p>
+    <p><a href="https://www.etsy.com/shop/tisdesign" target="_blank" style="color:#c67043;">https://www.etsy.com/shop/tisdesign</a></p>
+    <p>Etsy's terms for sales, returns and payments apply.</p>
+  </div>
+
+  <div class="lang-section" id="lang-de">
+    <h1>Verkaufsbedingungen</h1>
+    <p>TiSDesign-Produkte werden über die Plattform Etsy verkauft:</p>
+    <p><a href="https://www.etsy.com/shop/tisdesign" target="_blank" style="color:#c67043;">https://www.etsy.com/shop/tisdesign</a></p>
+    <p>Es gelten die Verkaufs-, Rückgabe- und Zahlungsbedingungen von Etsy.</p>
+  </div>
+
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
+      document.getElementById('lang-' + lang).style.display = 'block';
+    }
+    showLang('it');
+  </script>
 </body>
 </html> 

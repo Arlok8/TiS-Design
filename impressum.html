@@ -2,17 +2,68 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Note Legali (Impressum)</title>
+  <title>Note Legali / Legal Notice / Impressum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #000; color: #fff; }
+    .lang-section { display: none; }
+    .lang-toggle { margin-bottom: 20px; }
+    .lang-toggle button {
+      margin-right: 10px;
+      background: #c67043;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem; background: #000; color: #fff;">
-  <h1>Note Legali (Impressum)</h1>
-  <p><strong>Nome azienda:</strong> TiSDesign</p>
-  <p><strong>Responsabile:</strong> Tiziano Spedicato</p>
-  <p><strong>Indirizzo:</strong> [Inserisci indirizzo legale qui]</p>
-  <p><strong>Email:</strong> info.tisdesign@gmail.com</p>
-  <p><strong>Telefono:</strong> +49 176 80882922</p>
-  <p><strong>Partita IVA / USt-ID:</strong> [Se ce l'hai, inseriscila qui]</p>
-  <p>Contenuti di questo sito sono protetti da copyright.</p>
+<body>
+  <div class="lang-toggle">
+    <button onclick="showLang('it')">🇮🇹 Italiano</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('de')">🇩🇪 Deutsch</button>
+  </div>
+
+  <div class="lang-section" id="lang-it">
+    <h1>Note Legali (Impressum)</h1>
+    <p><strong>Nome azienda:</strong> TiSDesign</p>
+    <p><strong>Responsabile:</strong> Tiziano Spedicato</p>
+    <p><strong>Indirizzo:</strong> [Inserisci indirizzo legale]</p>
+    <p><strong>Email:</strong> info.tisdesign@gmail.com</p>
+    <p><strong>Telefono:</strong> +49 176 80882922</p>
+    <p><strong>Partita IVA / USt-ID:</strong> [Inserisci se disponibile]</p>
+    <p>I contenuti di questo sito sono protetti da copyright.</p>
+  </div>
+
+  <div class="lang-section" id="lang-en">
+    <h1>Legal Notice</h1>
+    <p><strong>Company Name:</strong> TiSDesign</p>
+    <p><strong>Responsible Person:</strong> Tiziano Spedicato</p>
+    <p><strong>Address:</strong> [Insert legal address]</p>
+    <p><strong>Email:</strong> info.tisdesign@gmail.com</p>
+    <p><strong>Phone:</strong> +49 176 80882922</p>
+    <p><strong>VAT ID:</strong> [Insert if available]</p>
+    <p>Contents of this website are protected by copyright.</p>
+  </div>
+
+  <div class="lang-section" id="lang-de">
+    <h1>Impressum</h1>
+    <p><strong>Firmenname:</strong> TiSDesign</p>
+    <p><strong>Verantwortlich:</strong> Tiziano Spedicato</p>
+    <p><strong>Adresse:</strong> [Rechtliche Adresse eintragen]</p>
+    <p><strong>Email:</strong> info.tisdesign@gmail.com</p>
+    <p><strong>Telefon:</strong> +49 176 80882922</p>
+    <p><strong>USt-ID:</strong> [Falls vorhanden, hier eintragen]</p>
+    <p>Die Inhalte dieser Website sind urheberrechtlich geschützt.</p>
+  </div>
+
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
+      document.getElementById('lang-' + lang).style.display = 'block';
+    }
+    showLang('it');
+  </script>
 </body>
 </html> 

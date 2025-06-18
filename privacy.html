@@ -4,12 +4,57 @@
   <meta charset="UTF-8">
   <title>Privacy Policy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #000; color: #fff; }
+    .lang-section { display: none; }
+    .lang-toggle { margin-bottom: 20px; }
+    .lang-toggle button {
+      margin-right: 10px;
+      background: #c67043;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem; background: #000; color: #fff;">
-  <h1>Privacy Policy</h1>
-  <p>TiSDesign rispetta il Regolamento Generale sulla Protezione dei Dati (GDPR).</p>
-  <p>Raccogliamo solo i dati necessari (nome, email, messaggi) tramite il modulo contatti e li usiamo esclusivamente per rispondere alle richieste.</p>
-  <p>I dati non vengono condivisi con terze parti.</p>
-  <p>Hai diritto di accesso, modifica o cancellazione dei tuoi dati in qualsiasi momento scrivendo a info.tisdesign@gmail.com.</p>
+<body>
+  <div class="lang-toggle">
+    <button onclick="showLang('it')">🇮🇹 Italiano</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('de')">🇩🇪 Deutsch</button>
+  </div>
+
+  <div class="lang-section" id="lang-it">
+    <h1>Privacy Policy</h1>
+    <p>TiSDesign rispetta il Regolamento Generale sulla Protezione dei Dati (GDPR).</p>
+    <p>Raccogliamo solo i dati necessari (nome, email, messaggio) attraverso il modulo contatti, e li usiamo esclusivamente per rispondere alle richieste.</p>
+    <p>I dati non vengono condivisi con terze parti.</p>
+    <p>Hai diritto di accesso, modifica o cancellazione scrivendo a info.tisdesign@gmail.com.</p>
+  </div>
+
+  <div class="lang-section" id="lang-en">
+    <h1>Privacy Policy</h1>
+    <p>TiSDesign complies with the General Data Protection Regulation (GDPR).</p>
+    <p>We collect only necessary data (name, email, message) via the contact form and use it solely to respond to inquiries.</p>
+    <p>Your data is not shared with third parties.</p>
+    <p>You have the right to access, modify or delete your data by contacting info.tisdesign@gmail.com.</p>
+  </div>
+
+  <div class="lang-section" id="lang-de">
+    <h1>Datenschutzerklärung</h1>
+    <p>TiSDesign beachtet die Datenschutz-Grundverordnung (DSGVO).</p>
+    <p>Wir erfassen nur notwendige Daten (Name, E-Mail, Nachricht) über das Kontaktformular und verwenden sie ausschließlich zur Beantwortung von Anfragen.</p>
+    <p>Ihre Daten werden nicht an Dritte weitergegeben.</p>
+    <p>Sie haben das Recht auf Zugriff, Änderung oder Löschung Ihrer Daten unter info.tisdesign@gmail.com.</p>
+  </div>
+
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
+      document.getElementById('lang-' + lang).style.display = 'block';
+    }
+    showLang('it');
+  </script>
 </body>
 </html> 
