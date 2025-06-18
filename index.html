@@ -12,7 +12,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" data-i18n="meta_description" content="Dai vita al tuo marchio o alla tua idea con un'identità visiva unica. Progettiamo abbigliamento personalizzato, gadget e decorazioni adesive con design gratuito.">
+    <meta name="description" content="Design gratuito per magliette, gadget e adesivi personalizzati. Perfetto per squadre, locali, brand e associazioni.">
     <meta name="keywords" data-i18n="meta_keywords" content="magliette personalizzate, gadget personalizzati, decorazioni adesive, design grafico, stampa digitale, abbigliamento personalizzato, merchandising, branding">
     <meta name="robots" content="index, follow">
     <meta name="author" content="TiSDesign">
@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <title data-i18n="page_title">TiSDesign - Dai vita al tuo marchio o alla tua idea con un'identità visiva unica</title>
+    <title>TiSDesign – Magliette, gadget e adesivi personalizzati</title>
     <style>
         html {
             scroll-behavior: smooth;
@@ -1511,6 +1511,23 @@
         .form-lang:not(.active) ~ form {
             display: none;
         }
+
+        /* ✅ Evita overflow orizzontale su tutto il sito */
+        html, body {
+          overflow-x: hidden;
+        }
+
+        /* ✅ Forza larghezza massima su ogni sezione/container */
+        * {
+          max-width: 100vw;
+        }
+
+        /* ✅ Fix specifico per immagini o elementi fuori viewport */
+        img, video, iframe {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
     </style>
 </head>
 <body>
@@ -1883,41 +1900,25 @@
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "TiSDesign",
-        "image": "https://tisdesign.com/images/logo.jpg",
-        "description": "Dai vita al tuo marchio o alla tua idea con un'identità visiva unica. Progettiamo abbigliamento personalizzato, gadget e decorazioni adesive con design gratuito.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "IT"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "YOUR_LATITUDE",
-            "longitude": "YOUR_LONGITUDE"
-        },
-        "url": "https://tisdesign.com",
-        "telephone": "+390176080882922",
-        "email": "info.tisdesign@gmail.com",
-        "priceRange": "€€",
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://www.instagram.com/tis_design_",
-            "https://www.tiktok.com/@tisdesign",
-            "https://www.etsy.com/shop/tisdesign"
-        ]
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TiSDesign",
+      "image": "https://tisdesign.com/images/logo.jpg",
+      "description": "Magliette, gadget e adesivi personalizzati con design gratuito.",
+      "url": "https://tisdesign.com",
+      "telephone": "+49 176 80882922",
+      "email": "info.tisdesign@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "DE"
+      },
+      "priceRange": "€€",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.instagram.com/tis_design_",
+        "https://www.tiktok.com/@tisdesign",
+        "https://www.etsy.com/shop/tisdesign"
+      ]
     }
     </script>
 
