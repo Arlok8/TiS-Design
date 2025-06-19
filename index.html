@@ -1711,21 +1711,21 @@
         
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
           
-          <!-- Carta 1 -->
+          <!-- Carta 1 - Magliette -->
           <a href="#configuratore" style="background: #fff; color: #000; width: 300px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="/images/magliette_card.jpg" alt="Magliette personalizzate per squadre e locali" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+            <img src="/images/card_magliette_uniforme.jpg" alt="Mockup maglietta personalizzata" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
             <h3 style="padding: 20px; font-size: 1.25rem;">Magliette personalizzate</h3>
           </a>
 
-          <!-- Carta 2 -->
-          <a href="#contattami" style="background: #fff; color: #000; width: 300px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="/images/gadget_card.jpg" alt="Gadget personalizzati con logo" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+          <!-- Carta 2 - Gadget -->
+          <a href="mailto:info.tisdesign@gmail.com?subject=Gadget personalizzati - richiesta info" style="background: #fff; color: #000; width: 300px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="/images/card_gadget_minimal.jpg" alt="Mockup gadget personalizzati" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
             <h3 style="padding: 20px; font-size: 1.25rem;">Gadget personalizzati</h3>
           </a>
 
-          <!-- Carta 3 -->
-          <a href="#contattami" style="background: #fff; color: #000; width: 300px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="/images/adesivi_card.jpg" alt="Decorazioni adesive per vetrine o auto" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+          <!-- Carta 3 - Adesivi -->
+          <a href="mailto:info.tisdesign@gmail.com?subject=Decorazioni adesive - richiesta info" style="background: #fff; color: #000; width: 300px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="/images/card_adesivi_mockup.jpg" alt="Mockup adesivi su vetrina o auto" style="width: 100%; height: auto; border-top-left-radius: 16px; border-top-right-radius: 16px;">
             <h3 style="padding: 20px; font-size: 1.25rem;">Decorazioni adesive</h3>
           </a>
 
@@ -1769,15 +1769,15 @@
             </p>
             <div class="testimonial-grid">
                 <div class="testimonial-item animate-on-scroll">
-                    <p class="testimonial-text">"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"</p>
+                    <p class="testimonial-text" data-i18n="testimonial1">"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"</p>
                     <span class="testimonial-author">— Dustin K.</span>
                 </div>
                 <div class="testimonial-item animate-on-scroll">
-                    <p class="testimonial-text">"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."</p>
+                    <p class="testimonial-text" data-i18n="testimonial2">"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."</p>
                     <span class="testimonial-author">— Julia K.</span>
                 </div>
                 <div class="testimonial-item animate-on-scroll">
-                    <p class="testimonial-text">"Tiziano ci ha aiutato a creare il logo e l'insegna. Gentile, disponibile e super professionale."</p>
+                    <p class="testimonial-text" data-i18n="testimonial3">"Tiziano ci ha aiutato a creare il logo e l'insegna. Gentile, disponibile e super professionale."</p>
                     <span class="testimonial-author">— Daniel B.</span>
                 </div>
             </div>
@@ -1823,33 +1823,33 @@
         <div style="margin-bottom: 20px;">
           <label for="printSize" data-i18n="config_size" style="display: block; font-weight: bold; margin-bottom: 5px;">Dimensione stampa:</label>
           <select id="printSize" name="printSize" style="width: 100%; padding: 10px;">
-            <option value="5x5">Solo fronte (5x5 cm) – €12,90</option>
-            <option value="5x5f+5x5b">Fronte 5x5 + Retro 5x5 – €15,90</option>
-            <option value="10x10">Solo fronte (10x10 cm) – €16,90</option>
-            <option value="20x20">Solo fronte (20x20 cm) – €20,90</option>
-            <option value="30x30">Solo fronte (30x30 cm) – €24,90</option>
-            <option value="10x10+10x10">Fronte 10x10 + Retro 10x10 – €19,90</option>
-            <option value="10x10+20x20">Fronte 10x10 + Retro 20x20 – €23,90</option>
-            <option value="10x10+30x30">Fronte 10x10 + Retro 30x30 – €27,90</option>
-            <option value="20x20+10x10">Fronte 20x20 + Retro 10x10 – €23,90</option>
-            <option value="20x20+20x20">Fronte 20x20 + Retro 20x20 – €27,90</option>
-            <option value="20x20+30x30">Fronte 20x20 + Retro 30x30 – €31,90</option>
-            <option value="30x30+10x10">Fronte 30x30 + Retro 10x10 – €27,90</option>
-            <option value="30x30+20x20">Fronte 30x30 + Retro 20x20 – €31,90</option>
-            <option value="30x30+30x30">Fronte 30x30 + Retro 30x30 – €35,90</option>
-            <option value="retro10x10">Solo retro (10x10 cm) – €14,90</option>
-            <option value="retro20x20">Solo retro (20x20 cm) – €18,90</option>
-            <option value="retro30x30">Solo retro (30x30 cm) – €22,90</option>
+            <option value="5x5" data-print-key="5x5"></option>
+            <option value="5x5f+5x5b" data-print-key="5x5f+5x5b"></option>
+            <option value="10x10" data-print-key="10x10"></option>
+            <option value="20x20" data-print-key="20x20"></option>
+            <option value="30x30" data-print-key="30x30"></option>
+            <option value="10x10+10x10" data-print-key="10x10+10x10"></option>
+            <option value="10x10+20x20" data-print-key="10x10+20x20"></option>
+            <option value="10x10+30x30" data-print-key="10x10+30x30"></option>
+            <option value="20x20+10x10" data-print-key="20x20+10x10"></option>
+            <option value="20x20+20x20" data-print-key="20x20+20x20"></option>
+            <option value="20x20+30x30" data-print-key="20x20+30x30"></option>
+            <option value="30x30+10x10" data-print-key="30x30+10x10"></option>
+            <option value="30x30+20x20" data-print-key="30x30+20x20"></option>
+            <option value="30x30+30x30" data-print-key="30x30+30x30"></option>
+            <option value="retro10x10" data-print-key="retro10x10"></option>
+            <option value="retro20x20" data-print-key="retro20x20"></option>
+            <option value="retro30x30" data-print-key="retro30x30"></option>
           </select>
         </div>
 
         <div style="margin-bottom: 20px;">
-          <label for="quantity" style="display: block; font-weight: bold; margin-bottom: 5px;">Quantità:</label>
+          <label for="quantity" data-i18n="config_quantity" style="display: block; font-weight: bold; margin-bottom: 5px;">Quantità:</label>
           <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 100%; padding: 10px;" />
         </div>
 
         <p id="price-estimate" style="font-size: 20px; font-weight: bold; margin: 30px 0 10px;">💶 Prezzo stimato: €0</p>
-        <p style="font-size: 14px; opacity: 0.8;">📦 Il prezzo può diminuire in base alla quantità ordinata</p>
+        <p style="font-size: 14px; opacity: 0.8;" data-i18n="config_discount_note">📦 Il prezzo può diminuire in base alla quantità ordinata</p>
         <p id="discount-message" style="font-size: 14px; color: #cccccc; margin-top: 5px;"></p>
 
         <!-- Bottone per inviare il design via email -->
@@ -1989,16 +1989,11 @@
                 cta_secondary: "Contattaci",
 
                 // Services Section
-                services_title: "Cosa faccio",
-                service1_title: "Abbigliamento personalizzato",
-                service1_desc: "Stampa di alta qualità su magliette, felpe e altri capi personalizzati.",
-                service2_title: "Gadget personalizzati",
-                service2_desc: "Tazze, penne e altri oggetti con il tuo logo.",
-                service3_title: "Decorazioni adesive",
-                service3_desc: "Adesivi personalizzati per vetrine e veicoli.",
+                services_title: "Cosa facciamo",
+                why_choose_title: "Perché sceglierci",
+                contact_title: "Contattaci",
 
                 // Why Choose Me Section
-                why_choose_title: "Perché scegliermi",
                 why1_title: "Target su misura",
                 why1_desc: "Soluzioni pensate per locali, piccoli team, brand e associazioni.",
                 why2_title: "Design incluso",
@@ -2016,6 +2011,7 @@
                 "idea-cta": "Hai un'idea? Iniziamo a crearla insieme.",
                 "contact-for-quote": "Contattaci per ricevere un preventivo",
                 "contact-for-design": "Contattaci per questo design",
+                "config_discount_note": "📦 Il prezzo può diminuire in base alla quantità ordinata",
                 printSizeOptions: {
                   "5x5": "Solo fronte (5×5 cm)",
                   "5x5f+5x5b": "Fronte 5×5 + Retro 5×5",
@@ -2034,7 +2030,21 @@
                   "retro10x10": "Solo retro (10×10 cm)",
                   "retro20x20": "Solo retro (20×20 cm)",
                   "retro30x30": "Solo retro (30×30 cm)"
-                }
+                },
+                service1_title: "Abbigliamento personalizzato",
+                service1_desc: "Stampa di alta qualità su magliette, felpe e altri capi personalizzati.",
+                service2_title: "Gadget personalizzati",
+                service2_desc: "Tazze, penne e altri oggetti con il tuo logo.",
+                service3_title: "Decorazioni adesive",
+                service3_desc: "Adesivi personalizzati per vetrine e veicoli.",
+                testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Alcuni esempi di progetti realizzati per i nostri clienti",
+                testimonials_title: "Cosa dicono i clienti",
+                testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
+                testimonial1: '"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"',
+                testimonial2: '"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."',
+                testimonial3: '"Tiziano ci ha aiutato a creare il logo e l\'insegna. Gentile, disponibile e super professionale."'
             },
             en: {
                 // Meta tags
@@ -2060,16 +2070,11 @@
                 cta_secondary: "Contact Us",
 
                 // Services Section
-                services_title: "What I do",
-                service1_title: "Custom Apparel",
-                service1_desc: "High-quality printing on t-shirts, hoodies, and other personalized clothing.",
-                service2_title: "Custom Gadgets",
-                service2_desc: "Mugs, pens and other items with your logo.",
-                service3_title: "Adhesive Decorations",
-                service3_desc: "Custom stickers for windows and vehicles.",
+                services_title: "What we do",
+                why_choose_title: "Why choose us",
+                contact_title: "Contact Us",
 
                 // Why Choose Me Section
-                why_choose_title: "Why choose me",
                 why1_title: "Tailored for you",
                 why1_desc: "Solutions for local venues, small teams, clubs and personal brands.",
                 why2_title: "Design included",
@@ -2087,6 +2092,7 @@
                 "idea-cta": "Have an idea? Let's build it together.",
                 "contact-for-quote": "Contact us for a quote",
                 "contact-for-design": "Contact us for this design",
+                "config_discount_note": "📦 Price may decrease depending on quantity ordered",
                 printSizeOptions: {
                   "5x5": "Front only (5×5 cm)",
                   "5x5f+5x5b": "Front 5×5 + Back 5×5",
@@ -2105,7 +2111,21 @@
                   "retro10x10": "Back only (10×10 cm)",
                   "retro20x20": "Back only (20×20 cm)",
                   "retro30x30": "Back only (30×30 cm)"
-                }
+                },
+                service1_title: "Custom Apparel",
+                service1_desc: "High-quality printing on t-shirts, hoodies, and other personalized clothing.",
+                service2_title: "Custom Gadgets",
+                service2_desc: "Mugs, pens and other items with your logo.",
+                service3_title: "Adhesive Decorations",
+                service3_desc: "Custom stickers for windows and vehicles.",
+                testimonials_subtitle: "Real reviews received from our customers",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Some examples of projects completed for our clients",
+                testimonials_title: "What our clients say",
+                testimonials_subtitle: "Real reviews received from our customers",
+                testimonial1: '"The t-shirts are excellent, the design is perfect, and the material quality is truly high. Highly recommended!"',
+                testimonial2: '"We ordered gadgets for our event: everything was on time, neat, and well-packaged."',
+                testimonial3: '"Tiziano helped us create the logo and sign. Kind, responsive, and very professional."'
             },
             de: {
                 // Meta tags
@@ -2131,16 +2151,11 @@
                 cta_secondary: "Kontakt",
 
                 // Services Section
-                services_title: "Was ich mache",
-                service1_title: "Personalisierte Kleidung",
-                service1_desc: "Hochwertiger Druck auf T-Shirts, Hoodies und anderen Kleidungsstücken.",
-                service2_title: "Personalisierte Gadgets",
-                service2_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
-                service3_title: "Klebebeschriftungen",
-                service3_desc: "Maßgeschneiderte Aufkleber für Fenster und Fahrzeuge.",
+                services_title: "Was wir machen",
+                why_choose_title: "Warum uns wählen",
+                contact_title: "Kontaktieren Sie uns",
 
                 // Why Choose Me Section
-                why_choose_title: "Warum mich wählen",
                 why1_title: "Individuelle Lösungen",
                 why1_desc: "Für kleine Teams, Vereine, lokale Marken und mehr.",
                 why2_title: "Design inklusive",
@@ -2158,6 +2173,7 @@
                 "idea-cta": "Hast du eine Idee? Lass sie uns gemeinsam umsetzen.",
                 "contact-for-quote": "Kontaktieren Sie uns für ein Angebot",
                 "contact-for-design": "Kontaktieren Sie uns für dieses Design",
+                "config_discount_note": "📦 Der Preis kann je nach Bestellmenge sinken",
                 printSizeOptions: {
                   "5x5": "Nur vorne (5×5 cm)",
                   "5x5f+5x5b": "Vorne 5×5 + Hinten 5×5",
@@ -2176,7 +2192,21 @@
                   "retro10x10": "Nur hinten (10×10 cm)",
                   "retro20x20": "Nur hinten (20×20 cm)",
                   "retro30x30": "Nur hinten (30×30 cm)"
-                }
+                },
+                service1_title: "Personalisierte Kleidung",
+                service1_desc: "Hochwertiger Druck auf T-Shirts, Hoodies und anderen Kleidungsstücken.",
+                service2_title: "Personalisierte Gadgets",
+                service2_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
+                service3_title: "Klebebeschriftungen",
+                service3_desc: "Maßgeschneiderte Aufkleber für Fenster und Fahrzeuge.",
+                testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Einige Beispiele von Projekten, die wir für unsere Kunden umgesetzt haben",
+                testimonials_title: "Was unsere Kunden sagen",
+                testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
+                testimonial1: '"Die T-Shirts sind großartig, das Design ist perfekt und die Materialqualität ist wirklich hoch. Sehr zu empfehlen!"',
+                testimonial2: '"Wir haben Gadgets für unsere Veranstaltung bestellt: alles war pünktlich, sorgfältig und gut verpackt."',
+                testimonial3: '"Tiziano hat uns geholfen, das Logo und das Schild zu entwerfen. Freundlich, hilfsbereit und sehr professionell."'
             }
         };
 
@@ -2216,81 +2246,39 @@
         }
 
         const translations_config = {
-            it: {
-                config_title: "Personalizza la tua maglietta",
-                config_subtitle: "Scegli le opzioni e ricevi un prezzo stimato",
-                config_model: "Modello",
-                config_model_unisex: "Unisex",
-                config_model_man: "Uomo",
-                config_model_woman: "Donna",
-                config_color: "Colore maglietta",
-                config_color_white: "Bianco",
-                config_color_black: "Nero",
-                config_color_red: "Rosso",
-                config_color_blue: "Blu",
-                config_print_color: "Colore della stampa",
-                config_print_color_white: "Bianco",
-                config_print_color_black: "Nero",
-                config_print_color_gold: "Oro",
-                config_print_color_red: "Rosso",
-                config_print_color_multicolor: "Multicolore",
-                config_size: "Dimensione stampa",
-                config_size_small: "Piccola (10x10 cm)",
-                config_size_medium: "Media (20x20 cm)",
-                config_size_large: "Grande (30x30 cm)",
-                config_button: "Contattaci per questo design",
-                price_label: "💶 Prezzo stimato: €"
-            },
-            en: {
-                config_title: "Customize your t-shirt",
-                config_subtitle: "Choose options and get an estimated price",
-                config_model: "Model",
-                config_model_unisex: "Unisex",
-                config_model_man: "Men",
-                config_model_woman: "Women",
-                config_color: "T-shirt color",
-                config_color_white: "White",
-                config_color_black: "Black",
-                config_color_red: "Red",
-                config_color_blue: "Blue",
-                config_print_color: "Print color",
-                config_print_color_white: "White",
-                config_print_color_black: "Black",
-                config_print_color_gold: "Gold",
-                config_print_color_red: "Red",
-                config_print_color_multicolor: "Multicolor",
-                config_size: "Print size",
-                config_size_small: "Small (10x10 cm)",
-                config_size_medium: "Medium (20x20 cm)",
-                config_size_large: "Large (30x30 cm)",
-                config_button: "Contact us for this design",
-                price_label: "💶 Estimated price: €"
-            },
-            de: {
-                config_title: "Gestalte dein T-Shirt",
-                config_subtitle: "Wähle Optionen und erhalte einen Preisvorschlag",
-                config_model: "Modell",
-                config_model_unisex: "Unisex",
-                config_model_man: "Männer",
-                config_model_woman: "Frauen",
-                config_color: "T-Shirt-Farbe",
-                config_color_white: "Weiß",
-                config_color_black: "Schwarz",
-                config_color_red: "Rot",
-                config_color_blue: "Blau",
-                config_print_color: "Druckfarbe",
-                config_print_color_white: "Weiß",
-                config_print_color_black: "Schwarz",
-                config_print_color_gold: "Gold",
-                config_print_color_red: "Rot",
-                config_print_color_multicolor: "Mehrfarbig",
-                config_size: "Druckgröße",
-                config_size_small: "Klein (10x10 cm)",
-                config_size_medium: "Mittel (20x20 cm)",
-                config_size_large: "Groß (30x30 cm)",
-                config_button: "Kontattiere uns für dieses Design",
-                price_label: "💶 Geschätzter Preis: €"
-            }
+          it: {
+            config_title: "Personalizza la tua maglietta",
+            config_subtitle: "Scegli le opzioni e ricevi un prezzo stimato",
+            config_model: "Modello",
+            config_color: "Colore maglietta",
+            config_print_color: "Colore della stampa",
+            config_size: "Dimensione stampa",
+            config_quantity: "Quantità",
+            price_label: "💶 Prezzo stimato:",
+            config_discount_msg: "🎉 Sconto del {percent}% attivato"
+          },
+          en: {
+            config_title: "Customize your T-shirt",
+            config_subtitle: "Choose the options and get an estimated price",
+            config_model: "Model",
+            config_color: "T-shirt color",
+            config_print_color: "Print color",
+            config_size: "Print size",
+            config_quantity: "Quantity",
+            price_label: "💶 Estimated price:",
+            config_discount_msg: "🎉 {percent}% discount applied"
+          },
+          de: {
+            config_title: "Gestalte dein T-Shirt",
+            config_subtitle: "Wähle die Optionen und erhalte einen geschätzten Preis",
+            config_model: "Modell",
+            config_color: "T-Shirt-Farbe",
+            config_print_color: "Druckfarbe",
+            config_size: "Druckgröße",
+            config_quantity: "Menge",
+            price_label: "💶 Geschätzter Preis:",
+            config_discount_msg: "🎉 {percent}% Rabatt aktiviert"
+          }
         };
 
         const formTranslations = {
@@ -2299,7 +2287,7 @@
                 contact_email_placeholder: "La tua email",
                 contact_message_placeholder: "Scrivi il tuo messaggio...",
                 contact_submit_button: "Invia messaggio",
-                success_message: "Grazie per il tuo messaggio! Ti risponderò al più presto.",
+                success_message: "Grazie per il tuo messaggio! Ti risponderemo al più presto.",
                 error_message: "C'è stato un problema durante l'invio del messaggio. Riprova più tardi."
             },
             en: {
@@ -2307,7 +2295,7 @@
                 contact_email_placeholder: "Your email",
                 contact_message_placeholder: "Write your message...",
                 contact_submit_button: "Send message",
-                success_message: "Thank you for your message! I'll get back to you as soon as possible.",
+                success_message: "Thank you for your message! We'll get back to you as soon as possible.",
                 error_message: "There was a problem sending your message. Please try again later."
             },
             de: {
@@ -2315,7 +2303,7 @@
                 contact_email_placeholder: "Ihre E-Mail",
                 contact_message_placeholder: "Schreiben Sie Ihre Nachricht...",
                 contact_submit_button: "Nachricht senden",
-                success_message: "Vielen Dank für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
+                success_message: "Vielen Dank für Ihre Nachricht! Wir melden uns so schnell wie möglich bei Ihnen.",
                 error_message: "Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte versuchen Sie es später erneut."
             }
         };
@@ -2342,14 +2330,16 @@
             ? `<span style="text-decoration: line-through; opacity: 0.6;">€${basePrice.toFixed(2)}</span> 
                <span style="color: #c67043; font-weight: bold;">€${discountedPrice}</span> 
                (x${quantity}) = €${total}`
-            : `€${basePrice.toFixed(2)} (x${quantity}) = €${total}`;
+            : `${basePrice.toFixed(2)} (x${quantity}) = €${total}`;
 
-          document.getElementById('price-estimate').innerHTML = `${label}${priceHtml}`;
+          document.getElementById('price-estimate').innerHTML = `${label} ${priceHtml}`;
 
           const discountMsgEl = document.getElementById('discount-message');
           if (discount > 0) {
             const percent = Math.round(discount * 100);
-            discountMsgEl.innerText = `🎉 Sconto del ${percent}% attivato`;
+            const configTranslations = translations_config[lang] || translations_config.en;
+            const msgTemplate = configTranslations.config_discount_msg || "{percent}% discount applied";
+            discountMsgEl.innerText = msgTemplate.replace("{percent}", percent);
           } else {
             discountMsgEl.innerText = '';
           }
@@ -2381,13 +2371,12 @@
 
         function updateConfiguratorTexts(lang) {
             const configTranslations = translations_config[lang] || translations_config.en;
-            
-            // Update select options
+            if (!configTranslations) {
+                console.warn("⚠️ Traduzioni configuratore mancanti per lingua:", lang);
+                return;
+            }
+
             const modelSelect = document.getElementById('model');
-            const colorSelect = document.getElementById('color');
-            const printColorSelect = document.getElementById('printColor');
-            const printSizeSelect = document.getElementById('printSize');
-            
             if (modelSelect) {
                 Array.from(modelSelect.options).forEach(option => {
                     const key = option.getAttribute('data-i18n');
@@ -2396,7 +2385,8 @@
                     }
                 });
             }
-            
+
+            const colorSelect = document.getElementById('color');
             if (colorSelect) {
                 Array.from(colorSelect.options).forEach(option => {
                     const key = option.getAttribute('data-i18n');
@@ -2405,7 +2395,8 @@
                     }
                 });
             }
-            
+
+            const printColorSelect = document.getElementById('printColor');
             if (printColorSelect) {
                 Array.from(printColorSelect.options).forEach(option => {
                     const key = option.getAttribute('data-i18n');
@@ -2414,12 +2405,14 @@
                     }
                 });
             }
-            
+
+            const printSizeTranslations = translations[lang]?.printSizeOptions || translations.en.printSizeOptions;
+            const printSizeSelect = document.getElementById('printSize');
             if (printSizeSelect) {
                 Array.from(printSizeSelect.options).forEach(option => {
-                    const key = option.getAttribute('data-i18n');
-                    if (key && configTranslations[key]) {
-                        option.textContent = configTranslations[key];
+                    const key = option.getAttribute('data-print-key');
+                    if (key && printSizeTranslations[key]) {
+                        option.textContent = `${printSizeTranslations[key]} – €${priceBySize[key].toFixed(2)}`;
                     }
                 });
             }
@@ -2432,6 +2425,7 @@
                     element.innerHTML = translations[lang][key];
                 }
             });
+            updateServiceCards(lang);
             
             // Update active state for navbar flags
             document.querySelectorAll('.language-switcher span').forEach(flag => {
@@ -2460,6 +2454,19 @@
             updateMetaTags(lang);
             localStorage.setItem('selectedLang', lang);
             updateEstimate(); // per ricalcolare testo e prezzo in lingua corrente
+            updatePortfolioAndTestimonials(lang);
+            updateConfiguratorStaticLabels(lang);
+        }
+
+        function updateServiceCards(lang) {
+          if (!translations[lang]) return;
+
+          document.querySelector('[data-i18n="service1_title"]').textContent = translations[lang].service1_title;
+          document.querySelector('[data-i18n="service1_desc"]').textContent = translations[lang].service1_desc;
+          document.querySelector('[data-i18n="service2_title"]').textContent = translations[lang].service2_title;
+          document.querySelector('[data-i18n="service2_desc"]').textContent = translations[lang].service2_desc;
+          document.querySelector('[data-i18n="service3_title"]').textContent = translations[lang].service3_title;
+          document.querySelector('[data-i18n="service3_desc"]').textContent = translations[lang].service3_desc;
         }
 
         function updateContactForm(lang) {
@@ -2617,6 +2624,43 @@
         // Fix per mostrare correttamente la frase finale
         document.querySelector('[data-i18n="idea-cta"]').innerText =
           translations[localStorage.getItem('selectedLang') || 'it']["idea-cta"];
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const quantityInput = document.querySelector('#mockup-form input[name="quantity"]');
+
+          if (quantityInput) {
+            quantityInput.addEventListener("keydown", function (e) {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                updateEstimate(); // aggiorna il prezzo manualmente
+              }
+            });
+          }
+        });
+
+        function updatePortfolioAndTestimonials(lang) {
+          if (!translations[lang]) return;
+          const t = translations[lang];
+          const el = (key) => document.querySelector(`[data-i18n="${key}"]`);
+          if (el("portfolio_title")) el("portfolio_title").innerHTML = t.portfolio_title;
+          if (el("portfolio_subtitle")) el("portfolio_subtitle").innerHTML = t.portfolio_subtitle;
+          if (el("testimonials_title")) el("testimonials_title").innerHTML = t.testimonials_title;
+          if (el("testimonials_subtitle")) el("testimonials_subtitle").innerHTML = t.testimonials_subtitle;
+        }
+
+        function updateConfiguratorStaticLabels(lang) {
+          const t = translations_config[lang] || translations_config.en;
+          if (!t) return;
+
+          const el = (id) => document.querySelector(`[data-i18n="${id}"]`);
+          if (el("config_title")) el("config_title").innerText = t.config_title;
+          if (el("config_subtitle")) el("config_subtitle").innerText = t.config_subtitle;
+          if (el("config_model")) el("config_model").innerText = t.config_model + ":";
+          if (el("config_color")) el("config_color").innerText = t.config_color + ":";
+          if (el("config_print_color")) el("config_print_color").innerText = t.config_print_color + ":";
+          if (el("config_size")) el("config_size").innerText = t.config_size + ":";
+          if (el("config_quantity")) el("config_quantity").innerText = t.config_quantity;
+        }
     </script>
 </body>
 </html>
