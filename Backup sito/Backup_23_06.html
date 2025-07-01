@@ -415,7 +415,7 @@
 
         .testimonial-author {
             font-weight: 600;
-            color: #A78BFA;
+            color: #0099ff;
             font-family: "Inter", "Inter Placeholder", sans-serif;
             font-size: 15px;
             font-weight: 500;
@@ -1000,7 +1000,7 @@
 
         .testimonial-author {
             font-weight: 600;
-            color: #A78BFA;
+            color: #0099ff;
             font-family: "Inter", "Inter Placeholder", sans-serif;
             font-size: 15px;
             font-weight: 500;
@@ -1527,23 +1527,6 @@
           display: block;
         }
 
-        button.start-button {
-          background-color: #7600FF;
-          color: white;
-          font-weight: bold;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 20px;
-          font-size: 1.1rem;
-          transition: background-color 0.3s ease;
-          margin-right: 10px;
-        }
-
-        button.start-button:hover {
-          background-color: #5d00cc;
-          transform: translateY(-2px);
-        }
-
         .hero .cta-primary {
             background: linear-gradient(135deg, #6a3fb4, #8f56d6);
             color: white;
@@ -1662,13 +1645,6 @@
         .card-text, .why-text {
           font-size: 15px;
         }
-
-        .cta-buttons .cta-button,
-        .cta-buttons .cta-button.primary {
-          font-size: 1.25rem;
-          padding: 1rem 2.5rem;
-          border-radius: 8px;
-        }
     </style>
 </head>
 <body>
@@ -1730,7 +1706,7 @@
         <!-- Pulsanti -->
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
           <div class="cta-buttons">
-            <button class="start-button">
+            <button class="cta-button primary" style="background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 10px 20px; border: none; border-radius: 20px; font-weight: bold; margin-right: 10px;">
               <a href="#configuratore" style="color: white; text-decoration: none;" data-i18n="cta_primary">Start Your Design</a>
             </button>
             <button class="cta-button" style="color: #6a3fb4; background: none; border: 1px solid white; padding: 10px 20px; border-radius: 20px; font-weight: bold;">
@@ -1745,28 +1721,29 @@
     <!-- Sezione "Servizi" (le 3 carte: magliette, gadget, adesivi) -->
     <section id="servizi" class="services" style="margin-top: 20px; padding-top: 0;">
       <div class="container">
-        <h2 class="section-title animate-on-scroll" data-i18n="services_title" style="color: #A78BFA;">Cosa facciamo</h2>
+        <h2 class="section-title animate-on-scroll" data-i18n="services_title">Cosa facciamo</h2>
+        <h2 style="color: white; text-align: center; font-size: 36px; font-weight: 600; margin-top: 20px; margin-bottom: 30px;">Cosa facciamo</h2>
         <div class="cards" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
 
   <!-- Carta 1: Abbigliamento -->
   <div class="card" onclick="window.location.href='personalizzazioni.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M4 4l4-2 2 3h4l2-3 4 2v4l-2 2v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V10L4 8V4z"/></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_clothing_title">Abbigliamento personalizzato</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_clothing_desc">Magliette, felpe e altri capi personalizzati.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Abbigliamento personalizzato</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Magliette, felpe e altri capi personalizzati.</p>
   </div>
 
   <!-- Carta 2: Gadget -->
   <div class="card" onclick="window.location.href='gadget.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_gadgets_title">Gadget personalizzati</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_gadgets_desc">Tazze, penne e altri oggetti con il tuo logo.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Gadget personalizzati</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Tazze, penne e altri oggetti con il tuo logo.</p>
   </div>
 
   <!-- Carta 3: Adesivi -->
   <div class="card" onclick="window.location.href='adesivi.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_stickers_title">Decorazioni adesive</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_stickers_desc">Vetrine, veicoli e superfici personalizzate.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Decorazioni adesive</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Vetrine, veicoli e superfici personalizzate.</p>
   </div>
 
 </div>
@@ -1776,59 +1753,143 @@
     <!-- Why Choose Me Section -->
     <section id="perche" style="background: #0D0D0D; padding: 0 0 100px 0; color: #fff; margin-top: 40px;">
       <div class="container">
-        <h2 class="section-title animate-on-scroll" data-i18n="why_choose_title" style="color: #A78BFA;">Perché sceglierci</h2>
+        <h2 class="section-title animate-on-scroll" data-i18n="why_choose_title" style="color: #CBBBF6;">Perché sceglierci</h2>
+        <h2 style="color: white; text-align: center; font-size: 36px; font-weight: 600; margin-top: 20px; margin-bottom: 30px;">
+  Perché sceglierci
+</h2>
         <div class="why-cards" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
-          <!-- Target su misura -->
-          <div style="width: 220px; text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="6"/>
-              <circle cx="12" cy="12" r="2"/>
-            </svg>
-            <h3 data-i18n="why_choose_cards.target_title" style="color: white; font-weight: bold;">Target su misura</h3>
-            <p data-i18n="why_choose_cards.target_text" style="color: #aaa;">Soluzioni per locali, team e brand.</p>
+
+  <!-- Target su misura -->
+  <div style="width: 220px; text-align: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="6"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+    <p style="color: white; font-weight: bold;">Target su misura</p>
+    <p style="color: #aaa;">Soluzioni per locali, team e brand.</p>
+  </div>
+
+  <!-- Design incluso -->
+  <div style="width: 220px; text-align: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 6v6l4 2"/>
+    </svg>
+    <p style="color: white; font-weight: bold;">Design incluso</p>
+    <p style="color: #aaa;">Grafica professionale inclusa in ogni ordine.</p>
+  </div>
+
+  <!-- Contatto diretto -->
+  <div style="width: 220px; text-align: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3"/>
+    </svg>
+    <p style="color: white; font-weight: bold;">Contatto diretto</p>
+    <p style="color: #aaa;">Risposte rapide e comunicazione semplice.</p>
+  </div>
+
+  <!-- Qualità e trasparenza -->
+  <div style="width: 220px; text-align: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M5.5 21h13a2 2 0 0 0 2-2v-1a6 6 0 0 0-6-6H9a6 6 0 0 0-6 6v1a2 2 0 0 0 2 2z"/>
+    </svg>
+    <p style="color: white; font-weight: bold;">Qualità & trasparenza</p>
+    <p style="color: #aaa;">Materiali premium e prezzi chiari.</p>
+  </div>
+
+</div>
+
+        <h2 style="color: white; text-align: center; font-size: 36px; font-weight: 600; margin-top: 80px;">
+          Cosa dicono di noi
+        </h2>
+
+        <div class="reviews" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+
+          <div style="width: 300px; background-color: #111; padding: 20px; border-radius: 15px; color: white;">
+            <p style="color: #CBBBF6; font-weight: bold;">Dustin K.</p>
+            <p style="color: #aaa; font-style: italic;">"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"</p>
+            <p style="color: #5F4B8B;">★★★★★</p>
           </div>
 
-          <!-- Design incluso -->
-          <div style="width: 220px; text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-            <h3 data-i18n="why_choose_cards.design_title" style="color: white; font-weight: bold;">Design incluso</h3>
-            <p data-i18n="why_choose_cards.design_text" style="color: #aaa;">Grafica professionale inclusa in ogni ordine.</p>
+          <div style="width: 300px; background-color: #111; padding: 20px; border-radius: 15px; color: white;">
+            <p style="color: #CBBBF6; font-weight: bold;">Bar Fratelli</p>
+            <p style="color: #aaa; font-style: italic;">"Design incluso, spedizione veloce. Tutto top!"</p>
+            <p style="color: #5F4B8B;">★★★★★</p>
           </div>
 
-          <!-- Contatto diretto -->
-          <div style="width: 220px; text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <h3 data-i18n="why_choose_cards.contact_title" style="color: white; font-weight: bold;">Contatto diretto</h3>
-            <p data-i18n="why_choose_cards.contact_text" style="color: #aaa;">Risposte rapide e comunicazione semplice.</p>
+          <div style="width: 300px; background-color: #111; padding: 20px; border-radius: 15px; color: white;">
+            <p style="color: #CBBBF6; font-weight: bold;">Team UrbanRun</p>
+            <p style="color: #aaa; font-style: italic;">"Personalizzazione fantastica per la nostra corsa annuale!"</p>
+            <p style="color: #5F4B8B;">★★★★★</p>
           </div>
 
-          <!-- Qualità & trasparenza -->
-          <div style="width: 220px; text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <h3 data-i18n="why_choose_cards.quality_title" style="color: white; font-weight: bold;">Qualità & trasparenza</h3>
-            <p data-i18n="why_choose_cards.quality_text" style="color: #aaa;">Materiali premium e prezzi chiari.</p>
-          </div>
         </div>
 
+        <h2 style="color: white; text-align: center; font-size: 36px; font-weight: 600; margin-top: 80px;">
+          Portfolio
+        </h2>
 
         <div class="portfolio" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
-          <!-- Portfolio items -->
-        </div>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio-section">
-          <div class="container">
-            <h2 class="section-title animate-on-scroll" data-i18n="portfolio_title" style="color: #A78BFA;">Portfolio</h2>
+          <div style="width: 280px; height: 200px; background-color: #222; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+            <p>Mockup maglietta per Burger Club</p>
+          </div>
+
+          <div style="width: 280px; height: 200px; background-color: #222; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+            <p>Felpe personalizzate per Team Trail</p>
+          </div>
+
+          <div style="width: 280px; height: 200px; background-color: #222; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+            <p>Vetrina adesiva per bar "Otto"</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Cards Section -->
+    <section id="progetti" style="background: #121212; padding: 100px 0; color: #fff; text-align: center;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 60px;" data-i18n="project_cards_title">
+          Scegli il tuo progetto
+        </h2>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+          
+          <!-- Carta 1 - Magliette -->
+          <a href="#configuratore" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="./Immagine-tshirt.webp" alt="Mockup maglietta personalizzata" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <h3 data-i18n="card1_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+              Magliette personalizzate
+            </h3>
+          </a>
+
+          <!-- Carta 2 - Gadget -->
+          <a href="mailto:info.tisdesign@gmail.com?subject=Gadget personalizzati - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="./gadjet-sito.webp" alt="Mockup gadget personalizzati" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <h3 data-i18n="card2_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+              Gadget personalizzati
+            </h3>
+          </a>
+
+          <!-- Carta 3 - Adesivi -->
+          <a href="mailto:info.tisdesign@gmail.com?subject=Decorazioni adesive - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="./Vetrine.webp" alt="Mockup adesivi su vetrina o auto" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            <h3 data-i18n="card3_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
+              Decorazioni adesive
+            </h3>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" data-i18n="portfolio_title">Portfolio</h2>
             <p class="section-subtitle animate-on-scroll" data-i18n="portfolio_subtitle">
                 Alcuni esempi di progetti realizzati per i nostri clienti
             </p>
@@ -1849,173 +1910,135 @@
                     <h3 data-i18n="portfolio3_title">Vetrina adesiva per bar</h3>
                 </div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Project Cards Section -->
-        <section id="progetti" style="background: #121212; padding: 100px 0; color: #fff; text-align: center;">
-          <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; color: #A78BFA;" data-i18n="project_cards_title">
-              Scegli il tuo progetto
-            </h2>
-
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
-              
-              <!-- Carta 1 - Magliette -->
-              <a href="#configuratore" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/tshirt_viola.webp" alt="Mockup maglietta personalizzata" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                <h3 data-i18n="card1_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
-                  Magliette personalizzate
-                </h3>
-              </a>
-
-              <!-- Carta 2 - Gadget -->
-              <a href="mailto:info.tisdesign@gmail.com?subject=Gadget personalizzati - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/gadget_viola.webp" alt="Mockup gadget personalizzati" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                <h3 data-i18n="card2_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
-                  Gadget personalizzati
-                </h3>
-              </a>
-
-              <!-- Carta 3 - Adesivi -->
-              <a href="mailto:info.tisdesign@gmail.com?subject=Decorazioni adesive - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/vetrine_viola.webp" alt="Mockup adesivi su vetrina o auto" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-                <h3 data-i18n="card3_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
-                  Decorazioni adesive
-                </h3>
-              </a>
-
-            </div>
-          </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonianze" class="testimonials-section">
-          <div class="container">
-            <h2 class="section-title animate-on-scroll" data-i18n="testimonials_title" style="color: #A78BFA;">Cosa dicono i clienti</h2>
+    <!-- Testimonials Section -->
+    <section id="testimonianze" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" data-i18n="testimonials_title">Cosa dicono i clienti</h2>
             <p class="section-subtitle animate-on-scroll" data-i18n="testimonials_subtitle">
                 Alcune recensioni vere ricevute dai nostri clienti
             </p>
             <div class="testimonial-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <p class="testimonial-text" data-i18n="testimonial1">Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!</p>
-                    <span class="testimonial-author" style="color: #A78BFA;">— Dustin K.</span>
+                <div class="testimonial-item animate-on-scroll">
+                    <p class="testimonial-text" data-i18n="testimonial1">"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"</p>
+                    <span class="testimonial-author">— Dustin K.</span>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <p class="testimonial-text" data-i18n="testimonial2">Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben imballato.</p>
-                    <span class="testimonial-author" style="color: #A78BFA;">— Julia K.</span>
+                <div class="testimonial-item animate-on-scroll">
+                    <p class="testimonial-text" data-i18n="testimonial2">"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."</p>
+                    <span class="testimonial-author">— Julia K.</span>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <p class="testimonial-text" data-i18n="testimonial3">Tiziano ci ha aiutato a progettare il logo e l'insegna. Gentile, disponibile e molto professionale.</p>
-                    <span class="testimonial-author" style="color: #A78BFA;">— Daniel B.</span>
+                <div class="testimonial-item animate-on-scroll">
+                    <p class="testimonial-text" data-i18n="testimonial3">"Tiziano ci ha aiutato a creare il logo e l'insegna. Gentile, disponibile e super professionale."</p>
+                    <span class="testimonial-author">— Daniel B.</span>
                 </div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Configuratore -->
-        <section id="configuratore" style="padding: 60px 20px; background-color: #000; color: #fff; text-align: center;">
-          <h2 class="section-title animate-on-scroll" style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #A78BFA;" data-i18n="config_title">Personalizza la tua maglietta</h2>
-          <p style="font-size: 18px; margin-bottom: 40px;" data-i18n="config_subtitle">Scegli le opzioni e ricevi un prezzo stimato</p>
+    <!-- Configuratore -->
+    <section id="configuratore" style="padding: 60px 20px; background-color: #000; color: #fff; text-align: center;">
+      <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;" data-i18n="config_title">Personalizza la tua maglietta</h2>
+      <p style="font-size: 18px; margin-bottom: 40px;" data-i18n="config_subtitle">Scegli le opzioni e ricevi un prezzo stimato</p>
 
-          <form id="mockup-form" style="max-width: 500px; margin: 0 auto;">
-            <div style="margin-bottom: 20px;">
-              <label for="model" data-i18n="config_model" style="display: block; font-weight: bold; margin-bottom: 5px;">Modello:</label>
-              <select id="model" name="model" style="width: 100%; padding: 10px;">
-                <option value="unisex" data-i18n="config_model_unisex">Unisex</option>
-                <option value="man" data-i18n="config_model_man">Uomo</option>
-                <option value="woman" data-i18n="config_model_woman">Donna</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-              <label for="color" data-i18n="config_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore maglietta:</label>
-              <select id="color" name="color" style="width: 100%; padding: 10px;">
-                <option value="bianco" data-i18n="config_color_white">Bianco</option>
-                <option value="nero" data-i18n="config_color_black">Nero</option>
-                <option value="rosso" data-i18n="config_color_red">Rosso</option>
-                <option value="blu" data-i18n="config_color_blue">Blu</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-              <label for="printColor" data-i18n="config_print_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore della stampa:</label>
-              <select id="printColor" name="printColor" style="width: 100%; padding: 10px;">
-                <option value="bianco" data-i18n="config_print_color_white">Bianco</option>
-                <option value="nero" data-i18n="config_print_color_black">Nero</option>
-                <option value="oro" data-i18n="config_print_color_gold">Oro</option>
-                <option value="rosso" data-i18n="config_print_color_red">Rosso</option>
-                <option value="multicolore" data-i18n="config_print_color_multicolor">Multicolore</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-              <label for="printSize" data-i18n="config_size" style="display: block; font-weight: bold; margin-bottom: 5px;">Dimensione stampa:</label>
-              <select id="printSize" name="printSize" style="width: 100%; padding: 10px;">
-                <option value="5x5" data-print-key="5x5"></option>
-                <option value="5x5f+5x5b" data-print-key="5x5f+5x5b"></option>
-                <option value="10x10" data-print-key="10x10"></option>
-                <option value="20x20" data-print-key="20x20"></option>
-                <option value="30x30" data-print-key="30x30"></option>
-                <option value="10x10+10x10" data-print-key="10x10+10x10"></option>
-                <option value="10x10+20x20" data-print-key="10x10+20x20"></option>
-                <option value="10x10+30x30" data-print-key="10x10+30x30"></option>
-                <option value="20x20+10x10" data-print-key="20x20+10x10"></option>
-                <option value="20x20+20x20" data-print-key="20x20+20x20"></option>
-                <option value="20x20+30x30" data-print-key="20x20+30x30"></option>
-                <option value="30x30+10x10" data-print-key="30x30+10x10"></option>
-                <option value="30x30+20x20" data-print-key="30x30+20x20"></option>
-                <option value="30x30+30x30" data-print-key="30x30+30x30"></option>
-                <option value="retro10x10" data-print-key="retro10x10"></option>
-                <option value="retro20x20" data-print-key="retro20x20"></option>
-                <option value="retro30x30" data-print-key="retro30x30"></option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-              <label for="quantity" data-i18n="config_quantity" style="display: block; font-weight: bold; margin-bottom: 5px;">Quantità:</label>
-              <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 100%; padding: 10px;" />
-            </div>
-
-            <p id="price-estimate" style="font-size: 20px; font-weight: bold; margin: 30px 0 10px;">💶 Prezzo stimato: €0</p>
-            <p style="font-size: 14px; opacity: 0.8;" data-i18n="config_discount_note">📦 Il prezzo può diminuire in base alla quantità ordinata</p>
-            <p id="discount-message" style="font-size: 14px; color: #cccccc; margin-top: 5px;"></p>
-
-            <!-- Bottone per inviare il design via email -->
-            <button type="button" onclick="sendEstimateEmail()" data-i18n="contact-for-design" style="margin-top: 20px; background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
-              Contattaci per questo design
-            </button>
-
-          </form>
-        </section>
-
-        <!-- Project Start Section (moved and updated) -->
-        <div style="text-align: center; padding: 40px 20px; background-color: #000; color: #fff;">
-          <h2 data-i18n="idea-cta" class="text-center text-white text-3xl font-bold py-10 animate-fade"></h2>
+      <form id="mockup-form" style="max-width: 500px; margin: 0 auto;">
+        <div style="margin-bottom: 20px;">
+          <label for="model" data-i18n="config_model" style="display: block; font-weight: bold; margin-bottom: 5px;">Modello:</label>
+          <select id="model" name="model" style="width: 100%; padding: 10px;">
+            <option value="unisex" data-i18n="config_model_unisex">Unisex</option>
+            <option value="man" data-i18n="config_model_man">Uomo</option>
+            <option value="woman" data-i18n="config_model_woman">Donna</option>
+          </select>
         </div>
 
-        <!-- Contact Section -->
-        <section id="contattami" style="padding: 100px 20px; background: #000; color: white; text-align: center;">
-          <h2 class="section-title animate-on-scroll" data-i18n="contact_title" style="color: #A78BFA;">Contattaci</h2>
+        <div style="margin-bottom: 20px;">
+          <label for="color" data-i18n="config_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore maglietta:</label>
+          <select id="color" name="color" style="width: 100%; padding: 10px;">
+            <option value="bianco" data-i18n="config_color_white">Bianco</option>
+            <option value="nero" data-i18n="config_color_black">Nero</option>
+            <option value="rosso" data-i18n="config_color_red">Rosso</option>
+            <option value="blu" data-i18n="config_color_blue">Blu</option>
+          </select>
+        </div>
 
-          <!-- Language Switcher del form -->
-          <div id="form-language-switcher" style="margin-bottom: 30px;">
-            <span class="flag-icon" data-lang="it">🇮🇹</span>
-            <span class="flag-icon" data-lang="en">🇬🇧</span>
-            <span class="flag-icon" data-lang="de">🇩🇪</span>
-          </div>
+        <div style="margin-bottom: 20px;">
+          <label for="printColor" data-i18n="config_print_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore della stampa:</label>
+          <select id="printColor" name="printColor" style="width: 100%; padding: 10px;">
+            <option value="bianco" data-i18n="config_print_color_white">Bianco</option>
+            <option value="nero" data-i18n="config_print_color_black">Nero</option>
+            <option value="oro" data-i18n="config_print_color_gold">Oro</option>
+            <option value="rosso" data-i18n="config_print_color_red">Rosso</option>
+            <option value="multicolore" data-i18n="config_print_color_multicolor">Multicolore</option>
+          </select>
+        </div>
 
-          <!-- Contact Form -->
-          <form id="contact-form" action="https://formspree.io/f/mvgrrlgn" method="POST" onsubmit="handleSubmit(event)" role="form" aria-label="Modulo di contatto">
-            <input type="text" name="name" id="contact-name" placeholder="Il tuo nome" required>
-            <input type="email" name="email" id="contact-email" placeholder="La tua email" required>
-            <textarea name="message" id="contact-message" placeholder="Scrivi il tuo messaggio..." rows="5" required></textarea>
-            <button type="submit" id="contact-submit" style="background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">Invia messaggio</button>
-          </form>
-          <div id="form-feedback" aria-live="polite" style="margin-top: 1.5rem; font-size: 1.2rem; color: white; text-align: center;"></div>
-        </section>
+        <div style="margin-bottom: 20px;">
+          <label for="printSize" data-i18n="config_size" style="display: block; font-weight: bold; margin-bottom: 5px;">Dimensione stampa:</label>
+          <select id="printSize" name="printSize" style="width: 100%; padding: 10px;">
+            <option value="5x5" data-print-key="5x5"></option>
+            <option value="5x5f+5x5b" data-print-key="5x5f+5x5b"></option>
+            <option value="10x10" data-print-key="10x10"></option>
+            <option value="20x20" data-print-key="20x20"></option>
+            <option value="30x30" data-print-key="30x30"></option>
+            <option value="10x10+10x10" data-print-key="10x10+10x10"></option>
+            <option value="10x10+20x20" data-print-key="10x10+20x20"></option>
+            <option value="10x10+30x30" data-print-key="10x10+30x30"></option>
+            <option value="20x20+10x10" data-print-key="20x20+10x10"></option>
+            <option value="20x20+20x20" data-print-key="20x20+20x20"></option>
+            <option value="20x20+30x30" data-print-key="20x20+30x30"></option>
+            <option value="30x30+10x10" data-print-key="30x30+10x10"></option>
+            <option value="30x30+20x20" data-print-key="30x30+20x20"></option>
+            <option value="30x30+30x30" data-print-key="30x30+30x30"></option>
+            <option value="retro10x10" data-print-key="retro10x10"></option>
+            <option value="retro20x20" data-print-key="retro20x20"></option>
+            <option value="retro30x30" data-print-key="retro30x30"></option>
+          </select>
+        </div>
 
+        <div style="margin-bottom: 20px;">
+          <label for="quantity" data-i18n="config_quantity" style="display: block; font-weight: bold; margin-bottom: 5px;">Quantità:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 100%; padding: 10px;" />
+        </div>
+
+        <p id="price-estimate" style="font-size: 20px; font-weight: bold; margin: 30px 0 10px;">💶 Prezzo stimato: €0</p>
+        <p style="font-size: 14px; opacity: 0.8;" data-i18n="config_discount_note">📦 Il prezzo può diminuire in base alla quantità ordinata</p>
+        <p id="discount-message" style="font-size: 14px; color: #cccccc; margin-top: 5px;"></p>
+
+        <!-- Bottone per inviare il design via email -->
+        <button type="button" onclick="sendEstimateEmail()" data-i18n="contact-for-design" style="margin-top: 20px; background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+          Contattaci per questo design
+        </button>
+
+      </form>
+    </section>
+
+    <!-- Project Start Section (moved and updated) -->
+    <div style="text-align: center; padding: 40px 20px; background-color: #000; color: #fff;">
+      <h2 data-i18n="idea-cta" class="text-center text-white text-3xl font-bold py-10 animate-fade"></h2>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contattami" style="padding: 100px 20px; background: #000; color: white; text-align: center;">
+      <h2 data-i18n="contact_title">Contattami</h2>
+
+      <!-- Language Switcher del form -->
+      <div id="form-language-switcher" style="margin-bottom: 30px;">
+        <span class="flag-icon" data-lang="it">🇮🇹</span>
+        <span class="flag-icon" data-lang="en">🇬🇧</span>
+        <span class="flag-icon" data-lang="de">🇩🇪</span>
       </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" action="https://formspree.io/f/mvgrrlgn" method="POST" onsubmit="handleSubmit(event)" role="form" aria-label="Modulo di contatto">
+        <input type="text" name="name" id="contact-name" placeholder="Il tuo nome" required>
+        <input type="email" name="email" id="contact-email" placeholder="La tua email" required>
+        <textarea name="message" id="contact-message" placeholder="Scrivi il tuo messaggio..." rows="5" required></textarea>
+        <button type="submit" id="contact-submit" style="background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">Invia messaggio</button>
+      </form>
+      <div id="form-feedback" aria-live="polite" style="margin-top: 1.5rem; font-size: 1.2rem; color: white; text-align: center;"></div>
+    </section>
+
     </main>
 
     <!-- Footer -->
@@ -2166,12 +2189,6 @@
                 service2_desc: "Tazze, penne e altri oggetti con il tuo logo.",
                 service3_title: "Decorazioni adesive",
                 service3_desc: "Adesivi personalizzati per vetrine e veicoli.",
-                custom_clothing_title: "Abbigliamento personalizzato",
-                custom_clothing_desc: "Magliette, felpe e altri capi personalizzati.",
-                custom_gadgets_title: "Gadget personalizzati",
-                custom_gadgets_desc: "Tazze, penne e altri oggetti con il tuo logo.",
-                custom_stickers_title: "Decorazioni adesive",
-                custom_stickers_desc: "Vetrine, veicoli e superfici personalizzate.",
                 testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Alcuni esempi di progetti realizzati per i nostri clienti",
@@ -2179,17 +2196,7 @@
                 testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
                 testimonial1: '"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"',
                 testimonial2: '"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."',
-                testimonial3: '"Tiziano ci ha aiutato a creare il logo e l\'insegna. Gentile, disponibile e super professionale."',
-                "why_choose_cards": {
-                    "target_title": "Target su misura",
-                    "target_text": "Soluzioni per locali, team e brand.",
-                    "design_title": "Design incluso",
-                    "design_text": "Grafica professionale inclusa in ogni ordine.",
-                    "contact_title": "Contatto diretto",
-                    "contact_text": "Risposte rapide e comunicazione semplice.",
-                    "quality_title": "Qualità & trasparenza",
-                    "quality_text": "Materiali premium e prezzi chiari."
-                }
+                testimonial3: '"Tiziano ci ha aiutato a creare il logo e l\'insegna. Gentile, disponibile e super professionale."'
             },
             en: {
                 // Meta tags
@@ -2263,12 +2270,6 @@
                 service2_desc: "Mugs, pens and other items with your logo.",
                 service3_title: "Adhesive Decorations",
                 service3_desc: "Custom stickers for windows and vehicles.",
-                custom_clothing_title: "Custom Clothing",
-                custom_clothing_desc: "T-shirts, hoodies and more with your design.",
-                custom_gadgets_title: "Custom Gadgets",
-                custom_gadgets_desc: "Mugs, pens and other items with your logo.",
-                custom_stickers_title: "Custom Stickers",
-                custom_stickers_desc: "Windows, vehicles and other personalized surfaces.",
                 testimonials_subtitle: "Real reviews received from our customers",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Some examples of projects completed for our clients",
@@ -2276,17 +2277,7 @@
                 testimonials_subtitle: "Real reviews received from our customers",
                 testimonial1: '"The t-shirts are excellent, the design is perfect, and the material quality is truly high. Highly recommended!"',
                 testimonial2: '"We ordered gadgets for our event: everything was on time, neat, and well-packaged."',
-                testimonial3: '"Tiziano helped us create the logo and sign. Kind, responsive, and very professional."',
-                "why_choose_cards": {
-                    "target_title": "Tailored targeting",
-                    "target_text": "Solutions for businesses, teams, and brands.",
-                    "design_title": "Design included",
-                    "design_text": "Professional design included in every order.",
-                    "contact_title": "Direct contact",
-                    "contact_text": "Quick replies and easy communication.",
-                    "quality_title": "Quality & transparency",
-                    "quality_text": "Premium materials and clear pricing."
-                }
+                testimonial3: '"Tiziano helped us create the logo and sign. Kind, responsive, and very professional."'
             },
             de: {
                 // Meta tags
@@ -2335,16 +2326,6 @@
                 "contact-for-quote": "Kontaktieren Sie uns für ein Angebot",
                 "contact-for-design": "Kontaktieren Sie uns für dieses Design",
                 "config_discount_note": "📦 Der Preis kann je nach Bestellmenge sinken",
-                "why_choose_cards": {
-                    "target_title": "Zielgruppenorientiert",
-                    "target_text": "Lösungen für Lokale, Teams und Marken.",
-                    "design_title": "Design inklusive",
-                    "design_text": "Professionelle Grafiken bei jeder Bestellung inklusive.",
-                    "contact_title": "Direkter Kontakt",
-                    "contact_text": "Schnelle Antworten und einfache Kommunikation.",
-                    "quality_title": "Qualität & Transparenz",
-                    "quality_text": "Premium-Materialien und transparente Preise."
-                },
                 printSizeOptions: {
                   "5x5": "Nur vorne (5×5 cm)",
                   "5x5f+5x5b": "Vorne 5×5 + Hinten 5×5",
@@ -2370,12 +2351,6 @@
                 service2_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
                 service3_title: "Klebebeschriftungen",
                 service3_desc: "Maßgeschneiderte Aufkleber für Fenster und Fahrzeuge.",
-                custom_clothing_title: "Personalisierte Kleidung",
-                custom_clothing_desc: "T-Shirts, Hoodies und mehr mit deinem Design.",
-                custom_gadgets_title: "Personalisierte Gadgets",
-                custom_gadgets_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
-                custom_stickers_title: "Klebefolien & Aufkleber",
-                custom_stickers_desc: "Fenster, Fahrzeuge und andere personalisierte Oberflächen.",
                 testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Einige Beispiele von Projekten, die wir für unsere Kunden umgesetzt haben",
@@ -2383,17 +2358,7 @@
                 testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
                 testimonial1: '"Die T-Shirts sind großartig, das Design ist perfekt und die Materialqualität ist wirklich hoch. Sehr zu empfehlen!"',
                 testimonial2: '"Wir haben Gadgets für unsere Veranstaltung bestellt: alles war pünktlich, sorgfältig und gut verpackt."',
-                testimonial3: '"Tiziano hat uns geholfen, das Logo und das Schild zu entwerfen. Freundlich, hilfsbereit und sehr professionell."',
-                "why_choose_cards": {
-                    "target_title": "Zielgerichtete Lösungen",
-                    "target_text": "Lösungen für Lokale, Teams und Marken.",
-                    "design_title": "Design inklusive",
-                    "design_text": "Professionelles Design in jeder Bestellung enthalten.",
-                    "contact_title": "Direkter Kontakt",
-                    "contact_text": "Schnelle Antworten und einfache Kommunikation.",
-                    "quality_title": "Qualität & Transparenz",
-                    "quality_text": "Hochwertige Materialien und transparente Preise."
-                }
+                testimonial3: '"Tiziano hat uns geholfen, das Logo und das Schild zu entwerfen. Freundlich, hilfsbereit und sehr professionell."'
             }
         };
 
@@ -2563,18 +2528,6 @@
                 return;
             }
 
-            // Aggiorna tutte le label e gli elementi con data-i18n all'interno del configuratore
-            const configurator = document.getElementById('mockup-form')?.parentElement;
-            if (configurator) {
-                configurator.querySelectorAll('[data-i18n]').forEach(el => {
-                    const key = el.getAttribute('data-i18n');
-                    if (key && configTranslations[key]) {
-                        el.textContent = configTranslations[key];
-                    }
-                });
-            }
-
-            // Aggiorna le option delle select (model, color, printColor)
             const modelSelect = document.getElementById('model');
             if (modelSelect) {
                 Array.from(modelSelect.options).forEach(option => {
@@ -2605,7 +2558,6 @@
                 });
             }
 
-            // Aggiorna le option della select printSize
             const printSizeTranslations = translations[lang]?.printSizeOptions || translations.en.printSizeOptions;
             const printSizeSelect = document.getElementById('printSize');
             if (printSizeSelect) {
@@ -2622,23 +2574,11 @@
             localStorage.setItem('selectedLang', lang);
             document.documentElement.setAttribute('lang', lang);
 
-            // Aggiorna tutti i testi con data-i18n (supporto per chiavi annidate)
+            // Aggiorna tutti i testi con data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
               const key = el.getAttribute('data-i18n');
-              const parts = key.split('.');
-              let value = translations[lang];
-
-              for (let part of parts) {
-                if (value && part in value) {
-                  value = value[part];
-                } else {
-                  value = null;
-                  break;
-                }
-              }
-
-              if (value !== null && value !== undefined) {
-                el.innerHTML = value;
+              if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
               }
             });
 

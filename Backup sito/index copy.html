@@ -1527,23 +1527,6 @@
           display: block;
         }
 
-        button.start-button {
-          background-color: #7600FF;
-          color: white;
-          font-weight: bold;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 20px;
-          font-size: 1.1rem;
-          transition: background-color 0.3s ease;
-          margin-right: 10px;
-        }
-
-        button.start-button:hover {
-          background-color: #5d00cc;
-          transform: translateY(-2px);
-        }
-
         .hero .cta-primary {
             background: linear-gradient(135deg, #6a3fb4, #8f56d6);
             color: white;
@@ -1662,13 +1645,6 @@
         .card-text, .why-text {
           font-size: 15px;
         }
-
-        .cta-buttons .cta-button,
-        .cta-buttons .cta-button.primary {
-          font-size: 1.25rem;
-          padding: 1rem 2.5rem;
-          border-radius: 8px;
-        }
     </style>
 </head>
 <body>
@@ -1730,7 +1706,7 @@
         <!-- Pulsanti -->
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
           <div class="cta-buttons">
-            <button class="start-button">
+            <button class="cta-button primary" style="background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 10px 20px; border: none; border-radius: 20px; font-weight: bold; margin-right: 10px;">
               <a href="#configuratore" style="color: white; text-decoration: none;" data-i18n="cta_primary">Start Your Design</a>
             </button>
             <button class="cta-button" style="color: #6a3fb4; background: none; border: 1px solid white; padding: 10px 20px; border-radius: 20px; font-weight: bold;">
@@ -1751,22 +1727,22 @@
   <!-- Carta 1: Abbigliamento -->
   <div class="card" onclick="window.location.href='personalizzazioni.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M4 4l4-2 2 3h4l2-3 4 2v4l-2 2v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V10L4 8V4z"/></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_clothing_title">Abbigliamento personalizzato</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_clothing_desc">Magliette, felpe e altri capi personalizzati.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Abbigliamento personalizzato</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Magliette, felpe e altri capi personalizzati.</p>
   </div>
 
   <!-- Carta 2: Gadget -->
   <div class="card" onclick="window.location.href='gadget.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_gadgets_title">Gadget personalizzati</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_gadgets_desc">Tazze, penne e altri oggetti con il tuo logo.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Gadget personalizzati</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Tazze, penne e altri oggetti con il tuo logo.</p>
   </div>
 
   <!-- Carta 3: Adesivi -->
   <div class="card" onclick="window.location.href='adesivi.html'" style="width: 300px; background-color: #0D0D0D; padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 0 40px rgba(255, 255, 255, 0.05); transition: transform 0.3s; cursor: pointer;">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#CBBBF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;" data-i18n="custom_stickers_title">Decorazioni adesive</p>
-    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;" data-i18n="custom_stickers_desc">Vetrine, veicoli e superfici personalizzate.</p>
+    <p class="card-title services-title" style="color: #CBBBF6; font-weight: bold; margin-bottom: 5px;">Decorazioni adesive</p>
+    <p class="card-text services-text" style="color: #aaa; font-size: 14px; margin: 0;">Vetrine, veicoli e superfici personalizzate.</p>
   </div>
 
 </div>
@@ -1855,7 +1831,7 @@
         <!-- Project Cards Section -->
         <section id="progetti" style="background: #121212; padding: 100px 0; color: #fff; text-align: center;">
           <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; color: #A78BFA;" data-i18n="project_cards_title">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 60px;" data-i18n="project_cards_title">
               Scegli il tuo progetto
             </h2>
 
@@ -1863,7 +1839,7 @@
               
               <!-- Carta 1 - Magliette -->
               <a href="#configuratore" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/tshirt_viola.webp" alt="Mockup maglietta personalizzata" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="./Immagine-tshirt.webp" alt="Mockup maglietta personalizzata" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 <h3 data-i18n="card1_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
                   Magliette personalizzate
                 </h3>
@@ -1871,7 +1847,7 @@
 
               <!-- Carta 2 - Gadget -->
               <a href="mailto:info.tisdesign@gmail.com?subject=Gadget personalizzati - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/gadget_viola.webp" alt="Mockup gadget personalizzati" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="./gadjet-sito.webp" alt="Mockup gadget personalizzati" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 <h3 data-i18n="card2_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
                   Gadget personalizzati
                 </h3>
@@ -1879,7 +1855,7 @@
 
               <!-- Carta 3 - Adesivi -->
               <a href="mailto:info.tisdesign@gmail.com?subject=Decorazioni adesive - richiesta info" style="position: relative; background: #000; width: 300px; height: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                <img src="sito_viola/vetrine_viola.webp" alt="Mockup adesivi su vetrina o auto" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="./Vetrine.webp" alt="Mockup adesivi su vetrina o auto" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 <h3 data-i18n="card3_title" style="position: absolute; bottom: 0; width: 100%; padding: 20px 10px; margin: 0; color: white; font-size: 1.2rem; text-align: center; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); text-shadow: 0 2px 4px rgba(0,0,0,0.6);">
                   Decorazioni adesive
                 </h3>
@@ -1915,7 +1891,7 @@
 
         <!-- Configuratore -->
         <section id="configuratore" style="padding: 60px 20px; background-color: #000; color: #fff; text-align: center;">
-          <h2 class="section-title animate-on-scroll" style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #A78BFA;" data-i18n="config_title">Personalizza la tua maglietta</h2>
+          <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 10px;" data-i18n="config_title">Personalizza la tua maglietta</h2>
           <p style="font-size: 18px; margin-bottom: 40px;" data-i18n="config_subtitle">Scegli le opzioni e ricevi un prezzo stimato</p>
 
           <form id="mockup-form" style="max-width: 500px; margin: 0 auto;">
@@ -2166,12 +2142,6 @@
                 service2_desc: "Tazze, penne e altri oggetti con il tuo logo.",
                 service3_title: "Decorazioni adesive",
                 service3_desc: "Adesivi personalizzati per vetrine e veicoli.",
-                custom_clothing_title: "Abbigliamento personalizzato",
-                custom_clothing_desc: "Magliette, felpe e altri capi personalizzati.",
-                custom_gadgets_title: "Gadget personalizzati",
-                custom_gadgets_desc: "Tazze, penne e altri oggetti con il tuo logo.",
-                custom_stickers_title: "Decorazioni adesive",
-                custom_stickers_desc: "Vetrine, veicoli e superfici personalizzate.",
                 testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Alcuni esempi di progetti realizzati per i nostri clienti",
@@ -2263,12 +2233,6 @@
                 service2_desc: "Mugs, pens and other items with your logo.",
                 service3_title: "Adhesive Decorations",
                 service3_desc: "Custom stickers for windows and vehicles.",
-                custom_clothing_title: "Custom Clothing",
-                custom_clothing_desc: "T-shirts, hoodies and more with your design.",
-                custom_gadgets_title: "Custom Gadgets",
-                custom_gadgets_desc: "Mugs, pens and other items with your logo.",
-                custom_stickers_title: "Custom Stickers",
-                custom_stickers_desc: "Windows, vehicles and other personalized surfaces.",
                 testimonials_subtitle: "Real reviews received from our customers",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Some examples of projects completed for our clients",
@@ -2335,16 +2299,6 @@
                 "contact-for-quote": "Kontaktieren Sie uns für ein Angebot",
                 "contact-for-design": "Kontaktieren Sie uns für dieses Design",
                 "config_discount_note": "📦 Der Preis kann je nach Bestellmenge sinken",
-                "why_choose_cards": {
-                    "target_title": "Zielgruppenorientiert",
-                    "target_text": "Lösungen für Lokale, Teams und Marken.",
-                    "design_title": "Design inklusive",
-                    "design_text": "Professionelle Grafiken bei jeder Bestellung inklusive.",
-                    "contact_title": "Direkter Kontakt",
-                    "contact_text": "Schnelle Antworten und einfache Kommunikation.",
-                    "quality_title": "Qualität & Transparenz",
-                    "quality_text": "Premium-Materialien und transparente Preise."
-                },
                 printSizeOptions: {
                   "5x5": "Nur vorne (5×5 cm)",
                   "5x5f+5x5b": "Vorne 5×5 + Hinten 5×5",
@@ -2370,12 +2324,6 @@
                 service2_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
                 service3_title: "Klebebeschriftungen",
                 service3_desc: "Maßgeschneiderte Aufkleber für Fenster und Fahrzeuge.",
-                custom_clothing_title: "Personalisierte Kleidung",
-                custom_clothing_desc: "T-Shirts, Hoodies und mehr mit deinem Design.",
-                custom_gadgets_title: "Personalisierte Gadgets",
-                custom_gadgets_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
-                custom_stickers_title: "Klebefolien & Aufkleber",
-                custom_stickers_desc: "Fenster, Fahrzeuge und andere personalisierte Oberflächen.",
                 testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
                 portfolio_title: "Portfolio",
                 portfolio_subtitle: "Einige Beispiele von Projekten, die wir für unsere Kunden umgesetzt haben",
@@ -2563,18 +2511,6 @@
                 return;
             }
 
-            // Aggiorna tutte le label e gli elementi con data-i18n all'interno del configuratore
-            const configurator = document.getElementById('mockup-form')?.parentElement;
-            if (configurator) {
-                configurator.querySelectorAll('[data-i18n]').forEach(el => {
-                    const key = el.getAttribute('data-i18n');
-                    if (key && configTranslations[key]) {
-                        el.textContent = configTranslations[key];
-                    }
-                });
-            }
-
-            // Aggiorna le option delle select (model, color, printColor)
             const modelSelect = document.getElementById('model');
             if (modelSelect) {
                 Array.from(modelSelect.options).forEach(option => {
@@ -2605,7 +2541,6 @@
                 });
             }
 
-            // Aggiorna le option della select printSize
             const printSizeTranslations = translations[lang]?.printSizeOptions || translations.en.printSizeOptions;
             const printSizeSelect = document.getElementById('printSize');
             if (printSizeSelect) {
@@ -2622,23 +2557,11 @@
             localStorage.setItem('selectedLang', lang);
             document.documentElement.setAttribute('lang', lang);
 
-            // Aggiorna tutti i testi con data-i18n (supporto per chiavi annidate)
+            // Aggiorna tutti i testi con data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
               const key = el.getAttribute('data-i18n');
-              const parts = key.split('.');
-              let value = translations[lang];
-
-              for (let part of parts) {
-                if (value && part in value) {
-                  value = value[part];
-                } else {
-                  value = null;
-                  break;
-                }
-              }
-
-              if (value !== null && value !== undefined) {
-                el.innerHTML = value;
+              if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
               }
             });
 
