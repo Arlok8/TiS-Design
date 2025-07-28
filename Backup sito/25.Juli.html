@@ -1,0 +1,3122 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S24FFWFL3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3S24FFWFL3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>TiS Design – Abbigliamento e gadget personalizzati</title>
+    <meta name="description" content="TiS Design offre magliette, gadget e decorazioni personalizzate per ristoranti, eventi e brand locali. Progetti unici, su misura per te.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.tis-design.com/">
+
+    <!-- Open Graph (social preview) -->
+    <meta property="og:title" content="TiS Design – Abbigliamento e gadget personalizzati">
+    <meta property="og:description" content="Scopri i nostri progetti personalizzati: magliette, gadget ed esperienze su misura per ristoranti, eventi e piccole attività.">
+    <meta property="og:image" content="https://www.tis-design.com/immagini/og-preview.jpg">
+    <meta property="og:url" content="https://www.tis-design.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (per X / Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TiS Design – Abbigliamento e gadget personalizzati">
+    <meta name="twitter:description" content="Gadget personalizzati, abbigliamento su misura e soluzioni grafiche per la tua attività.">
+    <meta name="twitter:image" content="https://www.tis-design.com/immagini/og-preview.jpg">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TiSDesign">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Utility class for hiding elements */
+        .hidden {
+            display: none !important;
+        }
+        
+        @font-face{
+            font-family:Inter Variable;
+            src:url(https://framerusercontent.com/assets/d3tHnaQIAeqiE5hGcRw4mmgWYU.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:400;
+        }
+        @font-face{
+            font-family:Inter;
+            src:url(https://framerusercontent.com/assets/d3tHnaQIAeqiE5hGcRw4mmgWYU.woff2);
+            font-display:swap;
+            font-style:normal;
+            font-weight:500;
+        }
+        @font-face{
+            font-family:Inter Placeholder;
+            src:local("Arial");
+            ascent-override:89.79%;
+            descent-override:22.36%;
+            line-gap-override:0%;
+            size-adjust:107.89%
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #0A0F1F;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-image: url('immagini/bg-neon.jpg');
+            background-repeat: repeat;
+            background-position: center top;
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-color: #0a0a0a;
+            z-index: 0;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        /* Effetto glow animato per il titolo principale */
+        h1 {
+            text-shadow:
+                0 0 8px #9f50ff,
+                0 0 16px #9f50ff,
+                0 0 32px #5a00ff,
+                0 0 64px #9f50ff;
+            animation: neonGlow 4s ease-in-out infinite;
+        }
+
+        /* Animazione soft per il glow */
+        @keyframes neonGlow {
+            0%, 100% {
+                text-shadow:
+                    0 0 8px #9f50ff,
+                    0 0 16px #9f50ff,
+                    0 0 32px #5a00ff,
+                    0 0 64px #9f50ff;
+            }
+            50% {
+                text-shadow:
+                    0 0 4px #9f50ff,
+                    0 0 8px #9f50ff,
+                    0 0 16px #5a00ff,
+                    0 0 24px #9f50ff;
+            }
+        }
+
+        /* Glow anche sul bottone viola */
+        .hero-buttons .btn-primary {
+            box-shadow:
+                0 0 8px #a833ff,
+                0 0 16px #a833ff,
+                0 0 24px #a833ff;
+            animation: buttonGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 8px #a833ff,
+                    0 0 16px #a833ff,
+                    0 0 24px #a833ff;
+            }
+            50% {
+                box-shadow:
+                    0 0 4px #a833ff,
+                    0 0 8px #a833ff,
+                    0 0 12px #a833ff;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 31, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #252525;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: #191919;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #252525;
+        }
+
+        .language-switcher span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .language-switcher span:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .language-switcher span.active {
+            border: 2px solid #0099ff;
+            background: rgba(0, 153, 255, 0.15);
+        }
+
+        .language-switcher span.clicked-animation {
+            transform: scale(0.9);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0099ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: transparent;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 32px; /* Adjusted spacing */
+            color: #ffffff;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-variation-settings: "opsz" 32, "wght" 700;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px; /* Adjusted spacing */
+            color: #ffffff;
+            opacity: 0.9;
+            font-family: "Inter", "Inter Placeholder", sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background: #c27049;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #b05f38;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .cta-button.secondary:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #A78BFA;
+            font-size: 2rem;
+            margin-top: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-item {
+            background: #191919;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid #252525;
+            box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 60px 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            margin-bottom: 20px;
+            background: #000000;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon svg {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .service-item p {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .why-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 48px;
+            height: 48px;
+            background: #777777;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .why-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .why-item p {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .testimonial-card {
+            background: #191919;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #252525;
+            box-sizing: border-box;
+        }
+
+        .testimonial-text {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            line-height: 1.2em;
+            text-align: left;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #A78BFA;
+            font-family: "Inter", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4em;
+            text-align: left;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact .cta-button {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact .cta-button:hover {
+            background: #333333;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #252525;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-info p {
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1em;
+            color: #999999;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social a {
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: "Inter Variable", "Inter Placeholder", sans-serif;
+            font-size: 15px;
+            font-variation-settings: "opsz" 24, "wght" 500;
+            letter-spacing: -0.01em;
+            line-height: 1em;
+            color: #999999;
+        }
+
+        .footer-social a:hover {
+            color: #0099ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .language-switcher {
+                padding: 6px 8px;
+                gap: 8px;
+                order: 1;
+            }
+            
+            .language-switcher span {
+                width: 24px;
+                height: 24px;
+                font-size: 16px;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+            }
+
+            .nav-left {
+                gap: 10px;
+            }
+
+            .nav-right {
+                gap: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-right .language-switcher {
+                margin-right: 10px;
+            }
+
+            .nav-right .hamburger {
+                order: 2;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-item {
+                padding: 30px 20px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        .animate-fade-in.animate-in {
+            opacity: 1;
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered animations for grids */
+        .service-item {
+            transition-delay: 0s;
+        }
+
+        .service-item:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .service-item:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .service-item:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        .service-item:nth-child(5) {
+            transition-delay: 0.4s;
+        }
+
+        .service-item:nth-child(6) {
+            transition-delay: 0.5s;
+        }
+
+        .why-item:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .why-item:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .why-item:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .why-item:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        /* Mobile Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(13, 13, 13, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 80px 20px 20px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border-left: 1px solid #252525;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu .nav-links a {
+            font-size: 1.2rem;
+            padding: 10px 0;
+            display: block;
+            border-bottom: 1px solid #252525;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .language-switcher {
+                padding: 6px 8px;
+                gap: 8px;
+            }
+            
+            .language-switcher span {
+                width: 24px;
+                height: 24px;
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Project Cards Section */
+        .project-cards {
+            background: transparent;
+            padding: 4rem 0;
+            color: #fff;
+        }
+
+        .project-cards .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .project-cards h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            justify-items: center;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .project-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .project-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .project-card {
+            width: 100%;
+            max-width: 320px;
+            background: #fff;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            color: #000;
+            padding: 1.5rem;
+            text-decoration: none;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            color: #000;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Portfolio Section Styles */
+        .portfolio-section {
+            padding: 4rem 0;
+            background-color: transparent;
+        }
+
+        .portfolio-section .section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-section .section-subtitle {
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .portfolio-item {
+            background: #1a1a1a;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-item h3 {
+            color: white;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .portfolio-item img {
+                height: 200px;
+            }
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials-section {
+            padding: 4rem 0;
+            background-color: transparent;
+        }
+
+        .testimonials-section .section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials-section .section-subtitle {
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .testimonial-item {
+            background-color: #0D101A;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .client-photo {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 0 auto 15px;
+        }
+
+        blockquote {
+          font-style: italic;
+          color: #ccc;
+          margin-bottom: 10px;
+        }
+
+        .client-name {
+          font-weight: bold;
+          color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Final CTA Section Styles */
+        .cta-section {
+            padding: 5rem 0;
+            background: transparent;
+            text-align: center;
+        }
+
+        .cta-title {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .cta-section .cta-button {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-section .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+        }
+
+        section,
+        .about-section,
+        .contact-section,
+        .testimonials,
+        footer {
+          background: transparent !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-item {
+                padding: 1.5rem;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .advantage-item {
+                padding: 1.5rem;
+            }
+
+            .project-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                height: 250px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .portfolio-item {
+                height: 250px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .cta-section .container {
+                padding: 2rem 1rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                font-size: 1.125rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Tablet Responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+
+            .section {
+                padding: 3rem 2rem;
+            }
+
+            .services-grid,
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-cards,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Container and Section Base Styles */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 2rem;
+            }
+        }
+
+        /* Grid System */
+        .services-grid,
+        .why-choose-grid,
+        .project-cards,
+        .portfolio-grid,
+        .testimonials-grid {
+            display: grid;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .services-grid,
+            .why-choose-grid,
+            .project-cards,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .services-grid,
+            .why-choose-grid,
+            .project-cards,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Image Responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .project-card img,
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text Responsiveness */
+        h1, h2, h3, h4, h5, h6 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* CTA Button Mobile Optimization */
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .cta-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Contact Form Styles */
+        #contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #1a1a1a;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            outline: none;
+            background: #2a2a2a;
+        }
+
+        #contact-form input::placeholder,
+        #contact-form textarea::placeholder {
+            color: #888;
+        }
+
+        #contact-form button {
+            padding: 12px 24px;
+            background-color: #c67043;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-form button:hover {
+            background-color: #b55a2f;
+        }
+
+        /* Form Language Switcher */
+        #form-language-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-lang {
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .form-lang:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .form-lang.active {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Configurator Styles */
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .bg-black {
+            background-color: #000;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+
+        .text-black {
+            color: #000;
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .hover\:bg-gray-200:hover {
+            background-color: #e5e7eb;
+        }
+
+        .transition {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .form-lang:not(.active) ~ form {
+            display: none;
+        }
+
+        /* ✅ Evita overflow orizzontale su tutto il sito */
+        html, body {
+          overflow-x: hidden;
+        }
+
+        /* ✅ Forza larghezza massima su ogni sezione/container */
+        * {
+          max-width: 100vw;
+        }
+
+        /* ✅ Fix specifico per immagini o elementi fuori viewport */
+        img, video, iframe {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        button.start-button {
+          background-color: #7600FF;
+          color: white;
+          font-weight: bold;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          font-size: 1.1rem;
+          transition: background-color 0.3s ease;
+          margin-right: 10px;
+        }
+
+        button.start-button:hover {
+          background-color: #5d00cc;
+          transform: translateY(-2px);
+        }
+
+        .hero .cta-primary {
+            background: linear-gradient(135deg, #6a3fb4, #8f56d6);
+            color: white;
+        }
+
+        .hero .cta-primary:hover {
+            background: linear-gradient(135deg, #563199, #7d3ec3);
+        }
+
+        .hero .cta-secondary {
+            background: transparent;
+            border: 2px solid #6a3fb4;
+            color: white;
+        }
+
+        .hero .cta-secondary:hover {
+            background: #6a3fb4;
+        }
+
+        .services .service-card i {
+            font-size: 3rem;
+            color: #6a3fb4;
+            margin-bottom: 1rem;
+        }
+
+        .why-choose-me .why-card i {
+            font-size: 3rem;
+            color: #6a3fb4;
+            margin-bottom: 1rem;
+        }
+
+        .contact button {
+            background: linear-gradient(135deg, #6a3fb4, #8f56d6);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: linear-gradient(135deg, #563199, #7d3ec3);
+        }
+
+        .why-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          text-align: center;
+        }
+        .why-item {
+          background: #1a1a1a;
+          padding: 30px;
+          border-radius: 15px;
+          border: 1px solid #2a2a2a;
+        }
+        .why-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 20px;
+        }
+        .why-item h3 {
+          color: #CBBBF6;
+          margin-bottom: 10px;
+        }
+        @media (max-width: 992px) {
+          .why-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .why-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-slide-up.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+
+        .animate-fade-in.animate-in {
+            opacity: 1;
+        }
+
+        svg {
+          width: 48px;
+          height: 48px;
+        }
+        .card-title, .why-title {
+          font-size: 20px;
+        }
+        .card-text, .why-text {
+          font-size: 15px;
+        }
+
+        .cta-buttons .cta-button,
+        .cta-buttons .cta-button.primary {
+          font-size: 1.25rem;
+          padding: 1rem 2.5rem;
+          border-radius: 8px;
+        }
+
+        .portfolio-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+          padding: 20px 0;
+        }
+        .portfolio-item {
+          width: 300px;
+          text-align: center;
+        }
+        .placeholder-box {
+          width: 100%;
+          height: 180px;
+          background-color: #1A1E28;
+          color: #999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-style: italic;
+          border-radius: 10px;
+        }
+        .project-title {
+          margin-top: 10px;
+          color: #ccc;
+          font-size: 16px;
+        }
+        .portfolio-subtitle {
+          text-align: center;
+          color: #999;
+          font-size: 14px;
+          margin-bottom: 30px;
+        }
+
+        .section-title {
+          text-align: center;
+          color: #A78BFA; /* Viola coerente */
+          font-size: 2rem;
+          margin: 40px 0 20px;
+        }
+
+        .testimonials-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 20px;
+        }
+
+        .testimonial-item {
+          background-color: #111111;
+          padding: 20px;
+          border-radius: 12px;
+          max-width: 300px;
+          text-align: center;
+          color: white;
+        }
+
+        .testimonial-item blockquote {
+          font-style: italic;
+          margin-bottom: 10px;
+          color: white;
+        }
+
+        .testimonial-item .client-name {
+          font-weight: bold;
+          color: white;
+        }
+      </style>
+      <style>
+        .neon-title {
+          font-size: 2.5em;
+          color: #b366ff;
+          text-align: center;
+          text-shadow: 0 0 5px #b366ff, 0 0 10px #b366ff, 0 0 20px #6600cc;
+          margin-bottom: 40px;
+        }
+
+        .project-cards {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap;
+        }
+
+        .project-card {
+          background-color: #111;
+          padding: 20px;
+          border-radius: 16px;
+          text-align: center;
+          width: 250px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+
+        .neon-border {
+          border: 2px solid #b366ff;
+          box-shadow: 0 0 10px #b366ff, 0 0 20px #b366ff inset;
+        }
+
+        .project-card:hover {
+          box-shadow: 0 0 15px #b366ff, 0 0 30px #b366ff inset;
+          transform: scale(1.03);
+        }
+
+        .project-card img {
+          width: 100%;
+          border-radius: 10px;
+          margin-bottom: 10px;
+        }
+
+        .project-card p {
+          color: #fff;
+          font-size: 1.1em;
+        }
+      </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#hero" class="logo" data-i18n="nav_logo">TiSDesign</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#servizi" data-i18n="nav_services">Servizi</a></li>
+                    <li><a href="#perche" data-i18n="nav_why_us">Perché Noi</a></li>
+                    <li><a href="#testimonianze" data-i18n="nav_testimonials">Clienti</a></li>
+                    <li><a href="#contattami" data-i18n="nav_contact">Contatti</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <span class="flag-icon" data-lang="it">🇮🇹</span>
+                    <span class="flag-icon" data-lang="en">🇬🇧</span>
+                    <span class="flag-icon" data-lang="de">🇩🇪</span>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="nav-links">
+            <li><a href="#servizi" data-i18n="nav_services">Servizi</a></li>
+            <li><a href="#perche" data-i18n="nav_why_us">Perché Noi</a></li>
+            <li><a href="#testimonianze" data-i18n="nav_testimonials">Clienti</a></li>
+            <li><a href="#contattami" data-i18n="nav_contact">Contatti</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <main>
+    <!-- Hero Section (nessuna modifica necessaria, già ok) -->
+    <section class="hero" style="background: transparent; padding: 100px 0; color: #fff; text-align: center;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto;">
+
+        <!-- Titolo -->
+        <h1 style="font-size: 4.5rem; font-weight: 800; margin-bottom: 20px;" data-i18n="hero_title">
+          Your team. Your style. Your brand.
+        </h1>
+
+        <!-- Sottotitolo -->
+        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="hero_subtitle">
+          Dai vita al tuo marchio o alla tua idea con un'identità visiva unica
+        </p>
+
+        <!-- Pulsanti -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+          <div class="cta-buttons">
+            <button class="start-button">
+              <a href="#configuratore" style="color: white; text-decoration: none;" data-i18n="cta_primary">Start Your Design</a>
+            </button>
+            <button class="cta-button" style="color: #6a3fb4; background: none; border: 1px solid white; padding: 10px 20px; border-radius: 20px; font-weight: bold;">
+              <a href="#contattami" style="color: white; text-decoration: none;" data-i18n="cta_secondary">Contattaci</a>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sezione Progetti con immagini reali -->
+    <section id="servizi" style="background: transparent; padding: 60px 20px;">
+        <h2 class="neon-title" data-i18n="home.choose">Scegli il tuo progetto</h2>
+        <div class="project-cards">
+          
+          <a href="#configuratore" class="project-card neon-border">
+            <img src="sito_viola/tshirt_viola.webp" alt="Mockup maglietta personalizzata" loading="lazy">
+            <p data-i18n="card1_title">Magliette personalizzate</p>
+          </a>
+
+          <a href="mailto:info.tisdesign@gmail.com?subject=Gadget personalizzati - richiesta info" class="project-card neon-border">
+            <img src="sito_viola/gadget_viola.webp" alt="Mockup gadget personalizzati" loading="lazy">
+            <p data-i18n="card2_title">Gadget personalizzati</p>
+          </a>
+
+          <a href="mailto:info.tisdesign@gmail.com?subject=Decorazioni adesive - richiesta info" class="project-card neon-border">
+            <img src="sito_viola/vetrine_viola.webp" alt="Mockup adesivi su vetrina o auto" loading="lazy">
+            <p data-i18n="card3_title">Decorazioni adesive</p>
+          </a>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section id="perche" style="background: transparent; padding: 60px 0; color: #fff;">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll" data-i18n="why_choose_title" style="color: #A78BFA;">Perché sceglierci</h2>
+        <div class="why-cards" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
+          <!-- Target su misura -->
+          <div style="width: 220px; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <h3 data-i18n="why_choose_cards.target_title" style="color: white; font-weight: bold;">Target su misura</h3>
+            <p data-i18n="why_choose_cards.target_text" style="color: #aaa;">Soluzioni per locali, team e brand.</p>
+          </div>
+
+          <!-- Design incluso -->
+          <div style="width: 220px; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <h3 data-i18n="why_choose_cards.design_title" style="color: white; font-weight: bold;">Design incluso</h3>
+            <p data-i18n="why_choose_cards.design_text" style="color: #aaa;">Grafica professionale inclusa in ogni ordine.</p>
+          </div>
+
+          <!-- Contatto diretto -->
+          <div style="width: 220px; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <h3 data-i18n="why_choose_cards.contact_title" style="color: white; font-weight: bold;">Contatto diretto</h3>
+            <p data-i18n="why_choose_cards.contact_text" style="color: #aaa;">Risposte rapide e comunicazione semplice.</p>
+          </div>
+
+          <!-- Qualità & trasparenza -->
+          <div style="width: 220px; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5F4B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3 data-i18n="why_choose_cards.quality_title" style="color: white; font-weight: bold;">Qualità & trasparenza</h3>
+            <p data-i18n="why_choose_cards.quality_text" style="color: #aaa;">Materiali premium e prezzi chiari.</p>
+          </div>
+        </div>
+
+
+        <div id="portfolio" class="portfolio" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+          <!-- Portfolio items -->
+        </div>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio-section">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll" data-i18n="portfolio_title" style="color: #A78BFA;">Portfolio</h2>
+            <p class="portfolio-subtitle" data-i18n="portfolio.subtitle">
+              Alcuni esempi di progetti realizzati per i nostri clienti. <br>
+              (Presto saranno visibili immagini reali).
+            </p>
+            <div class="portfolio-grid">
+              <div class="portfolio-item placeholder">
+                <div class="placeholder-box" data-i18n="portfolio.placeholder">Immagine in arrivo</div>
+                <p class="project-title" data-i18n="portfolio.img1">Logo e vetrina per ristorante</p>
+              </div>
+              <div class="portfolio-item placeholder">
+                <div class="placeholder-box" data-i18n="portfolio.placeholder">Immagine in arrivo</div>
+                <p class="project-title" data-i18n="portfolio.img2">Magliette staff per evento</p>
+              </div>
+              <div class="portfolio-item placeholder">
+                <div class="placeholder-box" data-i18n="portfolio.placeholder">Immagine in arrivo</div>
+                <p class="project-title" data-i18n="portfolio.img3">Packaging personalizzato</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+          <h2 class="section-title" data-translate="testimonials.title">Cosa dicono i clienti</h2>
+
+          <div class="testimonials-grid">
+            <div class="testimonial-item">
+              <blockquote data-translate="testimonials.text1">
+                Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!
+              </blockquote>
+              <p class="client-name" data-translate="testimonials.name1">— Dustin K.</p>
+            </div>
+
+            <div class="testimonial-item">
+              <blockquote data-translate="testimonials.text2">
+                Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben imballato.
+              </blockquote>
+              <p class="client-name" data-translate="testimonials.name2">— Julia K.</p>
+            </div>
+
+            <div class="testimonial-item">
+              <blockquote data-translate="testimonials.text3">
+                Tiziano ci ha aiutato a progettare il logo e l'insegna. Gentile, disponibile e molto professionale.
+              </blockquote>
+              <p class="client-name" data-translate="testimonials.name3">— Daniel B.</p>
+            </div>
+
+            <div class="testimonial-item">
+              <blockquote data-translate="testimonials.text4">
+                Servizio rapido e personalizzato, consigliatissimo!
+              </blockquote>
+              <p class="client-name" data-translate="testimonials.name4">— Martina S.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuratore -->
+        <section id="configuratore" style="padding: 60px 20px; background: transparent; color: #fff; text-align: center;">
+          <h2 class="section-title animate-on-scroll" style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #A78BFA;" data-i18n="config_title">Personalizza la tua maglietta</h2>
+          <p style="font-size: 18px; margin-bottom: 40px;" data-i18n="config_subtitle">Scegli le opzioni e ricevi un prezzo stimato</p>
+
+          <form id="mockup-form" style="max-width: 500px; margin: 0 auto;">
+            <div style="margin-bottom: 20px;">
+              <label for="model" data-i18n="config_model" style="display: block; font-weight: bold; margin-bottom: 5px;">Modello:</label>
+              <select id="model" name="model" style="width: 100%; padding: 10px;">
+                <option value="unisex" data-i18n="config_model_unisex">Unisex</option>
+                <option value="man" data-i18n="config_model_man">Uomo</option>
+                <option value="woman" data-i18n="config_model_woman">Donna</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="color" data-i18n="config_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore maglietta:</label>
+              <select id="color" name="color" style="width: 100%; padding: 10px;">
+                <option value="bianco" data-i18n="config_color_white">Bianco</option>
+                <option value="nero" data-i18n="config_color_black">Nero</option>
+                <option value="rosso" data-i18n="config_color_red">Rosso</option>
+                <option value="blu" data-i18n="config_color_blue">Blu</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="printColor" data-i18n="config_print_color" style="display: block; font-weight: bold; margin-bottom: 5px;">Colore della stampa:</label>
+              <select id="printColor" name="printColor" style="width: 100%; padding: 10px;">
+                <option value="bianco" data-i18n="config_print_color_white">Bianco</option>
+                <option value="nero" data-i18n="config_print_color_black">Nero</option>
+                <option value="oro" data-i18n="config_print_color_gold">Oro</option>
+                <option value="rosso" data-i18n="config_print_color_red">Rosso</option>
+                <option value="multicolore" data-i18n="config_print_color_multicolor">Multicolore</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="printSize" data-i18n="config_size" style="display: block; font-weight: bold; margin-bottom: 5px;">Dimensione stampa:</label>
+              <select id="printSize" name="printSize" style="width: 100%; padding: 10px;">
+                <option value="5x5" data-print-key="5x5"></option>
+                <option value="5x5f+5x5b" data-print-key="5x5f+5x5b"></option>
+                <option value="10x10" data-print-key="10x10"></option>
+                <option value="20x20" data-print-key="20x20"></option>
+                <option value="30x30" data-print-key="30x30"></option>
+                <option value="10x10+10x10" data-print-key="10x10+10x10"></option>
+                <option value="10x10+20x20" data-print-key="10x10+20x20"></option>
+                <option value="10x10+30x30" data-print-key="10x10+30x30"></option>
+                <option value="20x20+10x10" data-print-key="20x20+10x10"></option>
+                <option value="20x20+20x20" data-print-key="20x20+20x20"></option>
+                <option value="20x20+30x30" data-print-key="20x20+30x30"></option>
+                <option value="30x30+10x10" data-print-key="30x30+10x10"></option>
+                <option value="30x30+20x20" data-print-key="30x30+20x20"></option>
+                <option value="30x30+30x30" data-print-key="30x30+30x30"></option>
+                <option value="retro10x10" data-print-key="retro10x10"></option>
+                <option value="retro20x20" data-print-key="retro20x20"></option>
+                <option value="retro30x30" data-print-key="retro30x30"></option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="quantity" data-i18n="config_quantity" style="display: block; font-weight: bold; margin-bottom: 5px;">Quantità:</label>
+              <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 100%; padding: 10px;" />
+            </div>
+
+            <p id="price-estimate" style="font-size: 20px; font-weight: bold; margin: 30px 0 10px;">💶 Prezzo stimato: €0</p>
+            <p style="font-size: 14px; opacity: 0.8;" data-i18n="config_discount_note">📦 Il prezzo può diminuire in base alla quantità ordinata</p>
+            <p id="discount-message" style="font-size: 14px; color: #cccccc; margin-top: 5px;"></p>
+
+            <!-- Bottone per inviare il design via email -->
+            <button type="button" onclick="sendEstimateEmail()" data-i18n="contact-for-design" style="margin-top: 20px; background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+              Contattaci per questo design
+            </button>
+
+          </form>
+        </section>
+
+        <!-- Project Start Section (moved and updated) -->
+        <div style="text-align: center; padding: 40px 20px; background: transparent; color: #fff;">
+          <h2 data-i18n="idea-cta" class="text-center text-white text-3xl font-bold py-10 animate-fade"></h2>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contattami" style="padding: 100px 20px; background: transparent; color: white; text-align: center;">
+          <h2 class="section-title animate-on-scroll" data-i18n="contact_title" style="color: #A78BFA;">Contattaci</h2>
+
+          <!-- Language Switcher del form -->
+          <div id="form-language-switcher" style="margin-bottom: 30px;">
+            <span class="flag-icon" data-lang="it">🇮🇹</span>
+            <span class="flag-icon" data-lang="en">🇬🇧</span>
+            <span class="flag-icon" data-lang="de">🇩🇪</span>
+          </div>
+
+          <!-- Contact Form -->
+          <form id="contact-form" action="https://formspree.io/f/mvgrrlgn" method="POST" onsubmit="handleSubmit(event)" role="form" aria-label="Modulo di contatto">
+            <input type="text" name="name" id="contact-name" placeholder="Il tuo nome" required>
+            <input type="email" name="email" id="contact-email" placeholder="La tua email" required>
+            <textarea name="message" id="contact-message" placeholder="Scrivi il tuo messaggio..." rows="5" required></textarea>
+            <button type="submit" id="contact-submit" style="background: linear-gradient(135deg, #6a3fb4, #8f56d6); color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; margin-top: 10px;">Invia messaggio</button>
+          </form>
+          <div id="form-feedback" aria-live="polite" style="margin-top: 1.5rem; font-size: 1.2rem; color: white; text-align: center;"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social" style="margin-top: 10px;">
+                    <a href="https://www.instagram.com/tis_design_?igsh=MTM4a2xyZTVnZXJzcQ==" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;">Instagram</a>
+                    <a href="https://www.tiktok.com/@tisdesign?_t=ZN-8xJDbCSfVKA&_r=1" target="_blank" rel="noopener noreferrer" style="margin-right: 10px;">TikTok</a>
+                    <a href="https://www.facebook.com/share/1C9zfAvF4S/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </div>
+                <div class="footer-info">
+                    <p data-i18n="footer_copyright">&copy; 2025 TiSDesign - Tiziano Spedicato. Tutti i diritti riservati.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+          <a href="/impressum.html" target="_blank" rel="noopener noreferrer">Note Legali</a>
+          <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
+          <a href="/termini.html" target="_blank" rel="noopener noreferrer">Condizioni di Vendita</a>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TiSDesign",
+      "image": "https://tisdesign.com/images/logo.jpg",
+      "description": "Magliette, gadget e adesivi personalizzati con design gratuito.",
+      "url": "https://tisdesign.com",
+      "telephone": "+49 176 80882922",
+      "email": "info.tisdesign@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "DE"
+      },
+      "priceRange": "€€",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.instagram.com/tis_design_",
+        "https://www.tiktok.com/@tisdesign",
+        "https://www.etsy.com/shop/tisdesign"
+      ]
+    }
+    </script>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(13, 13, 13, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(255, 255, 255, 0.1)';
+            } else {
+                nav.style.background = 'rgba(13, 13, 13, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Language switcher (translations object)
+        const translations = {
+            it: {
+                // Meta tags
+                meta_description: "Dai vita al tuo marchio o alla tua idea con un'identità visiva unica. Progettiamo abbigliamento personalizzato, gadget e decorazioni adesive con design gratuito.",
+                meta_keywords: "magliette personalizzate, gadget personalizzati, decorazioni adesive, design grafico, stampa digitale, abbigliamento personalizzato, merchandising, branding",
+                og_title: "TiSDesign - Dai vita al tuo marchio o alla tua idea con un'identità visiva unica",
+                og_description: "Dai vita al tuo marchio o alla tua idea con un'identità visiva unica. Progettiamo abbigliamento personalizzato, gadget e decorazioni adesive con design gratuito.",
+                twitter_title: "TiSDesign - Dai vita al tuo marchio o alla tua idea con un'identità visiva unica",
+                twitter_description: "Dai vita al tuo marchio o alla tua idea con un'identità visiva unica. Progettiamo abbigliamento personalizzato, gadget e decorazioni adesive con design gratuito.",
+                page_title: "TiSDesign - Dai vita al tuo marchio o alla tua idea con un'identità visiva unica",
+
+                // Navigation
+                logo: "TiSDesign",
+                nav_services: "Servizi",
+                nav_why_us: "Perché Noi",
+                nav_testimonials: "Clienti",
+                nav_contact: "Contatti",
+
+                // Hero Section
+                hero_title: "Your team. Your style. Your brand.",
+                hero_subtitle: "Dai vita al tuo marchio o alla tua idea con un'identità visiva unica",
+                cta_primary: "Start Your Design",
+                cta_secondary: "Contattaci",
+
+                // Services Section
+                home: {
+                    choose: "Scegli il tuo progetto"
+                },
+                services_title: "Cosa facciamo",
+                why_choose_title: "Perché sceglierci",
+                contact_title: "Contattaci",
+
+                // Why Choose Me Section
+                why1_title: "Target su misura",
+                why1_desc: "Soluzioni pensate per locali, piccoli team, brand e associazioni.",
+                why2_title: "Design incluso",
+                why2_desc: "Ogni ordine include grafica professionale gratuita.",
+                why3_title: "Contatto diretto",
+                why3_desc: "Comunicazione semplice, risposta rapida e approccio personale.",
+                why4_title: "Qualità & trasparenza",
+                why4_desc: "Materiali di prima scelta, prezzi chiari e personalizzati.",
+
+                // Project Cards Section
+                project_cards_title: "Scegli il tuo progetto",
+                card1_title: "Magliette personalizzate",
+                card2_title: "Gadget personalizzati",
+                card3_title: "Decorazioni adesive",
+                "idea-cta": "Hai un'idea? Iniziamo a crearla insieme.",
+                "contact-for-quote": "Contattaci per ricevere un preventivo",
+                "contact-for-design": "Contattaci per questo design",
+                "config_discount_note": "📦 Il prezzo può diminuire in base alla quantità ordinata",
+                printSizeOptions: {
+                  "5x5": "Solo fronte (5×5 cm)",
+                  "5x5f+5x5b": "Fronte 5×5 + Retro 5×5",
+                  "10x10": "Solo fronte (10×10 cm)",
+                  "20x20": "Solo fronte (20×20 cm)",
+                  "30x30": "Solo fronte (30×30 cm)",
+                  "10x10+10x10": "Fronte 10×10 + Retro 10×10",
+                  "10x10+20x20": "Fronte 10×10 + Retro 20×20",
+                  "10x10+30x30": "Fronte 10×10 + Retro 30×30",
+                  "20x20+10x10": "Fronte 20×20 + Retro 10×10",
+                  "20x20+20x20": "Fronte 20×20 + Retro 20×20",
+                  "20x20+30x30": "Fronte 20×20 + Retro 30×30",
+                  "30x30+10x10": "Fronte 30×30 + Retro 10×10",
+                  "30x30+20x20": "Fronte 30×30 + Retro 20×20",
+                  "30x30+30x30": "Fronte 30×30 + Retro 30×30",
+                  "retro10x10": "Solo retro (10×10 cm)",
+                  "retro20x20": "Solo retro (20×20 cm)",
+                  "retro30x30": "Solo retro (30×30 cm)"
+                },
+                service1_title: "Abbigliamento personalizzato",
+                service1_desc: "Stampa di alta qualità su magliette, felpe e altri capi personalizzati.",
+                service2_title: "Gadget personalizzati",
+                service2_desc: "Tazze, penne e altri oggetti con il tuo logo.",
+                service3_title: "Decorazioni adesive",
+                service3_desc: "Adesivi personalizzati per vetrine e veicoli.",
+                custom_clothing_title: "Abbigliamento personalizzato",
+                custom_clothing_desc: "Magliette, felpe e altri capi personalizzati.",
+                custom_gadgets_title: "Gadget personalizzati",
+                custom_gadgets_desc: "Tazze, penne e altri oggetti con il tuo logo.",
+                custom_stickers_title: "Decorazioni adesive",
+                custom_stickers_desc: "Vetrine, veicoli e superfici personalizzate.",
+                testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Alcuni esempi di progetti realizzati per i nostri clienti",
+                testimonials_title: "Cosa dicono i clienti",
+                testimonials_subtitle: "Alcune recensioni vere ricevute dai nostri clienti",
+                testimonial1: '"Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!"',
+                testimonial2: '"Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben confezionato."',
+                testimonial3: '"Tiziano ci ha aiutato a creare il logo e l\'insegna. Gentile, disponibile e super professionale."',
+                "why_choose_cards": {
+                    "target_title": "Target su misura",
+                    "target_text": "Soluzioni per locali, team e brand.",
+                    "design_title": "Design incluso",
+                    "design_text": "Grafica professionale inclusa in ogni ordine.",
+                    "contact_title": "Contatto diretto",
+                    "contact_text": "Risposte rapide e comunicazione semplice.",
+                    "quality_title": "Qualità & trasparenza",
+                    "quality_text": "Materiali premium e prezzi chiari."
+                },
+                // Portfolio Section
+                portfolio: {
+                    subtitle: "Alcuni esempi di progetti realizzati per i nostri clienti. (Presto saranno visibili immagini reali).",
+                    img1: "Logo e vetrina per ristorante",
+                    img2: "Magliette staff per evento",
+                    img3: "Packaging personalizzato",
+                    placeholder: "Immagine in arrivo"
+                },
+                testimonials: {
+                    title: "Cosa dicono i clienti",
+                    text1: "Le magliette sono ottime, il design è perfetto e la qualità dei materiali è davvero alta. Lo consiglio!",
+                    name1: "Dustin K.",
+                    text2: "Abbiamo ordinato gadget per il nostro evento: tutto puntuale, curato e ben imballato.",
+                    name2: "Julia K.",
+                    text3: "Tiziano ci ha aiutato a progettare il logo e l'insegna. Gentile, disponibile e molto professionale.",
+                    name3: "Daniel B.",
+                    text4: "Servizio rapido e personalizzato, consigliatissimo!",
+                    name4: "Martina S."
+                }
+            },
+            en: {
+                // Meta tags
+                meta_description: "Bring your brand or idea to life with a unique visual identity. We design custom apparel, gadgets, and adhesive decorations with free design.",
+                meta_keywords: "custom t-shirts, custom gadgets, adhesive decorations, graphic design, digital printing, custom apparel, merchandising, branding",
+                og_title: "TiSDesign - Bring your brand or idea to life with a unique visual identity",
+                og_description: "Bring your brand or idea to life with a unique visual identity. We design custom apparel, gadgets, and adhesive decorations with free design.",
+                twitter_title: "TiSDesign - Bring your brand or idea to life with a unique visual identity",
+                twitter_description: "Bring your brand or idea to life with a unique visual identity. We design custom apparel, gadgets, and adhesive decorations with free design.",
+                page_title: "TiSDesign - Bring your brand or idea to life with a unique visual identity",
+
+                // Navigation
+                logo: "TiSDesign",
+                nav_services: "Services",
+                nav_why_us: "Why Us",
+                nav_testimonials: "Clients",
+                nav_contact: "Contact",
+
+                // Hero Section
+                hero_title: "Your team. Your style. Your brand.",
+                hero_subtitle: "Bring your brand or idea to life with a unique visual identity",
+                cta_primary: "Start Your Design",
+                cta_secondary: "Contact Us",
+
+                // Services Section
+                home: {
+                    choose: "Choose your project"
+                },
+                services_title: "What we do",
+                why_choose_title: "Why choose us",
+                contact_title: "Contact Us",
+
+                // Why Choose Me Section
+                why1_title: "Tailored for you",
+                why1_desc: "Solutions for local venues, small teams, clubs and personal brands.",
+                why2_title: "Design included",
+                why2_desc: "Every order includes free professional graphic design.",
+                why3_title: "Direct contact",
+                why3_desc: "Simple communication, fast replies and personal support.",
+                why4_title: "Quality & transparency",
+                why4_desc: "Top materials, clear prices, no surprises.",
+
+                // Project Cards Section
+                project_cards_title: "Choose your project",
+                card1_title: "Custom T-Shirts",
+                card2_title: "Custom Gadgets",
+                card3_title: "Adhesive Decorations",
+                "idea-cta": "Have an idea? Let's build it together.",
+                "contact-for-quote": "Contact us for a quote",
+                "contact-for-design": "Contact us for this design",
+                "config_discount_note": "📦 Price may decrease depending on quantity ordered",
+                printSizeOptions: {
+                  "5x5": "Front only (5×5 cm)",
+                  "5x5f+5x5b": "Front 5×5 + Back 5×5",
+                  "10x10": "Front only (10×10 cm)",
+                  "20x20": "Front only (20×20 cm)",
+                  "30x30": "Front only (30×30 cm)",
+                  "10x10+10x10": "Front 10×10 + Back 10×10",
+                  "10x10+20x20": "Front 10×10 + Back 20×20",
+                  "10x10+30x30": "Front 10×10 + Back 30×30",
+                  "20x20+10x10": "Front 20×20 + Back 10×10",
+                  "20x20+20x20": "Front 20×20 + Back 20×20",
+                  "20x20+30x30": "Front 20×20 + Back 30×30",
+                  "30x30+10x10": "Front 30×30 + Back 10×10",
+                  "30x30+20x20": "Front 30×30 + Back 20×20",
+                  "30x30+30x30": "Front 30×30 + Back 30×30",
+                  "retro10x10": "Back only (10×10 cm)",
+                  "retro20x20": "Back only (20×20 cm)",
+                  "retro30x30": "Back only (30×30 cm)"
+                },
+                service1_title: "Custom Apparel",
+                service1_desc: "High-quality printing on t-shirts, hoodies, and other personalized clothing.",
+                service2_title: "Custom Gadgets",
+                service2_desc: "Mugs, pens and other items with your logo.",
+                service3_title: "Adhesive Decorations",
+                service3_desc: "Custom stickers for windows and vehicles.",
+                custom_clothing_title: "Custom Clothing",
+                custom_clothing_desc: "T-shirts, hoodies and more with your design.",
+                custom_gadgets_title: "Custom Gadgets",
+                custom_gadgets_desc: "Mugs, pens and other items with your logo.",
+                custom_stickers_title: "Custom Stickers",
+                custom_stickers_desc: "Windows, vehicles and other personalized surfaces.",
+                testimonials_subtitle: "Real reviews received from our customers",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Some examples of projects completed for our clients",
+                testimonials_title: "What our clients say",
+                testimonials_subtitle: "Real reviews received from our customers",
+                testimonial1: '"The t-shirts are excellent, the design is perfect, and the material quality is truly high. Highly recommended!"',
+                testimonial2: '"We ordered gadgets for our event: everything was punctual, well made and well packed."',
+                testimonial3: '"Tiziano helped us design the logo and the sign. Kind, helpful and very professional."',
+                "why_choose_cards": {
+                    "target_title": "Tailored targeting",
+                    "target_text": "Solutions for businesses, teams, and brands.",
+                    "design_title": "Design included",
+                    "design_text": "Professional design included in every order.",
+                    "contact_title": "Direct contact",
+                    "contact_text": "Quick replies and easy communication.",
+                    "quality_title": "Quality & transparency",
+                    "quality_text": "Premium materials and clear pricing."
+                },
+                // Portfolio Section
+                portfolio: {
+                    subtitle: "Some examples of projects created for our clients. (Real images coming soon).",
+                    img1: "Restaurant logo and shop window",
+                    img2: "Event staff t-shirts",
+                    img3: "Custom packaging",
+                    placeholder: "Image coming soon"
+                },
+                testimonials: {
+                    title: "What clients say",
+                    text1: "The t-shirts are great, the design is perfect and the material quality is really high. Highly recommended!",
+                    name1: "Dustin K.",
+                    text2: "We ordered gadgets for our event: everything was punctual, well made and well packed.",
+                    name2: "Julia K.",
+                    text3: "Tiziano helped us design the logo and the sign. Kind, helpful and very professional.",
+                    name3: "Daniel B.",
+                    text4: "Fast and personalized service, highly recommended!",
+                    name4: "Martina S."
+                }
+            },
+            de: {
+                // Meta tags
+                meta_description: "Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben.",
+                meta_keywords: "individuelle T-Shirts, personalisierte Gadgets, Klebedekorationen, Grafikdesign, Digitaldruck, personalisierte Kleidung, Merchandising, Branding",
+                og_title: "TiSDesign - Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben",
+                og_description: "Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben. Wir gestalten personalisierte Kleidung, Gadgets und Klebedekorationen mit kostenlosem Design.",
+                twitter_title: "TiSDesign - Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben",
+                twitter_description: "Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben. Wir gestalten personalisierte Kleidung, Gadgets und Klebedekorationen mit kostenlosem Design.",
+                page_title: "TiSDesign - Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben",
+
+                // Navigation
+                logo: "TiSDesign",
+                nav_services: "Dienstleistungen",
+                nav_why_us: "Warum Wir",
+                nav_testimonials: "Kunden",
+                nav_contact: "Kontakt",
+
+                // Hero Section
+                hero_title: "Your team. Your style. Your brand.",
+                hero_subtitle: "Erwecken Sie Ihre Marke oder Idee mit einer einzigartigen visuellen Identität zum Leben",
+                cta_primary: "Start Your Design",
+                cta_secondary: "Kontakt",
+
+                // Services Section
+                home: {
+                    choose: "Wähle dein Projekt"
+                },
+                services_title: "Was wir machen",
+                why_choose_title: "Warum uns wählen",
+                contact_title: "Kontaktieren Sie uns",
+
+                // Why Choose Me Section
+                why1_title: "Individuelle Lösungen",
+                why1_desc: "Für kleine Teams, Vereine, lokale Marken und mehr.",
+                why2_title: "Design inklusive",
+                why2_desc: "Grafikdesign ist bei jeder Bestellung kostenlos dabei.",
+                why3_title: "Direkter Kontakt",
+                why3_desc: "Schnelle Antwortzeiten, persönliche Beratung, direkte Kommunikation.",
+                why4_title: "Qualität & Transparenz",
+                why4_desc: "Hochwertige Materialien, klare Preise, keine Überraschungen.",
+
+                // Project Cards Section
+                project_cards_title: "Wähle dein Projekt",
+                card1_title: "Individuelle T-Shirts",
+                card2_title: "Personalisierte Gadgets",
+                card3_title: "Klebefolien & Aufkleber",
+                "idea-cta": "Hast du eine Idee? Lass sie uns gemeinsam umsetzen.",
+                "contact-for-quote": "Kontaktieren Sie uns für ein Angebot",
+                "contact-for-design": "Kontaktieren Sie uns für dieses Design",
+                "config_discount_note": "📦 Der Preis kann je nach Bestellmenge sinken",
+                "why_choose_cards": {
+                    "target_title": "Zielgruppenorientiert",
+                    "target_text": "Lösungen für Lokale, Teams und Marken.",
+                    "design_title": "Design inklusive",
+                    "design_text": "Professionelle Grafiken bei jeder Bestellung inklusive.",
+                    "contact_title": "Direkter Kontakt",
+                    "contact_text": "Schnelle Antworten und einfache Kommunikation.",
+                    "quality_title": "Qualität & Transparenz",
+                    "quality_text": "Premium-Materialien und transparente Preise."
+                },
+                printSizeOptions: {
+                  "5x5": "Nur vorne (5×5 cm)",
+                  "5x5f+5x5b": "Vorne 5×5 + Hinten 5×5",
+                  "10x10": "Nur vorne (10×10 cm)",
+                  "20x20": "Nur vorne (20×20 cm)",
+                  "30x30": "Nur vorne (30×30 cm)",
+                  "10x10+10x10": "Vorne 10×10 + Hinten 10×10",
+                  "10x10+20x20": "Vorne 10×10 + Hinten 20×20",
+                  "10x10+30x30": "Vorne 10×10 + Hinten 30×30",
+                  "20x20+10x10": "Vorne 20×20 + Hinten 10×10",
+                  "20x20+20x20": "Vorne 20×20 + Hinten 20×20",
+                  "20x20+30x30": "Vorne 20×20 + Hinten 30×30",
+                  "30x30+10x10": "Vorne 30×30 + Hinten 10×10",
+                  "30x30+20x20": "Vorne 30×30 + Hinten 20×20",
+                  "30x30+30x30": "Vorne 30×30 + Hinten 30×30",
+                  "retro10x10": "Nur hinten (10×10 cm)",
+                  "retro20x20": "Nur hinten (20×20 cm)",
+                  "retro30x30": "Nur hinten (30×30 cm)"
+                },
+                service1_title: "Personalisierte Kleidung",
+                service1_desc: "Hochwertiger Druck auf T-Shirts, Hoodies und anderen Kleidungsstücken.",
+                service2_title: "Personalisierte Gadgets",
+                service2_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
+                service3_title: "Klebebeschriftungen",
+                service3_desc: "Maßgeschneiderte Aufkleber für Fenster und Fahrzeuge.",
+                custom_clothing_title: "Personalisierte Kleidung",
+                custom_clothing_desc: "T-Shirts, Hoodies und mehr mit deinem Design.",
+                custom_gadgets_title: "Personalisierte Gadgets",
+                custom_gadgets_desc: "Tassen, Stifte und andere Artikel mit deinem Logo.",
+                custom_stickers_title: "Klebefolien & Aufkleber",
+                custom_stickers_desc: "Fenster, Fahrzeuge und andere personalisierte Oberflächen.",
+                testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
+                portfolio_title: "Portfolio",
+                portfolio_subtitle: "Einige Beispiele von Projekten, die wir für unsere Kunden umgesetzt haben",
+                testimonials_title: "Was unsere Kunden sagen",
+                testimonials_subtitle: "Echte Bewertungen von unseren Kunden",
+                testimonial1: '"Die T-Shirts sind großartig, das Design ist perfekt und die Materialqualität ist wirklich hoch. Sehr zu empfehlen!"',
+                testimonial2: '"Wir haben Gadgets für unsere Veranstaltung bestellt: alles war pünktlich, sorgfältig und gut verpackt."',
+                testimonial3: '"Tiziano hat uns geholfen, das Logo und das Schild zu entwerfen. Freundlich, hilfsbereit und sehr professionell."',
+                "why_choose_cards": {
+                    "target_title": "Zielgerichtete Lösungen",
+                    "target_text": "Lösungen für Lokale, Teams und Marken.",
+                    "design_title": "Design inklusive",
+                    "design_text": "Professionelles Design in jeder Bestellung enthalten.",
+                    "contact_title": "Direkter Kontakt",
+                    "contact_text": "Schnelle Antworten und einfache Kommunikation.",
+                    "quality_title": "Qualität & Transparenz",
+                    "quality_text": "Hochwertige Materialien und transparente Preise."
+                },
+                // Portfolio Section
+                portfolio: {
+                    subtitle: "Einige Beispiele von Projekten für unsere Kunden. (Echte Bilder folgen in Kürze).",
+                    img1: "Logo und Schaufenster für Restaurant",
+                    img2: "T-Shirts für Event-Personal",
+                    img3: "Individuelle Verpackung",
+                    placeholder: "Bild folgt in Kürze"
+                },
+                testimonials: {
+                    title: "Was unsere Kunden sagen",
+                    text1: "Die T-Shirts sind großartig, das Design ist perfekt und die Materialqualität ist wirklich hoch. Sehr zu empfehlen!",
+                    name1: "Dustin K.",
+                    text2: "Wir haben Gadgets für unsere Veranstaltung bestellt: alles war pünktlich, sorgfältig und gut verpackt.",
+                    name2: "Julia K.",
+                    text3: "Tiziano hat uns geholfen, das Logo und das Schild zu entwerfen. Freundlich, hilfsbereit und sehr professionell.",
+                    name3: "Daniel B.",
+                    text4: "Schneller und individueller Service, sehr zu empfehlen!",
+                    name4: "Martina S."
+                }
+            }
+        };
+
+        const priceBySize = {
+          "5x5": 12.9,
+          "5x5f+5x5b": 15.9,
+          "10x10": 16.9,
+          "20x20": 20.9,
+          "30x30": 24.9,
+          "10x10+10x10": 19.9,
+          "10x10+20x20": 23.9,
+          "10x10+30x30": 27.9,
+          "20x20+10x10": 23.9,
+          "20x20+20x20": 27.9,
+          "20x20+30x30": 31.9,
+          "30x30+10x10": 27.9,
+          "30x30+20x20": 31.9,
+          "30x30+30x30": 35.9,
+          "retro10x10": 14.9,
+          "retro20x20": 18.9,
+          "retro30x30": 22.9
+        };
+
+        function updateMetaTags(lang) {
+          const meta = translations[lang] || translations.it;
+
+          document.querySelector('title').innerText = meta.page_title;
+
+          document.querySelector('meta[name="description"]').setAttribute("content", meta.meta_description);
+          document.querySelector('meta[name="keywords"]').setAttribute("content", meta.meta_keywords);
+
+          document.querySelector('meta[property="og:title"]').setAttribute("content", meta.og_title);
+          document.querySelector('meta[property="og:description"]').setAttribute("content", meta.og_description);
+
+          document.querySelector('meta[property="twitter:title"]').setAttribute("content", meta.twitter_title);
+          document.querySelector('meta[property="twitter:description"]').setAttribute("content", meta.twitter_description);
+        }
+
+        const translations_config = {
+          it: {
+            config_title: "Personalizza la tua maglietta",
+            config_subtitle: "Scegli le opzioni e ricevi un prezzo stimato",
+            config_model: "Modello",
+            config_color: "Colore maglietta",
+            config_print_color: "Colore della stampa",
+            config_size: "Dimensione stampa",
+            config_quantity: "Quantità",
+            price_label: "💶 Prezzo stimato:",
+            config_discount_msg: "🎉 Sconto del {percent}% attivato"
+          },
+          en: {
+            config_title: "Customize your T-shirt",
+            config_subtitle: "Choose the options and get an estimated price",
+            config_model: "Model",
+            config_color: "T-shirt color",
+            config_print_color: "Print color",
+            config_size: "Print size",
+            config_quantity: "Quantity",
+            price_label: "💶 Estimated price:",
+            config_discount_msg: "🎉 {percent}% discount applied"
+          },
+          de: {
+            config_title: "Gestalte dein T-Shirt",
+            config_subtitle: "Wähle die Optionen und erhalte einen geschätzten Preis",
+            config_model: "Modell",
+            config_color: "T-Shirt-Farbe",
+            config_print_color: "Druckfarbe",
+            config_size: "Druckgröße",
+            config_quantity: "Menge",
+            price_label: "💶 Geschätzter Preis:",
+            config_discount_msg: "🎉 {percent}% Rabatt aktiviert"
+          }
+        };
+
+        const formTranslations = {
+            it: {
+                contact_name_placeholder: "Il tuo nome",
+                contact_email_placeholder: "La tua email",
+                contact_message_placeholder: "Scrivi il tuo messaggio...",
+                contact_submit_button: "Invia messaggio",
+                success_message: "Grazie per il tuo messaggio! Ti risponderemo al più presto.",
+                error_message: "C'è stato un problema durante l'invio del messaggio. Riprova più tardi."
+            },
+            en: {
+                contact_name_placeholder: "Your name",
+                contact_email_placeholder: "Your email",
+                contact_message_placeholder: "Write your message...",
+                contact_submit_button: "Send message",
+                success_message: "Thank you for your message! We'll get back to you as soon as possible.",
+                error_message: "There was a problem sending your message. Please try again later."
+            },
+            de: {
+                contact_name_placeholder: "Ihr Name",
+                contact_email_placeholder: "Ihre E-Mail",
+                contact_message_placeholder: "Schreiben Sie Ihre Nachricht...",
+                contact_submit_button: "Nachricht senden",
+                success_message: "Vielen Dank für Ihre Nachricht! Wir melden uns so schnell wie möglich bei Ihnen.",
+                error_message: "Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte versuchen Sie es später erneut."
+            }
+        };
+
+        function updateEstimate() {
+          const lang = localStorage.getItem('selectedLang') || 'en';
+          const size = document.getElementById('printSize').value;
+          const quantity = parseInt(document.getElementById('quantity').value) || 1;
+          const basePrice = priceBySize[size] || 0;
+
+          let discount = 0;
+          if (quantity >= 5 && quantity < 10) discount = 0.10;
+          else if (quantity >= 10 && quantity < 20) discount = 0.15;
+          else if (quantity >= 20 && quantity < 50) discount = 0.20;
+          else if (quantity >= 50 && quantity < 100) discount = 0.25;
+          else if (quantity >= 100) discount = 0.30;
+
+          const discountedPrice = (basePrice * (1 - discount)).toFixed(2);
+          const total = (discountedPrice * quantity).toFixed(2);
+
+          const label = translations_config[lang]?.price_label || translations_config.en.price_label;
+
+          const priceHtml = discount > 0
+            ? `<span style="text-decoration: line-through; opacity: 0.6;">€${basePrice.toFixed(2)}</span> 
+               <span style="color: #6a3fb4; font-weight: bold;">€${discountedPrice}</span> 
+               (x${quantity}) = €${total}`
+            : `${basePrice.toFixed(2)} (x${quantity}) = €${total}`;
+
+          document.getElementById('price-estimate').innerHTML = `${label} ${priceHtml}`;
+
+          const discountMsgEl = document.getElementById('discount-message');
+          if (discount > 0) {
+            const percent = Math.round(discount * 100);
+            const configTranslations = translations_config[lang] || translations_config.en;
+            const msgTemplate = configTranslations.config_discount_msg || "{percent}% discount applied";
+            discountMsgEl.innerText = msgTemplate.replace("{percent}", percent);
+          } else {
+            discountMsgEl.innerText = '';
+          }
+        }
+
+        function sendEstimateEmail() {
+            const model = document.getElementById('model').value;
+            const color = document.getElementById('color').value;
+            const printColor = document.getElementById('printColor').value;
+            const printSize = document.getElementById('printSize').value;
+            const price = priceBySize[printSize] || 0;
+
+            const lang = localStorage.getItem('selectedLang') || 'en';
+            let subject, body;
+            
+            if (lang === 'it') {
+                subject = "Richiesta configurazione maglietta";
+                body = `Modello: ${model}\nColore maglietta: ${color}\nColore della stampa: ${printColor}\nDimensione stampa: ${printSize}\nPrezzo stimato: €${price}`;
+            } else if (lang === 'de') {
+                subject = "T-Shirt Konfigurationsanfrage";
+                body = `Modell: ${model}\nT-Shirt-Farbe: ${color}\nDruckfarbe: ${printColor}\nDruckgröße: ${printSize}\nGeschätzter Preis: €${price}`;
+            } else {
+                subject = "T-shirt configuration request";
+                body = `Model: ${model}\nT-shirt color: ${color}\nPrint color: ${printColor}\nPrint size: ${printSize}\nEstimated price: €${price}`;
+            }
+
+            window.location.href = `mailto:info.tisdesign@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function updateConfiguratorTexts(lang) {
+            const configTranslations = translations_config[lang] || translations_config.en;
+            if (!configTranslations) {
+                console.warn("⚠️ Traduzioni configuratore mancanti per lingua:", lang);
+                return;
+            }
+
+            // Aggiorna tutte le label e gli elementi con data-i18n all'interno del configuratore
+            const configurator = document.getElementById('mockup-form')?.parentElement;
+            if (configurator) {
+                configurator.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (key && configTranslations[key]) {
+                        el.textContent = configTranslations[key];
+                    }
+                });
+            }
+
+            // Aggiorna le option delle select (model, color, printColor)
+            const modelSelect = document.getElementById('model');
+            if (modelSelect) {
+                Array.from(modelSelect.options).forEach(option => {
+                    const key = option.getAttribute('data-i18n');
+                    if (key && configTranslations[key]) {
+                        option.textContent = configTranslations[key];
+                    }
+                });
+            }
+
+            const colorSelect = document.getElementById('color');
+            if (colorSelect) {
+                Array.from(colorSelect.options).forEach(option => {
+                    const key = option.getAttribute('data-i18n');
+                    if (key && configTranslations[key]) {
+                        option.textContent = configTranslations[key];
+                    }
+                });
+            }
+
+            const printColorSelect = document.getElementById('printColor');
+            if (printColorSelect) {
+                Array.from(printColorSelect.options).forEach(option => {
+                    const key = option.getAttribute('data-i18n');
+                    if (key && configTranslations[key]) {
+                        option.textContent = configTranslations[key];
+                    }
+                });
+            }
+
+            // Aggiorna le option della select printSize
+            const printSizeTranslations = translations[lang]?.printSizeOptions || translations.en.printSizeOptions;
+            const printSizeSelect = document.getElementById('printSize');
+            if (printSizeSelect) {
+                Array.from(printSizeSelect.options).forEach(option => {
+                    const key = option.getAttribute('data-print-key');
+                    if (key && printSizeTranslations[key]) {
+                        option.textContent = `${printSizeTranslations[key]} – €${priceBySize[key].toFixed(2)}`;
+                    }
+                });
+            }
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLang', lang);
+            document.documentElement.setAttribute('lang', lang);
+
+            // Aggiorna tutti i testi con data-i18n (supporto per chiavi annidate)
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+              const key = el.getAttribute('data-i18n');
+              const parts = key.split('.');
+              let value = translations[lang];
+
+              for (let part of parts) {
+                if (value && part in value) {
+                  value = value[part];
+                } else {
+                  value = null;
+                  break;
+                }
+              }
+
+              if (value !== null && value !== undefined) {
+                el.innerHTML = value;
+              }
+            });
+
+            // Aggiorna flag nav
+            document.querySelectorAll('.flag-icon').forEach(flag => {
+              flag.classList.remove('active');
+            });
+            const navFlag = document.querySelector(`.flag-icon[data-lang="${lang}"]`);
+            if (navFlag) navFlag.classList.add('active');
+
+            // Aggiorna flag form
+            document.querySelectorAll('.form-lang').forEach(flag => {
+              flag.classList.remove('active');
+            });
+            const formFlag = document.querySelector(`.form-lang[data-lang="${lang}"]`);
+            if (formFlag) formFlag.classList.add('active');
+
+            // Aggiorna form contatti e configuratore
+            if (typeof updateContactForm === 'function') updateContactForm(lang);
+            if (typeof updateConfiguratorTexts === 'function') updateConfiguratorTexts(lang);
+            if (typeof updateEstimate === 'function') updateEstimate();
+            if (typeof updateMetaTags === 'function') updateMetaTags(lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLang') || 'it';
+            setLanguage(savedLang);
+
+            // Listener flag nav con animazione
+            document.querySelectorAll('.flag-icon').forEach(flag => {
+              flag.addEventListener('click', event => {
+                const clickedFlag = event.target;
+                clickedFlag.classList.add('clicked-animation');
+                setTimeout(() => clickedFlag.classList.remove('clicked-animation'), 200);
+                setLanguage(clickedFlag.dataset.lang);
+              });
+            });
+            // Listener flag form
+            document.querySelectorAll('.form-lang').forEach(flag => {
+              flag.addEventListener('click', () => {
+                setLanguage(flag.dataset.lang);
+              });
+            });
+            // Inizializza configuratore
+            if (typeof updateConfiguratorTexts === 'function') updateConfiguratorTexts(savedLang);
+            if (typeof updateEstimate === 'function') updateEstimate();
+            // ...altre inizializzazioni se servono...
+        });
+
+        function updateServiceCards(lang) {
+          if (!translations[lang]) return;
+
+          document.querySelector('[data-i18n="service1_title"]').textContent = translations[lang].service1_title;
+          document.querySelector('[data-i18n="service1_desc"]').textContent = translations[lang].service1_desc;
+          document.querySelector('[data-i18n="service2_title"]').textContent = translations[lang].service2_title;
+          document.querySelector('[data-i18n="service2_desc"]').textContent = translations[lang].service2_desc;
+          document.querySelector('[data-i18n="service3_title"]').textContent = translations[lang].service3_title;
+          document.querySelector('[data-i18n="service3_desc"]').textContent = translations[lang].service3_desc;
+        }
+
+        function updateContactForm(lang) {
+            if (!formTranslations[lang]) return;
+            document.getElementById("contact-name").placeholder = formTranslations[lang].contact_name_placeholder;
+            document.getElementById("contact-email").placeholder = formTranslations[lang].contact_email_placeholder;
+            document.getElementById("contact-message").placeholder = formTranslations[lang].contact_message_placeholder;
+            document.getElementById("contact-submit").textContent = formTranslations[lang].contact_submit_button;
+        }
+
+        const originalSetLanguage = window.setLanguage;
+        window.setLanguage = function(lang) {
+            originalSetLanguage(lang);
+            updateContactForm(lang);
+        };
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.remove();
+                    const lang = localStorage.getItem('selectedLang') || 'en';
+                    const messages = formTranslations[lang];
+                    document.getElementById('form-feedback').innerText = messages.success_message;
+                } else {
+                    const lang = localStorage.getItem('selectedLang') || 'en';
+                    const messages = formTranslations[lang];
+                    alert(messages.error_message);
+                }
+            }).catch(error => {
+                const lang = localStorage.getItem('selectedLang') || 'en';
+                const messages = formTranslations[lang];
+                alert(messages.error_message);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize configurator texts
+            const initialLang = localStorage.getItem('selectedLang') || 'en';
+            updateConfiguratorTexts(initialLang);
+            document.getElementById('mockup-form').addEventListener('change', updateEstimate);
+            updateEstimate();
+            
+            // Set initial language based on localStorage or default to Italian
+            const savedLang = localStorage.getItem('selectedLang');
+            setLanguage(savedLang || 'it');
+            updateContactForm(savedLang || 'it'); // Ensure form is updated on initial load
+
+            const langFlags = document.querySelectorAll('.flag-icon');
+            langFlags.forEach(flag => {
+                flag.addEventListener('click', (event) => {
+                    const clickedFlag = event.target;
+                    clickedFlag.classList.add('clicked-animation');
+                    setTimeout(() => {
+                        clickedFlag.classList.remove('clicked-animation');
+                    }, 200); // Animation duration
+                    setLanguage(clickedFlag.dataset.lang);
+                });
+            });
+
+            document.querySelectorAll('.form-lang').forEach(flag => {
+                flag.addEventListener('click', () => {
+                  const lang = flag.dataset.lang;
+                  setLanguage(lang);
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation classes
+            const heroElements = document.querySelectorAll('.hero .animate-fade-in, .hero .animate-scale');
+            heroElements.forEach(el => {
+                setTimeout(() => {
+                    el.classList.add('animate-in');
+                }, 300); // Small delay for smooth loading
+            });
+
+            const scrollElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .testimonials .animate-scale, .contact .animate-fade-in, .contact .animate-scale');
+            scrollElements.forEach(el => observer.observe(el));
+
+            // Mobile Menu Functionality
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-menu .nav-links a');
+
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                
+                // Close menu when clicking outside
+            }
+
+            hamburger.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu();
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Fix per mostrare correttamente la frase finale
+        document.querySelector('[data-i18n="idea-cta"]').innerText =
+          translations[localStorage.getItem('selectedLang') || 'it']["idea-cta"];
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const quantityInput = document.querySelector('#mockup-form input[name="quantity"]');
+
+          if (quantityInput) {
+            quantityInput.addEventListener("keydown", function (e) {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                updateEstimate(); // aggiorna il prezzo manualmente
+              }
+            });
+          }
+        });
+
+        function updatePortfolioAndTestimonials(lang) {
+          if (!translations[lang]) return;
+          const t = translations[lang];
+          const el = (key) => document.querySelector(`[data-i18n="${key}"]`);
+          if (el("portfolio_title")) el("portfolio_title").innerHTML = t.portfolio_title;
+          if (el("portfolio_subtitle")) el("portfolio_subtitle").innerHTML = t.portfolio_subtitle;
+          if (el("testimonials_title")) el("testimonials_title").innerHTML = t.testimonials_title;
+          if (el("testimonials_subtitle")) el("testimonials_subtitle").innerHTML = t.testimonials_subtitle;
+        }
+
+        function updateConfiguratorStaticLabels(lang) {
+          const t = translations_config[lang] || translations_config.en;
+          if (!t) return;
+
+          const el = (id) => document.querySelector(`[data-i18n="${id}"]`);
+          if (el("config_title")) el("config_title").innerText = t.config_title;
+          if (el("config_subtitle")) el("config_subtitle").innerText = t.config_subtitle;
+          if (el("config_model")) el("config_model").innerText = t.config_model + ":";
+          if (el("config_color")) el("config_color").innerText = t.config_color + ":";
+          if (el("config_print_color")) el("config_print_color").innerText = t.config_print_color + ":";
+          if (el("config_size")) el("config_size").innerText = t.config_size + ":";
+          if (el("config_quantity")) el("config_quantity").innerText = t.config_quantity;
+        }
+
+        // Funzione setLanguage(lang) se non già presente
+        if (typeof setLanguage !== 'function') {
+          function setLanguage(lang) {
+            localStorage.setItem('selectedLang', lang);
+            document.documentElement.setAttribute('lang', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+              const key = el.getAttribute('data-i18n');
+              if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+              }
+            });
+
+            document.querySelectorAll('.flag-icon').forEach(flag => {
+              flag.classList.remove('active');
+            });
+            const currentFlag = document.querySelector(`.flag-icon[data-lang="${lang}"]`);
+            if (currentFlag) currentFlag.classList.add('active');
+
+            if (typeof updateContactForm === 'function') updateContactForm(lang);
+            if (typeof updateConfiguratorTexts === 'function') updateConfiguratorTexts(lang);
+            if (typeof updateEstimate === 'function') updateEstimate();
+            if (typeof updateMetaTags === 'function') updateMetaTags(lang);
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const defaultLang = localStorage.getItem('selectedLang') || 'it';
+          setLanguage(defaultLang);
+
+          document.querySelectorAll('.flag-icon').forEach(flag => {
+            flag.addEventListener('click', (event) => {
+              const selectedLang = flag.dataset.lang;
+              setLanguage(selectedLang);
+            });
+          });
+        });
+    </script>
+</body>
+</html>
+  
