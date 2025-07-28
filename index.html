@@ -213,9 +213,9 @@
 
         body {
             background-image: url('immagini/bg-neon.jpg');
-            background-repeat: repeat;
+            background-repeat: no-repeat;
             background-position: center top;
-            background-size: 100% auto;
+            background-size: cover;
             background-attachment: fixed;
             background-color: var(--bg-dark);
             z-index: 0;
@@ -241,6 +241,15 @@
 
         /* 📱 MOBILE TYPOGRAPHY & LAYOUT */
         @media (max-width: 768px) {
+            /* 🎨 Mobile background fix */
+            body {
+                background-image: url('immagini/sfondo_mobile.jpg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+
             /* 🍔 Show hamburger menu */
             .hamburger {
                 display: flex;
@@ -276,16 +285,23 @@
             .language-selector {
                 gap: var(--space-xs);
                 padding: var(--space-xs) var(--space-sm);
+                min-width: 120px;
+                justify-content: space-between;
             }
             /* Typography adjustments */
             .hero h1 {
-                font-size: clamp(2rem, 10vw, 3rem);
-                margin-bottom: var(--space-sm);
+                font-size: clamp(3.5rem, 16vw, 6rem);
+                margin-bottom: var(--space-md);
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+                text-align: center;
             }
 
             .hero p {
-                font-size: clamp(0.875rem, 4vw, 1.125rem);
-                margin-bottom: var(--space-md);
+                font-size: clamp(1.2rem, 6vw, 1.8rem);
+                margin-bottom: var(--space-lg);
+                line-height: 1.5;
+                text-align: center;
             }
 
             .section-title {
@@ -330,7 +346,12 @@
                 gap: var(--space-xs);
             }
 
-
+            /* 🎨 Logo mobile optimization */
+            .logo-image {
+                height: 40px;
+                max-width: 120px;
+                filter: brightness(1.2) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+            }
 
             #contact {
                 padding: var(--space-lg) var(--space-sm);
@@ -346,6 +367,19 @@
                 min-width: 48px;
                 padding: var(--space-md) var(--space-lg);
                 font-size: var(--font-size-lg);
+            }
+
+            /* 📝 Enhanced typography for small mobile */
+            .hero h1 {
+                font-size: clamp(4rem, 18vw, 7rem);
+                line-height: 1.1;
+                margin-bottom: var(--space-lg);
+            }
+
+            .hero p {
+                font-size: clamp(1.3rem, 7vw, 2rem);
+                line-height: 1.4;
+                margin-bottom: var(--space-xl);
             }
 
             .lang-emoji {
@@ -379,13 +413,6 @@
             .nav-container {
                 padding: var(--space-sm);
             }
-            .hero h1 {
-                font-size: clamp(1.75rem, 12vw, 2.5rem);
-            }
-
-            .hero p {
-                font-size: clamp(0.8rem, 5vw, 1rem);
-            }
 
             .section-title {
                 font-size: clamp(1.125rem, 7vw, 1.75rem);
@@ -397,8 +424,9 @@
             }
 
             .logo-image {
-                height: 35px;
-                max-width: 100px;
+                height: 40px;
+                max-width: 120px;
+                filter: brightness(1.2) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
             }
         }
 
@@ -637,6 +665,13 @@
             width: 100%;
             height: 100vh;
             background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            transition: left 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
             z-index: 999;
             transition: var(--transition-bezier);
@@ -652,6 +687,7 @@
 
         .mobile-menu.active {
             left: 0;
+            backdrop-filter: blur(20px);
         }
 
         .mobile-menu .nav-links {
@@ -1281,12 +1317,15 @@
             .testimonials-grid {
                 gap: var(--space-sm);
                 padding: 0 var(--space-sm);
+                justify-content: center;
+                align-items: center;
             }
 
             .testimonial-item {
                 width: 100%;
                 max-width: 350px;
                 padding: var(--space-md);
+                margin: 0 auto;
             }
 
             .testimonials-title {
@@ -1296,9 +1335,15 @@
         }
 
         @media (max-width: 480px) {
+            .testimonials-grid {
+                justify-content: center;
+                align-items: center;
+            }
+
             .testimonial-item {
                 max-width: 320px;
                 padding: var(--space-sm);
+                margin: 0 auto;
             }
 
             .testimonial-item blockquote {
@@ -2374,12 +2419,24 @@
                 gap: var(--space-md);
                 padding: var(--space-sm);
                 justify-content: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-behavior: smooth;
+            }
+
+            .project-cards::-webkit-scrollbar {
+                display: none;
             }
 
             .project-card {
                 width: 280px;
                 height: 360px;
                 margin-bottom: 0;
+                scroll-snap-align: center;
+                flex-shrink: 0;
             }
 
             .project-card img {
@@ -2398,11 +2455,23 @@
                 gap: var(--space-sm);
                 padding: var(--space-xs);
                 justify-content: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-behavior: smooth;
+            }
+
+            .project-cards::-webkit-scrollbar {
+                display: none;
             }
 
             .project-card {
                 width: 260px;
                 height: 340px;
+                scroll-snap-align: center;
+                flex-shrink: 0;
             }
 
             .project-card img {
@@ -3982,137 +4051,7 @@
           animation: none !important;
         }
 
-        /* 🧪 TEST FINALE & REFINEMENT (FASE 5.6) --- */
 
-        /* Performance monitoring styles */
-        .performance-indicator {
-          position: fixed;
-          bottom: 20px;
-          left: 20px;
-          background: rgba(0, 0, 0, 0.8);
-          color: white;
-          padding: 8px 12px;
-          border-radius: var(--radius-md);
-          font-size: 12px;
-          z-index: 9999;
-          opacity: 0;
-          transition: opacity 0.3s;
-        }
-
-        .performance-indicator.show {
-          opacity: 1;
-        }
-
-        .performance-indicator.good {
-          border-left: 3px solid #10b981;
-        }
-
-        .performance-indicator.warning {
-          border-left: 3px solid #f59e0b;
-        }
-
-        .performance-indicator.poor {
-          border-left: 3px solid #ef4444;
-        }
-
-        /* Debug mode styles */
-        .debug-mode * {
-          outline: 1px solid rgba(255, 0, 0, 0.1) !important;
-        }
-
-        .debug-mode .project-card,
-        .debug-mode .portfolio-item,
-        .debug-mode .testimonial-item {
-          outline: 2px solid rgba(0, 255, 0, 0.3) !important;
-        }
-
-        .debug-mode .form-group {
-          outline: 2px solid rgba(0, 0, 255, 0.3) !important;
-        }
-
-        /* Accessibility test indicators */
-        .a11y-test {
-          position: relative;
-        }
-
-        .a11y-test::before {
-          content: 'A11Y';
-          position: absolute;
-          top: -10px;
-          right: -10px;
-          background: #3b82f6;
-          color: white;
-          font-size: 10px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          z-index: 1000;
-        }
-
-        /* Loading performance indicator */
-        .loading-performance {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: rgba(0, 0, 0, 0.9);
-          color: white;
-          padding: 20px;
-          border-radius: var(--radius-lg);
-          z-index: 10000;
-          display: none;
-        }
-
-        .loading-performance.show {
-          display: block;
-        }
-
-        /* Error boundary visual indicator */
-        .error-boundary {
-          border: 2px dashed #ef4444;
-          padding: 20px;
-          margin: 20px 0;
-          background: rgba(239, 68, 68, 0.1);
-          border-radius: var(--radius-lg);
-        }
-
-        /* Test mode toggle */
-        .test-mode-toggle {
-          position: fixed;
-          top: 20px;
-          left: 20px;
-          background: var(--accent-primary);
-          color: white;
-          border: none;
-          padding: 8px 12px;
-          border-radius: var(--radius-md);
-          font-size: 12px;
-          cursor: pointer;
-          z-index: 10001;
-          opacity: 0.7;
-          transition: opacity 0.3s;
-        }
-
-        .test-mode-toggle:hover {
-          opacity: 1;
-        }
-
-        /* Responsive test grid */
-        .test-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 20px;
-          padding: 20px;
-          background: rgba(0, 0, 0, 0.05);
-          border-radius: var(--radius-lg);
-          margin: 20px 0;
-        }
-
-        .test-grid-item {
-          background: white;
-          padding: 15px;
-          border-radius: var(--radius-md);
-          border: 1px solid var(--border-color);
-        }
 
         /* Shimmer/glow su cards e testimonials */
         .project-card, .portfolio-item, .testimonial-item {
@@ -4225,12 +4164,14 @@
 
         <!-- Titolo Principale - FOCUS ASSOLUTO -->
         <h1 class="hero-main-title" data-i18n="hero_title">
-          Your team. Your style. Your brand.
+          Your team. Your style.<br>
+          Your brand.
         </h1>
 
         <!-- Sottotitolo - POSIZIONATO PIÙ VICINO AL TITOLO -->
         <p class="hero-subtitle" data-i18n="hero_subtitle">
-          Dai vita al tuo marchio o alla tua idea con un'identità visiva unica
+          Dai vita al tuo marchio o alla tua idea<br>
+          con un'identità visiva unica.
         </p>
 
         <!-- Pulsanti - POSIZIONATI PIÙ VICINI -->
@@ -4491,20 +4432,7 @@
         </div>
     </footer>
 
-    <!-- Toast Container per notifiche -->
-    <div id="toast-container" class="toast-container"></div>
 
-    <!-- Test Mode Toggle -->
-    <button id="test-mode-toggle" class="test-mode-toggle">🧪 Test Mode</button>
-
-    <!-- Performance Indicator -->
-    <div id="performance-indicator" class="performance-indicator"></div>
-
-    <!-- Loading Performance -->
-    <div id="loading-performance" class="loading-performance">
-      <div>Caricamento in corso...</div>
-      <div id="loading-stats"></div>
-    </div>
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -5560,10 +5488,10 @@
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;
                             newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // Nuova versione disponibile
-                                    showToast('info', 'Aggiornamento disponibile', 'Una nuova versione del sito è disponibile. Ricarica la pagina per aggiornare.');
-                                }
+                                                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // Nuova versione disponibile
+                            console.log('TiS Design: Nuova versione disponibile');
+                        }
                             });
                         });
                     })
@@ -5607,39 +5535,7 @@
             });
         }
 
-        // 🚨 TOAST NOTIFICATIONS & ERROR HANDLING (FASE 5.3)
-        function showToast(type, title, message, duration = 5000) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-            
-            const icons = {
-                success: '✅',
-                error: '❌',
-                warning: '⚠️',
-                info: 'ℹ️'
-            };
-            
-            toast.innerHTML = `
-                <div class="toast-icon">${icons[type] || 'ℹ️'}</div>
-                <div class="toast-content">
-                    <div class="toast-title">${title}</div>
-                    <div class="toast-message">${message}</div>
-                </div>
-                <button class="toast-close" onclick="this.parentElement.remove()">✕</button>
-            `;
-            
-            container.appendChild(toast);
-            
-            // Animate in
-            setTimeout(() => toast.classList.add('show'), 100);
-            
-            // Auto remove
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 300);
-            }, duration);
-        }
+
 
         // Form validation
         function validateForm(form) {
@@ -5980,311 +5876,7 @@
             window.addEventListener('scroll', requestTick);
         }
 
-        // 🧪 TEST FINALE & REFINEMENT (FASE 5.6)
-        
-        // Performance monitoring
-        function initPerformanceMonitoring() {
-            const indicator = document.getElementById('performance-indicator');
-            
-            // Monitor page load performance
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    const loadTime = performance.now();
-                    const performanceScore = calculatePerformanceScore(loadTime);
-                    
-                    indicator.textContent = `Performance: ${performanceScore}`;
-                    indicator.classList.add('show', performanceScore);
-                    
-                    // Hide after 5 seconds
-                    setTimeout(() => {
-                        indicator.classList.remove('show');
-                    }, 5000);
-                }, 1000);
-            });
-            
-            // Monitor scroll performance
-            let scrollCount = 0;
-            let lastScrollTime = Date.now();
-            
-            window.addEventListener('scroll', () => {
-                scrollCount++;
-                const now = Date.now();
-                
-                if (now - lastScrollTime > 1000) {
-                    const scrollPerformance = scrollCount > 100 ? 'poor' : scrollCount > 50 ? 'warning' : 'good';
-                    indicator.textContent = `Scroll: ${scrollPerformance}`;
-                    indicator.classList.add('show', scrollPerformance);
-                    
-                    scrollCount = 0;
-                    lastScrollTime = now;
-                    
-                    setTimeout(() => {
-                        indicator.classList.remove('show');
-                    }, 2000);
-                }
-            });
-        }
-        
-        function calculatePerformanceScore(loadTime) {
-            if (loadTime < 2000) return 'good';
-            if (loadTime < 4000) return 'warning';
-            return 'poor';
-        }
-        
-        // Test mode functionality
-        function initTestMode() {
-            const toggle = document.getElementById('test-mode-toggle');
-            let testMode = false;
-            
-            // Nascondi test mode in produzione
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                toggle.style.display = 'none';
-                return;
-            }
-            
-            toggle.addEventListener('click', () => {
-                testMode = !testMode;
-                document.documentElement.classList.toggle('debug-mode', testMode);
-                toggle.textContent = testMode ? '🔧 Debug Mode' : '🧪 Test Mode';
-                
-                if (testMode) {
-                    runAllTests();
-                }
-            });
-        }
-        
-        // Comprehensive testing suite
-        function runAllTests() {
-            console.log('🧪 Running comprehensive tests...');
-            
-            // Test 1: Accessibility
-            testAccessibility();
-            
-            // Test 2: Performance
-            testPerformance();
-            
-            // Test 3: Responsive Design
-            testResponsiveDesign();
-            
-            // Test 4: Form Validation
-            testFormValidation();
-            
-            // Test 5: Error Handling
-            testErrorHandling();
-            
-            // Test 6: Mobile UX
-            testMobileUX();
-            
-            console.log('✅ All tests completed!');
-        }
-        
-        function testAccessibility() {
-            console.log('🔍 Testing accessibility...');
-            
-            // Check for alt attributes
-            const images = document.querySelectorAll('img');
-            const imagesWithoutAlt = Array.from(images).filter(img => !img.alt);
-            
-            if (imagesWithoutAlt.length > 0) {
-                console.warn('⚠️ Images without alt attributes:', imagesWithoutAlt.length);
-            }
-            
-            // Check for ARIA labels
-            const interactiveElements = document.querySelectorAll('button, a, input, textarea, select');
-            const elementsWithoutAria = Array.from(interactiveElements).filter(el => 
-                !el.getAttribute('aria-label') && !el.getAttribute('aria-labelledby')
-            );
-            
-            if (elementsWithoutAria.length > 0) {
-                console.warn('⚠️ Interactive elements without ARIA labels:', elementsWithoutAria.length);
-            }
-            
-            // Check color contrast (basic)
-            const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div');
-            console.log('📊 Color contrast check completed for', textElements.length, 'elements');
-        }
-        
-        function testPerformance() {
-            console.log('⚡ Testing performance...');
-            
-            // Check image optimization
-            const images = document.querySelectorAll('img');
-            const unoptimizedImages = Array.from(images).filter(img => 
-                !img.loading || img.loading !== 'lazy'
-            );
-            
-            if (unoptimizedImages.length > 0) {
-                console.warn('⚠️ Images without lazy loading:', unoptimizedImages.length);
-            }
-            
-            // Check CSS optimization
-            const styleSheets = document.styleSheets;
-            console.log('📊 CSS optimization check completed for', styleSheets.length, 'stylesheets');
-            
-            // Check JavaScript performance
-            const scriptTags = document.querySelectorAll('script');
-            console.log('📊 JavaScript optimization check completed for', scriptTags.length, 'scripts');
-        }
-        
-        function testResponsiveDesign() {
-            console.log('📱 Testing responsive design...');
-            
-            // Check viewport meta tag
-            const viewport = document.querySelector('meta[name="viewport"]');
-            if (!viewport) {
-                console.error('❌ Missing viewport meta tag');
-            } else {
-                console.log('✅ Viewport meta tag found');
-            }
-            
-            // Check responsive images
-            const responsiveImages = document.querySelectorAll('img[srcset], img[sizes]');
-            console.log('📊 Responsive images found:', responsiveImages.length);
-            
-            // Check media queries (basic)
-            console.log('📊 Media queries check completed');
-        }
-        
-        function testFormValidation() {
-            console.log('📝 Testing form validation...');
-            
-            const forms = document.querySelectorAll('form');
-            forms.forEach((form, index) => {
-                const requiredInputs = form.querySelectorAll('[required]');
-                const validationMessages = form.querySelectorAll('.error-message');
-                
-                console.log(`📊 Form ${index + 1}: ${requiredInputs.length} required fields, ${validationMessages.length} validation messages`);
-            });
-        }
-        
-        function testErrorHandling() {
-            console.log('🛡️ Testing error handling...');
-            
-            // Test toast notifications
-            showToast('info', 'Test Mode', 'Error handling test completed');
-            
-            // Test image error handling
-            const images = document.querySelectorAll('img');
-            console.log('📊 Image error handling configured for', images.length, 'images');
-        }
-        
-        function testMobileUX() {
-            console.log('📱 Testing mobile UX...');
-            
-            // Check touch targets
-            const touchElements = document.querySelectorAll('button, a, input, textarea, select');
-            const smallTouchTargets = Array.from(touchElements).filter(el => {
-                const rect = el.getBoundingClientRect();
-                return rect.width < 44 || rect.height < 44;
-            });
-            
-            if (smallTouchTargets.length > 0) {
-                console.warn('⚠️ Elements with small touch targets:', smallTouchTargets.length);
-            }
-            
-            // Check mobile menu
-            const mobileMenu = document.querySelector('.mobile-menu');
-            if (mobileMenu) {
-                console.log('✅ Mobile menu found and configured');
-            }
-            
-            console.log('📊 Mobile UX test completed');
-        }
-        
-        // Error boundary implementation
-        function setupErrorBoundary() {
-            window.addEventListener('error', (event) => {
-                console.error('🚨 Error caught by boundary:', event.error);
-                
-                // Show user-friendly error message
-                showToast('error', 'Errore', 'Si è verificato un errore. La pagina verrà ricaricata.');
-                
-                // Log error details
-                const errorDetails = {
-                    message: event.error.message,
-                    filename: event.filename,
-                    lineno: event.lineno,
-                    colno: event.colno,
-                    stack: event.error.stack
-                };
-                
-                console.log('📊 Error details:', errorDetails);
-                
-                // Send error to analytics if available
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'exception', {
-                        description: event.error.message,
-                        fatal: false
-                    });
-                }
-            });
-            
-            // Handle unhandled promise rejections
-            window.addEventListener('unhandledrejection', (event) => {
-                console.error('🚨 Unhandled promise rejection:', event.reason);
-                showToast('error', 'Errore', 'Si è verificato un errore di comunicazione.');
-                
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'exception', {
-                        description: 'Unhandled promise rejection',
-                        fatal: false
-                    });
-                }
-            });
-        }
-        
-        // Final optimization check
-        function runFinalOptimizations() {
-            console.log('🔧 Running final optimizations...');
-            
-            // Remove any console.log statements in production
-            if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                console.log = () => {};
-                console.warn = () => {};
-                console.error = () => {};
-            }
-            
-            // Optimize images loading
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                if (!img.loading) {
-                    img.loading = 'lazy';
-                }
-                // Add decoding attribute for better performance
-                if (!img.decoding) {
-                    img.decoding = 'async';
-                }
-            });
-            
-            // Optimize CSS animations
-            const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right');
-            animatedElements.forEach(el => {
-                el.style.willChange = 'transform, opacity';
-            });
-            
-            // Preload critical resources
-            const criticalImages = document.querySelectorAll('.hero img, .project-card img');
-            criticalImages.forEach(img => {
-                if (img.src) {
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.href = img.src;
-                    document.head.appendChild(link);
-                }
-            });
-            
-            // Final performance check
-            const performanceMetrics = {
-                domContentLoaded: performance.timing.domContentLoadedEventEnd - performance.timing.domContentLoadedEventStart,
-                loadComplete: performance.timing.loadEventEnd - performance.timing.loadEventStart,
-                totalImages: images.length,
-                totalScripts: document.querySelectorAll('script').length,
-                totalStylesheets: document.styleSheets.length
-            };
-            
-            console.log('📊 Final performance metrics:', performanceMetrics);
-        }
+
 
         // 🚀 PWA INSTALLATION HANDLER
         let deferredPrompt;
@@ -6293,43 +5885,53 @@
             e.preventDefault();
             deferredPrompt = e;
             
-            // Mostra banner di installazione
-            showToast('info', 'Installa TiS Design', 'Installa la nostra app per un\'esperienza migliore!', 10000);
+            console.log('TiS Design: PWA installabile');
             
-            // Aggiungi pulsante di installazione se necessario
-            const installButton = document.createElement('button');
-            installButton.textContent = 'Installa App';
-            installButton.className = 'install-button';
-            installButton.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background: linear-gradient(135deg, #9333ea, #a855f7);
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 25px;
-                cursor: pointer;
-                z-index: 1000;
-                font-weight: 600;
-                box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
-                transition: all 0.3s ease;
-            `;
-            
-            installButton.addEventListener('click', () => {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('TiS Design: App installata con successo!');
-                        showToast('success', 'App installata!', 'TiS Design è ora installata sul tuo dispositivo.');
-                    }
-                    deferredPrompt = null;
-                    installButton.remove();
-                });
-            });
-            
-            document.body.appendChild(installButton);
+
         });
+
+        // 🔄 INFINITE SCROLL PER PROJECT CARDS
+        function initInfiniteScroll() {
+            const projectCards = document.querySelector('.project-cards');
+            if (!projectCards) return;
+
+            // Clona le carte per creare l'effetto infinito
+            const originalCards = Array.from(projectCards.children);
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                projectCards.appendChild(clone);
+            });
+
+            // Auto-scroll su mobile
+            if (window.innerWidth <= 768) {
+                let scrollDirection = 1;
+                let scrollSpeed = 2;
+                let isScrolling = true;
+                
+                // Pausa scroll quando l'utente tocca
+                projectCards.addEventListener('touchstart', () => {
+                    isScrolling = false;
+                });
+                
+                projectCards.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        isScrolling = true;
+                    }, 2000);
+                });
+                
+                setInterval(() => {
+                    if (!isScrolling) return;
+                    
+                    if (projectCards.scrollLeft >= projectCards.scrollWidth - projectCards.clientWidth - 10) {
+                        scrollDirection = -1;
+                    } else if (projectCards.scrollLeft <= 10) {
+                        scrollDirection = 1;
+                    }
+                    
+                    projectCards.scrollLeft += scrollSpeed * scrollDirection;
+                }, 30);
+            }
+        }
 
         // Inizializzazione completa del sito
         document.addEventListener('DOMContentLoaded', () => {
@@ -6393,11 +5995,8 @@
             enhanceMobileNavigation();
             optimizeMobileScroll();
             
-            // 🧪 Inizializza test e monitoring
-            initPerformanceMonitoring();
-            initTestMode();
-            setupErrorBoundary();
-            runFinalOptimizations();
+            // 🔄 Inizializza infinite scroll
+            initInfiniteScroll();
             
             // Inizializza configuratore
             const mockupForm = document.getElementById('mockup-form');
