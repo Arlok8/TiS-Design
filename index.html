@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     
     <!-- Favicon (Sostituisci l'URL con il tuo logo reale) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚫</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -743,9 +743,12 @@
                 resultBox.innerHTML = result.replace(/```html/g, '').replace(/```/g, '');
                 
                 btn.disabled = false; btn.innerText = originalBtnText;
-                setTimeout(() => resultBox.classList.remove('ai-glow'), 2000);
-            }
-        };
-    </script>
+                setTimeout(() => { titleEl.classList.remove('ai-glow'); subtitleEl.classList.remove('ai-glow'); }, 2000);
+        }
+    };
+
+    // Aggiungi questa riga per forzare il tedesco all'avvio!
+    app.changeLanguage('de');
+</script>
 </body>
 </html>
