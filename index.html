@@ -79,7 +79,7 @@
                 </div>
                 
                 <nav class="hidden md:flex space-x-8 items-center">
-                    <button onclick="app.navigate('home')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="home" data-i18n="nav_about">Chi Siamo</button>
+                    <button onclick="app.navigate('about')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="about" data-i18n="nav_about">Chi Siamo</button>
                     <button onclick="app.navigate('services')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="services" data-i18n="nav_services">Servizi</button>
                     <button onclick="app.navigate('shop')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="shop" data-i18n="nav_shop">Shop</button>
                 </nav>
@@ -100,11 +100,11 @@
         </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-zinc-950 p-8 flex flex-col items-center justify-center gap-8">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-zinc-950 p-8 flex flex-col items-center justify-center gap-8 backdrop-blur-xl">
         <button class="absolute top-8 right-8 text-white p-2" onclick="app.toggleMobileMenu()">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        <button onclick="app.navigate('home'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_about">Chi Siamo</button>
+        <button onclick="app.navigate('about'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_about">Chi Siamo</button>
         <button onclick="app.navigate('services'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_services">Servizi</button>
         <button onclick="app.navigate('shop'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_shop">Shop</button>
         
@@ -119,11 +119,16 @@
 
     <main id="app-content" class="flex-grow flex flex-col pt-24">
 
-        <section id="view-home" class="view-section active flex-grow">
-            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center flex flex-col items-center">
-                <div class="relative z-10 w-full flex flex-col items-center">
+        <section id="view-home" class="view-section active flex-grow relative">
+            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center flex flex-col items-center z-10">
+                <div class="relative w-full flex flex-col items-center">
+                    
+                    <!-- Sfondo di luce ancorato ESATTAMENTE dietro il titolo -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/30 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/3 w-[400px] h-[400px] bg-indigo-500/20 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-[10px] uppercase tracking-widest font-bold text-zinc-300 mb-8">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Berlin / Stuttgart based
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Stuttgart based
                     </div>
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-gradient mb-6 leading-tight" data-i18n="hero_title">
                         Design Creativo e<br>Merch Premium
@@ -181,7 +186,6 @@
                 </div>
             </div>
 
-            <!-- COMPACT SPLIT CARDS (Sistemate le dimensioni) -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div onclick="app.navigate('services')" class="glass-panel rounded-[2rem] p-8 md:p-10 cursor-pointer group transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
@@ -255,6 +259,33 @@
             <div class="py-24 text-center border-t border-white/5">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white tracking-tight" data-i18n="home_cta_title">Idee im Kopf? Lass uns darüber sprechen.</h2>
                 <button onclick="app.navigate('contact')" class="bg-white text-black px-10 py-5 rounded-full text-base font-bold hover:bg-zinc-200 transition-colors shadow-xl" data-i18n="home_cta_btn">Contattaci</button>
+            </div>
+        </section>
+
+        <!-- SEZIONE: ABOUT US / CHI SIAMO -->
+        <section id="view-about" class="view-section flex-grow pt-24 pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-white leading-tight" data-i18n="about_title">La Nostra Visione.</h1>
+                    <p class="text-lg text-zinc-400 max-w-2xl mx-auto" data-i18n="about_subtitle">Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="aspect-square rounded-[3rem] glass-panel flex items-center justify-center overflow-hidden border border-white/5 relative shadow-2xl">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent pointer-events-none"></div>
+                         <i data-lucide="users" class="w-32 h-32 text-white/20"></i>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="glass-panel p-8 md:p-10 rounded-3xl border-l-4 border-l-blue-500 relative overflow-hidden">
+                            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="about_mission_title">La Mission</h3>
+                            <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_mission_desc">Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e streetwear di altissima qualità.</p>
+                        </div>
+                        <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden">
+                            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="about_who_title">Chi c'è dietro</h3>
+                            <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_who_desc">Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Siamo pronti a portare il tuo progetto al livello successivo.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -429,6 +460,7 @@
             </div>
         </section>
 
+        <!-- PRODUCT DETAIL -->
         <section id="view-product" class="view-section flex-grow pt-8 pb-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <button onclick="app.navigate('shop')" class="text-xs font-bold text-zinc-500 hover:text-white mb-12 flex items-center gap-2 uppercase tracking-widest transition-colors">
@@ -512,7 +544,7 @@
                             </div>
                             <div class="space-y-3">
                                 <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="leaf" class="w-5 h-5 text-zinc-400"></i></div>
-                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_eco_title">100% Organico</p>
+                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_eco_title">Cotone Premium</p>
                             </div>
                         </div>
                     </div>
@@ -545,14 +577,13 @@
                                     </div>
                                     <div class="flex items-center gap-4 text-zinc-400 text-sm">
                                         <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i></div>
-                                        Berlin & Stuttgart
+                                        Stuttgart
                                     </div>
                                 </div>
                             </div>
                             <div class="pt-10 border-t border-white/10">
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-6" data-i18n="contact_social">Social</p>
                                 <div class="flex gap-4">
-                                    <!-- Inseriti SVG esatti per i loghi social al posto di lucide generici -->
                                     <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                                     </a>
@@ -615,7 +646,6 @@
                 </div>
             </div>
             
-            <!-- FAQ DISTANZIATE -->
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 mt-16 border-t border-white/5 pb-24">
                 <div class="text-center mb-12">
                     <h3 class="text-2xl font-bold text-white" data-i18n="faq_title">Domande Frequenti</h3>
@@ -708,7 +738,8 @@
                 form_submit: "Invia Richiesta", footer_privacy: "Privacy Policy", footer_terms: "Termini e Condizioni", footer_impressum: "Impressum",
                 cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
                 form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
-                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore."
+                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.",
+                about_title: "La Nostra Visione.", about_subtitle: "Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.", about_mission_title: "La Mission", about_mission_desc: "Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e streetwear di altissima qualità.", about_who_title: "Chi c'è dietro", about_who_desc: "Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Siamo pronti a portare il tuo progetto al livello successivo."
             },
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
@@ -736,7 +767,8 @@
                 form_submit: "Send Request", footer_privacy: "Privacy Policy", footer_terms: "Terms and Conditions", footer_impressum: "Impressum",
                 cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
                 form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
-                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error."
+                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.",
+                about_title: "Our Vision.", about_subtitle: "We are TiSDesign, blending creativity and streetwear to elevate your brand.", about_mission_title: "Our Mission", about_mission_desc: "We don't just create graphics, we build identities. We shape your ideas with clean, impactful design and premium streetwear.", about_who_title: "Who we are", about_who_desc: "Based in Stuttgart, we combine design rigor with the energy of urban culture. Ready to take your project to the next level."
             },
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
@@ -764,7 +796,8 @@
                 form_submit: "Anfrage Senden", footer_privacy: "Datenschutzerklärung", footer_terms: "AGB", footer_impressum: "Impressum",
                 cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
                 form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
-                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler."
+                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.",
+                about_title: "Unsere Vision.", about_subtitle: "Wir sind TiSDesign. Wir verbinden Kreativität und Streetwear, um deine Marke hervorzuheben.", about_mission_title: "Unsere Mission", about_mission_desc: "Wir entwerfen nicht nur Grafiken, wir bauen Identitäten. Wir geben deinen Ideen Form mit klarem, ausdrucksstarkem Design und Premium-Streetwear.", about_who_title: "Wer wir sind", about_who_desc: "Mit Sitz in Stuttgart verbinden wir Design-Strenge mit der Energie der urbanen Kultur. Bereit, dein Projekt auf die nächste Stufe zu heben."
             }
         };
 
@@ -889,7 +922,6 @@
                 this.chartInitialized = true;
             },
 
-            // --- FUNZIONE GEMINI AGGANCIATA AL TUO VERCEL BACKEND ---
             callGemini: async function(prompt) {
                 let retries = 3, delay = 1000;
                 const t = translations[this.state.currentLang];
