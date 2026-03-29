@@ -8,13 +8,12 @@
     <meta name="description" content="Agenzia di design creativo e streetwear personalizzato basata a Berlino e Stoccarda. Eleva il tuo brand.">
     <meta property="og:title" content="TiSDesign | Premium Merch & Digital Studio">
     <meta property="og:description" content="Design Creativo e Merch Premium. Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/09090b/ffffff?text=TiSDesign+Preview">
-    <meta property="og:type" content="website">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2318181b%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22%23ffffff%22 font-family=%22sans-serif%22 font-weight=%22bold%22>TD</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -29,397 +28,486 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #f4f4f5; }
+        /* Sfondo e Testo */
+        html, body { background-color: #09090b !important; color: #f4f4f5 !important; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
         .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 300px; }
-        .view-section { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .view-section { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
         .view-section.active { display: block; opacity: 1; }
-        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .nav-link.active { color: #ffffff; font-weight: 600; text-shadow: 0 0 10px rgba(255,255,255,0.5); border-bottom: 2px solid white; }
-        details > summary::-webkit-details-marker { display: none; }
-        .ai-glow { box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.4); border-color: rgba(255, 255, 255, 0.5) !important; transition: all 0.3s ease; }
+        
+        /* Stile Glassmorphism Moderno */
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
+        
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to bottom, #ffffff, #71717a); }
+        
         .abstract-portfolio { background: linear-gradient(135deg, #18181b 0%, #27272a 100%); transition: transform 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
         .abstract-portfolio:hover { transform: scale(1.02); }
         .abstract-pattern-1 { background: linear-gradient(45deg, #1e3a8a, #4c1d95); }
         .abstract-pattern-2 { background: linear-gradient(45deg, #064e3b, #1e3a8a); }
         .abstract-pattern-3 { background: radial-gradient(circle, #78350f, #7f1d1d); }
-        .tshirt-mock { width: 100%; height: 100%; background-color: #18181b; border-radius: 8px; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); overflow: hidden;}
-        .tshirt-mock::before { content: ''; position: absolute; top: 10%; width: 40%; height: 15%; background-color: #09090b; border-radius: 50% 50% 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none;}
-        .tshirt-mock::after { content: ''; width: 70%; height: 80%; background-color: #09090b; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); }
+        
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
-        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateY(-100%); }
-        #mobile-menu.open { transform: translateY(0); }
-        .quote-box ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #a1a1aa; }
-        .quote-box strong { color: #ffffff; }
-
-        /* Stili aggiuntivi per la Chat IA */
-        .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; margin-bottom: 15px; font-size: 0.9rem; }
+        
+        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateX(100%); }
+        #mobile-menu.open { transform: translateX(0); }
+        
+        details > summary::-webkit-details-marker { display: none; }
+        
+        /* Stili Chat IA */
+        .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; margin-bottom: 15px; font-size: 0.9rem; line-height: 1.5; }
         .chat-bubble-user { background: #2563eb; color: white; border-radius: 20px 20px 0 20px; padding: 10px 15px; margin-bottom: 15px; align-self: flex-end; max-width: 85%; margin-left: auto; font-style: italic; font-size: 0.9rem; }
-        #ai-chat-history h4 { font-weight: 800; margin-bottom: 8px; color: white; text-transform: uppercase; font-size: 0.85rem; }
-        #ai-chat-history ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 10px; color: #a1a1aa; }
         #ai-chat-history strong { color: #ffffff; }
+        #ai-chat-history ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 10px; color: #a1a1aa; }
     </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen selection:bg-white selection:text-black">
+<body class="antialiased flex flex-col min-h-screen bg-[#09090b] text-[#f4f4f5]">
 
-    <header class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[150px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[150px]"></div>
+    </div>
+
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent border-transparent py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="app.navigate('home')">
-                    <span class="text-xl font-bold tracking-tight text-white">TiS<span class="text-zinc-500">Design</span></span>
+            <div class="flex justify-between h-14 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="app.navigate('home')">
+                    <span class="text-2xl font-black tracking-tight text-white">TiS<span class="text-zinc-500 group-hover:text-white transition-colors">Design</span></span>
                 </div>
+                
                 <nav class="hidden md:flex space-x-8 items-center">
+                    <button onclick="app.navigate('home')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="home" data-i18n="nav_about">Chi Siamo</button>
                     <button onclick="app.navigate('services')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="services" data-i18n="nav_services">Servizi</button>
                     <button onclick="app.navigate('shop')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="shop" data-i18n="nav_shop">Shop</button>
-                    <button onclick="app.navigate('home')" class="nav-link text-zinc-400 hover:text-white px-3 py-4 text-sm font-medium transition-all" data-target="home" data-i18n="nav_about">Chi Siamo</button>
                 </nav>
+                
                 <div class="hidden md:flex items-center gap-4">
-                    <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-none text-zinc-400 text-sm focus:ring-0 outline-none cursor-pointer hover:text-white transition-colors">
+                    <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-none text-zinc-400 text-sm focus:ring-0 outline-none cursor-pointer hover:text-white transition-colors font-medium">
                         <option value="de" class="bg-zinc-900" selected>DE</option>
                         <option value="en" class="bg-zinc-900">EN</option>
                         <option value="it" class="bg-zinc-900">IT</option>
                     </select>
-                    <button onclick="app.navigate('contact')" class="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-200 transition-colors" data-i18n="nav_contact_btn">Preventivo</button>
+                    <button onclick="app.navigate('contact')" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors shadow-lg" data-i18n="nav_contact_btn">Preventivo</button>
                 </div>
-                <button class="md:hidden text-white text-2xl focus:outline-none p-2" onclick="app.toggleMobileMenu()">☰</button>
+                
+                <button class="md:hidden text-white p-2" onclick="app.toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 z-[60] flex flex-col items-center justify-center gap-8 backdrop-blur-xl">
-        <button class="absolute top-6 right-6 text-white text-3xl p-2 focus:outline-none" onclick="app.toggleMobileMenu()">✕</button>
-        <button onclick="app.navigate('home'); app.toggleMobileMenu();" class="text-2xl font-bold text-zinc-400 hover:text-white" data-i18n="nav_about">Chi Siamo</button>
-        <button onclick="app.navigate('services'); app.toggleMobileMenu();" class="text-2xl font-bold text-zinc-400 hover:text-white" data-i18n="nav_services">Servizi</button>
-        <button onclick="app.navigate('shop'); app.toggleMobileMenu();" class="text-2xl font-bold text-zinc-400 hover:text-white" data-i18n="nav_shop">Shop</button>
-        <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-b border-white/20 text-white text-xl focus:ring-0 outline-none cursor-pointer mt-4 pb-2 text-center">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-zinc-950 p-8 flex flex-col items-center justify-center gap-8">
+        <button class="absolute top-8 right-8 text-white p-2" onclick="app.toggleMobileMenu()">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <button onclick="app.navigate('home'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_about">Chi Siamo</button>
+        <button onclick="app.navigate('services'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_services">Servizi</button>
+        <button onclick="app.navigate('shop'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_shop">Shop</button>
+        
+        <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-b border-white/20 text-white text-xl focus:ring-0 outline-none cursor-pointer mt-4 pb-2 text-center font-bold">
             <option value="de" class="bg-zinc-900" selected>DE (Deutsch)</option>
             <option value="en" class="bg-zinc-900">EN (English)</option>
             <option value="it" class="bg-zinc-900">IT (Italiano)</option>
         </select>
-        <button onclick="app.navigate('contact'); app.toggleMobileMenu();" class="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold mt-4" data-i18n="nav_contact_btn">Preventivo</button>
+        
+        <button onclick="app.navigate('contact'); app.toggleMobileMenu();" class="mt-4 bg-white text-black px-8 py-4 rounded-full text-xl font-bold" data-i18n="nav_contact_btn">Preventivo</button>
     </div>
 
-    <main id="app-content" class="flex-grow flex flex-col pt-20">
+    <main id="app-content" class="flex-grow flex flex-col pt-24">
 
-        <!-- HOMEPAGE -->
         <section id="view-home" class="view-section active flex-grow">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center flex flex-col items-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-300 mb-8">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Berlin / Stuttgart based
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 mb-6" data-i18n="hero_title">
-                    Design Creativo e<br>Merch Premium.
-                </h1>
-                <p class="text-lg md:text-xl text-zinc-400 font-medium max-w-2xl mx-auto mb-10" data-i18n="hero_subtitle">
-                    Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
-                    <button onclick="app.navigate('services')" class="bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors w-full sm:w-auto" data-i18n="hero_btn_services">Esplora i Servizi</button>
-                    <button onclick="app.navigate('shop')" class="bg-white/5 text-white border border-white/10 px-8 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors w-full sm:w-auto" data-i18n="hero_btn_shop">Vai allo Shop</button>
+            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center flex flex-col items-center">
+                <div class="relative z-10 w-full flex flex-col items-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-[10px] uppercase tracking-widest font-bold text-zinc-300 mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Berlin / Stuttgart based
+                    </div>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-gradient mb-6 leading-tight" data-i18n="hero_title">
+                        Design Creativo e<br>Merch Premium.
+                    </h1>
+                    <p class="text-lg md:text-xl text-zinc-400 font-medium max-w-2xl mx-auto mb-10" data-i18n="hero_subtitle">
+                        Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+                        <button onclick="app.navigate('services')" class="bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors w-full sm:w-auto flex justify-center items-center gap-2 group">
+                            <span data-i18n="hero_btn_services">Esplora i Servizi</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button onclick="app.navigate('shop')" class="glass-panel text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors w-full sm:w-auto" data-i18n="hero_btn_shop">
+                            Vai allo Shop
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- GENERATORE DI PROGETTI IA -->
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 w-full">
-                <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 w-full">
+                <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] -mr-20 -mt-20 pointer-events-none"></div>
                     
-                    <div class="flex items-center gap-3 mb-4 relative z-10">
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl">⚡</div>
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center font-bold shadow-xl">
+                            <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+                        </div>
                         <div>
-                            <h3 class="text-xl font-bold text-white leading-tight" data-i18n="ai_prop_title">Ottieni una stima immediata</h3>
-                            <p class="text-xs text-zinc-400 font-medium" data-i18n="ai_prop_subtitle">L'IA genererà un mini-progetto con costi e tempistiche.</p>
+                            <h3 class="text-2xl font-bold text-white tracking-tight" data-i18n="ai_prop_title">Ottieni una stima immediata</h3>
+                            <p class="text-sm text-zinc-400 font-medium mt-1" data-i18n="ai_prop_subtitle">L'IA genererà un mini-progetto con costi e tempistiche.</p>
                         </div>
                     </div>
 
-                    <div id="ai-initial-fields" class="grid sm:grid-cols-2 gap-4 mt-6 relative z-10">
-                        <div>
-                            <label class="block text-xs font-semibold text-zinc-500 mb-2 uppercase tracking-wider" data-i18n="ai_prop_who">1. Chi sei?</label>
-                            <input type="text" id="ai-prop-who" data-i18n-placeholder="ai_prop_who_pl" placeholder="Es. Una band emergente..." class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40">
+                    <div id="ai-initial-fields" class="grid sm:grid-cols-2 gap-6 mt-8 relative z-10">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="ai_prop_who">1. Chi sei?</label>
+                            <input type="text" id="ai-prop-who" data-i18n-placeholder="ai_prop_who_pl" placeholder="Es. Una band emergente..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all">
                         </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-zinc-500 mb-2 uppercase tracking-wider" data-i18n="ai_prop_what">2. Di cosa hai bisogno?</label>
-                            <input type="text" id="ai-prop-what" data-i18n-placeholder="ai_prop_what_pl" placeholder="Es. Un logo e 50 magliette per il tour..." class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="ai_prop_what">2. Di cosa hai bisogno?</label>
+                            <input type="text" id="ai-prop-what" data-i18n-placeholder="ai_prop_what_pl" placeholder="Es. Un logo e 50 magliette per il tour..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all">
                         </div>
                     </div>
-                    <button onclick="app.generateProposal()" id="btn-generate-proposal" class="mt-4 w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors relative z-10" data-i18n="ai_prop_btn">Calcola il mio progetto</button>
+                    <button onclick="app.generateProposal()" id="btn-generate-proposal" class="mt-6 w-full bg-white text-black px-6 py-4 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-all relative z-10 flex justify-center items-center gap-2 shadow-lg">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="ai_prop_btn">Calcola il mio progetto</span>
+                    </button>
                     
                     <div id="ai-chat-container" class="hidden mt-6 flex flex-col gap-4 relative z-10">
-                        <div id="ai-chat-history" class="flex flex-col p-6 bg-black/40 rounded-2xl border border-white/10 text-sm leading-relaxed max-h-[400px] overflow-y-auto"></div>
-                        <div class="flex gap-2 pt-2 border-t border-white/10">
-                            <input type="text" id="ai-chat-input" placeholder="..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-accent" onkeypress="if(event.key === 'Enter') app.chatNext()">
-                            <button onclick="app.chatNext()" class="bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors">Invio</button>
-                            <button onclick="app.resetChat()" class="bg-zinc-900 text-zinc-500 px-4 py-3 rounded-xl text-sm hover:text-white transition-colors" title="Reset">↺</button>
+                        <div id="ai-chat-history" class="flex flex-col p-6 bg-black/40 rounded-3xl border border-white/10 text-sm leading-relaxed max-h-[400px] overflow-y-auto"></div>
+                        <div class="flex gap-2 pt-4 border-t border-white/10">
+                            <input type="text" id="ai-chat-input" placeholder="..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all" onkeypress="if(event.key === 'Enter') app.chatNext()">
+                            <button onclick="app.chatNext()" class="bg-blue-600 text-white px-6 py-4 rounded-xl text-sm font-bold hover:bg-blue-500 transition-colors shadow-lg">Invio</button>
+                            <button onclick="app.resetChat()" class="glass-panel text-zinc-400 px-4 py-4 rounded-xl hover:text-white transition-colors flex items-center justify-center" title="Reset"><i data-lucide="rotate-ccw" class="w-5 h-5"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SPLIT CARDS -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div onclick="app.navigate('services')" class="glass-panel rounded-3xl p-10 cursor-pointer group transition-all duration-300">
-                        <div class="text-3xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">01</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white" data-i18n="home_card1_title">Servizi Digitali</h3>
-                        <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="home_card1_desc">Logo design, branding e social media per far crescere il tuo progetto.</p>
-                        <span class="text-white text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all" data-i18n="home_card1_link">Vedi Dettagli &rarr;</span>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div onclick="app.navigate('services')" class="md:col-span-2 glass-panel rounded-[2.5rem] p-10 md:p-12 cursor-pointer group transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="sparkles" class="w-48 h-48"></i></div>
+                        <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 block">01</span>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="home_card1_title">Servizi Digitali</h3>
+                        <p class="text-zinc-400 mb-10 text-base leading-relaxed max-w-md" data-i18n="home_card1_desc">Logo design, branding e social media per far crescere il tuo progetto.</p>
+                        <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all"><span data-i18n="home_card1_link">Vedi Dettagli</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></div>
                     </div>
-                    <div onclick="app.navigate('shop')" class="glass-panel rounded-3xl p-10 cursor-pointer group transition-all duration-300">
-                        <div class="text-3xl mb-4 opacity-50 group-hover:opacity-100 transition-opacity">02</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white" data-i18n="home_card2_title">Shop & Custom Merch</h3>
-                        <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="home_card2_desc">Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.</p>
-                        <span class="text-white text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all" data-i18n="home_card2_link">Esplora Catalogo &rarr;</span>
+                    <div onclick="app.navigate('shop')" class="glass-panel rounded-[2.5rem] p-10 md:p-12 cursor-pointer group transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 block">02</span>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white" data-i18n="home_card2_title">Shop & Custom Merch</h3>
+                            <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="home_card2_desc">Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.</p>
+                        </div>
+                        <div class="aspect-square bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-xl">
+                            <i data-lucide="shopping-bag" class="w-12 h-12 text-zinc-700"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="py-24 border-t border-white/5 mt-12">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h3 class="text-2xl font-bold text-center mb-12 text-white" data-i18n="home_recent_works">Lavori Recenti</h3>
+                    <h3 class="text-3xl font-bold text-center mb-12 text-white tracking-tight" data-i18n="home_recent_works">Lavori Recenti</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="aspect-square rounded-2xl abstract-portfolio abstract-pattern-1 shadow-2xl"></div>
-                        <div class="aspect-square rounded-2xl abstract-portfolio abstract-pattern-2 shadow-2xl"></div>
-                        <div class="aspect-square rounded-2xl abstract-portfolio abstract-pattern-3 shadow-2xl"></div>
+                        <div class="aspect-square rounded-[2rem] abstract-portfolio abstract-pattern-1 shadow-2xl"></div>
+                        <div class="aspect-square rounded-[2rem] abstract-portfolio abstract-pattern-2 shadow-2xl"></div>
+                        <div class="aspect-square rounded-[2rem] abstract-portfolio abstract-pattern-3 shadow-2xl"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="py-24 border-t border-white/5">
+            <div class="py-24 border-t border-white/5 bg-white/[0.01]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
-                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="rev_title">Cosa dicono di noi</h3>
-                        <p class="text-zinc-500 text-sm" data-i18n="rev_subtitle">Recensioni verificate dei nostri clienti.</p>
+                        <h3 class="text-3xl font-bold text-white mb-4 tracking-tight" data-i18n="rev_title">Cosa dicono di noi</h3>
+                        <p class="text-zinc-500 text-base" data-i18n="rev_subtitle">Recensioni verificate dei nostri clienti.</p>
                     </div>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="glass-panel p-8 rounded-2xl">
-                            <div class="flex text-zinc-300 text-sm mb-6">★★★★★</div>
-                            <p class="text-zinc-400 text-sm mb-6 leading-relaxed" data-i18n="rev_1_text">"Qualità del cotone pazzesca e stampa perfetta. Le magliette per il mio locale sono andate a ruba in 2 giorni. Super consigliato!"</p>
-                            <div class="font-semibold text-white text-sm" data-i18n="rev_1_author">Marco T.</div>
-                            <div class="text-xs text-zinc-600" data-i18n="rev_1_role">Proprietario Caffetteria</div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="glass-panel p-8 rounded-3xl">
+                            <div class="flex text-blue-500 mb-6 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                            <p class="text-zinc-400 text-sm mb-8 leading-relaxed italic" data-i18n="rev_1_text">"Qualità del cotone pazzesca e stampa perfetta. Le magliette per il mio locale sono andate a ruba in 2 giorni. Super consigliato!"</p>
+                            <div>
+                                <div class="font-bold text-white text-base" data-i18n="rev_1_author">Marco T.</div>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1" data-i18n="rev_1_role">Proprietario Caffetteria</div>
+                            </div>
                         </div>
-                        <div class="glass-panel p-8 rounded-2xl">
-                            <div class="flex text-zinc-300 text-sm mb-6">★★★★★</div>
-                            <p class="text-zinc-400 text-sm mb-6 leading-relaxed" data-i18n="rev_2_text">"Hanno capito subito il vibe del mio brand. Il nuovo logo ha letteralmente svoltato la mia pagina Instagram. Bravi e veloci."</p>
-                            <div class="font-semibold text-white text-sm" data-i18n="rev_2_author">Elena R.</div>
-                            <div class="text-xs text-zinc-600" data-i18n="rev_2_role">Content Creator</div>
+                        <div class="glass-panel p-8 rounded-3xl">
+                            <div class="flex text-blue-500 mb-6 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                            <p class="text-zinc-400 text-sm mb-8 leading-relaxed italic" data-i18n="rev_2_text">"Hanno capito subito il vibe del mio brand. Il nuovo logo ha letteralmente svoltato la mia pagina Instagram. Bravi e veloci."</p>
+                            <div>
+                                <div class="font-bold text-white text-base" data-i18n="rev_2_author">Elena R.</div>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1" data-i18n="rev_2_role">Content Creator</div>
+                            </div>
                         </div>
-                        <div class="glass-panel p-8 rounded-2xl">
-                            <div class="flex text-zinc-300 text-sm mb-6">★★★★★</div>
-                            <p class="text-zinc-400 text-sm mb-6 leading-relaxed" data-i18n="rev_3_text">"La combo perfetta. Hanno fatto la grafica del mio nuovo progetto musicale e l'hanno stampata sul merch. Tutto gestito da loro."</p>
-                            <div class="font-semibold text-white text-sm" data-i18n="rev_3_author">Lukas K.</div>
-                            <div class="text-xs text-zinc-600" data-i18n="rev_3_role">Music Producer</div>
+                        <div class="glass-panel p-8 rounded-3xl">
+                            <div class="flex text-blue-500 mb-6 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                            <p class="text-zinc-400 text-sm mb-8 leading-relaxed italic" data-i18n="rev_3_text">"La combo perfetta. Hanno fatto la grafica del mio nuovo progetto musicale e l'hanno stampata sul merch. Tutto gestito da loro."</p>
+                            <div>
+                                <div class="font-bold text-white text-base" data-i18n="rev_3_author">Lukas K.</div>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-widest mt-1" data-i18n="rev_3_role">Music Producer</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="py-24 text-center border-t border-white/5">
-                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="home_cta_title">Idee im Kopf? Lass uns darüber sprechen.</h2>
-                <button onclick="app.navigate('contact')" class="bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors" data-i18n="home_cta_btn">Contattaci</button>
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-white tracking-tight" data-i18n="home_cta_title">Idee im Kopf? Lass uns darüber sprechen.</h2>
+                <button onclick="app.navigate('contact')" class="bg-white text-black px-10 py-5 rounded-full text-base font-bold hover:bg-zinc-200 transition-colors shadow-xl" data-i18n="home_cta_btn">Contattaci</button>
             </div>
         </section>
 
-        <!-- SERVIZI -->
         <section id="view-services" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white" data-i18n="srv_title">Servizi di Design</h1>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white" data-i18n="srv_title">Servizi di Design</h1>
                 <p class="text-lg text-zinc-400 max-w-2xl mx-auto" data-i18n="srv_subtitle">Dall'idea iniziale all'identità visiva completa.</p>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-                <div class="grid md:grid-cols-3 gap-6 mb-24">
-                    <div class="glass-panel p-8 rounded-3xl">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-6 text-xl">✨</div>
-                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="srv_logo_title">Logo & Branding</h3>
-                        <p class="text-zinc-400 mb-8 text-sm" data-i18n="srv_logo_desc">Creazione di identità visive uniche, memorabili e scalabili per il tuo business.</p>
-                        <div class="text-sm font-medium text-white border-t border-white/10 pt-4" data-i18n="srv_logo_price">A partire da 350€</div>
-                    </div>
-                    <div class="glass-panel p-8 rounded-3xl">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-6 text-xl">📱</div>
-                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="srv_social_title">Social Media Content</h3>
-                        <p class="text-zinc-400 mb-8 text-sm" data-i18n="srv_social_desc">Template, grafiche e asset visivi coerenti per dominare i feed dei tuoi canali.</p>
-                        <div class="text-sm font-medium text-white border-t border-white/10 pt-4" data-i18n="srv_social_price">A partire da 150€</div>
-                    </div>
-                    <div class="glass-panel p-8 rounded-3xl">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-6 text-xl">🖨️</div>
-                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="srv_print_title">Print & Poster Design</h3>
-                        <p class="text-zinc-400 mb-8 text-sm" data-i18n="srv_print_desc">Materiale cartaceo ad alto impatto. Dai biglietti da visita ai manifesti pubblicitari.</p>
-                        <div class="text-sm font-medium text-white border-t border-white/10 pt-4" data-i18n="srv_print_price">A partire da 90€</div>
-                    </div>
-                </div>
-
-                <div class="glass-panel rounded-3xl p-8 md:p-12 mb-24 relative overflow-hidden">
-                    <h3 class="text-2xl font-bold text-center mb-12 text-white" data-i18n="srv_process_title">Il Nostro Metodo</h3>
-                    <div class="flex flex-col md:flex-row gap-8 relative z-10">
-                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/20 -translate-y-1/2"></div>
-                        <div class="flex-1 bg-zinc-900 p-6 rounded-2xl border border-white/10 text-center relative">
-                            <div class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold mx-auto mb-4">1</div>
-                            <h4 class="font-bold mb-2 text-white" data-i18n="srv_process_1_t">Briefing & Concept</h4>
-                            <p class="text-sm text-zinc-400" data-i18n="srv_process_1_d">Allineamento sugli obiettivi.</p>
+                <div class="grid md:grid-cols-3 gap-8 mb-24">
+                    <div class="glass-panel p-10 rounded-[2rem] group hover:bg-white/[0.05] transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 text-blue-500 group-hover:scale-110 transition-transform"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="srv_logo_title">Logo & Branding</h3>
+                        <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="srv_logo_desc">Creazione di identità visive uniche, memorabili e scalabili per il tuo business.</p>
+                        <div class="text-sm font-bold text-white border-t border-white/10 pt-6 flex justify-between">
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Prezzo Base</span>
+                            <span data-i18n="srv_logo_price">A partire da 350€</span>
                         </div>
-                        <div class="flex-1 bg-zinc-900 p-6 rounded-2xl border border-white/10 text-center relative">
-                            <div class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold mx-auto mb-4">2</div>
-                            <h4 class="font-bold mb-2 text-white" data-i18n="srv_process_2_t">Design & Revisioni</h4>
-                            <p class="text-sm text-zinc-400" data-i18n="srv_process_2_d">Sviluppo visivo iterativo.</p>
+                    </div>
+                    <div class="glass-panel p-10 rounded-[2rem] group hover:bg-white/[0.05] transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 text-blue-500 group-hover:scale-110 transition-transform"><i data-lucide="smartphone" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="srv_social_title">Social Media Content</h3>
+                        <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="srv_social_desc">Template, grafiche e asset visivi coerenti per dominare i feed dei tuoi canali.</p>
+                        <div class="text-sm font-bold text-white border-t border-white/10 pt-6 flex justify-between">
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Prezzo Base</span>
+                            <span data-i18n="srv_social_price">A partire da 150€</span>
                         </div>
-                        <div class="flex-1 bg-zinc-900 p-6 rounded-2xl border border-white/10 text-center relative">
-                            <div class="w-10 h-10 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4">3</div>
-                            <h4 class="font-bold mb-2 text-white" data-i18n="srv_process_3_t">Consegna File</h4>
-                            <p class="text-sm text-zinc-400" data-i18n="srv_process_3_d">Asset definitivi pronti all'uso.</p>
+                    </div>
+                    <div class="glass-panel p-10 rounded-[2rem] group hover:bg-white/[0.05] transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 text-blue-500 group-hover:scale-110 transition-transform"><i data-lucide="printer" class="w-6 h-6"></i></div>
+                        <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="srv_print_title">Print & Poster Design</h3>
+                        <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="srv_print_desc">Materiale cartaceo ad alto impatto. Dai biglietti da visita ai manifesti pubblicitari.</p>
+                        <div class="text-sm font-bold text-white border-t border-white/10 pt-6 flex justify-between">
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Prezzo Base</span>
+                            <span data-i18n="srv_print_price">A partire da 90€</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4 text-white" data-i18n="srv_roi_title">Il valore del design professionale</h3>
-                        <p class="text-zinc-400 mb-6" data-i18n="srv_roi_desc">Investire in un'identità visiva solida non è un costo, ma un moltiplicatore di conversioni. Dati alla mano, i brand con un design coerente vedono un incremento misurabile nella fiducia del cliente.</p>
-                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
-                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-i18n="srv_roi_li1">Maggiore ritenzione utente (+40%)</span></li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-i18n="srv_roi_li2">Percezione di valore premium</span></li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <span data-i18n="srv_roi_li3">Riconoscibilità immediata</span></li>
-                        </ul>
-                    </div>
-                    <div class="glass-panel p-6 rounded-3xl w-full">
-                        <h4 class="text-center font-bold text-sm mb-4 text-zinc-400" data-i18n="srv_roi_chart">Impatto sul Tasso di Conversione</h4>
-                        <div class="chart-container w-full h-[250px] md:h-[300px]">
-                            <canvas id="roiChart"></canvas>
+                <div class="glass-panel rounded-[3rem] p-10 md:p-20 mb-24 relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 to-transparent pointer-events-none"></div>
+                    <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h3 class="text-4xl font-bold mb-10 text-white tracking-tight" data-i18n="srv_process_title">Il Nostro Metodo</h3>
+                            <div class="space-y-8">
+                                <div class="flex gap-6">
+                                    <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold flex-shrink-0 text-lg">1</div>
+                                    <div>
+                                        <h4 class="font-bold mb-1 text-white text-lg" data-i18n="srv_process_1_t">Briefing & Concept</h4>
+                                        <p class="text-sm text-zinc-400" data-i18n="srv_process_1_d">Allineamento sugli obiettivi.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 text-white border border-white/20 flex items-center justify-center font-bold flex-shrink-0 text-lg">2</div>
+                                    <div>
+                                        <h4 class="font-bold mb-1 text-white text-lg" data-i18n="srv_process_2_t">Design & Revisioni</h4>
+                                        <p class="text-sm text-zinc-400" data-i18n="srv_process_2_d">Sviluppo visivo iterativo.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6">
+                                    <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0 text-lg shadow-lg shadow-blue-500/30">3</div>
+                                    <div>
+                                        <h4 class="font-bold mb-1 text-white text-lg" data-i18n="srv_process_3_t">Consegna File</h4>
+                                        <p class="text-sm text-zinc-400" data-i18n="srv_process_3_d">Asset definitivi pronti all'uso.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-10 rounded-3xl border-l-4 border-l-blue-500 bg-zinc-900/50 backdrop-blur-md">
+                            <h4 class="text-xl font-bold mb-4 text-white italic" data-i18n="srv_roi_title">Il valore del design professionale</h4>
+                            <p class="text-zinc-400 mb-6 text-sm leading-relaxed" data-i18n="srv_roi_desc">Investire in un'identità visiva solida non è un costo, ma un moltiplicatore di conversioni. Dati alla mano, i brand con un design coerente vedono un incremento misurabile nella fiducia del cliente.</p>
+                            
+                            <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li1">Maggiore ritenzione utente (+40%)</span></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li2">Percezione di valore premium</span></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li3">Riconoscibilità immediata</span></li>
+                            </ul>
+
+                            <h4 class="font-bold text-xs mb-4 text-zinc-500 uppercase tracking-widest" data-i18n="srv_roi_chart">Impatto sul Tasso di Conversione</h4>
+                            <div class="chart-container w-full h-[200px]">
+                                <canvas id="roiChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SHOP -->
         <section id="view-shop" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white" data-i18n="shop_title">Merch & Custom Apparel</h1>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white" data-i18n="shop_title">Merch & Custom Apparel</h1>
                 <p class="text-lg text-zinc-400" data-i18n="shop_subtitle">Qualità premium. Design unico. Il tuo stile.</p>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div class="flex justify-center gap-2 md:gap-4 mb-12 flex-wrap">
-                    <button class="px-5 py-2 rounded-full bg-white text-black text-sm font-medium" data-i18n="shop_filter1">Tutti i Prodotti</button>
-                    <button class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-white/10 text-sm font-medium transition-colors" data-i18n="shop_filter2">T-Shirt Base</button>
-                    <button class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-white/10 text-sm font-medium transition-colors" data-i18n="shop_filter3">Stampe Custom</button>
+                <div class="flex justify-center gap-3 mb-16 flex-wrap">
+                    <button class="px-6 py-2.5 rounded-full bg-white text-black text-sm font-bold shadow-lg" data-i18n="shop_filter1">Tutti i Prodotti</button>
+                    <button class="px-6 py-2.5 rounded-full glass-panel text-zinc-300 hover:bg-white/10 text-sm font-medium transition-colors" data-i18n="shop_filter2">T-Shirt Base</button>
+                    <button class="px-6 py-2.5 rounded-full glass-panel text-zinc-300 hover:bg-white/10 text-sm font-medium transition-colors" data-i18n="shop_filter3">Stampe Custom</button>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="glass-panel p-4 rounded-3xl cursor-pointer group" onclick="app.navigate('product')">
-                        <div class="aspect-[4/5] mb-4 rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/5">
-                            <div class="w-3/4 h-3/4 bg-zinc-900 rounded-lg border border-zinc-800 shadow-xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"><span class="text-zinc-800 font-bold">TEE</span></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group" onclick="app.navigate('product')">
+                        <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <div class="w-[70%] h-[70%] bg-zinc-900 rounded-xl border border-zinc-800 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
+                                <span class="text-zinc-800 font-black text-3xl tracking-tighter">TEE</span>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-white text-sm" data-i18n="prod1_title">T-Shirt Premium Personalizzabile</h3>
-                        <p class="text-sm text-zinc-500 mt-1" data-i18n="prod1_price">Da 25,00 €</p>
+                        <div class="px-2">
+                            <h3 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors" data-i18n="prod1_title">T-Shirt Premium Personalizzabile</h3>
+                            <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod1_price">Da 25,00 €</p>
+                            <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                                <span class="font-black text-white text-lg">25,00 €</span>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
                     </div>
-                     <div class="glass-panel p-4 rounded-3xl cursor-pointer group">
-                        <div class="aspect-[4/5] mb-4 rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/5">
-                            <div class="w-3/4 h-3/4 bg-zinc-800 rounded-lg border border-zinc-700 shadow-xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"><span class="text-zinc-700 font-bold">HVY</span></div>
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                        <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <div class="w-[70%] h-[70%] bg-zinc-800 rounded-xl border border-zinc-700 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
+                                <span class="text-zinc-700 font-black text-3xl tracking-tighter">HVY</span>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-white text-sm" data-i18n="prod2_title">Heavyweight Street Tee (Nera)</h3>
-                        <p class="text-sm text-zinc-500 mt-1" data-i18n="prod2_price">Da 35,00 €</p>
+                        <div class="px-2">
+                            <h3 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors" data-i18n="prod2_title">Heavyweight Street Tee (Nera)</h3>
+                            <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod2_price">Da 35,00 €</p>
+                            <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                                <span class="font-black text-white text-lg">35,00 €</span>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
                     </div>
-                     <div class="glass-panel p-4 rounded-3xl cursor-pointer group">
-                        <div class="aspect-[4/5] mb-4 rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/5">
-                            <div class="w-3/4 h-3/4 bg-zinc-950 rounded-lg border border-zinc-900 shadow-xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center"><span class="text-zinc-900 font-bold">WSH</span></div>
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                        <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <div class="w-[70%] h-[70%] bg-zinc-950 rounded-xl border border-zinc-900 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
+                                <span class="text-zinc-900 font-black text-3xl tracking-tighter">WSH</span>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-white text-sm" data-i18n="prod3_title">Vintage Wash Custom</h3>
-                        <p class="text-sm text-zinc-500 mt-1" data-i18n="prod3_price">Da 30,00 €</p>
+                        <div class="px-2">
+                            <h3 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors" data-i18n="prod3_title">Vintage Wash Custom</h3>
+                            <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod3_price">Da 30,00 €</p>
+                            <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                                <span class="font-black text-white text-lg">30,00 €</span>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
                     </div>
-                     <div class="glass-panel p-4 rounded-3xl cursor-pointer group">
-                        <div class="aspect-[4/5] mb-4 rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
-                            <div class="absolute w-8 h-8 bg-brand-accent/50 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-sm"></div>
-                            <div class="w-3/4 h-3/4 bg-zinc-900 rounded-lg border border-zinc-800 shadow-xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-10"><span class="text-zinc-800 font-bold">LOGO</span></div>
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                        <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <div class="absolute w-16 h-16 bg-blue-600/30 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-xl pointer-events-none"></div>
+                            <div class="w-[70%] h-[70%] bg-zinc-900 rounded-xl border border-zinc-800 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-10">
+                                <span class="text-zinc-800 font-black text-3xl tracking-tighter">LOGO</span>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-white text-sm" data-i18n="prod4_title">Logo Print Tee</h3>
-                        <p class="text-sm text-zinc-500 mt-1" data-i18n="prod4_price">Da 28,00 €</p>
+                        <div class="px-2">
+                            <h3 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors" data-i18n="prod4_title">Logo Print Tee</h3>
+                            <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod4_price">Da 28,00 €</p>
+                            <div class="flex justify-between items-center border-t border-white/10 pt-4">
+                                <span class="font-black text-white text-lg">28,00 €</span>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PRODUCT DETAIL -->
         <section id="view-product" class="view-section flex-grow pt-8 pb-24">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <button onclick="app.navigate('shop')" class="text-xs font-semibold text-zinc-500 hover:text-white mb-12 flex items-center gap-2 transition-colors tracking-wider uppercase" data-i18n="pd_back">&larr; Torna allo Shop</button>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="app.navigate('shop')" class="text-xs font-bold text-zinc-500 hover:text-white mb-12 flex items-center gap-2 uppercase tracking-widest transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="pd_back">Torna allo Shop</span>
+                </button>
                 
                 <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
-                    <div class="flex flex-col gap-4">
-                        <div class="aspect-square bg-zinc-950 rounded-3xl border border-white/5 flex items-center justify-center p-8 md:p-12">
-                             <div class="w-full h-full bg-zinc-900 rounded-2xl border border-zinc-800 shadow-2xl flex items-center justify-center"><span class="text-zinc-800 text-2xl md:text-4xl font-bold">TISDESIGN</span></div>
+                    <div class="flex flex-col gap-6">
+                        <div class="aspect-square bg-zinc-950 rounded-[3rem] border border-white/5 flex items-center justify-center p-8 md:p-12 relative overflow-hidden shadow-2xl">
+                             <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600/5 blur-[80px] rounded-full pointer-events-none"></div>
+                             <div class="w-full h-full bg-zinc-900 rounded-[2.5rem] border border-zinc-800 shadow-2xl flex items-center justify-center relative z-10">
+                                <span class="text-zinc-800 text-4xl md:text-6xl font-black tracking-tighter">TISDESIGN</span>
+                             </div>
                         </div>
-                        <div class="grid grid-cols-4 gap-2 md:gap-4">
-                            <div class="aspect-square bg-zinc-950 rounded-lg border border-white/20 p-2 cursor-pointer"><div class="w-full h-full bg-zinc-900 rounded border border-zinc-800"></div></div>
-                            <div class="aspect-square bg-zinc-950 rounded-lg border border-white/5 p-2 cursor-pointer opacity-70 hover:opacity-100"><div class="w-full h-full bg-zinc-800 rounded border border-zinc-700"></div></div>
-                            <div class="aspect-square bg-zinc-950 rounded-lg border border-white/5 p-2 cursor-pointer opacity-70 hover:opacity-100"><div class="w-full h-full bg-zinc-700 rounded border border-zinc-600"></div></div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="aspect-square glass-panel rounded-2xl border-blue-500/50 p-2 cursor-pointer"><div class="w-full h-full bg-zinc-900 rounded-xl border border-zinc-800"></div></div>
+                            <div class="aspect-square glass-panel rounded-2xl p-2 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-full h-full bg-zinc-800 rounded-xl border border-zinc-700"></div></div>
+                            <div class="aspect-square glass-panel rounded-2xl p-2 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-full h-full bg-zinc-700 rounded-xl border border-zinc-600"></div></div>
                         </div>
                     </div>
 
                     <div class="flex flex-col justify-center">
-                        <h1 class="text-2xl md:text-3xl font-bold text-white mb-2" data-i18n="prod1_title">T-Shirt Premium Personalizzabile</h1>
-                        <p class="text-xl text-zinc-400 mb-8" id="product-price">25,00 €</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight" data-i18n="prod1_title">T-Shirt Premium Personalizzabile</h1>
+                        <p class="text-3xl text-zinc-400 mb-8 font-light tracking-tight" id="product-price">25,00 €</p>
                         
-                        <p class="text-sm text-zinc-400 mb-6 leading-relaxed" data-i18n="pd_desc">
+                        <p class="text-base text-zinc-400 mb-10 leading-relaxed" data-i18n="pd_desc">
                             Maglietta in cotone organico 100% (220gsm). Vestibilità boxy e texture morbida al tatto. Perfetta per stampe ad alta definizione.
                         </p>
 
-                        <div class="mb-6">
-                            <div class="flex justify-between items-center mb-3">
-                                <span class="font-bold text-sm text-white" data-i18n="pd_size">Seleziona Taglia</span>
-                                <span class="text-xs text-zinc-500 underline cursor-pointer hover:text-white" data-i18n="pd_size_guide">Guida Taglie</span>
-                            </div>
-                            <div class="flex gap-2 sm:gap-3">
-                                <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-white/10 text-zinc-400 flex items-center justify-center font-medium hover:border-white focus:border-white focus:text-white transition-colors">S</button>
-                                <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-white text-white flex items-center justify-center font-medium transition-colors">M</button>
-                                <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-white/10 text-zinc-400 flex items-center justify-center font-medium hover:border-white focus:border-white focus:text-white transition-colors">L</button>
-                                <button class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-white/10 text-zinc-400 flex items-center justify-center font-medium hover:border-white focus:border-white focus:text-white transition-colors">XL</button>
-                            </div>
-                        </div>
-
-                        <div class="mb-8">
-                            <span class="font-bold text-sm block mb-3 text-white" data-i18n="pd_color">Colore</span>
-                            <div class="flex gap-3">
-                                <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-white ring-2 ring-offset-2 ring-offset-zinc-950 ring-white"></button>
-                                <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-black"></button>
-                                <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-zinc-500"></button>
-                            </div>
-                        </div>
-                        
-                        <div class="glass-panel p-5 sm:p-6 rounded-2xl mb-8 border-l-2 border-l-white">
-                            <h3 class="font-bold text-sm text-white mb-4" data-i18n="pd_custom_title">Personalizzazione</h3>
-                            <button class="w-full py-3 mb-4 bg-white/5 text-white border border-white/10 rounded-xl text-sm font-medium hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-                                <span class="text-lg">↓</span> <span data-i18n="pd_custom_upload">Carica File Grafico (.png/.pdf)</span>
-                            </button>
-
-                            <label class="flex items-center gap-3 cursor-pointer mt-4 pt-4 border-t border-white/10">
-                                <input type="checkbox" id="upsell-checkbox" class="w-4 h-4 rounded border-white/20 bg-black checked:bg-white checked:border-transparent focus:ring-0 focus:ring-offset-0" onchange="app.toggleUpsell(this)">
-                                <div>
-                                    <span class="block font-semibold text-sm text-white" data-i18n="pd_upsell_title">Vuoi che creiamo noi la grafica? (+15€)</span>
-                                    <span class="block text-xs text-zinc-500 mt-1" data-i18n="pd_upsell_desc">Il nostro team designerà un'illustrazione su misura.</span>
+                        <div class="space-y-8 mb-12">
+                            <div>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="pd_size">Seleziona Taglia</span>
+                                    <span class="text-[10px] font-bold text-zinc-600 underline cursor-pointer hover:text-white uppercase tracking-wider" data-i18n="pd_size_guide">Guida Taglie</span>
                                 </div>
-                            </label>
+                                <div class="flex gap-3">
+                                    <button class="w-12 h-12 rounded-xl border border-white/10 text-zinc-400 flex items-center justify-center font-bold hover:border-white hover:text-white transition-all">S</button>
+                                    <button class="w-12 h-12 rounded-xl border border-white text-white flex items-center justify-center font-bold transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)]">M</button>
+                                    <button class="w-12 h-12 rounded-xl border border-white/10 text-zinc-400 flex items-center justify-center font-bold hover:border-white hover:text-white transition-all">L</button>
+                                    <button class="w-12 h-12 rounded-xl border border-white/10 text-zinc-400 flex items-center justify-center font-bold hover:border-white hover:text-white transition-all">XL</button>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest block mb-4" data-i18n="pd_color">Colore</span>
+                                <div class="flex gap-4">
+                                    <button class="w-10 h-10 rounded-full border border-white/20 bg-white ring-2 ring-offset-4 ring-offset-zinc-950 ring-white"></button>
+                                    <button class="w-10 h-10 rounded-full border border-white/20 bg-black"></button>
+                                    <button class="w-10 h-10 rounded-full border border-white/20 bg-zinc-500"></button>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-panel p-8 rounded-3xl border-l-4 border-l-blue-500 relative overflow-hidden">
+                                <h3 class="font-bold text-white mb-6 text-lg" data-i18n="pd_custom_title">Personalizzazione</h3>
+                                <button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-sm font-bold text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-3 mb-6">
+                                    <i data-lucide="upload" class="w-4 h-4"></i> <span data-i18n="pd_custom_upload">Carica File Grafico (.png/.pdf)</span>
+                                </button>
+
+                                <label class="flex items-center gap-4 cursor-pointer pt-6 border-t border-white/10">
+                                    <input type="checkbox" id="upsell-checkbox" class="w-5 h-5 rounded border-white/20 bg-zinc-900 checked:bg-blue-500 checked:border-blue-500 focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" onchange="app.toggleUpsell(this)">
+                                    <div>
+                                        <p class="font-bold text-white text-sm" data-i18n="pd_upsell_title">Vuoi che creiamo noi la grafica? (+15€)</p>
+                                        <p class="text-zinc-500 text-xs mt-1" data-i18n="pd_upsell_desc">Il nostro team designerà un'illustrazione su misura.</p>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
                         
-                        <button class="w-full py-4 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-colors text-sm mb-6 shadow-[0_0_20px_rgba(255,255,255,0.1)]" data-i18n="pd_add_cart">Aggiungi al Carrello</button>
+                        <button class="w-full bg-white text-black py-5 rounded-2xl font-bold text-lg hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex justify-center items-center gap-2" data-i18n="pd_add_cart">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i> Aggiungi al Carrello
+                        </button>
                         
-                        <div class="grid grid-cols-3 gap-2 mt-4 border-t border-white/5 pt-6 text-center text-[10px] sm:text-xs">
-                            <div class="text-zinc-400">
-                                <div class="text-lg sm:text-xl mb-1 text-white">🔒</div>
-                                <div class="font-bold text-white mb-1" data-i18n="trust_pay_title">Pagamenti Sicuri</div>
-                                <div data-i18n="trust_pay_desc">PayPal, Klarna</div>
+                        <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/5 text-center">
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="shield-check" class="w-5 h-5 text-zinc-400"></i></div>
+                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_pay_title">Pagamenti Sicuri</p>
                             </div>
-                            <div class="text-zinc-400 border-x border-white/5">
-                                <div class="text-lg sm:text-xl mb-1 text-white">📦</div>
-                                <div class="font-bold text-white mb-1" data-i18n="trust_ship_title">Spedizione Tracciata</div>
-                                <div data-i18n="trust_ship_desc">DHL in 3-5 giorni</div>
+                            <div class="space-y-3 border-x border-white/5">
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="truck" class="w-5 h-5 text-zinc-400"></i></div>
+                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_ship_title">Spedizione Tracciata</p>
                             </div>
-                            <div class="text-zinc-400">
-                                <div class="text-lg sm:text-xl mb-1 text-white">🌱</div>
-                                <div class="font-bold text-white mb-1" data-i18n="trust_eco_title">Cotone Premium</div>
-                                <div data-i18n="trust_eco_desc">100% Organico</div>
+                            <div class="space-y-3">
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="leaf" class="w-5 h-5 text-zinc-400"></i></div>
+                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_eco_title">100% Organico</p>
                             </div>
                         </div>
                     </div>
@@ -427,55 +515,66 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="view-contact" class="view-section flex-grow pt-24 pb-32">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 sm:mb-16">
-                    <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="contact_title">Parliamo del tuo progetto.</h1>
-                    <p class="text-zinc-400 text-xs sm:text-sm px-4" data-i18n="contact_subtitle">Compila il modulo per ricevere un preventivo o per ordini custom voluminosi.</p>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl font-bold text-white mb-6 tracking-tight" data-i18n="contact_title">Parliamo del tuo progetto.</h1>
+                    <p class="text-zinc-400 text-lg" data-i18n="contact_subtitle">Compila il modulo per ricevere un preventivo o per ordini custom voluminosi.</p>
                 </div>
 
-                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col md:flex-row border border-white/10">
-                    <div class="md:w-1/3 bg-zinc-900 text-white p-6 sm:p-8 flex flex-col justify-between border-r border-white/5">
-                        <div>
-                            <h3 class="text-lg font-bold mb-6" data-i18n="contact_direct">Contatti Diretti</h3>
-                            <div class="space-y-4 text-sm text-zinc-400">
-                                <p class="flex items-center gap-3"><span class="text-white">✉️</span> info.tisdesign@gmail.com</p>
-                                <p class="flex items-center gap-3"><span class="text-white">📞</span> <span data-i18n="contact_phone_coming">(In arrivo)</span></p>
-                                <p class="flex items-center gap-3"><span class="text-white">📍</span> Berlin & Stuttgart</p>
+                <div class="glass-panel rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl border border-white/10">
+                    <div class="md:w-1/3 bg-zinc-900/80 p-10 md:p-12 flex flex-col justify-between border-r border-white/5 relative overflow-hidden">
+                        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-600/10 to-transparent pointer-events-none"></div>
+                        <div class="space-y-10 relative z-10">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-8" data-i18n="contact_direct">Contatti Diretti</h3>
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 text-zinc-400 text-sm">
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i></div>
+                                        info.tisdesign@gmail.com
+                                    </div>
+                                    <div class="flex items-center gap-4 text-zinc-400 text-sm">
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="phone" class="w-4 h-4 text-blue-400"></i></div>
+                                        <span data-i18n="contact_phone_coming">(In arrivo)</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-zinc-400 text-sm">
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i></div>
+                                        Berlin & Stuttgart
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mt-8 md:mt-12">
-                            <h4 class="text-xs font-bold text-zinc-500 mb-3 uppercase tracking-wider" data-i18n="contact_social">Social</h4>
-                            <div class="flex gap-2">
-                                <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">IG</a>
-                                <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">TK</a>
-                                <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">DC</a>
+                            <div class="pt-10 border-t border-white/10">
+                                <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-6" data-i18n="contact_social">Social</p>
+                                <div class="flex gap-4">
+                                    <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                                    <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                                    <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="video" class="w-5 h-5"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="md:w-2/3 p-6 sm:p-8 md:p-12 bg-black/20">
-                        <form onsubmit="app.submitForm(event)" class="space-y-6" id="contact-form">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-semibold text-zinc-400 mb-2 uppercase tracking-wider" data-i18n="form_name">Nome</label>
-                                    <input type="text" name="Nome" required class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-white/40 transition-colors">
+                    <div class="md:w-2/3 p-10 md:p-16 relative">
+                        <form onsubmit="app.submitForm(event)" class="space-y-8 relative z-10" id="contact-form">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="form_name">Nome</label>
+                                    <input type="text" name="Nome" required class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 transition-all">
                                 </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-zinc-400 mb-2 uppercase tracking-wider" data-i18n="form_surname">Cognome</label>
-                                    <input type="text" name="Cognome" required class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-white/40 transition-colors">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="form_surname">Cognome</label>
+                                    <input type="text" name="Cognome" required class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 transition-all">
                                 </div>
                             </div>
                             
-                            <div>
-                                <label class="block text-xs font-semibold text-zinc-400 mb-2 uppercase tracking-wider" data-i18n="form_email">Email</label>
-                                <input type="email" name="Email" required class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-white/40 transition-colors">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="form_email">Email</label>
+                                <input type="email" name="Email" required class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 transition-all">
                             </div>
 
-                            <div>
-                                <label class="block text-xs font-semibold text-zinc-400 mb-2 uppercase tracking-wider" data-i18n="form_subject">Oggetto della richiesta</label>
-                                <select name="Oggetto" required class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-white/40 transition-colors appearance-none">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="form_subject">Oggetto della richiesta</label>
+                                <select name="Oggetto" required class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 transition-all appearance-none cursor-pointer">
                                     <option value="" disabled selected class="bg-zinc-900 text-zinc-500" data-i18n="form_opt_default">Seleziona un'opzione...</option>
                                     <option value="servizi" class="bg-zinc-900" data-i18n="form_opt_1">Preventivo Servizi Grafici</option>
                                     <option value="merch" class="bg-zinc-900" data-i18n="form_opt_2">Ordine Merch Personalizzato / Bulk</option>
@@ -483,53 +582,51 @@
                                 </select>
                             </div>
 
-                            <div>
-                                <label class="block text-xs font-semibold text-zinc-400 mb-2 uppercase tracking-wider" data-i18n="form_message">Messaggio</label>
-                                <div class="relative">
-                                    <textarea id="contact-message" name="Messaggio" rows="5" required data-i18n-placeholder="form_placeholder" placeholder="Descrivi la tua idea..." class="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-white/40 transition-colors resize-none"></textarea>
-                                </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="form_message">Messaggio</label>
+                                <textarea id="contact-message" name="Messaggio" rows="5" required data-i18n-placeholder="form_placeholder" placeholder="Descrivi la tua idea..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-blue-500 transition-all resize-none"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors text-sm mt-4" data-i18n="form_submit">Invia Richiesta</button>
+                            <button type="submit" class="w-full bg-white text-black py-5 rounded-xl font-bold text-lg hover:bg-zinc-200 transition-all shadow-xl flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5"></i> <span data-i18n="form_submit">Invia Richiesta</span>
+                            </button>
                         </form>
 
-                        <!-- SCHERMATA DI SUCCESSO -->
-                        <div id="form-success" class="hidden h-full flex flex-col items-center justify-center text-center py-12">
-                            <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-3xl mb-6">✓</div>
-                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="form_success_title">Richiesta Inviata!</h3>
-                            <p class="text-zinc-400 text-sm" data-i18n="form_success_desc">Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.</p>
-                            <button onclick="app.resetForm()" class="mt-8 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition-colors" data-i18n="form_success_btn">Invia un altro messaggio</button>
+                        <div id="form-success" class="hidden absolute inset-0 bg-zinc-950/90 backdrop-blur-md flex-col items-center justify-center text-center p-12 z-20 rounded-[3rem]">
+                            <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-4xl mb-8"><i data-lucide="check-circle" class="w-10 h-10"></i></div>
+                            <h3 class="text-3xl font-bold text-white mb-4" data-i18n="form_success_title">Richiesta Inviata!</h3>
+                            <p class="text-zinc-400 mb-8" data-i18n="form_success_desc">Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.</p>
+                            <button onclick="app.resetForm()" class="text-xs font-bold text-white bg-white/10 px-6 py-3 rounded-full hover:bg-white/20 transition-colors uppercase tracking-widest" data-i18n="form_success_btn">Invia un altro messaggio</button>
                         </div>
-                        <!-- FINE BLOCCO SUCCESSO -->
-
                     </div>
                 </div>
             </div>
             
-            <!-- FAQ INSERITE QUI SOTTO I CONTATTI PER MAGGIORE UTILITA' -->
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pb-12">
-                <h3 class="text-2xl font-bold text-center mb-8 text-white" data-i18n="faq_title">Domande Frequenti</h3>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-bold text-white" data-i18n="faq_title">Domande Frequenti</h3>
+                </div>
                 <div class="space-y-4">
-                    <details class="glass-panel p-6 rounded-2xl group cursor-pointer">
-                        <summary class="font-medium list-none flex justify-between items-center text-sm text-zinc-200">
+                    <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
+                        <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_1_q">Quali sono i tempi di spedizione per le magliette?</span>
-                            <span class="text-zinc-500 group-open:rotate-180 transition-transform">▼</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
                         </summary>
-                        <p class="text-zinc-400 mt-4 text-sm leading-relaxed" data-i18n="faq_1_a">Normalmente stampiamo e spediamo i tuoi ordini in 3-5 giorni lavorativi tramite DHL direttamente dalla Germania (Baden-Württemberg).</p>
+                        <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_1_a">Normalmente stampiamo e spediamo i tuoi ordini in 3-5 giorni lavorativi tramite DHL direttamente dalla Germania (Baden-Württemberg).</p>
                     </details>
-                    <details class="glass-panel p-6 rounded-2xl group cursor-pointer">
-                        <summary class="font-medium list-none flex justify-between items-center text-sm text-zinc-200">
+                    <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
+                        <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_2_q">Quante revisioni sono incluse nei servizi di design?</span>
-                            <span class="text-zinc-500 group-open:rotate-180 transition-transform">▼</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
                         </summary>
-                        <p class="text-zinc-400 mt-4 text-sm leading-relaxed" data-i18n="faq_2_a">I nostri pacchetti base includono sempre fino a 3 giri di revisione per assicurarci che tu sia soddisfatto al 100% del risultato finale.</p>
+                        <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_2_a">I nostri pacchetti base includono sempre fino a 3 giri di revisione per assicurarci che tu sia soddisfatto al 100% del risultato finale.</p>
                     </details>
-                    <details class="glass-panel p-6 rounded-2xl group cursor-pointer">
-                        <summary class="font-medium list-none flex justify-between items-center text-sm text-zinc-200">
+                    <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
+                        <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_3_q">Che tipo di file devo fornire per la stampa personalizzata?</span>
-                            <span class="text-zinc-500 group-open:rotate-180 transition-transform">▼</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
                         </summary>
-                        <p class="text-zinc-400 mt-4 text-sm leading-relaxed" data-i18n="faq_3_a">Accettiamo file vettoriali (.PDF, .AI, .SVG) o immagini raster ad altissima risoluzione (.PNG, .JPG a 300dpi). Se non hai il file giusto, il nostro team può aiutarti a ricrearlo (Servizio +15€).</p>
+                        <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_3_a">Accettiamo file vettoriali (.PDF, .AI, .SVG) o immagini raster ad altissima risoluzione (.PNG, .JPG a 300dpi). Se non hai il file giusto, il nostro team può aiutarti a ricrearlo (Servizio +15€).</p>
                     </details>
                 </div>
             </div>
@@ -537,38 +634,47 @@
 
     </main>
 
-    <footer class="border-t border-white/10 pt-12 pb-8 mt-auto bg-zinc-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <span class="text-xl font-bold tracking-tight text-white">TiS<span class="text-zinc-600">Design</span></span>
-            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-[10px] md:text-xs text-zinc-500 font-medium">
+    <footer class="border-t border-white/5 bg-zinc-950 pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <span class="text-2xl font-black tracking-tighter text-white">TiS<span class="text-zinc-600">Design</span></span>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold text-zinc-600 uppercase tracking-widest">
                 <a href="#" class="hover:text-white transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors" data-i18n="footer_terms">Termini e Condizioni</a>
                 <a href="#" class="hover:text-white transition-colors" data-i18n="footer_impressum">Impressum</a>
-                <span>St.-Nr.: DE459612769</span>
             </div>
+            
+            <div class="flex gap-4">
+                <span class="text-zinc-700 text-xs">St.-Nr.: DE459612769</span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/[0.02] text-center text-[10px] text-zinc-700 font-medium">
+            © 2026 TiSDesign Studio. All rights reserved.
         </div>
     </footer>
     
-    <!-- BANNER COOKIE (DSGVO OBBILIGATORIO) -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-50 bg-zinc-900 border-t border-white/10 p-4 transform transition-transform duration-500 translate-y-0">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="text-xs text-zinc-400 text-center sm:text-left" data-i18n="cookie_text">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-50 glass-panel border-t-0 p-6 transform transition-transform duration-500 translate-y-0">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm text-zinc-400 text-center md:text-left" data-i18n="cookie_text">
                 Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.
             </p>
             <div class="flex gap-3">
-                <button onclick="document.getElementById('cookie-banner').style.transform = 'translateY(100%)'" class="bg-white text-black px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap" data-i18n="cookie_btn">Accetta e chiudi</button>
+                <button onclick="document.getElementById('cookie-banner').style.transform = 'translateY(100%)'" class="bg-white text-black px-6 py-3 rounded-full text-xs font-bold whitespace-nowrap shadow-lg hover:bg-zinc-200 transition-colors" data-i18n="cookie_btn">Accetta e chiudi</button>
             </div>
         </div>
     </div>
 
     <script>
+        // Inizializza Icone Lucide
+        lucide.createIcons();
+
         const translations = {
             it: {
                 nav_services: "Servizi", nav_shop: "Shop", nav_about: "Chi Siamo", nav_contact_btn: "Preventivo",
                 hero_title: "Design Creativo e<br>Merch Premium.", hero_subtitle: "Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.", hero_btn_services: "Esplora i Servizi", hero_btn_shop: "Vai allo Shop",
-                ai_prop_title: "Ottieni una stima immediata", ai_prop_subtitle: "L'IA genererà un mini-progetto con costi e tempistiche per convincerti.", ai_prop_who: "1. Chi sei?", ai_prop_who_pl: "Es. Una band emergente...", ai_prop_what: "2. Di cosa hai bisogno?", ai_prop_what_pl: "Es. Un logo e 50 magliette...", ai_prop_btn: "Calcola il mio progetto",
-                home_card1_title: "Servizi Digitali", home_card1_desc: "Logo design, branding e social media per far crescere il tuo progetto.", home_card1_link: "Vedi Dettagli &rarr;",
-                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.", home_card2_link: "Esplora Catalogo &rarr;",
+                ai_prop_title: "Ottieni una stima immediata", ai_prop_subtitle: "L'IA genererà un mini-progetto con costi e tempistiche.", ai_prop_who: "1. Chi sei?", ai_prop_who_pl: "Es. Una band emergente...", ai_prop_what: "2. Di cosa hai bisogno?", ai_prop_what_pl: "Es. Un logo e 50 magliette...", ai_prop_btn: "Calcola il mio progetto",
+                home_card1_title: "Servizi Digitali", home_card1_desc: "Logo design, branding e social media per far crescere il tuo progetto.", home_card1_link: "Vedi Dettagli",
+                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.", home_card2_link: "Esplora Catalogo",
                 home_recent_works: "Lavori Recenti", rev_title: "Cosa dicono di noi", rev_subtitle: "Recensioni verificate dei nostri clienti.",
                 rev_1_text: "\"Qualità del cotone pazzesca e stampa perfetta. Le magliette per il mio locale sono andate a ruba in 2 giorni. Super consigliato!\"", rev_1_author: "Marco T.", rev_1_role: "Proprietario Caffetteria",
                 rev_2_text: "\"Hanno capito subito il vibe del mio brand. Il nuovo logo ha letteralmente svoltato la mia pagina Instagram. Bravi e veloci.\"", rev_2_author: "Elena R.", rev_2_role: "Content Creator",
@@ -595,8 +701,8 @@
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
                 hero_title: "Creative Design &<br>Premium Merch.", hero_subtitle: "Graphic solutions for brands and high-quality custom apparel.", hero_btn_services: "Explore Services", hero_btn_shop: "Go to Shop",
                 ai_prop_title: "Get an instant estimate", ai_prop_subtitle: "AI will generate a mini-project with costs and timelines.", ai_prop_who: "1. Who are you?", ai_prop_who_pl: "E.g. An upcoming band...", ai_prop_what: "2. What do you need?", ai_prop_what_pl: "E.g. A logo and 50 t-shirts...", ai_prop_btn: "Calculate my project",
-                home_card1_title: "Digital Services", home_card1_desc: "Logo design, branding and social media to grow your project.", home_card1_link: "See Details &rarr;",
-                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium cotton prints. Create your style or choose our designs.", home_card2_link: "Explore Catalog &rarr;",
+                home_card1_title: "Digital Services", home_card1_desc: "Logo design, branding and social media to grow your project.", home_card1_link: "See Details",
+                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium cotton prints. Create your style or choose our designs.", home_card2_link: "Explore Catalog",
                 home_recent_works: "Recent Works", rev_title: "What they say about us", rev_subtitle: "Verified reviews from our clients.",
                 rev_1_text: "\"Crazy cotton quality and perfect print. The shirts for my shop sold out in 2 days. Highly recommended!\"", rev_1_author: "Marco T.", rev_1_role: "Coffee Shop Owner",
                 rev_2_text: "\"They immediately understood the vibe of my brand. The new logo literally turned my Instagram page around. Good and fast.\"", rev_2_author: "Elena R.", rev_2_role: "Content Creator",
@@ -623,8 +729,8 @@
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
                 hero_title: "Kreatives Design &<br>Premium Merch.", hero_subtitle: "Grafiklösungen für Marken und hochwertige personalisierte Kleidung.", hero_btn_services: "Dienste entdecken", hero_btn_shop: "Zum Shop",
                 ai_prop_title: "Sofortige Schätzung erhalten", ai_prop_subtitle: "KI generiert ein Mini-Projekt mit Kosten.", ai_prop_who: "1. Wer bist du?", ai_prop_who_pl: "Z.B. Eine aufstrebende Band...", ai_prop_what: "2. Was brauchst du?", ai_prop_what_pl: "Z.B. Ein Logo und 50 Shirts...", ai_prop_btn: "Mein Projekt berechnen",
-                home_card1_title: "Digitale Dienste", home_card1_desc: "Logo-Design, Branding und Social Media, um dein Projekt zu vergrößern.", home_card1_link: "Details ansehen &rarr;",
-                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium-Baumwolldrucke. Kreiere deinen Stil oder wähle unsere Designs.", home_card2_link: "Katalog erkunden &rarr;",
+                home_card1_title: "Digitale Dienste", home_card1_desc: "Logo-Design, Branding und Social Media, um dein Projekt zu vergrößern.", home_card1_link: "Details ansehen",
+                home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium-Baumwolldrucke. Kreiere deinen Stil oder wähle unsere Designs.", home_card2_link: "Katalog erkunden",
                 home_recent_works: "Aktuelle Arbeiten", rev_title: "Was unsere Kunden sagen", rev_subtitle: "Verifizierte Bewertungen.",
                 rev_1_text: "\"Wahnsinns Baumwollqualität und perfekter Druck. Die Shirts für mein Café waren in 2 Tagen ausverkauft!\"", rev_1_author: "Marco T.", rev_1_role: "Café-Besitzer",
                 rev_2_text: "\"Sie haben sofort den Vibe meiner Marke verstanden. Das neue Logo hat meine Instagram-Seite komplett verändert.\"", rev_2_author: "Elena R.", rev_2_role: "Content Creator",
@@ -673,16 +779,21 @@
                 if (target) {
                     target.classList.add('active');
                     this.state.currentView = viewId;
-                    window.scrollTo(0, 0);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
                     document.querySelectorAll('.nav-link').forEach(link => {
-                        if (link.dataset.target === viewId) link.classList.add('active'); else link.classList.remove('active');
+                        if (link.dataset.target === viewId) link.classList.add('text-white'); 
+                        else link.classList.remove('text-white');
                     });
+                    
                     if(viewId === 'services' && !this.chartInitialized) {
                         this.initChart();
                     }
                     if(addToHistory) {
                         history.pushState({ viewId: viewId }, '', '#' + viewId);
                     }
+                    
+                    setTimeout(() => lucide.createIcons(), 50);
                 }
             },
 
@@ -698,7 +809,8 @@
                 const btn = form.querySelector('button[type="submit"]');
                 const t = translations[this.state.currentLang];
                 
-                btn.innerText = t.js_sending;
+                btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> <span data-i18n="js_sending">${t.js_sending}</span>`;
+                lucide.createIcons();
                 btn.disabled = true;
 
                 try {
@@ -711,13 +823,16 @@
                     if (response.ok) {
                         form.classList.add('hidden');
                         document.getElementById('form-success').classList.remove('hidden');
+                        document.getElementById('form-success').classList.add('flex');
                         form.reset();
                     } else {
-                        btn.innerText = t.js_error_retry;
+                        btn.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5"></i> <span data-i18n="js_error_retry">${t.js_error_retry}</span>`;
                         btn.classList.add('bg-red-500', 'text-white');
+                        lucide.createIcons();
                     }
                 } catch (error) {
-                    btn.innerText = t.js_error_net;
+                    btn.innerHTML = `<i data-lucide="wifi-off" class="w-5 h-5"></i> <span data-i18n="js_error_net">${t.js_error_net}</span>`;
+                    lucide.createIcons();
                 }
 
                 setTimeout(() => {
@@ -727,12 +842,14 @@
 
             resetForm: function() {
                 document.getElementById('form-success').classList.add('hidden');
+                document.getElementById('form-success').classList.remove('flex');
                 const form = document.getElementById('contact-form');
                 form.classList.remove('hidden');
                 
                 const btn = form.querySelector('button[type="submit"]');
-                btn.innerText = translations[this.state.currentLang].form_submit;
+                btn.innerHTML = `<i data-lucide="send" class="w-5 h-5"></i> <span data-i18n="form_submit">${translations[this.state.currentLang].form_submit}</span>`;
                 btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
+                lucide.createIcons();
             },
 
             initChart: function() {
@@ -752,13 +869,14 @@
                     options: {
                         responsive: true, maintainAspectRatio: false,
                         plugins: { legend: { display: false } },
-                        scales: { y: { beginAtZero: true, grid: { color: '#18181b' }, ticks: { color: '#a1a1aa' } }, x: { grid: { display: false }, ticks: { color: '#a1a1aa' } } },
+                        scales: { y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#a1a1aa' } }, x: { grid: { display: false }, ticks: { color: '#a1a1aa' } } },
                         animation: { duration: 1200, easing: 'easeOutQuart' }
                     }
                 });
                 this.chartInitialized = true;
             },
 
+            // --- FUNZIONE GEMINI AGGANCIATA AL TUO VERCEL BACKEND ---
             callGemini: async function(prompt) {
                 let retries = 3, delay = 1000;
                 const t = translations[this.state.currentLang];
@@ -793,11 +911,13 @@
                 const chatContainer = document.getElementById('ai-chat-container');
                 const btn = document.getElementById('btn-generate-proposal');
                 
-                btn.disabled = true; btn.innerText = "...";
+                btn.disabled = true; btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>...`;
+                lucide.createIcons();
                 
                 initialFields.classList.add('hidden');
                 btn.classList.add('hidden');
                 chatContainer.classList.remove('hidden');
+                chatContainer.classList.add('flex');
                 
                 const loaderId = "ai-loading-" + Date.now();
                 historyBox.innerHTML = `<div id="${loaderId}" class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
@@ -828,10 +948,8 @@ REGOLE DI COMPORTAMENTO:
 - FORMATO TASSATIVO: Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>, <button>). ASSOLUTAMENTE NESSUN MARKDOWN (niente asterischi *).
 - LINGUA IN CUI DEVI RISPONDERE: ${langMap[this.state.currentLang]}.
 
-REGOLA SPECIALE PER IL PULSANTE DI CONTATTO (ATTENZIONE!):
-- Inserisci il seguente codice HTML del pulsante SOLO E SOLTANTO SE il cliente nel prompt ha appena espresso esplicitamente l'intenzione di prenotare una consulenza, procedere o contattarvi (es. "voglio procedere", "mi va bene", "ich möchte mich beraten lassen", "ok procediamo").
-- NON INSERIRE IL PULSANTE se il cliente sta solo facendo domande, chiedendo preventivi o aggiungendo prodotti (es. "voglio 3 magliette e 2 poster").
-- Codice del pulsante: <button onclick="app.navigate('contact')" class="mt-4 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>`;
+REGOLA SPECIALE PER IL PULSANTE DI CONTATTO:
+- NON INSERIRE IL PULSANTE se il cliente sta solo facendo domande o chiedendo preventivi. Inseriscilo SOLO se il cliente chiede esplicitamente di procedere o contattarvi.`;
                 
                 const userRequest = `Il cliente si presenta come "${who}" e chiede: "${what}". Fornisci una risposta accogliente e un preventivo di massima basato sui tuoi servizi.`;
 
@@ -893,7 +1011,7 @@ REGOLA SPECIALE PER IL PULSANTE DI CONTATTO (ATTENZIONE!):
 - Inserisci il seguente codice HTML del pulsante SOLO E SOLTANTO SE il cliente in questa conversazione ha appena espresso esplicitamente l'intenzione di prenotare una consulenza, procedere o contattarvi (es. "voglio procedere", "mi va bene", "ich möchte mich beraten lassen", "ok procediamo").
 - NON INSERIRE IL PULSANTE se il cliente sta solo facendo domande, chiedendo preventivi o aggiungendo prodotti (es. "voglio 3 magliette e 2 poster").
 - Se inserisci il pulsante, non fare altre domande al cliente. Salutalo ed invitalo a cliccarlo.
-- Codice del pulsante: <button onclick="app.navigate('contact')" class="mt-4 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>
+- Codice del pulsante: <button onclick="app.navigate('contact')" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>
 
 STORICO DELLA CHAT:
 ${fullContext}
@@ -916,6 +1034,7 @@ ${text}`;
             resetChat: function() {
                 this.state.chatHistory = [];
                 document.getElementById('ai-chat-container').classList.add('hidden');
+                document.getElementById('ai-chat-container').classList.remove('flex');
                 document.getElementById('ai-initial-fields').classList.remove('hidden');
                 document.getElementById('ai-prop-who').value = "";
                 document.getElementById('ai-prop-what').value = "";
@@ -923,11 +1042,24 @@ ${text}`;
                 const btn = document.getElementById('btn-generate-proposal');
                 btn.classList.remove('hidden');
                 btn.disabled = false;
-                btn.innerText = translations[this.state.currentLang].ai_prop_btn;
+                btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="ai_prop_btn">${translations[this.state.currentLang].ai_prop_btn}</span>`;
+                lucide.createIcons();
                 
                 document.getElementById('ai-chat-history').innerHTML = "";
             }
         };
+
+        // Listener Scroll Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-zinc-950/80', 'backdrop-blur-md', 'border-white/10');
+                nav.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                nav.classList.remove('bg-zinc-950/80', 'backdrop-blur-md', 'border-white/10');
+                nav.classList.add('bg-transparent', 'border-transparent');
+            }
+        });
 
         window.addEventListener('popstate', function(event) {
             if (event.state && event.state.viewId) {
