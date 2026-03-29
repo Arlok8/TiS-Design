@@ -57,6 +57,11 @@
         #mobile-menu.open { transform: translateY(0); }
         .quote-box ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #a1a1aa; }
         .quote-box strong { color: #ffffff; }
+
+        /* Stili aggiuntivi per la Chat IA */
+        .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; font-size: 0.9rem; }
+        .chat-bubble-user { background: #2563eb; color: white; border-radius: 20px 20px 0 20px; padding: 10px 15px; align-self: flex-end; max-width: 85%; font-style: italic; font-size: 0.9rem; }
+        #ai-chat-history h4 { font-weight: 800; margin-bottom: 8px; color: white; text-transform: uppercase; font-size: 0.85rem; }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen selection:bg-white selection:text-black">
@@ -131,7 +136,8 @@
                         </div>
                     </div>
 
-                    <div class="grid sm:grid-cols-2 gap-4 mt-6 relative z-10">
+                    <!-- Area Input Iniziale -->
+                    <div id="ai-initial-fields" class="grid sm:grid-cols-2 gap-4 mt-6 relative z-10">
                         <div>
                             <label class="block text-xs font-semibold text-zinc-500 mb-2 uppercase tracking-wider" data-i18n="ai_prop_who">1. Chi sei?</label>
                             <input type="text" id="ai-prop-who" data-i18n-placeholder="ai_prop_who_pl" placeholder="Es. Una band emergente..." class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40">
@@ -143,7 +149,15 @@
                     </div>
                     <button onclick="app.generateProposal()" id="btn-generate-proposal" class="mt-4 w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors relative z-10" data-i18n="ai_prop_btn">Calcola il mio progetto</button>
                     
-                    <div id="ai-proposal-result" class="hidden mt-6 p-6 bg-black/40 rounded-2xl border border-white/10 quote-box text-sm leading-relaxed relative z-10"></div>
+                    <!-- Area Chat (Nascosta all'inizio) -->
+                    <div id="ai-chat-container" class="hidden mt-6 flex flex-col gap-4 relative z-10">
+                        <div id="ai-chat-history" class="flex flex-col gap-3 p-6 bg-black/40 rounded-2xl border border-white/10 quote-box text-sm leading-relaxed max-h-[400px] overflow-y-auto"></div>
+                        <div class="flex gap-2 pt-2 border-t border-white/10">
+                            <input type="text" id="ai-chat-input" placeholder="..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40" onkeypress="if(event.key === 'Enter') app.chatNext()">
+                            <button onclick="app.chatNext()" class="bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors">Invio</button>
+                            <button onclick="app.resetChat()" class="bg-zinc-800 text-zinc-400 px-4 py-3 rounded-xl text-sm hover:text-white transition-colors" title="Reset">↺</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -578,7 +592,7 @@
                 form_submit: "Invia Richiesta", footer_privacy: "Privacy Policy", footer_terms: "Termini e Condizioni", footer_impressum: "Impressum",
                 cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
                 form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
-                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Calcolando progetto...", js_ai_offline: "IA offline.", js_ai_error: "Errore.", ai_prop_pack: "Pacchetto Consigliato", ai_prop_price: "Stima Prezzo:", ai_prop_time: "Tempistiche:"
+                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.", ai_prop_pack: "Pacchetto Consigliato", ai_prop_price: "Stima Prezzo:", ai_prop_time: "Tempistiche:"
             },
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
@@ -606,7 +620,7 @@
                 form_submit: "Send Request", footer_privacy: "Privacy Policy", footer_terms: "Terms and Conditions", footer_impressum: "Impressum",
                 cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
                 form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
-                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Calculating project...", js_ai_offline: "AI offline.", js_ai_error: "Error.", ai_prop_pack: "Recommended Package", ai_prop_price: "Estimated Price:", ai_prop_time: "Timeline:"
+                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.", ai_prop_pack: "Recommended Package", ai_prop_price: "Estimated Price:", ai_prop_time: "Timeline:"
             },
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
@@ -634,13 +648,12 @@
                 form_submit: "Anfrage Senden", footer_privacy: "Datenschutzerklärung", footer_terms: "AGB", footer_impressum: "Impressum",
                 cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
                 form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
-                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Projekt wird berechnet...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.", ai_prop_pack: "Empfohlenes Paket", ai_prop_price: "Geschätzter Preis:", ai_prop_time: "Zeitrahmen:"
+                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Analysiert...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.", ai_prop_pack: "Empfohlenes Paket", ai_prop_price: "Geschätzter Preis:", ai_prop_time: "Zeitrahmen:"
             }
         };
 
         const app = {
-            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de' },
-            apiKey: "", 
+            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chatHistory: [] },
             
             toggleMobileMenu: function() {
                 const menu = document.getElementById('mobile-menu');
@@ -750,15 +763,21 @@
             },
 
             callGemini: async function(prompt) {
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${this.apiKey}`;
                 let retries = 3, delay = 1000;
                 const t = translations[this.state.currentLang];
                 for (let i = 0; i < retries; i++) {
                     try {
-                        const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }) });
-                        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                        const res = await fetch('https://ti-s-design.vercel.app/api/gemini', { 
+                            method: 'POST', 
+                            headers: { 'Content-Type': 'application/json' }, 
+                            body: JSON.stringify({ prompt: prompt }) 
+                        });
+                        if (!res.ok) throw new Error('HTTP error');
                         const data = await res.json();
-                        return data.candidates?.[0]?.content?.parts?.[0]?.text || t.js_ai_error;
+                        let resultText = data.candidates?.[0]?.content?.parts?.[0]?.text || t.js_ai_error;
+                        
+                        const mk = String.fromCharCode(96).repeat(3);
+                        return resultText.replace(new RegExp(mk + 'html', 'gi'), '').replace(new RegExp(mk, 'g'), '');
                     } catch (e) {
                         if (i === retries - 1) return t.js_ai_offline;
                         await new Promise(r => setTimeout(r, delay)); delay *= 2;
@@ -772,33 +791,96 @@
                 if(!who.trim() || !what.trim()) return;
                 
                 const t = translations[this.state.currentLang];
-                const resultBox = document.getElementById('ai-proposal-result');
+                const historyBox = document.getElementById('ai-chat-history');
+                const initialFields = document.getElementById('ai-initial-fields');
+                const chatContainer = document.getElementById('ai-chat-container');
                 const btn = document.getElementById('btn-generate-proposal');
-                const originalBtnText = btn.innerText;
                 
                 btn.disabled = true; btn.innerText = "...";
-                resultBox.classList.remove('hidden'); 
-                resultBox.classList.add('ai-glow');
-                resultBox.innerHTML = `<div class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
+                
+                initialFields.classList.add('hidden');
+                btn.classList.add('hidden');
+                chatContainer.classList.remove('hidden');
+                
+                historyBox.innerHTML = `<div id="ai-loading-first" class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
 
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
-                const prompt = `Sei un brillante account manager di TiSDesign (agenzia design e merch streetwear). L'utente è: "${who}" e ha bisogno di: "${what}". 
-                Genera una mini-proposta commerciale per convincerlo ad assumerti.
-                Usa questo FORMATO HTML ESATTO senza aggiungere altro:
-                <h4 class="text-lg font-bold text-white mb-3">${t.ai_prop_pack}</h4>
-                <ul class="mb-4"><li>[Cosa faremo per loro 1]</li><li>[Cosa faremo 2]</li></ul>
-                <div class="border-t border-white/10 pt-3 mt-3">
-                <p><strong>${t.ai_prop_price}</strong> [In base a loghi=~350€, social=~150€, magliette=~25-35€/pz]</p>
-                <p><strong>${t.ai_prop_time}</strong> [Es. 3-5 giorni per design, 5 giorni spedizione]</p>
-                </div>
-                LINGUA: ${langMap[this.state.currentLang]}. NON includere i tag \`\`\`html.`;
+                const systemPrompt = `Sei l'Assistente strategico di TiSDesign.
+Obiettivo: Aiutare i clienti (nuove attività o realtà ferme) a far emergere il loro potenziale inespresso.
+Regola d'oro: Mai criticare il lavoro precedente; parlare sempre di "evoluzione naturale".
+Focus: Far sentire il cliente capito, mai giudicato.
+Merchandising & Tecnica: Uso plotter da taglio e pressa a caldo per massima precisione. T-shirt da €15-18. Felpe da €30-35. (Il prezzo finale dipende da dimensione e posizione stampa). Cura capi: lavare a freddo max 30°C, rovescio, no asciugatrice.
+Servizi Design & Prezzi: Logo Single €150-200. Brand Identity Pack €250. Social Asset Kit €100-150. Social Content Pack (4 post) da €120. Tutto il Design: vetrine, banner, menu, insegne.
+Metodo: Fase 0 (Analisi) GRATIS. Visualizzazione tramite mockup reali. Puntiamo a diventare il reparto branding esterno del cliente.
+Call to Action: Invitare SEMPRE l'utente a richiedere l'Analisi Gratuita di Fase 0 chiedendogli di rispondere qui.
+FORMATO: Usa SOLO tag HTML (<h4>, <ul>, <li>, <strong>, <p>). MAI USARE MARKDOWN o asterischi. Non includere blocchi codice. Lingua: ${langMap[this.state.currentLang]}.`;
 
-                const result = await this.callGemini(prompt);
+                const userRequest = `Utente: "${who}". Richiesta: "${what}". Crea una prima risposta empatica e proponi una soluzione indicando costi/tempi. Chiudi invitando all'Analisi Gratuita di Fase 0.`;
+
+                const result = await this.callGemini(systemPrompt + "\n\n" + userRequest);
                 
-                resultBox.innerHTML = result.replace(/```html/g, '').replace(/```/g, '');
+                const loaderEl = document.getElementById('ai-loading-first');
+                if (loaderEl) loaderEl.remove();
                 
-                btn.disabled = false; btn.innerText = originalBtnText;
-                setTimeout(() => resultBox.classList.remove('ai-glow'), 2000);
+                this.state.chatHistory.push({ role: "user", text: userRequest });
+                this.state.chatHistory.push({ role: "model", text: result });
+                
+                historyBox.innerHTML += `<div class="chat-bubble-ai">${result}</div>`;
+                historyBox.scrollTop = historyBox.scrollHeight;
+            },
+
+            chatNext: async function() {
+                const inputEl = document.getElementById('ai-chat-input');
+                const text = inputEl.value;
+                if(!text.trim()) return;
+                
+                const historyBox = document.getElementById('ai-chat-history');
+                const t = translations[this.state.currentLang];
+                inputEl.value = "";
+                
+                historyBox.innerHTML += `<div class="chat-bubble-user">${text}</div>`;
+                
+                const loaderId = "ai-loading-" + Date.now();
+                historyBox.innerHTML += `<div id="${loaderId}" class="animate-pulse text-zinc-500 text-xs mt-2 mb-2 ml-2">${t.js_ai_calc}</div>`;
+                historyBox.scrollTop = historyBox.scrollHeight;
+                
+                const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
+                const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
+                
+                const prompt = `Sei l'Assistente Strategico di TiSDesign. Continua la conversazione. Ricorda di spingere l'Analisi Fase 0.
+Usa SOLO HTML. NIENTE markdown. Lingua: ${langMap[this.state.currentLang]}.
+
+STORICO:
+${fullContext}
+
+CLIENTE ORA:
+${text}`;
+                
+                const response = await this.callGemini(prompt);
+                
+                const loaderEl = document.getElementById(loaderId);
+                if(loaderEl) loaderEl.remove();
+                
+                this.state.chatHistory.push({ role: "user", text: text });
+                this.state.chatHistory.push({ role: "model", text: response });
+                
+                historyBox.innerHTML += `<div class="chat-bubble-ai">${response}</div>`;
+                historyBox.scrollTop = historyBox.scrollHeight;
+            },
+
+            resetChat: function() {
+                this.state.chatHistory = [];
+                document.getElementById('ai-chat-container').classList.add('hidden');
+                document.getElementById('ai-initial-fields').classList.remove('hidden');
+                document.getElementById('ai-prop-who').value = "";
+                document.getElementById('ai-prop-what').value = "";
+                
+                const btn = document.getElementById('btn-generate-proposal');
+                btn.classList.remove('hidden');
+                btn.disabled = false;
+                btn.innerText = translations[this.state.currentLang].ai_prop_btn;
+                
+                document.getElementById('ai-chat-history').innerHTML = "";
             }
         };
 
