@@ -9,6 +9,9 @@
     <meta property="og:title" content="TiSDesign | Premium Merch & Digital Studio">
     <meta property="og:description" content="Design Creativo e Merch Premium. Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.">
     
+    <!-- Favicon aggiornata a TiS -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2318181b%22/><text x=%2250%22 y=%2266%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22%23ffffff%22 font-family=%22sans-serif%22 font-weight=%22bold%22>TiS</text></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -28,14 +31,12 @@
         }
     </script>
     <style>
-        /* Sfondo e Testo */
         html, body { background-color: #09090b !important; color: #f4f4f5 !important; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
         .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 300px; }
         .view-section { display: none; opacity: 0; transition: opacity 0.4s ease-in-out; }
         .view-section.active { display: block; opacity: 1; }
         
-        /* Stile Glassmorphism Moderno */
         .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
         
@@ -57,7 +58,6 @@
         
         details > summary::-webkit-details-marker { display: none; }
         
-        /* Stili Chat IA */
         .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; margin-bottom: 15px; font-size: 0.9rem; line-height: 1.5; }
         .chat-bubble-user { background: #2563eb; color: white; border-radius: 20px 20px 0 20px; padding: 10px 15px; margin-bottom: 15px; align-self: flex-end; max-width: 85%; margin-left: auto; font-style: italic; font-size: 0.9rem; }
         #ai-chat-history strong { color: #ffffff; }
@@ -126,7 +126,7 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Berlin / Stuttgart based
                     </div>
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-gradient mb-6 leading-tight" data-i18n="hero_title">
-                        Design Creativo e<br>Merch Premium.
+                        Design Creativo e<br>Merch Premium
                     </h1>
                     <p class="text-lg md:text-xl text-zinc-400 font-medium max-w-2xl mx-auto mb-10" data-i18n="hero_subtitle">
                         Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.
@@ -181,23 +181,26 @@
                 </div>
             </div>
 
+            <!-- COMPACT SPLIT CARDS (Sistemate le dimensioni) -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div onclick="app.navigate('services')" class="md:col-span-2 glass-panel rounded-[2.5rem] p-10 md:p-12 cursor-pointer group transition-all duration-300 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="sparkles" class="w-48 h-48"></i></div>
-                        <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 block">01</span>
-                        <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white" data-i18n="home_card1_title">Servizi Digitali</h3>
-                        <p class="text-zinc-400 mb-10 text-base leading-relaxed max-w-md" data-i18n="home_card1_desc">Logo design, branding e social media per far crescere il tuo progetto.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div onclick="app.navigate('services')" class="glass-panel rounded-[2rem] p-8 md:p-10 cursor-pointer group transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="sparkles" class="w-40 h-40"></i></div>
+                        <div>
+                            <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 block">01</span>
+                            <h3 class="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-white" data-i18n="home_card1_title">Servizi Digitali</h3>
+                            <p class="text-zinc-400 mb-8 text-base leading-relaxed max-w-md" data-i18n="home_card1_desc">Logo design, branding e social media per far crescere il tuo progetto.</p>
+                        </div>
                         <div class="text-white text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all"><span data-i18n="home_card1_link">Vedi Dettagli</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></div>
                     </div>
-                    <div onclick="app.navigate('shop')" class="glass-panel rounded-[2.5rem] p-10 md:p-12 cursor-pointer group transition-all duration-300 flex flex-col justify-between">
+                    <div onclick="app.navigate('shop')" class="glass-panel rounded-[2rem] p-8 md:p-10 cursor-pointer group transition-all duration-300 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4 block">02</span>
-                            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white" data-i18n="home_card2_title">Shop & Custom Merch</h3>
-                            <p class="text-zinc-400 mb-8 text-sm leading-relaxed" data-i18n="home_card2_desc">Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.</p>
+                            <h3 class="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-white" data-i18n="home_card2_title">Shop & Custom Merch</h3>
+                            <p class="text-zinc-400 mb-6 text-sm leading-relaxed" data-i18n="home_card2_desc">Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.</p>
                         </div>
-                        <div class="aspect-square bg-zinc-900 rounded-3xl border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-xl">
-                            <i data-lucide="shopping-bag" class="w-12 h-12 text-zinc-700"></i>
+                        <div class="h-28 bg-zinc-900 rounded-2xl border border-white/5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-xl">
+                            <i data-lucide="shopping-bag" class="w-10 h-10 text-zinc-700"></i>
                         </div>
                     </div>
                 </div>
@@ -255,9 +258,10 @@
             </div>
         </section>
 
+        <!-- SERVIZI -->
         <section id="view-services" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white" data-i18n="srv_title">Servizi di Design</h1>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 text-white leading-tight" data-i18n="srv_title">Servizi di Design</h1>
                 <p class="text-lg text-zinc-400 max-w-2xl mx-auto" data-i18n="srv_subtitle">Dall'idea iniziale all'identità visiva completa.</p>
             </div>
 
@@ -341,9 +345,10 @@
             </div>
         </section>
 
+        <!-- SHOP -->
         <section id="view-shop" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white" data-i18n="shop_title">Merch & Custom Apparel</h1>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 text-white leading-tight" data-i18n="shop_title">Merch & Custom Apparel</h1>
                 <p class="text-lg text-zinc-400" data-i18n="shop_subtitle">Qualità premium. Design unico. Il tuo stile.</p>
             </div>
 
@@ -515,10 +520,11 @@
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="view-contact" class="view-section flex-grow pt-24 pb-32">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h1 class="text-5xl font-bold text-white mb-6 tracking-tight" data-i18n="contact_title">Parliamo del tuo progetto.</h1>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 text-white leading-tight" data-i18n="contact_title">Parliamo del tuo progetto.</h1>
                     <p class="text-zinc-400 text-lg" data-i18n="contact_subtitle">Compila il modulo per ricevere un preventivo o per ordini custom voluminosi.</p>
                 </div>
 
@@ -546,9 +552,16 @@
                             <div class="pt-10 border-t border-white/10">
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-6" data-i18n="contact_social">Social</p>
                                 <div class="flex gap-4">
-                                    <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                                    <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                                    <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all"><i data-lucide="video" class="w-5 h-5"></i></a>
+                                    <!-- Inseriti SVG esatti per i loghi social al posto di lucide generici -->
+                                    <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                                    </a>
+                                    <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.5c3.5-1 5.5-1 9 0"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/><path d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-1 2.5"/><path d="M8.5 17c0 1-1.356 3-1.832 3-1.429 0-2.698-1.667-3.333-3-.635-1.667-.476-5.833 1.428-11.5C6.151 4.485 7.545 4.16 9 4l1 2.5"/></svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -602,7 +615,8 @@
                 </div>
             </div>
             
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <!-- FAQ DISTANZIATE -->
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 mt-16 border-t border-white/5 pb-24">
                 <div class="text-center mb-12">
                     <h3 class="text-2xl font-bold text-white" data-i18n="faq_title">Domande Frequenti</h3>
                 </div>
@@ -665,13 +679,12 @@
     </div>
 
     <script>
-        // Inizializza Icone Lucide
         lucide.createIcons();
 
         const translations = {
             it: {
                 nav_services: "Servizi", nav_shop: "Shop", nav_about: "Chi Siamo", nav_contact_btn: "Preventivo",
-                hero_title: "Design Creativo e<br>Merch Premium.", hero_subtitle: "Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.", hero_btn_services: "Esplora i Servizi", hero_btn_shop: "Vai allo Shop",
+                hero_title: "Design Creativo e<br>Merch Premium", hero_subtitle: "Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.", hero_btn_services: "Esplora i Servizi", hero_btn_shop: "Vai allo Shop",
                 ai_prop_title: "Ottieni una stima immediata", ai_prop_subtitle: "L'IA genererà un mini-progetto con costi e tempistiche.", ai_prop_who: "1. Chi sei?", ai_prop_who_pl: "Es. Una band emergente...", ai_prop_what: "2. Di cosa hai bisogno?", ai_prop_what_pl: "Es. Un logo e 50 magliette...", ai_prop_btn: "Calcola il mio progetto",
                 home_card1_title: "Servizi Digitali", home_card1_desc: "Logo design, branding e social media per far crescere il tuo progetto.", home_card1_link: "Vedi Dettagli",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.", home_card2_link: "Esplora Catalogo",
@@ -699,7 +712,7 @@
             },
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
-                hero_title: "Creative Design &<br>Premium Merch.", hero_subtitle: "Graphic solutions for brands and high-quality custom apparel.", hero_btn_services: "Explore Services", hero_btn_shop: "Go to Shop",
+                hero_title: "Creative Design &<br>Premium Merch", hero_subtitle: "Graphic solutions for brands and high-quality custom apparel.", hero_btn_services: "Explore Services", hero_btn_shop: "Go to Shop",
                 ai_prop_title: "Get an instant estimate", ai_prop_subtitle: "AI will generate a mini-project with costs and timelines.", ai_prop_who: "1. Who are you?", ai_prop_who_pl: "E.g. An upcoming band...", ai_prop_what: "2. What do you need?", ai_prop_what_pl: "E.g. A logo and 50 t-shirts...", ai_prop_btn: "Calculate my project",
                 home_card1_title: "Digital Services", home_card1_desc: "Logo design, branding and social media to grow your project.", home_card1_link: "See Details",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium cotton prints. Create your style or choose our designs.", home_card2_link: "Explore Catalog",
@@ -727,7 +740,7 @@
             },
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
-                hero_title: "Kreatives Design &<br>Premium Merch.", hero_subtitle: "Grafiklösungen für Marken und hochwertige personalisierte Kleidung.", hero_btn_services: "Dienste entdecken", hero_btn_shop: "Zum Shop",
+                hero_title: "Kreatives Design &<br>Premium Merch", hero_subtitle: "Grafiklösungen für Marken und hochwertige personalisierte Kleidung.", hero_btn_services: "Dienste entdecken", hero_btn_shop: "Zum Shop",
                 ai_prop_title: "Sofortige Schätzung erhalten", ai_prop_subtitle: "KI generiert ein Mini-Projekt mit Kosten.", ai_prop_who: "1. Wer bist du?", ai_prop_who_pl: "Z.B. Eine aufstrebende Band...", ai_prop_what: "2. Was brauchst du?", ai_prop_what_pl: "Z.B. Ein Logo und 50 Shirts...", ai_prop_btn: "Mein Projekt berechnen",
                 home_card1_title: "Digitale Dienste", home_card1_desc: "Logo-Design, Branding und Social Media, um dein Projekt zu vergrößern.", home_card1_link: "Details ansehen",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium-Baumwolldrucke. Kreiere deinen Stil oder wähle unsere Designs.", home_card2_link: "Katalog erkunden",
