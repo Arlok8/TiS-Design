@@ -803,6 +803,8 @@
                 historyBox.innerHTML = `<div id="${loaderId}" class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
 
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
+                const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
+
                 const systemPrompt = `Sei l'assistente virtuale ufficiale di TiSDesign, agenzia di design e premium streetwear.
 
 IDENTITÀ E TONO DI VOCE:
@@ -822,10 +824,15 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
 
 REGOLE DI COMPORTAMENTO:
 - Calcola sempre un preventivo di massima o un budget di partenza basato sui prezzi sopra indicati.
-- Alla fine del messaggio, invita il cliente a prenotare una "consulenza gratuita" (o "kostenlose Erstberatung" / "free consultation") per definire i dettagli.
 - Mantieni la risposta strutturata e facile da leggere (massimo 3-4 brevi paragrafi).
-- FORMATO TASSATIVO: Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). ASSOLUTAMENTE NESSUN MARKDOWN (niente asterischi *).
-- LINGUA IN CUI DEVI RISPONDERE: ${langMap[this.state.currentLang]}.`;
+- FORMATO TASSATIVO: Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>, <button>). ASSOLUTAMENTE NESSUN MARKDOWN (niente asterischi *).
+- LINGUA IN CUI DEVI RISPONDERE: ${langMap[this.state.currentLang]}.
+
+REGOLA SPECIALE PER IL PULSANTE DI CONTATTO (ATTENZIONE!):
+- Inserisci il seguente codice HTML del pulsante SOLO E SOLTANTO SE il cliente nel prompt ha appena espresso esplicitamente l'intenzione di prenotare una consulenza, procedere o contattarvi (es. "voglio procedere", "mi va bene", "ich möchte mich beraten lassen", "ok procediamo").
+- NON INSERIRE IL PULSANTE se il cliente sta solo facendo domande, chiedendo preventivi o aggiungendo prodotti (es. "voglio 3 magliette e 2 poster").
+- Codice del pulsante: <button onclick="app.navigate('contact')" class="mt-4 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>`;
+                
                 const userRequest = `Il cliente si presenta come "${who}" e chiede: "${what}". Fornisci una risposta accogliente e un preventivo di massima basato sui tuoi servizi.`;
 
                 const result = await this.callGemini(systemPrompt + "\n\n" + userRequest);
@@ -856,6 +863,7 @@ REGOLE DI COMPORTAMENTO:
                 historyBox.scrollTop = historyBox.scrollHeight;
                 
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
+                const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
                 const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
                 
                 const systemPrompt = `Sei l'assistente virtuale ufficiale di TiSDesign, agenzia di design e premium streetwear.
@@ -878,9 +886,14 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
 REGOLE DI COMPORTAMENTO:
 - Rispondi in modo naturale e amichevole alla richiesta attuale del cliente.
 - Usa i prezzi indicati per dare stime.
-- Non ripetere l'invito alla consulenza gratuita in ogni singolo messaggio se non è necessario, usalo con naturalezza.
-- FORMATO TASSATIVO: Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). ASSOLUTAMENTE NESSUN MARKDOWN (niente asterischi *).
+- FORMATO TASSATIVO: Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>, <button>). ASSOLUTAMENTE NESSUN MARKDOWN (niente asterischi *).
 - LINGUA IN CUI DEVI RISPONDERE: ${langMap[this.state.currentLang]}.
+
+REGOLA SPECIALE PER IL PULSANTE DI CONTATTO (ATTENZIONE!):
+- Inserisci il seguente codice HTML del pulsante SOLO E SOLTANTO SE il cliente in questa conversazione ha appena espresso esplicitamente l'intenzione di prenotare una consulenza, procedere o contattarvi (es. "voglio procedere", "mi va bene", "ich möchte mich beraten lassen", "ok procediamo").
+- NON INSERIRE IL PULSANTE se il cliente sta solo facendo domande, chiedendo preventivi o aggiungendo prodotti (es. "voglio 3 magliette e 2 poster").
+- Se inserisci il pulsante, non fare altre domande al cliente. Salutalo ed invitalo a cliccarlo.
+- Codice del pulsante: <button onclick="app.navigate('contact')" class="mt-4 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>
 
 STORICO DELLA CHAT:
 ${fullContext}
