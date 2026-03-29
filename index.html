@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO & Social Preview (Open Graph) -->
     <title>TiSDesign | Premium Merch & Digital Studio</title>
     <meta name="description" content="Agenzia di design creativo e streetwear personalizzato basata a Berlino e Stoccarda. Eleva il tuo brand.">
     <meta property="og:title" content="TiSDesign | Premium Merch & Digital Studio">
@@ -11,7 +12,8 @@
     <meta property="og:image" content="https://via.placeholder.com/1200x630/09090b/ffffff?text=TiSDesign+Preview">
     <meta property="og:type" content="website">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚫</text></svg>">
+    <!-- Favicon (Sostituisci l'URL con il tuo logo reale) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -72,9 +74,9 @@
                 </nav>
                 <div class="hidden md:flex items-center gap-4">
                     <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-none text-zinc-400 text-sm focus:ring-0 outline-none cursor-pointer hover:text-white transition-colors">
-                        <option value="it" class="bg-zinc-900">IT</option>
+                        <option value="de" class="bg-zinc-900" selected>DE</option>
                         <option value="en" class="bg-zinc-900">EN</option>
-                        <option value="de" class="bg-zinc-900">DE</option>
+                        <option value="it" class="bg-zinc-900">IT</option>
                     </select>
                     <button onclick="app.navigate('contact')" class="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-200 transition-colors" data-i18n="nav_contact_btn">Preventivo</button>
                 </div>
@@ -89,13 +91,16 @@
         <button onclick="app.navigate('services'); app.toggleMobileMenu();" class="text-2xl font-bold text-zinc-400 hover:text-white" data-i18n="nav_services">Servizi</button>
         <button onclick="app.navigate('shop'); app.toggleMobileMenu();" class="text-2xl font-bold text-zinc-400 hover:text-white" data-i18n="nav_shop">Shop</button>
         <select onchange="app.changeLanguage(this.value)" class="lang-selector bg-transparent border-b border-white/20 text-white text-xl focus:ring-0 outline-none cursor-pointer mt-4 pb-2 text-center">
-            <option value="it" class="bg-zinc-900">IT (Italiano)</option><option value="en" class="bg-zinc-900">EN (English)</option><option value="de" class="bg-zinc-900">DE (Deutsch)</option>
+            <option value="de" class="bg-zinc-900" selected>DE (Deutsch)</option>
+            <option value="en" class="bg-zinc-900">EN (English)</option>
+            <option value="it" class="bg-zinc-900">IT (Italiano)</option>
         </select>
         <button onclick="app.navigate('contact'); app.toggleMobileMenu();" class="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold mt-4" data-i18n="nav_contact_btn">Preventivo</button>
     </div>
 
     <main id="app-content" class="flex-grow flex flex-col pt-20">
 
+        <!-- HOMEPAGE -->
         <section id="view-home" class="view-section active flex-grow">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center flex flex-col items-center">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-300 mb-8">
@@ -113,6 +118,7 @@
                 </div>
             </div>
 
+            <!-- GENERATORE DI PROGETTI IA -->
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 w-full">
                 <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
@@ -141,6 +147,7 @@
                 </div>
             </div>
 
+            <!-- SPLIT CARDS -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div onclick="app.navigate('services')" class="glass-panel rounded-3xl p-10 cursor-pointer group transition-all duration-300">
@@ -199,11 +206,12 @@
             </div>
 
             <div class="py-24 text-center border-t border-white/5">
-                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="home_cta_title">Hai un progetto in mente? Parliamone.</h2>
+                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="home_cta_title">Idee im Kopf? Lass uns darüber sprechen.</h2>
                 <button onclick="app.navigate('contact')" class="bg-white text-black px-8 py-4 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors" data-i18n="home_cta_btn">Contattaci</button>
             </div>
         </section>
 
+        <!-- SERVIZI -->
         <section id="view-services" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white" data-i18n="srv_title">Servizi di Design</h1>
@@ -274,6 +282,7 @@
             </div>
         </section>
 
+        <!-- SHOP -->
         <section id="view-shop" class="view-section flex-grow">
             <div class="py-24 text-center px-4 border-b border-white/5">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white" data-i18n="shop_title">Merch & Custom Apparel</h1>
@@ -321,6 +330,7 @@
             </div>
         </section>
 
+        <!-- PRODUCT DETAIL -->
         <section id="view-product" class="view-section flex-grow pt-8 pb-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <button onclick="app.navigate('shop')" class="text-xs font-semibold text-zinc-500 hover:text-white mb-12 flex items-center gap-2 transition-colors tracking-wider uppercase" data-i18n="pd_back">&larr; Torna allo Shop</button>
@@ -406,6 +416,7 @@
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="view-contact" class="view-section flex-grow pt-24 pb-32">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 sm:mb-16">
@@ -419,7 +430,7 @@
                             <h3 class="text-lg font-bold mb-6" data-i18n="contact_direct">Contatti Diretti</h3>
                             <div class="space-y-4 text-sm text-zinc-400">
                                 <p class="flex items-center gap-3"><span class="text-white">✉️</span> info.tisdesign@gmail.com</p>
-                                <p class="flex items-center gap-3"><span class="text-white">📞</span> (In arrivo)</p>
+                                <p class="flex items-center gap-3"><span class="text-white">📞</span> <span data-i18n="contact_phone_coming">(In arrivo)</span></p>
                                 <p class="flex items-center gap-3"><span class="text-white">📍</span> Berlin & Stuttgart</p>
                             </div>
                         </div>
@@ -470,10 +481,21 @@
 
                             <button type="submit" class="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors text-sm mt-4" data-i18n="form_submit">Invia Richiesta</button>
                         </form>
+
+                        <!-- SCHERMATA DI SUCCESSO -->
+                        <div id="form-success" class="hidden h-full flex flex-col items-center justify-center text-center py-12">
+                            <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-3xl mb-6">✓</div>
+                            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="form_success_title">Richiesta Inviata!</h3>
+                            <p class="text-zinc-400 text-sm" data-i18n="form_success_desc">Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.</p>
+                            <button onclick="app.resetForm()" class="mt-8 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition-colors" data-i18n="form_success_btn">Invia un altro messaggio</button>
+                        </div>
+                        <!-- FINE BLOCCO SUCCESSO -->
+
                     </div>
                 </div>
             </div>
             
+            <!-- FAQ INSERITE QUI SOTTO I CONTATTI PER MAGGIORE UTILITA' -->
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pb-12">
                 <h3 class="text-2xl font-bold text-center mb-8 text-white" data-i18n="faq_title">Domande Frequenti</h3>
                 <div class="space-y-4">
@@ -516,6 +538,7 @@
         </div>
     </footer>
     
+    <!-- BANNER COOKIE (DSGVO OBBILIGATORIO) -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-50 bg-zinc-900 border-t border-white/10 p-4 transform transition-transform duration-500 translate-y-0">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
             <p class="text-xs text-zinc-400 text-center sm:text-left" data-i18n="cookie_text">
@@ -553,7 +576,9 @@
                 contact_title: "Parliamo del tuo progetto.", contact_subtitle: "Compila il modulo per ricevere un preventivo o per ordini custom voluminosi.", contact_direct: "Contatti Diretti", contact_social: "Social",
                 form_name: "Nome", form_surname: "Cognome", form_email: "Email", form_subject: "Oggetto della richiesta", form_opt_default: "Seleziona un'opzione...", form_opt_1: "Preventivo Servizi Grafici", form_opt_2: "Ordine Merch Personalizzato / Bulk", form_opt_3: "Altro", form_message: "Messaggio", form_placeholder: "Descrivi la tua idea...",
                 form_submit: "Invia Richiesta", footer_privacy: "Privacy Policy", footer_terms: "Termini e Condizioni", footer_impressum: "Impressum",
-                cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi"
+                cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
+                form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
+                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Calcolando progetto...", js_ai_offline: "IA offline.", js_ai_error: "Errore.", ai_prop_pack: "Pacchetto Consigliato", ai_prop_price: "Stima Prezzo:", ai_prop_time: "Tempistiche:"
             },
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
@@ -579,7 +604,9 @@
                 contact_title: "Let's talk about your project.", contact_subtitle: "Fill out the form to receive a quote or for large custom orders.", contact_direct: "Direct Contacts", contact_social: "Social",
                 form_name: "Name", form_surname: "Surname", form_email: "Email", form_subject: "Subject of request", form_opt_default: "Select an option...", form_opt_1: "Graphic Services Quote", form_opt_2: "Custom Merch / Bulk Order", form_opt_3: "Other", form_message: "Message", form_placeholder: "Describe your idea...",
                 form_submit: "Send Request", footer_privacy: "Privacy Policy", footer_terms: "Terms and Conditions", footer_impressum: "Impressum",
-                cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close"
+                cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
+                form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
+                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Calculating project...", js_ai_offline: "AI offline.", js_ai_error: "Error.", ai_prop_pack: "Recommended Package", ai_prop_price: "Estimated Price:", ai_prop_time: "Timeline:"
             },
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
@@ -592,7 +619,7 @@
                 rev_2_text: "\"Sie haben sofort den Vibe meiner Marke verstanden. Das neue Logo hat meine Instagram-Seite komplett verändert.\"", rev_2_author: "Elena R.", rev_2_role: "Content Creator",
                 rev_3_text: "\"Die perfekte Kombination. Sie haben die Grafiken für mein Musikprojekt gemacht und sie auf das Merch gedruckt.\"", rev_3_author: "Lukas K.", rev_3_role: "Musikproduzent",
                 faq_title: "Häufig gestellte Fragen", faq_1_q: "Wie sind die Lieferzeiten für T-Shirts?", faq_1_a: "Normalerweise bedrucken und versenden wir deine Bestellungen in 3-5 Werktagen per DHL direkt aus Deutschland (Baden-Württemberg).", faq_2_q: "Wie viele Überarbeitungen sind bei Design-Dienstleistungen enthalten?", faq_2_a: "Unsere Basispakete beinhalten immer bis zu 3 Überarbeitungsrunden, um sicherzustellen, dass du zu 100% mit dem Endergebnis zufrieden bist.", faq_3_q: "Welche Art von Datei muss ich für den Druck bereitstellen?", faq_3_a: "Wir akzeptieren Vektordateien (.PDF, .AI, .SVG) oder hochauflösende Rasterbilder (.PNG, .JPG bei 300dpi). Falls nicht vorhanden, erstellen wir sie neu (+15€).",
-                home_cta_title: "Hast du ein Projekt im Sinn? Lass uns reden.", home_cta_btn: "Kontaktiere uns",
+                home_cta_title: "Idee im Kopf? Lass uns darüber sprechen.", home_cta_btn: "Kontaktiere uns",
                 srv_title: "Design-Dienstleistungen", srv_subtitle: "Von der ersten Idee bis zur kompletten visuellen Identität.", srv_logo_title: "Logo & Branding", srv_logo_desc: "Schaffung einzigartiger, einprägsamer und skalierbarer visueller Identitäten für dein Unternehmen.", srv_logo_price: "Ab 350€", srv_social_title: "Social Media Content", srv_social_desc: "Vorlagen, Grafiken und konsistente visuelle Assets, um deine Feeds zu dominieren.", srv_social_price: "Ab 150€", srv_print_title: "Print & Poster Design", srv_print_desc: "Drucksachen mit hoher Wirkung. Von Visitenkarten bis zu Werbeplakaten.", srv_print_price: "Ab 90€",
                 srv_process_title: "Unsere Methode", srv_process_1_t: "Briefing & Konzept", srv_process_1_d: "Abstimmung der Ziele.", srv_process_2_t: "Design & Revisionen", srv_process_2_d: "Iterative visuelle Entwicklung.", srv_process_3_t: "Dateiübergabe", srv_process_3_d: "Gebrauchsfertige Endprodukte.",
                 srv_roi_title: "Der Wert von professionellem Design", srv_roi_desc: "Die Investition in eine solide visuelle Identität ist kein Kostenfaktor, sondern ein Multiplikator. Marken mit konsistentem Design verzeichnen messbaren Vertrauenszuwachs.", srv_roi_li1: "Höhere Nutzerbindung (+40%)", srv_roi_li2: "Wahrnehmung von Premium-Wert", srv_roi_li3: "Sofortige Wiedererkennung", srv_roi_chart: "Auswirkung auf die Konversionsrate",
@@ -605,12 +632,14 @@
                 contact_title: "Lass uns über dein Projekt sprechen.", contact_subtitle: "Fülle das Formular aus, um ein Angebot oder für große Bestellungen zu erhalten.", contact_direct: "Direkte Kontakte", contact_social: "Social",
                 form_name: "Vorname", form_surname: "Nachname", form_email: "E-Mail", form_subject: "Betreff der Anfrage", form_opt_default: "Wähle eine Option...", form_opt_1: "Angebot Grafikdienste", form_opt_2: "Custom Merch / Großbestellung", form_opt_3: "Andere", form_message: "Nachricht", form_placeholder: "Beschreibe deine Idee...",
                 form_submit: "Anfrage Senden", footer_privacy: "Datenschutzerklärung", footer_terms: "AGB", footer_impressum: "Impressum",
-                cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen"
+                cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
+                form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
+                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Projekt wird berechnet...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.", ai_prop_pack: "Empfohlenes Paket", ai_prop_price: "Geschätzter Preis:", ai_prop_time: "Zeitrahmen:"
             }
         };
 
         const app = {
-            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'it' },
+            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de' },
             apiKey: "", 
             
             toggleMobileMenu: function() {
@@ -657,9 +686,9 @@
                 e.preventDefault();
                 const form = e.target;
                 const btn = form.querySelector('button[type="submit"]');
-                const originalText = btn.innerText;
+                const t = translations[this.state.currentLang];
                 
-                btn.innerText = "Invio in corso...";
+                btn.innerText = t.js_sending;
                 btn.disabled = true;
 
                 try {
@@ -670,22 +699,30 @@
                     });
                     
                     if (response.ok) {
-                        btn.innerText = "✓ Inviato con successo";
-                        btn.classList.add('bg-green-500', 'text-white');
+                        form.classList.add('hidden');
+                        document.getElementById('form-success').classList.remove('hidden');
                         form.reset();
                     } else {
-                        btn.innerText = "Errore, riprova";
+                        btn.innerText = t.js_error_retry;
                         btn.classList.add('bg-red-500', 'text-white');
                     }
                 } catch (error) {
-                    btn.innerText = "Errore di rete";
+                    btn.innerText = t.js_error_net;
                 }
 
                 setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
                     btn.disabled = false;
                 }, 3000);
+            },
+
+            resetForm: function() {
+                document.getElementById('form-success').classList.add('hidden');
+                const form = document.getElementById('contact-form');
+                form.classList.remove('hidden');
+                
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerText = translations[this.state.currentLang].form_submit;
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
             },
 
             initChart: function() {
@@ -715,14 +752,15 @@
             callGemini: async function(prompt) {
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${this.apiKey}`;
                 let retries = 3, delay = 1000;
+                const t = translations[this.state.currentLang];
                 for (let i = 0; i < retries; i++) {
                     try {
                         const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }) });
                         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                         const data = await res.json();
-                        return data.candidates?.[0]?.content?.parts?.[0]?.text || "Errore.";
+                        return data.candidates?.[0]?.content?.parts?.[0]?.text || t.js_ai_error;
                     } catch (e) {
-                        if (i === retries - 1) return "IA offline.";
+                        if (i === retries - 1) return t.js_ai_offline;
                         await new Promise(r => setTimeout(r, delay)); delay *= 2;
                     }
                 }
@@ -733,6 +771,7 @@
                 const what = document.getElementById('ai-prop-what').value;
                 if(!who.trim() || !what.trim()) return;
                 
+                const t = translations[this.state.currentLang];
                 const resultBox = document.getElementById('ai-proposal-result');
                 const btn = document.getElementById('btn-generate-proposal');
                 const originalBtnText = btn.innerText;
@@ -740,17 +779,17 @@
                 btn.disabled = true; btn.innerText = "...";
                 resultBox.classList.remove('hidden'); 
                 resultBox.classList.add('ai-glow');
-                resultBox.innerHTML = "<div class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>Calcolando progetto...</span></div>";
+                resultBox.innerHTML = `<div class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
 
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
                 const prompt = `Sei un brillante account manager di TiSDesign (agenzia design e merch streetwear). L'utente è: "${who}" e ha bisogno di: "${what}". 
                 Genera una mini-proposta commerciale per convincerlo ad assumerti.
                 Usa questo FORMATO HTML ESATTO senza aggiungere altro:
-                <h4 class="text-lg font-bold text-white mb-3">Pacchetto Consigliato</h4>
+                <h4 class="text-lg font-bold text-white mb-3">${t.ai_prop_pack}</h4>
                 <ul class="mb-4"><li>[Cosa faremo per loro 1]</li><li>[Cosa faremo 2]</li></ul>
                 <div class="border-t border-white/10 pt-3 mt-3">
-                <p><strong>Stima Prezzo:</strong> [In base a loghi=~350€, social=~150€, magliette=~25-35€/pz]</p>
-                <p><strong>Tempistiche:</strong> [Es. 3-5 giorni per design, 5 giorni spedizione]</p>
+                <p><strong>${t.ai_prop_price}</strong> [In base a loghi=~350€, social=~150€, magliette=~25-35€/pz]</p>
+                <p><strong>${t.ai_prop_time}</strong> [Es. 3-5 giorni per design, 5 giorni spedizione]</p>
                 </div>
                 LINGUA: ${langMap[this.state.currentLang]}. NON includere i tag \`\`\`html.`;
 
