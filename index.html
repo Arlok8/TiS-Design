@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://via.placeholder.com/1200x630/09090b/ffffff?text=TiSDesign+Preview">
     <meta property="og:type" content="website">
     
-    <!-- Favicon (Sostituisci l'URL con il tuo logo reale) -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,6 +57,13 @@
         #mobile-menu.open { transform: translateY(0); }
         .quote-box ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #a1a1aa; }
         .quote-box strong { color: #ffffff; }
+
+        /* Stili aggiuntivi per la Chat IA */
+        .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; margin-bottom: 15px; font-size: 0.9rem; }
+        .chat-bubble-user { background: #2563eb; color: white; border-radius: 20px 20px 0 20px; padding: 10px 15px; margin-bottom: 15px; align-self: flex-end; max-width: 85%; margin-left: auto; font-style: italic; font-size: 0.9rem; }
+        #ai-chat-history h4 { font-weight: 800; margin-bottom: 8px; color: white; text-transform: uppercase; font-size: 0.85rem; }
+        #ai-chat-history ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 10px; color: #a1a1aa; }
+        #ai-chat-history strong { color: white; }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen selection:bg-white selection:text-black">
@@ -118,7 +125,7 @@
                 </div>
             </div>
 
-            <!-- GENERATORE DI PROGETTI IA -->
+            <!-- CHAT IA STRATEGICA -->
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 w-full">
                 <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
@@ -131,7 +138,7 @@
                         </div>
                     </div>
 
-                    <div class="grid sm:grid-cols-2 gap-4 mt-6 relative z-10">
+                    <div id="ai-initial-fields" class="grid sm:grid-cols-2 gap-4 mt-6 relative z-10">
                         <div>
                             <label class="block text-xs font-semibold text-zinc-500 mb-2 uppercase tracking-wider" data-i18n="ai_prop_who">1. Chi sei?</label>
                             <input type="text" id="ai-prop-who" data-i18n-placeholder="ai_prop_who_pl" placeholder="Es. Una band emergente..." class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40">
@@ -143,7 +150,15 @@
                     </div>
                     <button onclick="app.generateProposal()" id="btn-generate-proposal" class="mt-4 w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors relative z-10" data-i18n="ai_prop_btn">Calcola il mio progetto</button>
                     
-                    <div id="ai-proposal-result" class="hidden mt-6 p-6 bg-black/40 rounded-2xl border border-white/10 quote-box text-sm leading-relaxed relative z-10"></div>
+                    <!-- Area Chat (Si mostra dopo l'invio) -->
+                    <div id="ai-chat-container" class="hidden mt-6 flex flex-col gap-4 relative z-10">
+                        <div id="ai-chat-history" class="flex flex-col p-6 bg-black/40 rounded-2xl border border-white/10 text-sm leading-relaxed max-h-[400px] overflow-y-auto"></div>
+                        <div class="flex gap-2 pt-2 border-t border-white/10">
+                            <input type="text" id="ai-chat-input" placeholder="..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-accent/40" onkeypress="if(event.key === 'Enter') app.chatNext()">
+                            <button onclick="app.chatNext()" class="bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors">Invio</button>
+                            <button onclick="app.resetChat()" class="bg-zinc-900 text-zinc-500 px-4 py-3 rounded-xl text-sm hover:text-white transition-colors" title="Reset">↺</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -639,7 +654,7 @@
         };
 
         const app = {
-            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de' },
+            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chatHistory: [] },
             apiKey: "", 
             
             toggleMobileMenu: function() {
@@ -749,7 +764,7 @@
                 this.chartInitialized = true;
             },
 
-           callGemini: async function(prompt) {
+            callGemini: async function(prompt) {
                 let retries = 3, delay = 1000;
                 const t = translations[this.state.currentLang];
                 for (let i = 0; i < retries; i++) {
@@ -759,9 +774,12 @@
                             headers: { 'Content-Type': 'application/json' }, 
                             body: JSON.stringify({ prompt: prompt }) 
                         });
-                        if (!res.ok) throw new Error(`HTTP error!`);
+                        if (!res.ok) throw new Error('HTTP error');
                         const data = await res.json();
-                        return data.candidates?.[0]?.content?.parts?.[0]?.text || t.js_ai_error;
+                        let resultText = data.candidates?.[0]?.content?.parts?.[0]?.text || t.js_ai_error;
+                        
+                        // Elimina eventuali tag markdown in modo sicuro
+                        return resultText.replace(/```html/g, '').replace(/```/g, '');
                     } catch (e) {
                         if (i === retries - 1) return t.js_ai_offline;
                         await new Promise(r => setTimeout(r, delay)); delay *= 2;
@@ -775,33 +793,94 @@
                 if(!who.trim() || !what.trim()) return;
                 
                 const t = translations[this.state.currentLang];
-                const resultBox = document.getElementById('ai-proposal-result');
+                const historyBox = document.getElementById('ai-chat-history');
+                const initialFields = document.getElementById('ai-initial-fields');
+                const chatContainer = document.getElementById('ai-chat-container');
                 const btn = document.getElementById('btn-generate-proposal');
                 const originalBtnText = btn.innerText;
                 
                 btn.disabled = true; btn.innerText = "...";
-                resultBox.classList.remove('hidden'); 
-                resultBox.classList.add('ai-glow');
-                resultBox.innerHTML = `<div class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
+                
+                initialFields.classList.add('hidden');
+                btn.classList.add('hidden');
+                chatContainer.classList.remove('hidden');
+                historyBox.innerHTML = `<div class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
 
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
-                const prompt = `Sei un brillante account manager di TiSDesign (agenzia design e merch streetwear). L'utente è: "${who}" e ha bisogno di: "${what}". 
-                Genera una mini-proposta commerciale per convincerlo ad assumerti.
-                Usa questo FORMATO HTML ESATTO senza aggiungere altro:
-                <h4 class="text-lg font-bold text-white mb-3">${t.ai_prop_pack}</h4>
-                <ul class="mb-4"><li>[Cosa faremo per loro 1]</li><li>[Cosa faremo 2]</li></ul>
-                <div class="border-t border-white/10 pt-3 mt-3">
-                <p><strong>${t.ai_prop_price}</strong> [In base a loghi=~350€, social=~150€, magliette=~25-35€/pz]</p>
-                <p><strong>${t.ai_prop_time}</strong> [Es. 3-5 giorni per design, 5 giorni spedizione]</p>
-                </div>
-                LINGUA: ${langMap[this.state.currentLang]}. NON includere i tag \`\`\`html.`;
+                const systemPrompt = `Sei l'Assistente strategico di TiSDesign.
+Obiettivo: Aiutare i clienti (nuove attività o realtà ferme) a far emergere il loro potenziale inespresso.
+Regola d'oro: Mai criticare il lavoro precedente; parlare sempre di "evoluzione naturale".
+Focus: Far sentire il cliente capito, mai giudicato.
 
-                const result = await this.callGemini(prompt);
+Merchandising & Tecnica: Uso plotter da taglio e pressa a caldo. T-shirt: da €15-18. Felpa: da €30-35. (Il prezzo finale dipende da dimensione e posizione stampa). Cura capi: lavare a freddo max 30°C, rovescio, no asciugatrice.
+Servizi Design & Prezzi: Logo Single €150-200. Brand Identity Pack €250. Social Asset Kit €100-150. Social Content Pack (4 post) da €120. Tutto il Design: vetrine, banner, menu, insegne.
+Metodo: Fase 0 (Analisi) GRATIS. Visualizzazione tramite mockup reali. Puntiamo a diventare il reparto branding esterno del cliente.
+
+Call to Action: Invitare SEMPRE l'utente a richiedere l'Analisi Gratuita di Fase 0 rispondendo a questo messaggio.
+FORMATO: Usa SOLO tag HTML (<h4>, <ul>, <li>, <strong>, <p>). MAI USARE MARKDOWN o asterischi. Non includere blocchi codice.
+Lingua della risposta: ${langMap[this.state.currentLang]}.`;
+
+                const userRequest = `Utente: "${who}". Ha bisogno di: "${what}". Crea una prima risposta empatica per agganciarlo, proponi una soluzione indicando costi/tempi. CHIUSURA OBBLIGATORIA: Invita a richiedere l'Analisi Gratuita di Fase 0.`;
+
+                const result = await this.callGemini(systemPrompt + "\n\n" + userRequest);
                 
-                resultBox.innerHTML = result.replace(/```html/g, '').replace(/```/g, '');
+                this.state.chatHistory.push({ role: "user", text: userRequest });
+                this.state.chatHistory.push({ role: "model", text: result });
                 
-                btn.disabled = false; btn.innerText = originalBtnText;
-                setTimeout(() => resultBox.classList.remove('ai-glow'), 2000);
+                historyBox.innerHTML = `<div class="chat-bubble-ai">${result}</div>`;
+            },
+
+            chatNext: async function() {
+                const inputEl = document.getElementById('ai-chat-input');
+                const text = inputEl.value;
+                if(!text.trim()) return;
+                
+                const historyBox = document.getElementById('ai-chat-history');
+                const t = translations[this.state.currentLang];
+                inputEl.value = "";
+                
+                historyBox.innerHTML += `<div class="chat-bubble-user">${text}</div>`;
+                
+                const loaderId = "ai-loading-" + Date.now();
+                historyBox.innerHTML += `<div id="${loaderId}" class="animate-pulse text-zinc-500 text-xs mt-2 ml-2">${t.js_ai_calc}</div>`;
+                historyBox.scrollTop = historyBox.scrollHeight;
+                
+                const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
+                const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
+                
+                const systemPrompt = `Sei l'Assistente Strategico di TiSDesign. Continua la conversazione. Ricorda sempre di spingere l'Analisi Fase 0. Usa SOLO HTML. NON usare markdown (*). Lingua: ${langMap[this.state.currentLang]}.
+                
+STORICO:
+${fullContext}
+
+CLIENTE ORA:
+${text}`;
+                
+                const response = await this.callGemini(systemPrompt);
+                
+                const loaderEl = document.getElementById(loaderId);
+                if(loaderEl) loaderEl.remove();
+                
+                this.state.chatHistory.push({ role: "user", text: text });
+                this.state.chatHistory.push({ role: "model", text: response });
+                
+                historyBox.innerHTML += `<div class="chat-bubble-ai">${response}</div>`;
+                historyBox.scrollTop = historyBox.scrollHeight;
+            },
+
+            resetChat: function() {
+                this.state.chatHistory = [];
+                document.getElementById('ai-chat-container').classList.add('hidden');
+                document.getElementById('ai-initial-fields').classList.remove('hidden');
+                document.getElementById('ai-prop-who').value = "";
+                document.getElementById('ai-prop-what').value = "";
+                
+                const btn = document.getElementById('btn-generate-proposal');
+                btn.classList.remove('hidden');
+                btn.disabled = false;
+                btn.innerText = translations[this.state.currentLang].ai_prop_btn;
+                
+                document.getElementById('ai-chat-history').innerHTML = "";
             }
         };
 
