@@ -858,7 +858,7 @@ REGOLE TASSATIVE PRODOTTI E PREZZI:
 
 Metodo: Offriamo sempre una consulenza iniziale GRATUITA per analizzare il brand (non chiamarla "Fase 0" con il cliente, chiamala "consulenza gratuita" o "chiacchierata iniziale"). Mostriamo mockup reali.
 Call to Action: Invita SEMPRE a rispondere qui in chat per una consulenza gratuita.
-FORMATO: Usa SOLO tag HTML (<h4>, <ul>, <li>, <strong>, <p>). MAI USARE MARKDOWN (*). Niente blocchi codice. Lingua: ${langMap[this.state.currentLang]}.`;
+FORMATO: Usa SOLO tag HTML (<h4>, <ul>, <li>, <strong>, <p>). MAI USARE MARKDOWN (*). Niente blocchi codice. Lingua: ${langMap[this.state.currentLang]}.
 
 STORICO:
 ${fullContext}
@@ -866,7 +866,7 @@ ${fullContext}
 CLIENTE ORA:
 ${text}`;
                 
-                const response = await this.callGemini(prompt);
+                const response = await this.callGemini(systemPrompt);
                 
                 const loaderEl = document.getElementById(loaderId);
                 if(loaderEl) loaderEl.remove();
