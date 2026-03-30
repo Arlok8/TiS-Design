@@ -271,27 +271,37 @@
             </div>
         </section>
 
-        <!-- SEZIONE: ABOUT US / CHI SIAMO -->
-        <section id="view-about" class="view-section flex-grow pt-24 pb-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- SEZIONE: ABOUT US / CHI SIAMO (BENTO BOX LAYOUT) -->
+        <section id="view-about" class="view-section flex-grow pt-24 pb-32 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-white leading-tight" data-i18n="about_title">La Nostra Visione.</h1>
                     <p class="text-lg text-zinc-400 max-w-2xl mx-auto" data-i18n="about_subtitle">Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="aspect-square rounded-[3rem] glass-panel flex items-center justify-center overflow-hidden border border-white/5 relative shadow-2xl">
-                         <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent pointer-events-none"></div>
-                         <i data-lucide="users" class="w-32 h-32 text-white/20"></i>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Box 1: Chi c'è dietro (Largo) -->
+                    <div class="md:col-span-2 glass-panel p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-blue-600"></div>
+                        <h3 class="text-3xl font-bold text-white mb-6 tracking-tight" data-i18n="about_who_title">Chi c'è dietro</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_who_desc">Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Non siamo solo un'agenzia grafica o una semplice stamperia: siamo un partner creativo pronto a portare il tuo progetto al livello successivo con uno stile inconfondibile.</p>
                     </div>
-                    <div class="space-y-8">
-                        <div class="glass-panel p-8 md:p-10 rounded-3xl border-l-4 border-l-blue-500 relative overflow-hidden">
-                            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="about_mission_title">La Mission</h3>
-                            <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_mission_desc">Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e streetwear di altissima qualità.</p>
+
+                    <!-- Box 2: La Mission -->
+                    <div class="glass-panel p-10 md:p-12 rounded-[2.5rem] flex flex-col justify-center">
+                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-6"><i data-lucide="target" class="w-6 h-6 text-white"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 tracking-tight" data-i18n="about_mission_title">La Mission</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm" data-i18n="about_mission_desc">Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e merch premium.</p>
+                    </div>
+
+                    <!-- Box 3: Cosa Faccio / Approccio (Largo) -->
+                    <div class="md:col-span-3 glass-panel p-10 md:p-14 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-10 border border-white/10">
+                        <div class="flex-shrink-0">
+                            <span class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-zinc-600 to-zinc-800">100%</span>
                         </div>
-                        <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden">
-                            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="about_who_title">Chi c'è dietro</h3>
-                            <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_who_desc">Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Siamo pronti a portare il tuo progetto al livello successivo.</p>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight" data-i18n="about_what_title">Cosa Faccio</h3>
+                            <p class="text-zinc-400 leading-relaxed text-sm md:text-base" data-i18n="about_what_desc">Dallo sviluppo di loghi e identità visive per i social media, fino alla produzione reale di abbigliamento in cotone organico. Seguiamo tutto il processo internamente per garantire zero compromessi sulla qualità finale.</p>
                         </div>
                     </div>
                 </div>
@@ -400,7 +410,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- PRODOTTO 1 -->
                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group" onclick="app.navigate('product')">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -417,8 +426,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- PRODOTTO 2 -->
-                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="w-[70%] h-[70%] bg-zinc-800 rounded-xl border border-zinc-700 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
@@ -434,8 +442,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- PRODOTTO 3 -->
-                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="w-[70%] h-[70%] bg-zinc-950 rounded-xl border border-zinc-900 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
@@ -451,8 +458,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- PRODOTTO 4 -->
-                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="absolute w-16 h-16 bg-blue-600/30 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-xl pointer-events-none"></div>
@@ -757,7 +763,7 @@
                 cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
                 form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
                 contact_phone: "+49 1575 6389016", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.",
-                about_title: "La Nostra Visione.", about_subtitle: "Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.", about_mission_title: "La Mission", about_mission_desc: "Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e streetwear di altissima qualità.", about_who_title: "Chi c'è dietro", about_who_desc: "Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Siamo pronti a portare il tuo progetto al livello successivo."
+                about_title: "La Nostra Visione.", about_subtitle: "Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.", about_mission_title: "La Mission", about_mission_desc: "Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e merch premium.", about_who_title: "Chi c'è dietro", about_who_desc: "Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Non siamo solo un'agenzia grafica o una semplice stamperia: siamo un partner strategico pronto a portare il tuo progetto al livello successivo con uno stile inconfondibile.", about_what_title: "Cosa Faccio", about_what_desc: "Dallo sviluppo di loghi e identità visive per i social media, fino alla produzione reale di abbigliamento in cotone organico. Seguiamo tutto il processo internamente per garantire zero compromessi sulla qualità finale."
             },
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
@@ -786,7 +792,7 @@
                 cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
                 form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
                 contact_phone: "+49 1575 6389016", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.",
-                about_title: "Our Vision.", about_subtitle: "We are TiSDesign, blending creativity and streetwear to elevate your brand.", about_mission_title: "Our Mission", about_mission_desc: "We don't just create graphics, we build identities. We shape your ideas with clean, impactful design and premium streetwear.", about_who_title: "Who we are", about_who_desc: "Based in Stuttgart, we combine design rigor with the energy of urban culture. Ready to take your project to the next level."
+                about_title: "Our Vision.", about_subtitle: "We are TiSDesign, blending creativity and streetwear to elevate your brand.", about_mission_title: "Our Mission", about_mission_desc: "We don't just create graphics, we build identities. We shape your ideas with clean, impactful design and premium merch.", about_who_title: "Who we are", about_who_desc: "Based in Stuttgart, we combine design rigor with the energy of urban culture. We are not just a graphic agency or a simple print shop: we are a strategic partner ready to take your project to the next level with an unmistakable style.", about_what_title: "What I Do", about_what_desc: "From developing logos and visual identities for social media, to the actual production of organic cotton clothing. We handle the entire process internally to ensure zero compromises on final quality."
             },
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
@@ -815,7 +821,7 @@
                 cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
                 form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
                 contact_phone: "+49 1575 6389016", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.",
-                about_title: "Unsere Vision.", about_subtitle: "Wir sind TiSDesign. Wir verbinden Kreativität und Streetwear, um deine Marke hervorzuheben.", about_mission_title: "Unsere Mission", about_mission_desc: "Wir entwerfen nicht nur Grafiken, wir bauen Identitäten. Wir geben deinen Ideen Form mit klarem, ausdrucksstarkem Design und Premium-Streetwear.", about_who_title: "Wer wir sind", about_who_desc: "Mit Sitz in Stuttgart verbinden wir Design-Strenge mit der Energie der urbanen Kultur. Bereit, dein Projekt auf die nächste Stufe zu heben."
+                about_title: "Unsere Vision.", about_subtitle: "Wir sind TiSDesign. Wir verbinden Kreativität und Streetwear, um deine Marke hervorzuheben.", about_mission_title: "Unsere Mission", about_mission_desc: "Wir entwerfen nicht nur Grafiken, wir bauen Identitäten. Wir geben deinen Ideen Form mit klarem, ausdrucksstarkem Design und Premium-Streetwear.", about_who_title: "Wer wir sind", about_who_desc: "Mit Sitz in Stuttgart verbinden wir Design-Strenge mit der Energie der urbanen Kultur. Wir sind nicht nur eine Grafikagentur oder eine Druckerei: Wir sind ein strategischer Partner, der bereit ist, dein Projekt mit einem unverwechselbaren Stil auf die nächste Stufe zu heben.", about_what_title: "Was wir machen", about_what_desc: "Von der Entwicklung von Logos und visuellen Identitäten für Social Media bis zur tatsächlichen Produktion von Bio-Baumwollkleidung. Wir führen den gesamten Prozess intern durch, um null Kompromisse bei der Endqualität zu garantieren."
             }
         };
 
