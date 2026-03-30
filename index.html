@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>TiSDesign | Premium Merch & Digital Studio</title>
-    <meta name="description" content="Agenzia di design creativo e streetwear personalizzato basata a Berlino e Stoccarda. Eleva il tuo brand.">
+    <meta name="description" content="Agenzia di design creativo e streetwear personalizzato basata a Stoccarda. Eleva il tuo brand.">
     <meta property="og:title" content="TiSDesign | Premium Merch & Digital Studio">
     <meta property="og:description" content="Design Creativo e Merch Premium. Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.">
     
-    <!-- Favicon aggiornata a TiS -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2318181b%22/><text x=%2250%22 y=%2266%22 font-size=%2232%22 text-anchor=%22middle%22 fill=%22%23ffffff%22 font-family=%22sans-serif%22 font-weight=%22bold%22>TiS</text></svg>">
     
+    <!-- Librerie essenziali (Versioni bloccate per sicurezza) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@0.344.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
@@ -66,11 +67,13 @@
 </head>
 <body class="antialiased flex flex-col min-h-screen bg-[#09090b] text-[#f4f4f5]">
 
+    <!-- AMBIENT GLOW BACKGROUND -->
     <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
         <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[150px]"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[150px]"></div>
     </div>
 
+    <!-- HEADER / NAVBAR -->
     <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent border-transparent py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-14 items-center">
@@ -93,15 +96,16 @@
                     <button onclick="app.navigate('contact')" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors shadow-lg" data-i18n="nav_contact_btn">Preventivo</button>
                 </div>
                 
-                <button class="md:hidden text-white p-2" onclick="app.toggleMobileMenu()">
+                <button class="md:hidden text-white p-2" onclick="app.toggleMobileMenu()" aria-label="Menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- MOBILE MENU -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-zinc-950 p-8 flex flex-col items-center justify-center gap-8 backdrop-blur-xl">
-        <button class="absolute top-8 right-8 text-white p-2" onclick="app.toggleMobileMenu()">
+        <button class="absolute top-8 right-8 text-white p-2" onclick="app.toggleMobileMenu()" aria-label="Chiudi">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <button onclick="app.navigate('about'); app.toggleMobileMenu();" class="text-3xl font-bold text-white" data-i18n="nav_about">Chi Siamo</button>
@@ -119,6 +123,7 @@
 
     <main id="app-content" class="flex-grow flex flex-col pt-24">
 
+        <!-- HOMEPAGE -->
         <section id="view-home" class="view-section active flex-grow relative">
             <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center flex flex-col items-center z-10">
                 <div class="relative w-full flex flex-col items-center">
@@ -147,6 +152,7 @@
                 </div>
             </div>
 
+            <!-- GENERATORE DI PROGETTI IA -->
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 w-full">
                 <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] -mr-20 -mt-20 pointer-events-none"></div>
@@ -186,6 +192,7 @@
                 </div>
             </div>
 
+            <!-- COMPACT SPLIT CARDS -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div onclick="app.navigate('services')" class="glass-panel rounded-[2rem] p-8 md:p-10 cursor-pointer group transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
@@ -210,6 +217,7 @@
                 </div>
             </div>
 
+            <!-- Lavori Recenti -->
             <div class="py-24 border-t border-white/5 mt-12">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h3 class="text-3xl font-bold text-center mb-12 text-white tracking-tight" data-i18n="home_recent_works">Lavori Recenti</h3>
@@ -221,6 +229,7 @@
                 </div>
             </div>
 
+            <!-- Testimonials -->
             <div class="py-24 border-t border-white/5 bg-white/[0.01]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
@@ -361,9 +370,9 @@
                             <p class="text-zinc-400 mb-6 text-sm leading-relaxed" data-i18n="srv_roi_desc">Investire in un'identità visiva solida non è un costo, ma un moltiplicatore di conversioni. Dati alla mano, i brand con un design coerente vedono un incremento misurabile nella fiducia del cliente.</p>
                             
                             <ul class="space-y-3 text-sm text-zinc-300 mb-8">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li1">Maggiore ritenzione utente (+40%)</span></li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li2">Percezione di valore premium</span></li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> <span data-i18n="srv_roi_li3">Riconoscibilità immediata</span></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4 shrink-0"></i> <span data-i18n="srv_roi_li1">Maggiore ritenzione utente (+40%)</span></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4 shrink-0"></i> <span data-i18n="srv_roi_li2">Percezione di valore premium</span></li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4 shrink-0"></i> <span data-i18n="srv_roi_li3">Riconoscibilità immediata</span></li>
                             </ul>
 
                             <h4 class="font-bold text-xs mb-4 text-zinc-500 uppercase tracking-widest" data-i18n="srv_roi_chart">Impatto sul Tasso di Conversione</h4>
@@ -391,6 +400,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- PRODOTTO 1 -->
                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group" onclick="app.navigate('product')">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -403,11 +413,12 @@
                             <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod1_price">Da 25,00 €</p>
                             <div class="flex justify-between items-center border-t border-white/10 pt-4">
                                 <span class="font-black text-white text-lg">25,00 €</span>
-                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4 shrink-0"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <!-- PRODOTTO 2 -->
+                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="w-[70%] h-[70%] bg-zinc-800 rounded-xl border border-zinc-700 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
@@ -419,11 +430,12 @@
                             <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod2_price">Da 35,00 €</p>
                             <div class="flex justify-between items-center border-t border-white/10 pt-4">
                                 <span class="font-black text-white text-lg">35,00 €</span>
-                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4 shrink-0"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <!-- PRODOTTO 3 -->
+                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="w-[70%] h-[70%] bg-zinc-950 rounded-xl border border-zinc-900 shadow-2xl group-hover:scale-105 transition-transform duration-500 flex items-center justify-center relative z-0">
@@ -435,11 +447,12 @@
                             <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod3_price">Da 30,00 €</p>
                             <div class="flex justify-between items-center border-t border-white/10 pt-4">
                                 <span class="font-black text-white text-lg">30,00 €</span>
-                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4 shrink-0"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
+                    <!-- PRODOTTO 4 -->
+                     <div class="glass-panel p-5 rounded-[2.5rem] cursor-pointer group">
                         <div class="aspect-[4/5] mb-6 rounded-3xl overflow-hidden bg-black flex items-center justify-center border border-white/5 relative">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                             <div class="absolute w-16 h-16 bg-blue-600/30 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-xl pointer-events-none"></div>
@@ -452,7 +465,7 @@
                             <p class="text-xs text-zinc-500 mb-6 leading-relaxed" data-i18n="prod4_price">Da 28,00 €</p>
                             <div class="flex justify-between items-center border-t border-white/10 pt-4">
                                 <span class="font-black text-white text-lg">28,00 €</span>
-                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white text-zinc-300 hover:text-black transition-all"><i data-lucide="shopping-bag" class="w-4 h-4 shrink-0"></i></button>
                             </div>
                         </div>
                     </div>
@@ -464,7 +477,7 @@
         <section id="view-product" class="view-section flex-grow pt-8 pb-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <button onclick="app.navigate('shop')" class="text-xs font-bold text-zinc-500 hover:text-white mb-12 flex items-center gap-2 uppercase tracking-widest transition-colors">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="pd_back">Torna allo Shop</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4 shrink-0"></i> <span data-i18n="pd_back">Torna allo Shop</span>
                 </button>
                 
                 <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
@@ -516,11 +529,11 @@
                             <div class="glass-panel p-8 rounded-3xl border-l-4 border-l-blue-500 relative overflow-hidden">
                                 <h3 class="font-bold text-white mb-6 text-lg" data-i18n="pd_custom_title">Personalizzazione</h3>
                                 <button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-sm font-bold text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-3 mb-6">
-                                    <i data-lucide="upload" class="w-4 h-4"></i> <span data-i18n="pd_custom_upload">Carica File Grafico (.png/.pdf)</span>
+                                    <i data-lucide="upload" class="w-4 h-4 shrink-0"></i> <span data-i18n="pd_custom_upload">Carica File Grafico (.png/.pdf)</span>
                                 </button>
 
                                 <label class="flex items-center gap-4 cursor-pointer pt-6 border-t border-white/10">
-                                    <input type="checkbox" id="upsell-checkbox" class="w-5 h-5 rounded border-white/20 bg-zinc-900 checked:bg-blue-500 checked:border-blue-500 focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer" onchange="app.toggleUpsell(this)">
+                                    <input type="checkbox" id="upsell-checkbox" class="w-5 h-5 rounded border-white/20 bg-zinc-900 checked:bg-blue-500 checked:border-blue-500 focus:ring-0 focus:ring-offset-0 transition-colors cursor-pointer shrink-0" onchange="app.toggleUpsell(this)">
                                     <div>
                                         <p class="font-bold text-white text-sm" data-i18n="pd_upsell_title">Vuoi che creiamo noi la grafica? (+15€)</p>
                                         <p class="text-zinc-500 text-xs mt-1" data-i18n="pd_upsell_desc">Il nostro team designerà un'illustrazione su misura.</p>
@@ -530,20 +543,20 @@
                         </div>
                         
                         <button class="w-full bg-white text-black py-5 rounded-2xl font-bold text-lg hover:bg-zinc-200 transition-all shadow-2xl shadow-white/10 flex justify-center items-center gap-2" data-i18n="pd_add_cart">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i> Aggiungi al Carrello
+                            <i data-lucide="shopping-cart" class="w-5 h-5 shrink-0"></i> Aggiungi al Carrello
                         </button>
                         
                         <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/5 text-center">
                             <div class="space-y-3">
-                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="shield-check" class="w-5 h-5 text-zinc-400"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto shrink-0"><i data-lucide="shield-check" class="w-5 h-5 text-zinc-400"></i></div>
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_pay_title">Pagamenti Sicuri</p>
                             </div>
                             <div class="space-y-3 border-x border-white/5">
-                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="truck" class="w-5 h-5 text-zinc-400"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto shrink-0"><i data-lucide="truck" class="w-5 h-5 text-zinc-400"></i></div>
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_ship_title">Spedizione Tracciata</p>
                             </div>
                             <div class="space-y-3">
-                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto"><i data-lucide="leaf" class="w-5 h-5 text-zinc-400"></i></div>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mx-auto shrink-0"><i data-lucide="leaf" class="w-5 h-5 text-zinc-400"></i></div>
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest" data-i18n="trust_eco_title">Cotone Premium</p>
                             </div>
                         </div>
@@ -552,7 +565,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT & FAQ -->
         <section id="view-contact" class="view-section flex-grow pt-24 pb-32">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -568,29 +581,34 @@
                                 <h3 class="text-xl font-bold text-white mb-8" data-i18n="contact_direct">Contatti Diretti</h3>
                                 <div class="space-y-6">
                                     <div class="flex items-center gap-4 text-zinc-400 text-sm">
-                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i></div>
-                                        info.tisdesign@gmail.com
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i></div>
+                                        <a href="mailto:info.tisdesign@gmail.com" class="hover:text-white transition-colors break-all">info.tisdesign@gmail.com</a>
                                     </div>
+                                    <!-- Pulsante WhatsApp interattivo -->
+                                    <a href="https://wa.me/4915756389016" target="_blank" class="flex items-center gap-4 text-zinc-400 text-sm hover:text-white transition-all group">
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-zinc-400 group-hover:text-[#25D366] transition-colors" viewBox="0 0 16 16">
+                                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                            </svg>
+                                        </div>
+                                        <span data-i18n="contact_phone" class="break-all">+49 1575 6389016</span>
+                                    </a>
                                     <div class="flex items-center gap-4 text-zinc-400 text-sm">
-                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="phone" class="w-4 h-4 text-blue-400"></i></div>
-                                        <span data-i18n="contact_phone_coming">(In arrivo)</span>
-                                    </div>
-                                    <div class="flex items-center gap-4 text-zinc-400 text-sm">
-                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i></div>
-                                        Stuttgart
+                                        <div class="w-10 h-10 rounded-full glass-panel flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i></div>
+                                        <span class="break-all">Stuttgart</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="pt-10 border-t border-white/10">
                                 <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-6" data-i18n="contact_social">Social</p>
                                 <div class="flex gap-4">
-                                    <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                    <a href="https://www.instagram.com/tis_design_/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center shrink-0 hover:bg-white hover:text-black transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                                     </a>
-                                    <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                    <a href="https://www.tiktok.com/@tisdesign?_r=1&_t=ZG-954K7VSRkuH" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center shrink-0 hover:bg-white hover:text-black transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
                                     </a>
-                                    <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                    <a href="https://discord.gg/sfqUJFfdy2" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center shrink-0 hover:bg-white hover:text-black transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M7.5 7.5c3.5-1 5.5-1 9 0"/><path d="M7 16.5c3.5 1 6.5 1 10 0"/><path d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-1 2.5"/><path d="M8.5 17c0 1-1.356 3-1.832 3-1.429 0-2.698-1.667-3.333-3-.635-1.667-.476-5.833 1.428-11.5C6.151 4.485 7.545 4.16 9 4l1 2.5"/></svg>
                                     </a>
                                 </div>
@@ -632,12 +650,12 @@
                             </div>
 
                             <button type="submit" class="w-full bg-white text-black py-5 rounded-xl font-bold text-lg hover:bg-zinc-200 transition-all shadow-xl flex items-center justify-center gap-2">
-                                <i data-lucide="send" class="w-5 h-5"></i> <span data-i18n="form_submit">Invia Richiesta</span>
+                                <i data-lucide="send" class="w-5 h-5 shrink-0"></i> <span data-i18n="form_submit">Invia Richiesta</span>
                             </button>
                         </form>
 
                         <div id="form-success" class="hidden absolute inset-0 bg-zinc-950/90 backdrop-blur-md flex-col items-center justify-center text-center p-12 z-20 rounded-[3rem]">
-                            <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-4xl mb-8"><i data-lucide="check-circle" class="w-10 h-10"></i></div>
+                            <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-4xl mb-8"><i data-lucide="check-circle" class="w-10 h-10 shrink-0"></i></div>
                             <h3 class="text-3xl font-bold text-white mb-4" data-i18n="form_success_title">Richiesta Inviata!</h3>
                             <p class="text-zinc-400 mb-8" data-i18n="form_success_desc">Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.</p>
                             <button onclick="app.resetForm()" class="text-xs font-bold text-white bg-white/10 px-6 py-3 rounded-full hover:bg-white/20 transition-colors uppercase tracking-widest" data-i18n="form_success_btn">Invia un altro messaggio</button>
@@ -654,21 +672,21 @@
                     <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
                         <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_1_q">Quali sono i tempi di spedizione per le magliette?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform shrink-0"></i>
                         </summary>
                         <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_1_a">Normalmente stampiamo e spediamo i tuoi ordini in 3-5 giorni lavorativi tramite DHL direttamente dalla Germania (Baden-Württemberg).</p>
                     </details>
                     <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
                         <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_2_q">Quante revisioni sono incluse nei servizi di design?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform shrink-0"></i>
                         </summary>
                         <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_2_a">I nostri pacchetti base includono sempre fino a 3 giri di revisione per assicurarci che tu sia soddisfatto al 100% del risultato finale.</p>
                     </details>
                     <details class="glass-panel p-6 md:p-8 rounded-3xl group cursor-pointer">
                         <summary class="font-bold list-none flex justify-between items-center text-white outline-none">
                             <span data-i18n="faq_3_q">Che tipo di file devo fornire per la stampa personalizzata?</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform shrink-0"></i>
                         </summary>
                         <p class="text-zinc-400 mt-6 text-sm leading-relaxed" data-i18n="faq_3_a">Accettiamo file vettoriali (.PDF, .AI, .SVG) o immagini raster ad altissima risoluzione (.PNG, .JPG a 300dpi). Se non hai il file giusto, il nostro team può aiutarti a ricrearlo (Servizio +15€).</p>
                     </details>
@@ -738,7 +756,7 @@
                 form_submit: "Invia Richiesta", footer_privacy: "Privacy Policy", footer_terms: "Termini e Condizioni", footer_impressum: "Impressum",
                 cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
                 form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
-                contact_phone_coming: "(In arrivo)", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.",
+                contact_phone: "+49 1575 6389016", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.",
                 about_title: "La Nostra Visione.", about_subtitle: "Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.", about_mission_title: "La Mission", about_mission_desc: "Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e streetwear di altissima qualità.", about_who_title: "Chi c'è dietro", about_who_desc: "Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Siamo pronti a portare il tuo progetto al livello successivo."
             },
             en: {
@@ -767,7 +785,7 @@
                 form_submit: "Send Request", footer_privacy: "Privacy Policy", footer_terms: "Terms and Conditions", footer_impressum: "Impressum",
                 cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
                 form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
-                contact_phone_coming: "(Coming soon)", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.",
+                contact_phone: "+49 1575 6389016", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.",
                 about_title: "Our Vision.", about_subtitle: "We are TiSDesign, blending creativity and streetwear to elevate your brand.", about_mission_title: "Our Mission", about_mission_desc: "We don't just create graphics, we build identities. We shape your ideas with clean, impactful design and premium streetwear.", about_who_title: "Who we are", about_who_desc: "Based in Stuttgart, we combine design rigor with the energy of urban culture. Ready to take your project to the next level."
             },
             de: {
@@ -796,13 +814,13 @@
                 form_submit: "Anfrage Senden", footer_privacy: "Datenschutzerklärung", footer_terms: "AGB", footer_impressum: "Impressum",
                 cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
                 form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
-                contact_phone_coming: "(Bald verfügbar)", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.",
+                contact_phone: "+49 1575 6389016", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.",
                 about_title: "Unsere Vision.", about_subtitle: "Wir sind TiSDesign. Wir verbinden Kreativität und Streetwear, um deine Marke hervorzuheben.", about_mission_title: "Unsere Mission", about_mission_desc: "Wir entwerfen nicht nur Grafiken, wir bauen Identitäten. Wir geben deinen Ideen Form mit klarem, ausdrucksstarkem Design und Premium-Streetwear.", about_who_title: "Wer wir sind", about_who_desc: "Mit Sitz in Stuttgart verbinden wir Design-Strenge mit der Energie der urbanen Kultur. Bereit, dein Projekt auf die nächste Stufe zu heben."
             }
         };
 
         const app = {
-            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chatHistory: [] },
+            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chartInitialized: false, chatHistory: [] },
             
             toggleMobileMenu: function() {
                 const menu = document.getElementById('mobile-menu');
@@ -832,8 +850,8 @@
                         else link.classList.remove('text-white');
                     });
                     
-                    if(viewId === 'services' && !this.chartInitialized) {
-                        this.initChart();
+                    if(viewId === 'services' && !this.state.chartInitialized) {
+                        setTimeout(() => this.initChart(), 50);
                     }
                     if(addToHistory) {
                         history.pushState({ viewId: viewId }, '', '#' + viewId);
@@ -855,7 +873,7 @@
                 const btn = form.querySelector('button[type="submit"]');
                 const t = translations[this.state.currentLang];
                 
-                btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> <span data-i18n="js_sending">${t.js_sending}</span>`;
+                btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin shrink-0"></i> <span data-i18n="js_sending">${t.js_sending}</span>`;
                 lucide.createIcons();
                 btn.disabled = true;
 
@@ -872,12 +890,12 @@
                         document.getElementById('form-success').classList.add('flex');
                         form.reset();
                     } else {
-                        btn.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5"></i> <span data-i18n="js_error_retry">${t.js_error_retry}</span>`;
+                        btn.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5 shrink-0"></i> <span data-i18n="js_error_retry">${t.js_error_retry}</span>`;
                         btn.classList.add('bg-red-500', 'text-white');
                         lucide.createIcons();
                     }
                 } catch (error) {
-                    btn.innerHTML = `<i data-lucide="wifi-off" class="w-5 h-5"></i> <span data-i18n="js_error_net">${t.js_error_net}</span>`;
+                    btn.innerHTML = `<i data-lucide="wifi-off" class="w-5 h-5 shrink-0"></i> <span data-i18n="js_error_net">${t.js_error_net}</span>`;
                     lucide.createIcons();
                 }
 
@@ -893,13 +911,15 @@
                 form.classList.remove('hidden');
                 
                 const btn = form.querySelector('button[type="submit"]');
-                btn.innerHTML = `<i data-lucide="send" class="w-5 h-5"></i> <span data-i18n="form_submit">${translations[this.state.currentLang].form_submit}</span>`;
+                btn.innerHTML = `<i data-lucide="send" class="w-5 h-5 shrink-0"></i> <span data-i18n="form_submit">${translations[this.state.currentLang].form_submit}</span>`;
                 btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
                 lucide.createIcons();
             },
 
             initChart: function() {
-                const ctx = document.getElementById('roiChart').getContext('2d');
+                const canvas = document.getElementById('roiChart');
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -919,7 +939,7 @@
                         animation: { duration: 1200, easing: 'easeOutQuart' }
                     }
                 });
-                this.chartInitialized = true;
+                this.state.chartInitialized = true;
             },
 
             callGemini: async function(prompt) {
@@ -956,7 +976,7 @@
                 const chatContainer = document.getElementById('ai-chat-container');
                 const btn = document.getElementById('btn-generate-proposal');
                 
-                btn.disabled = true; btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>...`;
+                btn.disabled = true; btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin shrink-0"></i>...`;
                 lucide.createIcons();
                 
                 initialFields.classList.add('hidden');
@@ -1087,7 +1107,7 @@ ${text}`;
                 const btn = document.getElementById('btn-generate-proposal');
                 btn.classList.remove('hidden');
                 btn.disabled = false;
-                btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="ai_prop_btn">${translations[this.state.currentLang].ai_prop_btn}</span>`;
+                btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i> <span data-i18n="ai_prop_btn">${translations[this.state.currentLang].ai_prop_btn}</span>`;
                 lucide.createIcons();
                 
                 document.getElementById('ai-chat-history').innerHTML = "";
@@ -1116,6 +1136,11 @@ ${text}`;
 
         app.changeLanguage('de');
         history.replaceState({ viewId: 'home' }, '', '#home');
+        
+        // Safety check per icone iniziali
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
     </script>
 </body>
 </html>
