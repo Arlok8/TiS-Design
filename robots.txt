@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tis-design.com/sitemap.xml
