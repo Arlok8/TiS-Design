@@ -1146,7 +1146,6 @@
                 
                 const t = translations[this.state.currentLang];
                 
-                // Fix: Aggiorniamo il dataset per i cambi lingua futuri
                 const titleEl = document.getElementById('pd_title');
                 titleEl.dataset.i18n = prodKey + '_title';
                 titleEl.innerText = t[prodKey + '_title'];
@@ -1290,7 +1289,6 @@
                 if(!canvas) return;
                 const ctx = canvas.getContext('2d');
                 
-                // Fix: Etichette tradotte
                 const labelsMap = {
                     it: ['Fai-da-te', 'Basso Costo', 'TiSDesign'],
                     en: ['DIY', 'Low Cost', 'TiSDesign'],
@@ -1340,6 +1338,38 @@
                         await new Promise(r => setTimeout(r, delay)); delay *= 2;
                     }
                 }
+            },
+
+            goToContactWithSummary: async function(btnElement) {
+                const originalHTML = btnElement.innerHTML;
+                const t = translations[this.state.currentLang];
+                
+                btnElement.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin shrink-0"></i> ...`;
+                lucide.createIcons();
+                btnElement.disabled = true;
+
+                const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
+                
+                const prompt = `Agisci come il cliente. Scrivi un breve messaggio per un modulo di contatto riassumendo la tua richiesta basandoti su questa chat. 
+Regole tassative: 
+- Scrivi in PRIMA PERSONA (es. "Ciao, vorrei ordinare..."). 
+- Includi quantità, taglie o preventivo discusso. 
+- NON aggiungere convenevoli inutili.
+- Usa rigorosamente la STESSA LINGUA usata dal cliente nella chat.
+- Restituisci SOLO il testo del messaggio, niente formattazione HTML.
+
+Chat:
+${fullContext}`;
+
+                const summary = await this.callGemini(prompt);
+                
+                document.getElementById('contact-subject').value = 'altro'; 
+                document.getElementById('contact-message').value = summary.trim();
+                
+                btnElement.innerHTML = originalHTML;
+                btnElement.disabled = false;
+                
+                this.navigate('contact');
             },
 
             generateProposal: async function() {
@@ -1416,7 +1446,7 @@ REGOLA SPECIALE PER IL PULSANTE DI CONTATTO:
                 
                 let finalResult = result;
                 if (finalResult.includes('[PULSANTE_CONTATTO]')) {
-                    finalResult = finalResult.replace('[PULSANTE_CONTATTO]', `<button onclick="app.navigate('contact')" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>`);
+                    finalResult = finalResult.replace('[PULSANTE_CONTATTO]', `<button onclick="app.goToContactWithSummary(this)" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg flex items-center justify-center gap-2">${ctaBtnText}</button>`);
                 }
                 
                 historyBox.innerHTML += `<div class="chat-bubble-ai">${finalResult}</div>`;
@@ -1494,7 +1524,7 @@ ${text}`;
                 
                 let finalResponse = response;
                 if (finalResponse.includes('[PULSANTE_CONTATTO]')) {
-                    finalResponse = finalResponse.replace('[PULSANTE_CONTATTO]', `<button onclick="app.navigate('contact')" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg">${ctaBtnText}</button>`);
+                    finalResponse = finalResponse.replace('[PULSANTE_CONTATTO]', `<button onclick="app.goToContactWithSummary(this)" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg flex items-center justify-center gap-2">${ctaBtnText}</button>`);
                 }
                 
                 historyBox.innerHTML += `<div class="chat-bubble-ai">${finalResponse}</div>`;
