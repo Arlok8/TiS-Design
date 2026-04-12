@@ -1350,13 +1350,14 @@
 
                 const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
                 
-                const prompt = `Agisci come il cliente. Scrivi un breve messaggio per un modulo di contatto riassumendo la tua richiesta basandoti su questa chat. 
-Regole tassative: 
-- Scrivi in PRIMA PERSONA (es. "Ciao, vorrei ordinare..."). 
-- Includi quantità, taglie o preventivo discusso. 
-- NON aggiungere convenevoli inutili.
-- Usa rigorosamente la STESSA LINGUA usata dal cliente nella chat.
-- Restituisci SOLO il testo del messaggio, niente formattazione HTML o saluti iniziali artificiali dell'IA.
+                const prompt = `Traduci e compila questo esatto template nella STESSA LINGUA usata dal cliente nella chat (Italiano, Inglese o Tedesco). Non cambiare il tono amichevole.
+
+Template da usare:
+"Ciao, ho appena parlato col tuo bot e avrei bisogno di [INSERISCI RIASSUNTO CAPI, TAGLIE, QUANTITÀ O SERVIZI]. Il bot mi ha stimato un prezzo di [INSERISCI PREZZI A CAPO + COSTO GRAFICA SE PRESENTE]. Possiamo sentirci per i dettagli?"
+
+Regole:
+1. Sostituisci le parti tra parentesi quadre con i dati reali della chat.
+2. Restituisci SOLO il testo finale del messaggio (nessuna introduzione, nessuna formattazione HTML, niente virgolette).
 
 Chat:
 ${fullContext}`;
@@ -1411,8 +1412,8 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
    - Creator Pro (Logo Base, Banner, 10 Post IG, 5 Stories - 3 Giri rev Logo / 2 resto): 350€ - 450€
    - Brand Launch (Logo Completo, Brand Kit, 15 Post, Banner - 3 Giri rev Logo / 2 resto): 750€ - 950€
 2. SERVIZI SINGOLI:
-   - Logo Base (1 Proposta): 150€ - 250€
-   - Logo Pro (3 Proposte): 350€ - 500€
+   - Solo Logo Base (1 Proposta): 150€ - 250€
+   - Solo Logo Pro (3 Proposte): 350€ - 500€
    - Kit Social Base: 100€ - 150€
    - Ore Extra: 40€/ora
 3. MERCH & STREETWEAR (Cotone organico 100%):
@@ -1422,7 +1423,8 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
    - REGOLA MATEMATICA GRAFICA: La creazione grafica su misura costa +15€ FISSI UNA TANTUM per l'intero ordine (NON moltiplicare i 15€ per il numero di magliette!). Se un cliente ordina 10 maglie da 20€ con grafica, il totale è (10 * 20) + 15 = 215€.
 
 REGOLE DI COMPORTAMENTO:
-- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. Se non sai le quantità per il merch, dai un prezzo indicativo "a capo".
+- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. 
+- QUANDO PARLI DI PREZZI DEL MERCH: Indica SEMPRE il prezzo "a capo" (es. "30€ a felpa"). Se fai un totale, scomponilo chiaramente (es. "3 felpe a 30€ l'una + 15€ grafica = 105€"). Non lanciare mai somme totali senza spiegarle.
 - Se chiedono servizi/prodotti fuori listino, di' che valutate ogni richiesta su misura e falli proseguire.
 - Non rivelare mai di essere un'IA.
 - Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). NESSUN MARKDOWN, NESSUN <button>.
@@ -1483,8 +1485,8 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
    - Creator Pro (Logo Base, Banner, 10 Post IG, 5 Stories - 3 Giri rev Logo / 2 resto): 350€ - 450€
    - Brand Launch (Logo Completo, Brand Kit, 15 Post, Banner - 3 Giri rev Logo / 2 resto): 750€ - 950€
 2. SERVIZI SINGOLI:
-   - Logo Base (1 Proposta): 150€ - 250€
-   - Logo Pro (3 Proposte): 350€ - 500€
+   - Solo Logo Base (1 Proposta): 150€ - 250€
+   - Solo Logo Pro (3 Proposte): 350€ - 500€
    - Kit Social Base: 100€ - 150€
    - Ore Extra: 40€/ora
 3. MERCH & STREETWEAR (Cotone organico 100%):
@@ -1494,7 +1496,8 @@ LISTINO PREZZI E SERVIZI UFFICIALI:
    - REGOLA MATEMATICA GRAFICA: La creazione grafica su misura costa +15€ FISSI UNA TANTUM per l'intero ordine (NON moltiplicare i 15€ per il numero di magliette!). Se un cliente ordina 10 maglie da 20€ con grafica, il totale è (10 * 20) + 15 = 215€.
 
 REGOLE DI COMPORTAMENTO:
-- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. Se non sai le quantità per il merch, dai un prezzo indicativo "a capo".
+- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. 
+- QUANDO PARLI DI PREZZI DEL MERCH: Indica SEMPRE il prezzo "a capo" (es. "30€ a felpa"). Se fai un totale, scomponilo chiaramente (es. "3 felpe a 30€ l'una + 15€ grafica = 105€"). Non lanciare mai somme totali senza spiegarle.
 - Se chiedono servizi/prodotti fuori listino, di' che valutate ogni richiesta su misura e falli proseguire.
 - Non rivelare mai di essere un'IA.
 - Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). NESSUN MARKDOWN, NESSUN <button>.
