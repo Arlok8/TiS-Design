@@ -1051,7 +1051,7 @@
                 rev_1_text: "\"Wahnsinns Baumwollqualität und perfekter Druck. Die Shirts für mein Café waren in 2 Tagen ausverkauft!\"", rev_1_author: "Marco T.", rev_1_role: "Café-Besitzer",
                 rev_2_text: "\"Sie haben sofort den Vibe meiner Marke verstanden. Das neue Logo hat meine Instagram-Seite komplett verändert.\"", rev_2_author: "Elena R.", rev_2_role: "Content Creator",
                 rev_3_text: "\"Die perfekte Kombination. Sie haben die Grafiken für mein Musikprojekt gemacht und sie auf das Merch gedruckt.\"", rev_3_author: "Lukas K.", rev_3_role: "Musikproduzent",
-                faq_title: "Häufig gestellte Fragen", faq_1_q: "Wie sind die Lieferzeiten für T-Shirts?", faq_1_a: "Normalerweise bedrucken und versenden wir deine Bestellungen in 3-5 Werktagen per DHL direkt aus Deutschland (Baden-Württemberg).", faq_2_q: "Wie viele Überarbeitungen sind bei Design-Dienstleistungen enthalten?", faq_2_a: "Unsere Basispakete beinhalten immer bis zu 3 Überarbeitungsrunden, um sicherzustellen, dass du zu 100% mit dem Endergebnis zufrieden bist.", faq_3_q: "Welche Art von Datei muss ich für den Druck bereitstellen?", faq_3_a: "Wir akzeptieren Vektordateien (.PDF, .AI, .SVG) oder hochauflösende Rasterbilder (.PNG, .JPG bei 300dpi). Falls nicht vorhanden, erstellen wir sie neu (+15€).",
+                faq_title: "Häufig gestellte Fragen", faq_1_q: "Wie sind die Lieferzeiten für T-Shirts?", faq_1_a: "Normalerweise bedrucken und versenden wir deine Bestellungen in 3-5 Werktagen per DHL direkt aus Deutschland (Baden-Württemberg).", faq_2_q: "Wie viele Überarbeitungen sind bei Design-Dienstleistungen enthalten?", faq_2_a: "Unsere Basispakete beinhalten immer bis zu 3 Überarbeitungsrunden, um sicherzustellen, dass du zu 100% mit dem Endergebnis zufrieden bist.", faq_3_q: "Welche Art von Datei muss ich für Druck bereitstellen?", faq_3_a: "Wir akzeptieren Vektordateien (.PDF, .AI, .SVG) oder hochauflösende Rasterbilder (.PNG, .JPG bei 300dpi). Falls nicht vorhanden, erstellen wir sie neu (+15€).",
                 home_cta_title: "Idee im Kopf? Lass uns darüber sprechen.", home_cta_btn: "Kontaktiere uns",
                 
                 srv_title: "Dienstleistungen & Pakete", srv_subtitle: "Strukturierte Lösungen, um dich wirklich wachsen zu lassen. Ohne Kompromisse.",
@@ -1351,16 +1351,13 @@
 
                 const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
                 
-                const prompt = `Agisci come un estrattore di dati. Devi SOLO riempire questo template basandoti sulla chat. Usa la stessa lingua del cliente (IT, EN, DE).
-
-Template rigoroso:
-"Ciao, ho appena parlato col tuo bot e avrei bisogno di [INSERISCI CAPI, TAGLIE, QUANTITÀ E/O SERVIZI]. Il bot mi ha stimato un prezzo di [INSERISCI PREZZI A CAPO E L'EVENTUALE COSTO GRAFICA]. Possiamo sentirci per i dettagli?"
-
-REGOLE TASSATIVE:
-- Restituisci SOLO il testo compilato. Zero introduzioni.
-- NON usare virgolette all'inizio e alla fine.
-- NON cambiare il testo fuori dalle parentesi quadre.
-- Mantieni i prezzi separati (es. "35€ a felpa + 15€ di grafica").
+                const langMap = { it: "Italiano", en: "Inglese", de: "Tedesco" };
+                
+                const prompt = `Riassumi questa conversazione dal punto di vista del cliente.
+Scrivi un breve messaggio in prima persona (es. "Ciao, vorrei ordinare...") da inserire in un form di contatti.
+Specifica i capi richiesti, le taglie e i prezzi discussi (prezzo unitario e grafica separata).
+Scrivi nella lingua: ${langMap[this.state.currentLang]}.
+Restituisci solo il messaggio, senza formattazione HTML.
 
 Chat:
 ${fullContext}`;
@@ -1401,32 +1398,23 @@ ${fullContext}`;
                 const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
                 const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
 
-                const systemPrompt = `Sei l'assistente virtuale di TiSDesign, studio di design e premium streetwear.
+                const systemPrompt = `Sei l'assistente clienti di TiSDesign, studio di design e streetwear. Parla in modo amichevole, professionale e conciso.
 
-TONO DI VOCE E REGOLE:
-- Informale, diretto e professionale. Parla come un vero designer in studio.
-- NESSUN finto entusiasmo (niente "Siamo entusiasti di...", "Amiamo...").
-- Frasi brevi e naturali. 
-- Fai una sola domanda alla fine per mantenere viva la conversazione.
-- Non rivelare mai di essere un'IA.
-- Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). NESSUN MARKDOWN.
-- LINGUA: ${langMap[this.state.currentLang]}.
-
-LISTINO PREZZI E SERVIZI:
+Listino:
 - Pacchetti: Influencer Start (120-180€), Creator Pro (350-450€), Brand Launch (750-950€).
-- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social Base (100-150€), Ore Extra: 40€/ora.
-- MERCH (Cotone organico 100%): T-shirt base + Stampa (Fronte piccolo): 12,90€ - 16,90€. T-shirt base + Stampa (Fronte/Retro grande o Fronte+Retro): 19,90€ - 35,90€. Felpe/Hoodies stampate: 30€ - 35€.
-- GRAFICA SU MISURA: costa +15€ FISSI UNA TANTUM per l'intero ordine (NON moltiplicare i 15€ per il numero di magliette!).
+- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social (100-150€), Ore extra (40€/h).
+- Merch (cotone 100%): T-shirt stampata 12,90€-24,90€ l'una. Felpe stampate 30€-35€ l'una.
+- Grafica su misura per merch: 15€ fissi in totale per l'intero ordine.
 
-REGOLE SUI PREZZI:
-- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. 
-- QUANDO PARLI DI PREZZI DEL MERCH: Indica SEMPRE il prezzo "a capo" (es. "30€ a felpa"). Se fai un totale, scomponilo chiaramente (es. "3 felpe a 30€ l'una + 15€ grafica = 105€"). Non lanciare mai somme totali senza spiegarle.
-- Se chiedono servizi fuori listino, di' che valutate ogni richiesta su misura.
-
-PULSANTE DI CONTATTO:
-- Se il cliente è pronto a ordinare o chiede esplicitamente un preventivo/contatto, inserisci alla fine della risposta ESATTAMENTE questa singola parola tutta attaccata: AZIONECONTATTO`;
+Linee guida:
+- Rispondi in lingua: ${langMap[this.state.currentLang]}.
+- Fai un preventivo chiaro. Per il merch specifica sempre il costo a singolo capo.
+- Tieni separato il costo della grafica dal costo dei capi (es. "3 felpe a 30€ l'una, più 15€ per la grafica").
+- Formatta la risposta solo con tag HTML base come <p>, <strong>, <br>.
+- Fai una domanda alla fine.
+- Se il cliente vuole ordinare o chiede il modulo contatti, aggiungi alla fine della risposta esattamente questa parola: AZIONECONTATTO.`;
                 
-                const userRequest = `Il cliente si presenta come "${who}" e chiede: "${what}". Fornisci una risposta accogliente e un preventivo di massima basato sui tuoi servizi.`;
+                const userRequest = `Il cliente si presenta come "${who}" e chiede: "${what}". Fornisci una risposta e un preventivo basato sui tuoi servizi.`;
 
                 const result = await this.callGemini(systemPrompt + "\n\n" + userRequest);
                 
@@ -1464,30 +1452,21 @@ PULSANTE DI CONTATTO:
                 const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
                 const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
                 
-                const systemPrompt = `Sei l'assistente virtuale di TiSDesign, studio di design e premium streetwear.
+                const systemPrompt = `Sei l'assistente clienti di TiSDesign, studio di design e streetwear. Parla in modo amichevole, professionale e conciso.
 
-TONO DI VOCE E REGOLE:
-- Informale, diretto e professionale. Parla come un vero designer in studio.
-- NESSUN finto entusiasmo (niente "Siamo entusiasti di...", "Amiamo...").
-- Frasi brevi e naturali. 
-- Fai una sola domanda alla fine per mantenere viva la conversazione.
-- Non rivelare mai di essere un'IA.
-- Usa SOLO tag HTML (<p>, <strong>, <ul>, <li>, <br>). NESSUN MARKDOWN.
-- LINGUA: ${langMap[this.state.currentLang]}.
-
-LISTINO PREZZI E SERVIZI:
+Listino:
 - Pacchetti: Influencer Start (120-180€), Creator Pro (350-450€), Brand Launch (750-950€).
-- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social Base (100-150€), Ore Extra: 40€/ora.
-- MERCH (Cotone organico 100%): T-shirt base + Stampa (Fronte piccolo): 12,90€ - 16,90€. T-shirt base + Stampa (Fronte/Retro grande o Fronte+Retro): 19,90€ - 35,90€. Felpe/Hoodies stampate: 30€ - 35€.
-- GRAFICA SU MISURA: costa +15€ FISSI UNA TANTUM per l'intero ordine (NON moltiplicare i 15€ per il numero di magliette!).
+- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social (100-150€), Ore extra (40€/h).
+- Merch (cotone 100%): T-shirt stampata 12,90€-24,90€ l'una. Felpe stampate 30€-35€ l'una.
+- Grafica su misura per merch: 15€ fissi in totale per l'intero ordine.
 
-REGOLE SUI PREZZI:
-- Fai una singola stima mirata basandoti SOLO su ciò che chiede il cliente. 
-- QUANDO PARLI DI PREZZI DEL MERCH: Indica SEMPRE il prezzo "a capo" (es. "30€ a felpa"). Se fai un totale, scomponilo chiaramente (es. "3 felpe a 30€ l'una + 15€ grafica = 105€"). Non lanciare mai somme totali senza spiegarle.
-- Se chiedono servizi fuori listino, di' che valutate ogni richiesta su misura.
-
-PULSANTE DI CONTATTO:
-- Se il cliente è pronto a ordinare o chiede esplicitamente un preventivo/contatto, inserisci alla fine della risposta ESATTAMENTE questa singola parola tutta attaccata: AZIONECONTATTO
+Linee guida:
+- Rispondi in lingua: ${langMap[this.state.currentLang]}.
+- Fai un preventivo chiaro. Per il merch specifica sempre il costo a singolo capo.
+- Tieni separato il costo della grafica dal costo dei capi (es. "3 felpe a 30€ l'una, più 15€ per la grafica").
+- Formatta la risposta solo con tag HTML base come <p>, <strong>, <br>.
+- Fai una domanda alla fine.
+- Se il cliente vuole ordinare o chiede il modulo contatti, aggiungi alla fine della risposta esattamente questa parola: AZIONECONTATTO.
 
 STORICO DELLA CHAT:
 ${fullContext}
