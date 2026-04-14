@@ -53,10 +53,6 @@
         #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateX(100%); }
         #mobile-menu.open { transform: translateX(0); }
         details > summary::-webkit-details-marker { display: none; }
-        .chat-bubble-ai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px 20px 20px 0; padding: 15px; margin-bottom: 15px; font-size: 0.9rem; line-height: 1.5; }
-        .chat-bubble-user { background: #2563eb; color: white; border-radius: 20px 20px 0 20px; padding: 10px 15px; margin-bottom: 15px; align-self: flex-end; max-width: 85%; margin-left: auto; font-style: italic; font-size: 0.9rem; }
-        #ai-chat-history strong { color: #ffffff; }
-        #ai-chat-history ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 10px; color: #a1a1aa; }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen bg-[#09090b] text-[#f4f4f5]">
@@ -137,46 +133,6 @@
                         <button onclick="app.navigate('shop')" class="glass-panel text-white px-8 py-4 rounded-full text-sm font-bold hover:bg-white/10 transition-colors w-full sm:w-auto" data-i18n="hero_btn_shop">
                             Vai allo Shop
                         </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Bot Prop -->
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 w-full">
-                <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] -mr-20 -mt-20 pointer-events-none"></div>
-                    
-                    <div class="flex items-center gap-4 mb-6 relative z-10">
-                        <div class="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center font-bold shadow-xl">
-                            <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white tracking-tight" data-i18n="ai_prop_title">Ottieni una stima immediata</h3>
-                            <p class="text-sm text-zinc-400 font-medium mt-1" data-i18n="ai_prop_subtitle">L'IA genererà un mini-progetto con costi e tempistiche.</p>
-                        </div>
-                    </div>
-
-                    <div id="ai-initial-fields" class="grid sm:grid-cols-2 gap-6 mt-8 relative z-10">
-                        <div class="space-y-2">
-                            <label for="ai-prop-who" class="block text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="ai_prop_who">1. Chi sei?</label>
-                            <input type="text" id="ai-prop-who" data-i18n-placeholder="ai_prop_who_pl" placeholder="Es. Una band emergente..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="ai-prop-what" class="block text-xs font-bold text-zinc-500 uppercase tracking-widest" data-i18n="ai_prop_what">2. Di cosa hai bisogno?</label>
-                            <input type="text" id="ai-prop-what" data-i18n-placeholder="ai_prop_what_pl" placeholder="Es. Un logo e 50 magliette per il tour..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all">
-                        </div>
-                    </div>
-                    <button onclick="app.generateProposal()" id="btn-generate-proposal" class="mt-6 w-full bg-white text-black px-6 py-4 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-all relative z-10 flex justify-center items-center gap-2 shadow-lg">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="ai_prop_btn">Calcola il mio progetto</span>
-                    </button>
-                    
-                    <div id="ai-chat-container" class="hidden mt-6 flex flex-col gap-4 relative z-10">
-                        <div id="ai-chat-history" class="flex flex-col p-6 bg-black/40 rounded-3xl border border-white/10 text-sm leading-relaxed max-h-[400px] overflow-y-auto" aria-live="polite"></div>
-                        <div class="flex gap-2 pt-4 border-t border-white/10">
-                            <input type="text" id="ai-chat-input" placeholder="..." aria-label="Messaggio chat" class="flex-grow bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500 transition-all" onkeypress="if(event.key === 'Enter') app.chatNext()">
-                            <button onclick="app.chatNext()" class="bg-blue-600 text-white px-6 py-4 rounded-xl text-sm font-bold hover:bg-blue-500 transition-colors shadow-lg">Invio</button>
-                            <button onclick="app.resetChat()" class="glass-panel text-zinc-400 px-4 py-4 rounded-xl hover:text-white transition-colors flex items-center justify-center" aria-label="Reset Chat" title="Reset"><i data-lucide="rotate-ccw" class="w-5 h-5"></i></button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -936,7 +892,6 @@
             it: {
                 nav_services: "Servizi", nav_shop: "Shop", nav_about: "Chi Siamo", nav_contact_btn: "Preventivo",
                 hero_title: "Design Creativo e<br>Merch Premium", hero_subtitle: "Soluzioni grafiche per brand e abbigliamento personalizzato di alta qualità.", hero_btn_services: "Esplora i Servizi", hero_btn_shop: "Vai allo Shop",
-                ai_prop_title: "Ottieni una stima immediata", ai_prop_subtitle: "L'IA genererà un mini-progetto con costi e tempistiche.", ai_prop_who: "1. Chi sei?", ai_prop_who_pl: "Es. Una band emergente...", ai_prop_what: "2. Di cosa hai bisogno?", ai_prop_what_pl: "Es. Un logo e 50 magliette...", ai_prop_btn: "Calcola il mio progetto",
                 home_card1_title: "Servizi Digitali", home_card1_desc: "Logo design, branding e social media per far crescere il tuo progetto.", home_card1_link: "Vedi Dettagli",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Stampe su cotone premium. Crea il tuo stile o scegli i nostri design.", home_card2_link: "Esplora Catalogo",
                 home_recent_works: "Lavori Recenti", rev_title: "Cosa dicono di noi", rev_subtitle: "Recensioni verificate dei nostri clienti.",
@@ -980,7 +935,7 @@
                 form_submit: "Invia Richiesta", footer_privacy: "Privacy Policy", footer_terms: "Termini e Condizioni", footer_impressum: "Impressum",
                 cookie_text: "Questo sito utilizza cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra Privacy Policy e l'uso dei cookie.", cookie_btn: "Accetta e chiudi",
                 form_success_title: "Richiesta Inviata!", form_success_desc: "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto.", form_success_btn: "Invia un altro messaggio",
-                contact_phone: "+49 1575 6389016", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete", js_ai_calc: "Sto analizzando...", js_ai_offline: "IA offline.", js_ai_error: "Errore.",
+                contact_phone: "+49 1575 6389016", js_sending: "Invio in corso...", js_error_retry: "Errore, riprova", js_error_net: "Errore di rete",
                 about_title: "La Nostra Visione.", about_subtitle: "Siamo TiSDesign, fondiamo creatività e streetwear per elevare il tuo brand.", about_mission_title: "La Missione", about_mission_desc: "Non creiamo solo grafiche, costruiamo identità. Diamo forma alle tue idee con un design pulito, d'impatto e merch premium.", about_who_title: "Chi c'è dietro", about_who_desc: "Basati a Stoccarda, combiniamo il rigore del design con l'energia della cultura urbana. Non siamo solo un'agenzia grafica o una semplice stamperia: siamo un partner strategico pronto a portare il tuo progetto al livello successivo con uno stile inconfondibile.", about_what_title: "Cosa Faccio", about_what_desc: "Dallo sviluppo di loghi e identità visive per i social media, fino alla produzione reale di abbigliamento in cotone organico. Seguiamo tutto il processo internamente per garantire zero compromessi sulla qualità finale.",
                 
                 imp_title: "Impressum", imp_sub1: "Indicazioni legali (Angaben gemäß § 5 TMG):", imp_sub2: "Rappresentato da:", imp_sub3: "Contatti:", imp_sub4: "Partita IVA (Umsatzsteuer-ID):",
@@ -990,7 +945,6 @@
             en: {
                 nav_services: "Services", nav_shop: "Shop", nav_about: "About Us", nav_contact_btn: "Get a Quote",
                 hero_title: "Creative Design &<br>Premium Merch", hero_subtitle: "Graphic solutions for brands and high-quality custom apparel.", hero_btn_services: "Explore Services", hero_btn_shop: "Go to Shop",
-                ai_prop_title: "Get an instant estimate", ai_prop_subtitle: "AI will generate a mini-project with costs and timelines.", ai_prop_who: "1. Who are you?", ai_prop_who_pl: "E.g. An upcoming band...", ai_prop_what: "2. What do you need?", ai_prop_what_pl: "E.g. A logo and 50 t-shirts...", ai_prop_btn: "Calculate my project",
                 home_card1_title: "Digital Services", home_card1_desc: "Logo design, branding and social media to grow your project.", home_card1_link: "See Details",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium cotton prints. Create your style or choose our designs.", home_card2_link: "Explore Catalog",
                 home_recent_works: "Recent Works", rev_title: "What they say about us", rev_subtitle: "Verified reviews from our clients.",
@@ -1034,7 +988,7 @@
                 form_submit: "Send Request", footer_privacy: "Privacy Policy", footer_terms: "Terms and Conditions", footer_impressum: "Impressum",
                 cookie_text: "This site uses cookies to enhance your experience. By continuing to browse, you accept our Privacy Policy and the use of cookies.", cookie_btn: "Accept & Close",
                 form_success_title: "Request Sent!", form_success_desc: "We have received your message. We will reply as soon as possible.", form_success_btn: "Send another message",
-                contact_phone: "+49 1575 6389016", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error", js_ai_calc: "Thinking...", js_ai_offline: "AI offline.", js_ai_error: "Error.",
+                contact_phone: "+49 1575 6389016", js_sending: "Sending...", js_error_retry: "Error, try again", js_error_net: "Network error",
                 about_title: "Our Vision.", about_subtitle: "We are TiSDesign, blending creativity and streetwear to elevate your brand.", about_mission_title: "Our Mission", about_mission_desc: "We don't just create graphics, we build identities. We shape your ideas with clean, impactful design and premium merch.", about_who_title: "Who we are", about_who_desc: "Based in Stuttgart, we combine design rigor with the energy of urban culture. We are not just a graphic agency or a simple print shop: we are a strategic partner ready to take your project to the next level with an unmistakable style.", about_what_title: "What I Do", about_what_desc: "From developing logos and visual identities for social media, to the actual production of organic cotton clothing. We handle the entire process internally to ensure zero compromises on final quality.",
                 
                 imp_title: "Impressum", imp_sub1: "Information according to § 5 TMG:", imp_sub2: "Represented by:", imp_sub3: "Contact:", imp_sub4: "VAT ID:",
@@ -1044,7 +998,6 @@
             de: {
                 nav_services: "Dienstleistungen", nav_shop: "Shop", nav_about: "Über Uns", nav_contact_btn: "Angebot anfordern",
                 hero_title: "Kreatives Design &<br>Premium Merch", hero_subtitle: "Grafiklösungen für Marken und hochwertige personalisierte Kleidung.", hero_btn_services: "Dienste entdecken", hero_btn_shop: "Zum Shop",
-                ai_prop_title: "Sofortige Schätzung erhalten", ai_prop_subtitle: "KI generiert ein Mini-Projekt mit Kosten.", ai_prop_who: "1. Wer bist du?", ai_prop_who_pl: "Z.B. Eine aufstrebende Band...", ai_prop_what: "2. Was brauchst du?", ai_prop_what_pl: "Z.B. Ein Logo und 50 Shirts...", ai_prop_btn: "Mein Projekt berechnen",
                 home_card1_title: "Digitale Dienste", home_card1_desc: "Logo-Design, Branding und Social Media, um dein Projekt zu vergrößern.", home_card1_link: "Details ansehen",
                 home_card2_title: "Shop & Custom Merch", home_card2_desc: "Premium-Baumwolldrucke. Kreiere deinen Stil oder wähle unsere Designs.", home_card2_link: "Katalog erkunden",
                 home_recent_works: "Aktuelle Arbeiten", rev_title: "Was unsere Kunden sagen", rev_subtitle: "Verifizierte Bewertungen.",
@@ -1088,7 +1041,7 @@
                 form_submit: "Anfrage Senden", footer_privacy: "Datenschutzerklärung", footer_terms: "AGB", footer_impressum: "Impressum",
                 cookie_text: "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Wenn Sie weiter surfen, akzeptieren Sie unsere Datenschutzrichtlinie und die Verwendung von Cookies.", cookie_btn: "Akzeptieren & Schließen",
                 form_success_title: "Anfrage gesendet!", form_success_desc: "Wir haben deine Nachricht erhalten und melden uns in Kürze.", form_success_btn: "Weitere Nachricht senden",
-                contact_phone: "+49 1575 6389016", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler", js_ai_calc: "Denkt nach...", js_ai_offline: "KI offline.", js_ai_error: "Fehler.",
+                contact_phone: "+49 1575 6389016", js_sending: "Wird gesendet...", js_error_retry: "Fehler, erneut versuchen", js_error_net: "Netzwerkfehler",
                 about_title: "Unsere Vision.", about_subtitle: "Wir sind TiSDesign. Wir verbinden Kreativität und Streetwear, um deine Marke hervorzuheben.", about_mission_title: "Unsere Mission", about_mission_desc: "Wir entwerfen nicht nur Grafiken, wir bauen Identitäten. Wir geben deinen Ideen Form mit klarem, ausdrucksstarkem Design und Premium-Streetwear.", about_who_title: "Wer wir sind", about_who_desc: "Mit Sitz in Stuttgart verbinden wir Design-Strenge mit der Energie der urbanen Kultur. Wir sind nicht nur eine Grafikagentur oder eine Druckerei: Wir sind ein strategischer Partner, der bereit ist, dein Projekt mit einem unverwechselbaren Stil auf die nächste Stufe zu heben.", about_what_title: "Was wir machen", about_what_desc: "Von der Entwicklung von Logos und visuellen Identitäten für Social Media bis zur tatsächlichen Produktion von Bio-Baumwollkleidung. Wir führen den gesamten Prozess intern durch, um null Kompromisse bei der Endqualität zu garantieren.",
                 
                 imp_title: "Impressum", imp_sub1: "Angaben gemäß § 5 TMG:", imp_sub2: "Vertreten durch:", imp_sub3: "Kontakt:", imp_sub4: "Umsatzsteuer-ID:",
@@ -1098,7 +1051,7 @@
         };
 
         const app = {
-            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chartInitialized: false, chatHistory: [] },
+            state: { currentView: 'home', basePrice: 25.00, upsellPrice: 15.00, currentLang: 'de', chartInitialized: false },
             
             toggleMobileMenu: function() {
                 const menu = document.getElementById('mobile-menu');
@@ -1315,197 +1268,6 @@
                     }
                 });
                 this.state.chartInitialized = true;
-            },
-
-            callGemini: async function(prompt) {
-                let retries = 3, delay = 1000;
-                const t = translations[this.state.currentLang];
-                for (let i = 0; i < retries; i++) {
-                    try {
-                        const res = await fetch('/api/gemini', { 
-                            method: 'POST', 
-                            headers: { 'Content-Type': 'application/json' }, 
-                            body: JSON.stringify({ prompt: prompt }) 
-                        });
-                        if (!res.ok) throw new Error('HTTP error');
-                        const data = await res.json();
-                        let resultText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                        if (!resultText) return t.js_ai_error;
-                        
-                        const m = String.fromCharCode(96);
-                        return resultText.replace(new RegExp(m + m + m + 'html', 'g'), '').replace(new RegExp(m + m + m, 'g'), '');
-                    } catch (e) {
-                        if (i === retries - 1) return t.js_ai_offline;
-                        await new Promise(r => setTimeout(r, delay)); delay *= 2;
-                    }
-                }
-            },
-
-            goToContactWithSummary: async function(btnElement) {
-                const originalHTML = btnElement.innerHTML;
-                const t = translations[this.state.currentLang];
-                
-                btnElement.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin shrink-0"></i> ...`;
-                lucide.createIcons();
-                btnElement.disabled = true;
-
-                const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
-                
-                const langMap = { it: "Italiano", en: "Inglese", de: "Tedesco" };
-                
-                const prompt = `Riassumi questa conversazione dal punto di vista del cliente.
-Scrivi un breve messaggio in prima persona (es. "Ciao, vorrei ordinare...") da inserire in un form di contatti.
-Specifica i capi richiesti, le taglie e i prezzi discussi (prezzo unitario e grafica separata).
-Scrivi nella lingua: ${langMap[this.state.currentLang]}.
-Restituisci solo il messaggio, senza formattazione HTML.
-
-Chat:
-${fullContext}`;
-
-                const summary = await this.callGemini(prompt);
-                
-                document.getElementById('contact-subject').value = 'altro'; 
-                document.getElementById('contact-message').value = summary.trim();
-                
-                btnElement.innerHTML = originalHTML;
-                btnElement.disabled = false;
-                
-                this.navigate('contact');
-            },
-
-            generateProposal: async function() {
-                const who = document.getElementById('ai-prop-who').value;
-                const what = document.getElementById('ai-prop-what').value;
-                if(!who.trim() || !what.trim()) return;
-                
-                const t = translations[this.state.currentLang];
-                const historyBox = document.getElementById('ai-chat-history');
-                const initialFields = document.getElementById('ai-initial-fields');
-                const chatContainer = document.getElementById('ai-chat-container');
-                const btn = document.getElementById('btn-generate-proposal');
-                
-                btn.disabled = true; btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin shrink-0"></i>...`;
-                lucide.createIcons();
-                
-                initialFields.classList.add('hidden');
-                btn.classList.add('hidden');
-                chatContainer.classList.remove('hidden');
-                chatContainer.classList.add('flex');
-                
-                const loaderId = "ai-loading-" + Date.now();
-                historyBox.innerHTML = `<div id="${loaderId}" class='flex items-center justify-center py-4'><span class='animate-pulse text-zinc-400'>${t.js_ai_calc}</span></div>`;
-
-                const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
-                const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
-
-                const systemPrompt = `Sei l'assistente clienti di TiSDesign, studio di design e streetwear. Parla in modo amichevole, professionale e conciso.
-
-Listino:
-- Pacchetti: Influencer Start (120-180€), Creator Pro (350-450€), Brand Launch (750-950€).
-- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social (100-150€), Ore extra (40€/h).
-- Merch (cotone 100%): T-shirt stampata 12,90€-24,90€ l'una. Felpe stampate 30€-35€ l'una.
-- Grafica su misura per merch: 15€ fissi in totale per l'intero ordine.
-
-Linee guida:
-- Rispondi in lingua: ${langMap[this.state.currentLang]}.
-- Fai un preventivo chiaro. Per il merch specifica sempre il costo a singolo capo.
-- Tieni separato il costo della grafica dal costo dei capi (es. "3 felpe a 30€ l'una, più 15€ per la grafica").
-- Formatta la risposta solo con tag HTML base come <p>, <strong>, <br>.
-- Fai una domanda alla fine.
-- Se il cliente vuole ordinare o chiede il modulo contatti, aggiungi alla fine della risposta esattamente questa parola: AZIONECONTATTO.`;
-                
-                const userRequest = `Il cliente si presenta come "${who}" e chiede: "${what}". Fornisci una risposta e un preventivo basato sui tuoi servizi.`;
-
-                const result = await this.callGemini(systemPrompt + "\n\n" + userRequest);
-                
-                const loaderEl = document.getElementById(loaderId);
-                if(loaderEl) loaderEl.remove();
-                
-                this.state.chatHistory.push({ role: "user", text: userRequest });
-                this.state.chatHistory.push({ role: "model", text: result });
-                
-                let finalResult = result;
-                if (finalResult.includes('AZIONECONTATTO')) {
-                    finalResult = finalResult.replace('AZIONECONTATTO', `<button onclick="app.goToContactWithSummary(this)" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg flex items-center justify-center gap-2">${ctaBtnText}</button>`);
-                }
-                
-                historyBox.innerHTML += `<div class="chat-bubble-ai">${finalResult}</div>`;
-                historyBox.scrollTop = historyBox.scrollHeight;
-            },
-
-            chatNext: async function() {
-                const inputEl = document.getElementById('ai-chat-input');
-                const text = inputEl.value;
-                if(!text.trim()) return;
-                
-                const historyBox = document.getElementById('ai-chat-history');
-                const t = translations[this.state.currentLang];
-                inputEl.value = "";
-                
-                historyBox.innerHTML += `<div class="chat-bubble-user">${text}</div>`;
-                
-                const loaderId = "ai-loading-" + Date.now();
-                historyBox.innerHTML += `<div id="${loaderId}" class="animate-pulse text-zinc-500 text-xs mt-2 mb-2 ml-2">${t.js_ai_calc}</div>`;
-                historyBox.scrollTop = historyBox.scrollHeight;
-                
-                const langMap = { it: "Italiano", en: "English", de: "Deutsch" };
-                const ctaBtnText = this.state.currentLang === 'de' ? 'Zum Kontaktformular' : (this.state.currentLang === 'en' ? 'Go to Contact Form' : 'Vai al Modulo di Contatto');
-                const fullContext = this.state.chatHistory.map(m => `${m.role === 'user' ? 'Cliente' : 'TiSDesign'}: ${m.text}`).join("\n\n");
-                
-                const systemPrompt = `Sei l'assistente clienti di TiSDesign, studio di design e streetwear. Parla in modo amichevole, professionale e conciso.
-
-Listino:
-- Pacchetti: Influencer Start (120-180€), Creator Pro (350-450€), Brand Launch (750-950€).
-- Singoli: Logo Base (150-250€), Logo Pro (350-500€), Kit Social (100-150€), Ore extra (40€/h).
-- Merch (cotone 100%): T-shirt stampata 12,90€-24,90€ l'una. Felpe stampate 30€-35€ l'una.
-- Grafica su misura per merch: 15€ fissi in totale per l'intero ordine.
-
-Linee guida:
-- Rispondi in lingua: ${langMap[this.state.currentLang]}.
-- Fai un preventivo chiaro. Per il merch specifica sempre il costo a singolo capo.
-- Tieni separato il costo della grafica dal costo dei capi (es. "3 felpe a 30€ l'una, più 15€ per la grafica").
-- Formatta la risposta solo con tag HTML base come <p>, <strong>, <br>.
-- Fai una domanda alla fine.
-- Se il cliente vuole ordinare o chiede il modulo contatti, aggiungi alla fine della risposta esattamente questa parola: AZIONECONTATTO.
-
-STORICO DELLA CHAT:
-${fullContext}
-
-DOMANDA ATTUALE DEL CLIENTE:
-${text}`;
-                
-                const response = await this.callGemini(systemPrompt);
-                
-                const loaderEl = document.getElementById(loaderId);
-                if(loaderEl) loaderEl.remove();
-                
-                this.state.chatHistory.push({ role: "user", text: text });
-                this.state.chatHistory.push({ role: "model", text: response });
-                
-                let finalResponse = response;
-                if (finalResponse.includes('AZIONECONTATTO')) {
-                    finalResponse = finalResponse.replace('AZIONECONTATTO', `<button onclick="app.goToContactWithSummary(this)" class="mt-6 bg-white text-black px-6 py-3 rounded-xl text-sm font-bold hover:bg-zinc-200 transition-colors w-full shadow-lg flex items-center justify-center gap-2">${ctaBtnText}</button>`);
-                }
-                
-                historyBox.innerHTML += `<div class="chat-bubble-ai">${finalResponse}</div>`;
-                historyBox.scrollTop = historyBox.scrollHeight;
-            },
-
-            resetChat: function() {
-                this.state.chatHistory = [];
-                document.getElementById('ai-chat-container').classList.add('hidden');
-                document.getElementById('ai-chat-container').classList.remove('flex');
-                document.getElementById('ai-initial-fields').classList.remove('hidden');
-                document.getElementById('ai-prop-who').value = "";
-                document.getElementById('ai-prop-what').value = "";
-                
-                const btn = document.getElementById('btn-generate-proposal');
-                btn.classList.remove('hidden');
-                btn.disabled = false;
-                btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i> <span data-i18n="ai_prop_btn">${translations[this.state.currentLang].ai_prop_btn}</span>`;
-                lucide.createIcons();
-                
-                document.getElementById('ai-chat-history').innerHTML = "";
             }
         };
 
